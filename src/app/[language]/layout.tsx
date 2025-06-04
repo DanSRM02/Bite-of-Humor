@@ -1,15 +1,20 @@
 import LanguageProvider from "@/context/languageContext";
-import { ReactNode, use } from "react";
+import { ReactNode } from "react";
 
 type LanguageWrapperProps = {
   params: Promise<{ language: string }>;
   children: ReactNode;
 };
-export default function LanguageWrapper({
+
+export const metadata = {
+  title: "Bite of Humor",
+  description: "",
+};
+export default async function LanguageWrapper({
   params,
   children,
 }: LanguageWrapperProps) {
-  const resolvedParams = use(params);
+  const resolvedParams = await params;
   const languageFromUrl = resolvedParams.language;
   return (
     <html lang={languageFromUrl}>

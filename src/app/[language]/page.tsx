@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react";
-// import classes from "./TheStartSetup.module.scss";
+import { useContext, useEffect, useRef, useState } from "react";
 import Button from "@/components/inputs/button";
-// import { useNavigate } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
 import { modifyPositionElement } from "@/utils/modifyPositionElement";
+import { redirect } from "next/navigation";
+import { LanguageContext } from "@/context/languageContext";
 
 function TheStartSetupPage() {
-  // const navigate = useNavigate();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const { t } = useTranslation();
+  const { localizationRouter }= useContext(LanguageContext);
   const [message, setMessage] = useState("");
   const [timesClicked, setTimesClicked] = useState(2);
 
@@ -47,7 +47,7 @@ function TheStartSetupPage() {
     }
 
     if (shouldRedirectToNextStep) {
-      // navigate("setup");
+      redirect(`${localizationRouter}/setup/medium`);
     }
 
     const messageTranslated = t(
@@ -58,50 +58,29 @@ function TheStartSetupPage() {
   }
 
   return (
-    <main
-      tabIndex={0}
-      aria-label="First setup main content"
-    >
-      <h1
-        tabIndex={0}
-        aria-label="Bite Of Humor heading"
-      >
+    <main tabIndex={0} aria-label="First setup main content">
+      <h1 tabIndex={0} aria-label="Bite Of Humor heading">
         Bite Of Humor
       </h1>
-      <section
-        tabIndex={0}
-        aria-label="Setup question and interaction"
-      >
-        <article
-
-          tabIndex={0}
-          aria-label="Setup introduction and description"
-        >
-          <h2
-  
-            tabIndex={0}
-            aria-label={translations.intro.title}
-          >
+      <section tabIndex={0} aria-label="Setup question and interaction">
+        <article tabIndex={0} aria-label="Setup introduction and description">
+          <h2 tabIndex={0} aria-label={translations.intro.title}>
             {translations.intro.title}
           </h2>
-          <h5
-  
-            tabIndex={0}
-            aria-label={translations.intro.remark}
-          >
+          <h5 tabIndex={0} aria-label={translations.intro.remark}>
             {translations.intro.remark}
           </h5>
-          <p >
+          <p>
             <Trans i18nKey="FirstSetup.introduction.paragraph1">
               {translations.intro.paragraph1}
             </Trans>
           </p>
-          <p >
+          <p>
             <Trans i18nKey="FirstSetup.introduction.paragraph2">
               {translations.intro.paragraph2}
             </Trans>
           </p>
-          <p >
+          <p>
             <Trans i18nKey="FirstSetup.introduction.paragraph3">
               {translations.intro.paragraph3}
             </Trans>
@@ -113,7 +92,6 @@ function TheStartSetupPage() {
             variant="primary"
             ref={buttonRef}
             onClick={handleClick}
-  
             tabIndex={0}
           >
             {message}

@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import "@/i18n/config"
 import { redirect } from "next/navigation";
 
-const LanguageContext = createContext<LanguageCtxImpl>({
+export const LanguageContext = createContext<LanguageCtxImpl>({
   language: DEFAULT_LANG,
   locale: DEFAULT_LOCAL,
   localizationRouter: `${DEFAULT_LANG}-${DEFAULT_LOCAL}`,
