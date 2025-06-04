@@ -8,7 +8,8 @@ import {
 } from "@/utils/const";
 import { createContext, ReactNode, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import "@/i18n/i18n.config"
+import "@/i18n/config"
+import { redirect } from "next/navigation";
 
 const LanguageContext = createContext<LanguageCtxImpl>({
   language: DEFAULT_LANG,
@@ -50,6 +51,19 @@ const LanguageProvider = ({ languageParam, children }: LanguageCtxProps) => {
     i18n.changeLanguage(languageConfig.localizationRouter);
     document.documentElement.lang = languageConfig.localizationRouter;
   }, [languageConfig.localizationRouter, i18n]);
+
+  useEffect(() => {
+    const correctUrlLang = languageConfig.localizationRouter;
+    const currentPath = location.pathname;
+    if (languageParam !== correctUrlLang) {
+      const pathSegmenths = currentPath.split("/").filter((space) => space);
+      const correctPath = `/${correctUrlLang}/${pathSegmenths
+        .slice(1)
+        .join("/")}`;
+
+      redirect(correctPath);
+    }
+  }, [languageConfig.localizationRouter, languageParam]);
 
   return (
     <LanguageContext.Provider value={languageConfig}>
