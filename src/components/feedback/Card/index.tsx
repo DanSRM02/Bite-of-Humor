@@ -1,3 +1,4 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
 import { BiArrowFromLeft } from "react-icons/bi";

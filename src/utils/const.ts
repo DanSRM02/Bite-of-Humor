@@ -1,6 +1,7 @@
 // DEFAULT LANGUAGE CONFIG
-
+import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
 import type { Country, Locale } from "@/types/countryTypes";
+import { UnorderedListImpl } from "@/types/unorderedListType";
 
 export const DEFAULT_LANG: string = "en";
 export const DEFAULT_LOCAL: string = "US";
@@ -44,4 +45,24 @@ export const _AVAILABLE_FLAGS: string[] = [
   "racist",
   "sexist",
   "explicit",
+];
+
+// DATA CONST
+
+export const platformSections: UnorderedListImpl[] = [
+  {
+    title: "communicationHub",
+    icon: LuMail,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+  },
+  {
+    title: "socialFeatures",
+    icon: LuUsers,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+  },
+  {
+    title: "premiumExperience",
+    icon: LuCrown,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+  },
 ];
