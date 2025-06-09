@@ -66,3 +66,25 @@ export const platformSections: UnorderedListImpl[] = [
     features: ["feature1", "feature2", "feature3", "feature4"],
   },
 ];
+
+export const plans: UnorderedListImpl[] = [
+  {
+    title: "basic",
+    icon: LuCircle,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    price: 0,
+  },
+  {
+    title: "pro",
+    icon: LuStar,
+    popular: true,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    price: 9.99,
+  },
+  {
+    title: "premium",
+    icon: LuCrown,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    price: 19.99,
+  },
+];

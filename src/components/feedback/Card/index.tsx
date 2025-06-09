@@ -74,9 +74,7 @@ const Card = ({
       onClick={handleCardClick}
       tabIndex={0}
       aria-label={
-        title +
-        (badge ? `, ${badge}` : "") +
-        (isExpanded ? ", expanded" : ", collapsed")
+        title         
       }
       role="button"
       aria-expanded={isExpanded}

@@ -30,10 +30,20 @@ i18next
           const supportedCurrency = SUPPORTED_LOCALES.find(
             (locale) => locale.language === language
           );
-          return new Intl.NumberFormat(language, {
+
+          console.log(
+            `Formatting value: ${value} with format: ${format} for language: ${language}`
+          );
+
+          const currentFormat = new Intl.NumberFormat(language, {
             style: "currency",
             currency: supportedCurrency?.currency || "USD",
           }).format(value);
+
+          console.log(currentFormat);
+          
+
+          return currentFormat;
         }
         return value;
       },

@@ -8,7 +8,7 @@ import {
 } from "@/utils/const";
 import { createContext, ReactNode, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import "@/i18n/config";
+import "@/i18n/config"; 
 import { redirect } from "next/navigation";
 
 export const LanguageContext = createContext<LanguageCtxImpl>({
