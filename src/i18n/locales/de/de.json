@@ -251,5 +251,41 @@
     },
     "loadingMessage": "Wird geladen...",
     "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt."
+  },
+  "footer": {
+    "brandName": "Bite of Humor",
+    "copyright": "© {{year}} Bite of Humor. Alle Rechte vorbehalten.",
+    "linkGroups": [
+      {
+        "title": "Kernkonzepte",
+        "topics": [
+          { "subtitle": "Was ist Bite of Humor?", "link": "/core/what-is" },
+          { "subtitle": "Hinter dem Namen", "link": "/core/name-origin" },
+          { "subtitle": "Logo-Philosophie", "link": "/core/logo-philosophy" }
+        ]
+      },
+      {
+        "title": "Über das Projekt",
+        "topics": [
+          { "subtitle": "Projektübersicht", "link": "/about/overview" },
+          { "subtitle": "Designziele", "link": "/about/goals" },
+          {
+            "subtitle": "Kreative Leitung",
+            "link": "/about/creative-direction"
+          }
+        ]
+      },
+      {
+        "title": "Community",
+        "topics": [
+          { "subtitle": "Feedback-Forum", "link": "/community/forum" },
+          { "subtitle": "Witz einreichen", "link": "/community/submit-joke" },
+          {
+            "subtitle": "Design-Herausforderungen",
+            "link": "/community/challenges"
+          }
+        ]
+      }
+    ]
   }
 }

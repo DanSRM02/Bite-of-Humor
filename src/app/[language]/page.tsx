@@ -8,9 +8,9 @@ import { modifyPositionElement } from "@/utils/modifyPositionElement";
 import Button from "@/components/inputs/button";
 
 function TheStartSetupPage() {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const refButton = useRef<HTMLButtonElement>(null);
   const { t } = useTranslation();
-  const { localizationRouter }= useContext(LanguageContext);
+  const { localizationRouter } = useContext(LanguageContext);
   const [message, setMessage] = useState("");
   const [timesClicked, setTimesClicked] = useState(2);
 
@@ -33,7 +33,7 @@ function TheStartSetupPage() {
 
   function handleClick() {
     setTimesClicked((prev) => prev + 1);
-    const buttonUtil = modifyPositionElement(buttonRef.current);
+    const buttonUtil = modifyPositionElement(refButton.current);
     const shouldRedirectToNextStep = timesClicked === 6;
     const shouldChangePosition = timesClicked <= 4;
     const shouldDefaultPosition = timesClicked === 5;
@@ -47,7 +47,9 @@ function TheStartSetupPage() {
     }
 
     if (shouldRedirectToNextStep) {
-      redirect(`${localizationRouter}/setup/medium`);
+      console.log("reduitre");
+      
+      redirect(`/${localizationRouter}/setup/medium`);
     }
 
     const messageTranslated = t(
@@ -90,7 +92,7 @@ function TheStartSetupPage() {
           <Button
             size="medium"
             variant="primary"
-            ref={buttonRef}
+            refButton={refButton}
             onClick={handleClick}
             tabIndex={0}
           >

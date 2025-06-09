@@ -250,5 +250,44 @@
       "categoryLabel": "Sélectionner une catégorie"
     },
     "loadingMessage": "Chargement..."
+  },
+  "footer": {
+    "brandName": "Bite of Humor",
+    "copyright": "© {{year}} Bite of Humor. Tous droits réservés.",
+    "linkGroups": [
+      {
+        "title": "Concepts Clés",
+        "topics": [
+          {
+            "subtitle": "Qu'est-ce que Bite of Humor ?",
+            "link": "/core/what-is"
+          },
+          { "subtitle": "Derrière le Nom", "link": "/core/name-origin" },
+          { "subtitle": "Philosophie du Logo", "link": "/core/logo-philosophy" }
+        ]
+      },
+      {
+        "title": "À Propos du Projet",
+        "topics": [
+          { "subtitle": "Aperçu du Projet", "link": "/about/overview" },
+          { "subtitle": "Objectifs de Conception", "link": "/about/goals" },
+          {
+            "subtitle": "Direction Créative",
+            "link": "/about/creative-direction"
+          }
+        ]
+      },
+      {
+        "title": "Communauté",
+        "topics": [
+          { "subtitle": "Forum de Discussion", "link": "/community/forum" },
+          {
+            "subtitle": "Proposer une Blague",
+            "link": "/community/submit-joke"
+          },
+          { "subtitle": "Défis de Conception", "link": "/community/challenges" }
+        ]
+      }
+    ]
   }
 }

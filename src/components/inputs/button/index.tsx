@@ -1,4 +1,5 @@
 import type { ReactNode, Ref } from "react";
+import clsx from "clsx";
 
 type ButtonProps = {
   variant: "primary" | "secondary" | string;
@@ -7,7 +8,7 @@ type ButtonProps = {
   type?: "button" | "submit" | "reset";
   icon?: string;
   tabIndex: number;
-  ref?: Ref<HTMLButtonElement> | null;
+  refButton?: Ref<HTMLButtonElement> | null;
   onClick?: () => void;
   "aria-label"?: string;
   "aria-pressed"?: boolean;
@@ -16,7 +17,7 @@ type ButtonProps = {
 
 const Button = ({
   children,
-  ref,
+  refButton,
   onClick,
   variant,
   size,
@@ -30,9 +31,9 @@ const Button = ({
 
   return (
     <button
-      ref={ref}
+      ref={refButton}
       type={type}
-      className={`${buttonStyle} ${sizeStyle}`}
+      className={clsx(buttonStyle, sizeStyle)}
       onClick={onClick}
       tabIndex={tabIndex}
       aria-label={props["aria-label"]}

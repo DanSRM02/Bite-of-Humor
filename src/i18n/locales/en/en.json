@@ -69,7 +69,7 @@
   "ErrorPage": {
     "content": {
       "title": "Error Page",
-      "message": "An error occurred!"      
+      "message": "An error occurred!"
     },
     "actions": {
       "button": "Go to Home"
@@ -247,5 +247,38 @@
     },
     "loadingMessage": "Loading...",
     "safeModeWarning": "Safe mode is not allowed for the 'Dark' category."
+  },
+  "footer": {
+    "brandName": "Bite of Humor",
+    "copyright": " {{year}}© Bite of Humor. All rights reserved.",
+    "linkGroups": [
+      {
+        "title": "Core Concepts",
+        "topics": [
+          { "subtitle": "What is Bite of Humor?", "link": "/core/what-is" },
+          { "subtitle": "Behind the Name", "link": "/core/name-origin" },
+          { "subtitle": "Logo Philosophy", "link": "/core/logo-philosophy" }
+        ]
+      },
+      {
+        "title": "About the Project",
+        "topics": [
+          { "subtitle": "Project Overview", "link": "/about/overview" },
+          { "subtitle": "Design Goals", "link": "/about/goals" },
+          {
+            "subtitle": "Creative Direction",
+            "link": "/about/creative-direction"
+          }
+        ]
+      },
+      {
+        "title": "Community",
+        "topics": [
+          { "subtitle": "Feedback Forum", "link": "/community/forum" },
+          { "subtitle": "Submit a Joke", "link": "/community/submit-joke" },
+          { "subtitle": "Design Challenges", "link": "/community/challenges" }
+        ]
+      }
+    ]
   }
 }
