@@ -1,3 +1,4 @@
+"use client"
 import LeadIn from "@/components/dataDisplay/LeadIn";
 // import classes from "./LogIn.module.scss";
 import { useTranslation } from "react-i18next";
@@ -16,21 +17,21 @@ function LogIn() {
   const translations = useMemo(
     () => ({
       intro: {
-        heading: t("ComedianLogInForm.introduction.heading"),
-        paragraph: t("ComedianLogInForm.introduction.paragraph"),
+        heading: t("ComedianLoginForm.introduction.heading"),
+        paragraph: t("ComedianLoginForm.introduction.paragraph"),
       },
       fields: {
         name: {
-          placeholder: t("ComedianLogInForm.fields.namePlaceholder"),
-          label: t("ComedianLogInForm.fields.nameLabel"),
+          placeholder: t("ComedianLoginForm.fields.namePlaceholder"),
+          label: t("ComedianLoginForm.fields.nameLabel"),
         },
         email: {
-          placeholder: t("ComedianLogInForm.fields.emailPlaceholder"),
-          label: t("ComedianLogInForm.fields.emailLabel"),
+          placeholder: t("ComedianLoginForm.fields.emailPlaceholder"),
+          label: t("ComedianLoginForm .fields.emailLabel"),
         },
       },
       actions: {
-        submitButton: t("ComedianLogInForm.actions.submitButton"),
+        submitButton: t("ComedianLoginForm.actions.submitButton"),
       },
     }),
     [t]
