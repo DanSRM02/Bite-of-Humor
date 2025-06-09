@@ -31,17 +31,10 @@ i18next
             (locale) => locale.language === language
           );
 
-          console.log(
-            `Formatting value: ${value} with format: ${format} for language: ${language}`
-          );
-
           const currentFormat = new Intl.NumberFormat(language, {
             style: "currency",
             currency: supportedCurrency?.currency || "USD",
           }).format(value);
-
-          console.log(currentFormat);
-          
 
           return currentFormat;
         }

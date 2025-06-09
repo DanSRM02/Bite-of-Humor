@@ -1,6 +1,13 @@
 export interface BaseFieldImpl {
   id: string;
-  type?: "text" | "password" | "email" | "checkbox" | "textarea" | "select";
+  type?:
+    | "text"
+    | "password"
+    | "email"
+    | "checkbox"
+    | "textarea"
+    | "select"
+    | "search";
   placeholder?: string;
   value?: string | string[];
   onChange?: (
