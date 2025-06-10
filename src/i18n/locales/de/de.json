@@ -3,9 +3,9 @@
     "introduction": {
       "title": "Warum bist du hier?",
       "remark": "Willst du lachen oder was?",
-      "paragraph1": "Wenn die Antwort „Ja“ ist, <1> tut es mir leid </1>, aber das hier ist nicht der richtige Ort.",
-      "paragraph2": "Oder <1>scherze</1> ich nur?",
-      "paragraph3": "Es gibt nur <1>einen</1> Weg, das herauszufinden..."
+      "paragraph1": "Wenn die Antwort „Ja“ ist, <strong> tut es mir leid </strong>, aber das hier ist nicht der richtige Ort.",
+      "paragraph2": "Oder <strong>scherze</strong> ich nur?",
+      "paragraph3": "Es gibt nur <strong>einen</strong> Weg, das herauszufinden..."
     },
     "actions": {
       "buttonMessages": {

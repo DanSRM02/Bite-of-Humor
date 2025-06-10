@@ -3,9 +3,9 @@
     "introduction": {
       "title": "Why are you here?",
       "remark": "You want to laugh or what?",
-      "paragraph1": "If the answer is “yes”, <1> so sorry </1> that's not the place.",
-      "paragraph2": "Or I'm <1>joking?</1>",
-      "paragraph3": "There's only <1>one</1> way to know..."
+      "paragraph1": "If the answer is “yes”, <strong> so sorry </strong> that's not the place.",
+      "paragraph2": "Or I'm <strong>joking?</strong>",
+      "paragraph3": "There's only <strong>one</strong> way to know..."
     },
     "actions": {
       "buttonMessages": {

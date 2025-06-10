@@ -3,9 +3,9 @@
     "introduction": {
       "title": "Pourquoi êtes-vous ici ?",
       "remark": "Vous voulez rire ou quoi ?",
-      "paragraph1": "Si la réponse est “oui”, <1> désolé </1> mais ce n'est pas le bon endroit.",
-      "paragraph2": "Ou suis-je en train de <1>plaisanter ?</1>",
-      "paragraph3": "Il n'y a qu'<1>une seule</1> façon de le savoir..."
+      "paragraph1": "Si la réponse est “oui”, <strong> désolé </strong> mais ce n'est pas le bon endroit.",
+      "paragraph2": "Ou suis-je en train de <strong>plaisanter ?</strong>",
+      "paragraph3": "Il n'y a qu'<strong>une seule</strong> façon de le savoir..."
     },
     "actions": {
       "buttonMessages": {

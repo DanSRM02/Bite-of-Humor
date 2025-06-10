@@ -26,7 +26,7 @@ const Button = ({
   disabled = false,
   ...props
 }: ButtonProps) => {
-  const buttonStyle = `button-${variant}`;
+  const buttonStyle = `btn-${variant}`;
   const sizeStyle = `size-${size}`;
 
   return (

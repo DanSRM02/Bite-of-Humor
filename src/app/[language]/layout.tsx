@@ -1,5 +1,6 @@
 import LanguageProvider from "@/context/languageContext";
 import { ReactNode } from "react";
+import "../globals.css";
 
 type LanguageWrapperProps = {
   params: Promise<{ language: string }>;
@@ -18,6 +19,9 @@ export default async function LanguageWrapper({
   const languageFromUrl = resolvedParams.language;
   return (
     <html lang={languageFromUrl}>
+      <head>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      </head>
       <body>
         <LanguageProvider languageParam={languageFromUrl}>
           {children}
