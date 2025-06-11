@@ -30,29 +30,32 @@ function PremiunExpPage() {
   );
 
   const translations = {
-      navkLink: {
-        text: t("plans.navLink.text"),
-      },
-      leadIn: {
-        heading: t("plans.LeadIn.heading"),
-        paragraph: t("plans.LeadIn.paragraph"),
-      },
-      plans: mappingPlan,
-    }
+    navkLink: {
+      text: t("plans.navLink.text"),
+    },
+    leadIn: {
+      heading: t("plans.LeadIn.heading"),
+      paragraph: t("plans.LeadIn.paragraph"),
+    },
+    plans: mappingPlan,
+  };
 
   return (
     <>
-      <section>
-        <span>
+      <section className="flex flex-col gap-8">
+        <span className="flex flex-row items-center gap-15">
           <Link href={"final"}>
-            <FaArrowLeftLong size={"2rem"} />
+            <FaArrowLeftLong
+              size={"2rem"}
+              className="hover:fill-secondary-bg hover:border-b-2 hover:border-secondary-bg"
+            />
           </Link>
           <LeadIn
             heading={translations.leadIn.heading}
             paragraph={translations.leadIn.paragraph}
           />
         </span>
-        <article>
+        <article className="grid grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] m-8 gap-4">
           {translations.plans.map((card) => (
             <Card
               key={card.key}
