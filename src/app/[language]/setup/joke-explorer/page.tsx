@@ -96,13 +96,13 @@ function JokeExplorerPage() {
 
   return (
     <>
-      <section aria-label="Joke explorer section" tabIndex={0}>
-        <span>
+      <section aria-label="Joke explorer section" tabIndex={0} className="flex flex-col">
+        <span className="flex justify-center items-center gap-20">
           <Link href={"final"}>
-            <FaArrowLeftLong size={"2rem"} />
+            <FaArrowLeftLong size={"2rem"} className="hover:fill-secondary-bg hover:border-b-2 hover:border-secondary-bg" />
           </Link>
           <div
-            // className={classes["joke__header"]}
+            className="flex flex-wrap justify-around items-center p-8 w-[85%] border border-solid border-gray-300 rounded-md"
             aria-label="Joke search and filters"
             tabIndex={0}
           >
@@ -113,7 +113,7 @@ function JokeExplorerPage() {
             />
 
             <span
-              // className={classes["joke__header-filter"]}
+              className="flex flex-wrap items-center gap-6"
               aria-label="Joke filter controls"
               tabIndex={0}
             >
@@ -138,7 +138,7 @@ function JokeExplorerPage() {
                   value: category,
                   label: category,
                 }))}
-              />                                             
+              />                                              
               <DefaultField
                 onChange={handleInputChange}
                 color="primary"
@@ -152,15 +152,15 @@ function JokeExplorerPage() {
             </span>
           </div>
         </span>
-        {jokeState.error && <p role="alert">{jokeState.error}</p>}
-        {jokeState.isLoading && (
-          <p aria-live="polite">{translations.loadingMessage}</p>
-        )}
-        {/* Show warning only if category is 'Dark' */}
+        <br />
+        {jokeState.error && <p role="alert" className="text-red-700 bg-red-100 border border-red-300 font-medium p-4 rounded-md">{jokeState.error}</p>}
+        {jokeState.isLoading && (          
+          <p aria-live="polite" className="text-blue-700 bg-blue-100 border border-blue-300 p-4 rounded-md">{translations.loadingMessage}</p>
+        )}        
         {filter.category === "Dark" && (
-          <span>{translations.safeModeWarning}</span>
+          <span className="text-yellow-700 bg-yellow-100 border border-yellow-300 font-medium p-4 rounded-md">{translations.safeModeWarning}</span>
         )}
-        <menu aria-label="Joke results list">
+        <menu aria-label="Joke results list" className="grid grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] m-8 gap-4">
           {jokeState.jokes &&
             jokeState.jokes.map((joke) => (
               <Card
