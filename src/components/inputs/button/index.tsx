@@ -27,7 +27,11 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const buttonStyle = `btn-${variant}`;
-  const sizeStyle = `size-${size}`;
+  const sizeStyle = clsx({
+    "px-6 py-3 text-lg": size === "large",
+    "px-4 py-2 text-base": size === "medium",
+    "px-2 py-1 text-sm": size === "small",
+  });
 
   return (
     <button

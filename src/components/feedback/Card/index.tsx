@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/inputs/button";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
 import { BiArrowFromLeft } from "react-icons/bi";
@@ -76,7 +77,7 @@ const Card = ({
       aria-label={title}
       role="button"
       aria-expanded={isExpanded}
-      className={`flex flex-col items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
+      className={`flex flex-col pointer-course items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
         isExpanded ? "border-gray-800 shadow-xl" : "border-gray-300"
       }`}
     >
@@ -118,16 +119,17 @@ const Card = ({
               </div>
             ))}
             {onExplore && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
+              <Button
+                onClick={() => {
                   onExplore();
                 }}
-                className="bg-transparent text-gray-800 border border-gray-300 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                size="small"
+                variant="outline"
                 aria-label={`Explore ${title}`}
+                tabIndex={0}                
               >
                 Explore {title}
-              </button>
+              </Button>
             )}
           </div>
         )}

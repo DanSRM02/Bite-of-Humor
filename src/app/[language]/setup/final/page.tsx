@@ -89,8 +89,16 @@ function TheFinalSetupPage() {
         heading={dashboardTranslations.title}
         paragraph={dashboardTranslations.body}
       />
-      <section aria-label="Platform features and dashboard" tabIndex={0}>
-        <article aria-label="Platform features list" tabIndex={0}>
+      <section
+        aria-label="Platform features and dashboard"
+        tabIndex={0}
+        className="flex flex-col gap-20"
+      >
+        <article
+          aria-label="Platform features list"
+          tabIndex={0}
+          className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(20rem,1fr))]"
+        >
           {platformSectionCard.map((card) => (
             <Card
               key={card.key}
@@ -104,24 +112,29 @@ function TheFinalSetupPage() {
             />
           ))}
         </article>
-        <article aria-label="User dashboard actions" tabIndex={0}>
+        <article
+          aria-label="User dashboard actions"
+          tabIndex={0}
+          className="border-2 border-gray-300 rounded-lg"
+        >
           <Card
             title={dashboardTranslations.title}
             body={dashboardTranslations.body}
           />
-          <span>
+          <span className="flex justify-center items-center p-4 gap-4">
             {dashboardButtons.map((btn) => (
               <Button
                 key={btn.label}
                 onClick={btn.onClick}
-                size="large"
+                size="medium"
                 variant="outline"
                 aria-label={btn.label}
                 tabIndex={0}
               >
-                {btn.icon}
-                <br />
-                {btn.label}
+                <span className="flex items-center gap-2">
+                  {btn.icon}
+                  {btn.label}
+                </span>
               </Button>
             ))}
           </span>
