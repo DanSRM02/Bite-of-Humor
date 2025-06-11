@@ -10,37 +10,31 @@ type TextareaFieldProps = BaseFieldImpl & {
 };
 
 const TextareaField = ({
-  color = "default",
-  disabled = false,
-  error = false,
-  onChange,
   id,
-  placeholder,
   label,
-  value,
-  rows,
-  cols,
-  refAreatext,
-  children,
-  required = false,
+  placeholder,
+  rows = 3,
+  color = "primary",
+  ...props
 }: TextareaFieldProps) => {
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
+    <div className="flex flex-col">
+      {label && (
+        <label htmlFor={id} className="font-semibold mb-2">
+          {label}
+        </label>
+      )}
       <textarea
         id={id}
-        rows={rows}
-        cols={cols}
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        required={required}
-        ref={refAreatext}
-        aria-invalid={error}
-      >
-        {children}
-      </textarea>
+        rows={rows}
+        className={`border border-gray-300 rounded-lg p-4 text-base font-sans max-w-full max-h-min ${
+          color === "primary"
+            ? "bg-white text-gray-800"
+            : "bg-gray-100 text-gray-800"
+        }`}
+        {...props}
+      ></textarea>
     </div>
   );
 };

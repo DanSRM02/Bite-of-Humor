@@ -8,13 +8,13 @@ type SetupLayoutProps = {
 export default function SetupLayout({ children }: SetupLayoutProps) {
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen flex flex-col"
       aria-label="Public layout wrapper"
       tabIndex={0}
     >
       <Navigation />
       <main
-        className="mx-[5rem] flex flex-col gap-[5rem] "
+        className="mx-[5rem] flex flex-col flex-1 gap-[5rem] "
         aria-label="Main content area"
         tabIndex={0}
       >

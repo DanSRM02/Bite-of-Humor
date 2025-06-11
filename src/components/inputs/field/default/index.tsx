@@ -7,31 +7,24 @@ type DefaultFieldProps = BaseFieldImpl & {
 };
 
 const DefaultField = ({
-  color = "default",
-  disabled = false,
-  error = false,
-  onChange,
   id,
+  label,
   placeholder,
   type = "text",
-  label,
-  value,
-  refInput,
-  required = false,
+  color = "primary",
+  ...props
 }: DefaultFieldProps) => {
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
+    <div className="flex flex-col">
+      {label && <label htmlFor={id} className="font-semibold mb-2">{label}</label>}
       <input
-        type={type}
         id={id}
-        value={value}
+        type={type}
         placeholder={placeholder}
-        onChange={onChange}
-        ref={refInput}
-        disabled={disabled}
-        required={required}
-        aria-invalid={error}
+        className={`border border-gray-300 rounded-lg p-4 text-base ${
+          color === "primary" ? "bg-white text-gray-800" : "bg-gray-100 text-gray-800"
+        }`}
+        {...props}
       />
     </div>
   );

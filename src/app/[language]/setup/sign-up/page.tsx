@@ -9,7 +9,7 @@ import TextareaField from "@/components/inputs/field/textarea";
 import DefaultField from "@/components/inputs/field/default";
 
 function SignUp() {
-  const { t } = useTranslation();  
+  const { t } = useTranslation();
 
   const handleRedirect = () => {
     redirect("select-country");
@@ -45,7 +45,7 @@ function SignUp() {
   return (
     <>
       <section
-        // className={classes["sign-up"]}
+        className="flex justify-center items-center flex-wrap p-12 gap-8 min-h-[37rem] border-2 border-gray-300 rounded-lg"
         aria-label="Sign up section"
         tabIndex={0}
       >
@@ -54,14 +54,14 @@ function SignUp() {
           paragraph={translations.intro.paragraph}
         />
         <form
-        //   className={classes["sign-up__form"]}
+          className="flex flex-col gap-6 w-full max-w-[45rem] mt-12"
           aria-label="Comedian sign up form"
         >
-          <fieldset >
-            <legend >
+          <fieldset className="border-2 border-gray-300 rounded-2xl p-8 mb-8 bg-gray-100 shadow-md relative min-w-0">
+            <legend className="text-lg font-bold default-text-color px-4 mb-4 bg-white rounded-lg shadow-sm relative">
               {translations.intro.heading}
             </legend>
-            <span >
+            <span className="flex flex-wrap mb-6 justify-stretch flex-row gap-4">
               <DefaultField
                 placeholder={translations.fields.name.placeholder}
                 label={translations.fields.name.label}
@@ -84,7 +84,7 @@ function SignUp() {
               id="comedian-joke"
               placeholder={translations.fields.joke.placeholder}
               label={translations.fields.joke.label}
-              color="primary"              
+              color="primary"
               rows={5}
               aria-label={translations.fields.joke.label}
             />

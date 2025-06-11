@@ -20,7 +20,7 @@ const CheckboxField = ({
   required = false,
 }: CheckboxProps) => {
   return (
-    <label>
+    <label className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none">
       <input
         type={type}
         id={id}
@@ -30,8 +30,20 @@ const CheckboxField = ({
         disabled={disabled}
         required={required}
         aria-invalid={error}
+        className="absolute opacity-0 w-0 h-0 focus:outline-none"
       />
-      {label && <span>{label}</span>}
+      <span
+        className={`inline-block w-10 h-6 bg-gray-200 rounded-full relative transition-all box-border outline-2 outline-gray-300 ${
+          checked ? "bg-white outline-blue-500" : ""
+        }`}
+      >
+        <span
+          className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform shadow-md ${
+            checked ? "transform translate-x-4 bg-blue-500" : ""
+          }`}
+        ></span>
+      </span>
+      {label && <span className="ml-2 font-medium cursor-pointer">{label}</span>}
     </label>
   );
 };
