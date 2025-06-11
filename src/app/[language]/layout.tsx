@@ -18,7 +18,7 @@ export default async function LanguageWrapper({
   const resolvedParams = await params;
   const languageFromUrl = resolvedParams.language;
   return (
-    <html lang={languageFromUrl}>
+    <html className=" text-xs sm:text-sm md:text-base " lang={languageFromUrl}>
       <head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>

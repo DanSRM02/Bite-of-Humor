@@ -21,7 +21,7 @@ const Button = ({
   onClick,
   variant,
   size,
-  type,
+  type = "button",
   tabIndex,
   disabled = false,
   ...props

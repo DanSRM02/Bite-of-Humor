@@ -27,13 +27,13 @@ const UnorderedList: React.FC<UnorderedListProps> = ({ items, children }) => {
 
   return (
     <div
-      // className={classes["list-info"]}
+      className="w-48 leading-8 flex flex-col justify-center"
       aria-label={items?.title || "Information list"}
       tabIndex={0}
     >
-      {items && <h6 tabIndex={0}>{items.title}</h6>}
+      {items && <h6 className="font-bold" tabIndex={0}>{items.title}</h6>}
       <ul
-        // className={classes["list-info__items"]}
+        className="w-48 leading-8 flex flex-col justify-center"
         aria-label={items?.title ? `${items.title} topics` : "List topics"}
       >
         {children}

@@ -11,12 +11,12 @@ const LeadIn = ({ heading, paragraph, variant = "primary" }: LeadInProps) => {
     case "secondary":
       contentVariant = (
         <article
-          //className={classes["lead-in"]}
+          className="flex flex-col flex-wrap"
           aria-label={heading}
           tabIndex={0}
         >
-          <h5>{heading}</h5>
-          <p>{paragraph}</p>
+          <h5 className="max-w-[37rem] mt-[1.76rem] font-bold">{heading}</h5>
+          <p className="max-w-[45rem]">{paragraph}</p>
         </article>
       );
       break;
@@ -24,13 +24,13 @@ const LeadIn = ({ heading, paragraph, variant = "primary" }: LeadInProps) => {
     default:
       contentVariant = (
         <article
-          //   className={classes["lead-in"]}
+          className="flex flex-col flex-wrap"
           aria-label={heading}
           tabIndex={0}
         >
           <span>
-            <h1>{heading}</h1>
-            <p>{paragraph}</p>
+            <h1 className="max-w-[37rem] mt-[1.76rem] font-bold">{heading}</h1>
+            <p className="max-w-[45rem]">{paragraph}</p>
           </span>
         </article>
       );

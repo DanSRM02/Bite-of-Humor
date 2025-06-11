@@ -62,7 +62,7 @@ function TheStartSetupPage() {
       <h1 tabIndex={0} className="mb-2 font-bold" aria-label="Bite Of Humor heading">
         Bite Of Humor
       </h1>
-      <section tabIndex={0} className="flex gap-25 mt-12"  aria-label="Setup question and interaction">
+      <section tabIndex={0} className="flex flex-wrap justify-center gap-[6rem] mt-12"  aria-label="Setup question and interaction">
         <article tabIndex={0} className="flex flex-col justify-center" aria-label="Setup introduction and description">
           <h2 className="font-bold" tabIndex={0} aria-label={translations.intro.title}>
             {translations.intro.title}

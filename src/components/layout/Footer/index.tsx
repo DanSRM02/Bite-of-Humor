@@ -18,18 +18,18 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer
-        // className={classes["footer"]}
+        className="flex justify-between p-12 gap-10"
         aria-label="Site footer"
         tabIndex={0}
       >
         <article
-          // className={classes["footer__brand-info"]}
+          className="flex flex-col justify-around"
           aria-label="Brand and social links"
           tabIndex={0}
         >
-          <h5 tabIndex={0}>{t("footer.brandName")}</h5>
+          <h5 className="font-bold" tabIndex={0}>{t("footer.brandName")}</h5>
           <div
-            // className={classes["brand-info__social-icons"]}
+            className="flex opacity-50 gap-4"
             aria-label="Social media links"
             tabIndex={0}
           >
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
         </article>
 
         <article
-          // className={classes["footer__list-info"]}
+          className="flex flex-wrap justify-end gap-4"
           aria-label="Information links"
           tabIndex={0}
         >
