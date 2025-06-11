@@ -114,11 +114,13 @@
     },
     "searchCountryControls": {
       "selectLabel": "Wählen Sie Ihr Land...",
-      "selectPlaceholder": "Weiter mit Ihrem Land"
+      "selectPlaceholder": "Weiter mit Ihrem Land",
+      "disableLabel": "Wählen Sie ein Land"
     },
     "searchLanguageControls": {
       "selectLabel": "Wählen Sie Ihre Sprache...",
-      "selectPlaceholder": "Weiter mit Ihrer Sprache"
+      "selectPlaceholder": "Weiter mit Ihrer Sprache",
+      "disableLabel": "Wählen Sie eine Sprache"
     },
     "languagesNames": {
       "fr": "Französisch",

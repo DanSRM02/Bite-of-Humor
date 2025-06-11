@@ -2,7 +2,7 @@
 import LeadIn from "@/components/dataDisplay/LeadIn";
 // import classes from "./JokePage.module.scss";
 import useJoke from "@/services/useJoke";
-import { useEffect, useState, useMemo, useContext, ChangeEvent, use } from "react";
+import { useEffect, useState, useMemo, ChangeEvent, use } from "react";
 import Card from "@/components/feedback/Card";
 import { useTranslation } from "react-i18next";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
@@ -129,18 +129,16 @@ function JokeExplorerPage() {
               <SelectField
                 id="select-category"
                 color="secondary"
+                optDisabled="Select a category"
                 label={translations.searchForm.categoryLabel}
                 value={filter.category}
                 onChange={handleInputChange}
                 aria-label={translations.searchForm.categoryLabel}
-              >
-                <option value="Any">Any</option>
-                {_AVAILABLE_CATEGORIES.map((optionValue) => (
-                  <option key={optionValue} value={optionValue}>
-                    {optionValue}
-                  </option>
-                ))}
-              </SelectField>
+                options={_AVAILABLE_CATEGORIES.map((category) => ({
+                  value: category,
+                  label: category,
+                }))}
+              />                                             
               <DefaultField
                 onChange={handleInputChange}
                 color="primary"

@@ -114,11 +114,13 @@
     },
     "searchCountryControls": {
       "selectLabel": "Recherchez votre pays...",
-      "selectPlaceholder": "Continuez avec votre pays"
+      "selectPlaceholder": "Continuez avec votre pays",
+      "disableLabel": "Sélectionnez un pays"
     },
     "searchLanguageControls": {
       "selectLabel": "Recherchez votre langue...",
-      "selectPlaceholder": "Continuez avec votre langue"
+      "selectPlaceholder": "Continuez avec votre langue",
+      "disableLabel": "Sélectionnez une langue"
     },
     "languagesNames": {
       "fr": "Français",

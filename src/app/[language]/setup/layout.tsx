@@ -14,7 +14,7 @@ export default function SetupLayout({ children }: SetupLayoutProps) {
     >
       <Navigation />
       <main
-        className="mx-[5rem] flex flex-col flex-1 gap-[5rem] "
+        className="mx-[5rem] flex flex-col flex-1 gap-[5rem] justify-center"
         aria-label="Main content area"
         tabIndex={0}
       >
