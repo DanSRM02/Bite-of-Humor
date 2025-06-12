@@ -20,6 +20,7 @@ export interface JokeImpl {
   category: string;
   delivery: string;
   flags: FlagImpl;
+  punchline: string;
   joke?: string;
   id: number;
   lang: string;

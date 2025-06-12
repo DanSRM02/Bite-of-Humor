@@ -30,6 +30,7 @@ export const SUPPORTED_LOCALES: Locale[] = [
 export const API_BASE: string = "https://v2.jokeapi.dev/";
 
 export const _AVAILABLE_CATEGORIES: string[] = [
+  "Any",
   "Programming",
   "Christmas",
   "Spooky",

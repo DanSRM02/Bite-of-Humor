@@ -7,8 +7,7 @@ type CheckboxProps = BaseFieldImpl & {
   checked?: boolean;
 };
 
-const CheckboxField = ({
-  color = "default",
+const CheckboxField = ({  
   disabled = false,
   error = false,
   onChange,

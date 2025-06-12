@@ -2,13 +2,14 @@
 import Button from "@/components/inputs/button";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import { BiArrowFromLeft } from "react-icons/bi";
 
-interface CardProps {
+type CardProps = {
   children?: ReactNode;
   img?: StaticImageData;
   icon?: ReactNode;
-  title: string;
+  title?: string;
   body?: string;
   badge?: string;
   features?: string[];
@@ -17,36 +18,7 @@ interface CardProps {
   jokeSetup?: string;
   jokePunchline?: string;
   jokeType?: string;
-}
-
-const renderFeatures = (
-  features: string[],
-  onExplore?: () => void,
-  title?: string
-) => (
-  <div>
-    <div>Separator</div>
-    <div>
-      {features.map((feature, index) => (
-        <div key={index}>
-          <div aria-hidden="true">•</div>
-          <span>{feature}</span>
-        </div>
-      ))}
-    </div>
-    {onExplore && (
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onExplore();
-        }}
-        aria-label={`Explore ${title}`}
-      >
-        Explore {title}
-      </button>
-    )}
-  </div>
-);
+};
 
 const Card = ({
   img,
@@ -63,6 +35,7 @@ const Card = ({
   jokeType,
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useTranslation();
 
   const handleCardClick = () => {
     if (variant === "expandable") {
@@ -74,32 +47,29 @@ const Card = ({
     <article
       onClick={handleCardClick}
       tabIndex={0}
-      aria-label={title}
+      aria-label={t(title || "")}
       role="button"
       aria-expanded={isExpanded}
       className={`flex flex-col pointer-course items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
-        isExpanded ? "border-gray-800 shadow-xl" : "border-gray-300"
+        isExpanded ? "border-stone-800 shadow-xl" : "border-stone-300"
       }`}
     >
       <header className="flex justify-between items-start mb-4">
         <div className="flex items-center">
-          {icon && (
-            <div
-              aria-hidden="true"
-              className="flex items-center justify-center bg-gray-800 text-white p-4 rounded-md"
-            >
-              {icon}
-            </div>
-          )}
+          <div
+            aria-hidden="true"
+            className="flex items-center justify-center bg-stone-800 text-white p-4 rounded-md"
+          >
+            {icon}
+          </div>
+
           <div className="ml-3">
-            <h6 className="text-xl font-semibold text-gray-800 leading-snug">
-              {title}
+            <h6 className="text-xl font-semibold text-stone-800 leading-snug">
+              {t(title || "")}
             </h6>
-            {badge && (
-              <span className="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-md text-sm font-medium">
-                {badge}
-              </span>
-            )}
+            <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
+              {t(badge || "")}
+            </span>
           </div>
         </div>
         <BiArrowFromLeft
@@ -108,14 +78,14 @@ const Card = ({
         />
       </header>
       <div className="flex-grow">
-        <p className="text-base text-gray-600 leading-relaxed mb-4">{body}</p>
+        <p className="text-base text-stone-600 leading-relaxed mb-4">{t(body || "")}</p>
         {isExpanded && features && (
           <div className="flex flex-col gap-3 mt-4">
-            <div className="h-px bg-gray-300 w-full"></div>
+            <div className="h-px bg-stone-300 w-full"></div>
             {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>
-                <span className="text-sm text-gray-700">{feature}</span>
+                <div className="w-1.5 h-1.5 bg-stone-500 rounded-full"></div>
+                <span className="text-sm text-stone-700">{t(feature)}</span>
               </div>
             ))}
             {onExplore && (
@@ -125,10 +95,10 @@ const Card = ({
                 }}
                 size="small"
                 variant="outline"
-                aria-label={`Explore ${title}`}
-                tabIndex={0}                
+                aria-label={`Explore ${t(title || "")}`}
+                tabIndex={0}
               >
-                Explore {title}
+                {`Explore ${t(title || "")}`}
               </Button>
             )}
           </div>
@@ -140,29 +110,20 @@ const Card = ({
   const renderJoke = () => (
     <article
       tabIndex={0}
-      aria-label={title}
-      className="bg-white border border-gray-200 p-6 rounded-lg"
+      aria-label={t(jokeSetup || "")}
+      className="bg-white border border-stone-200 p-6 rounded-lg"
     >
-      {title && (
-        <h6 className="text-lg font-semibold text-gray-800 mb-2">{title}</h6>
-      )}
+      <h6 className="text-lg font-semibold text-stone-800 mb-2">{t(jokeSetup || "")}</h6>
+
       {jokeType === "twopart" ? (
-        <>
-          <p className="text-base text-gray-700 mb-2">{jokeSetup || body}</p>
-          {jokePunchline && (
-            <p className="text-base font-medium text-gray-800">
-              {jokePunchline}
-            </p>
-          )}
-        </>
+        <p className="text-base font-medium text-stone-800">{t(jokePunchline || "")}</p>
       ) : (
-        <p className="text-base text-gray-700">{jokeSetup}</p>
+        <p className="text-base font-semibold">{t(jokePunchline || "")}</p>
       )}
-      {badge && (
-        <span className="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
-          {badge}
-        </span>
-      )}
+      <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
+        {t(badge || "")}
+      </span>
+
       {children && <div className="mt-4">{children}</div>}
     </article>
   );
@@ -170,31 +131,23 @@ const Card = ({
   const renderDefault = () => (
     <article
       tabIndex={0}
-      aria-label={title}
-      className="bg-white border border-gray-200 p-6 rounded-lg"
+      aria-label={t(title || "")}
+      className="bg-white border border-stone-200 p-6 rounded-lg"
     >
       {img && (
         <Image
           src={img}
-          alt={title || "Card image"}
+          alt={t(title || "Card image")}
           className="w-full h-48 object-cover rounded-md mb-4"
         />
       )}
       <div className="flex flex-col gap-4">
-        {icon && (
-          <div
-            aria-hidden="true"
-            className="flex items-center justify-center bg-gray-800 text-white p-4 rounded-md"
-          >
-            {icon}
-          </div>
-        )}
         <div className="flex flex-col gap-2">
-          <h6 className="text-lg font-semibold text-gray-800">{title}</h6>
-          {body && <p className="text-base text-gray-700">{body}</p>}
+          <h6 className="text-lg font-semibold text-stone-800">{t(title || "")}</h6>
+          <p className="text-base text-stone-700">{t(body || "")}</p>
           {badge && (
-            <span className="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-md text-sm font-medium">
-              {badge}
+            <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
+              {t(badge || "")}
             </span>
           )}
         </div>

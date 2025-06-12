@@ -35,7 +35,7 @@ function SelectCountry() {
         ),
         disableLabel: t("SelectCountry.searchLanguageControls.disableLabel"),
         options: SUPPORTED_LANGS.map((lang) => ({
-          label: t(`SelectCountry.languagesNames.${lang}`),
+          label: `SelectCountry.languagesNames.${lang}`,
           value: lang,
         })),
       },
