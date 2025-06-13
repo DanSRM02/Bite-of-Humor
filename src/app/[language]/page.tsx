@@ -91,8 +91,7 @@ function TheStartSetupPage() {
             size="medium"
             variant="primary"
             refButton={refButton}
-            onClick={handleClick}
-            tabIndex={0}
+            onClick={handleClick}            
           >
             {message}
           </Button>

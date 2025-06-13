@@ -128,8 +128,7 @@ function TheFinalSetupPage() {
                 onClick={btn.onClick}
                 size="medium"
                 variant="outline"
-                aria-label={btn.label}
-                tabIndex={0}
+                aria-label={btn.label}                
               >
                 <span className="flex items-center gap-2">
                   {btn.icon}

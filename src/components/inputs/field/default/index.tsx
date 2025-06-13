@@ -1,7 +1,8 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import { type ReactNode, Ref } from "react";
+import { Ref } from "react";
+import { useTranslation } from "react-i18next";
 
-type DefaultFieldProps = BaseFieldImpl & {
+export type DefaultFieldProps = BaseFieldImpl & {
   color?: string;
   refInput?: Ref<HTMLInputElement>;
 };
@@ -12,19 +13,24 @@ const DefaultField = ({
   placeholder,
   type = "text",
   color = "primary",
-  ...props
 }: DefaultFieldProps) => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col">
-      {label && <label htmlFor={id} className="font-semibold mb-2">{label}</label>}
+      {label && (
+        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
+          {t(label)}
+        </label>
+      )}
       <input
-        id={id}
+        id={`comedian-${id}`}
         type={type}
-        placeholder={placeholder}
+        placeholder={t(placeholder || "")}
         className={`border border-gray-300 rounded-lg p-4 text-base ${
-          color === "primary" ? "bg-white text-gray-800" : "bg-gray-100 text-gray-800"
+          color === "primary"
+            ? "bg-white text-gray-800"
+            : "bg-gray-100 text-gray-800"
         }`}
-        {...props}
       />
     </div>
   );

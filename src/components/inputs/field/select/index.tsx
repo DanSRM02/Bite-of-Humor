@@ -1,10 +1,11 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { useTranslation } from "react-i18next";
 
-type SelectFieldProps = BaseFieldImpl & {
+export type SelectFieldProps = BaseFieldImpl & {
   color?: string;
   refSelect?: React.Ref<HTMLSelectElement>;
   options?: { label: string; value: string | number }[];
-  optDisabled: string;
+  optDisabled?: string;
 };
 
 const SelectField = ({
@@ -15,15 +16,16 @@ const SelectField = ({
   color = "primary",
   ...props
 }: SelectFieldProps) => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center">
       {label && (
-        <label htmlFor={id} className="font-semibold mb-2">
-          {label}
+        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
+          {t(label)}
         </label>
       )}
       <select
-        id={id}
+        id={`comedian-${id}`}
         className={`border border-gray-300 rounded-lg p-4 text-base font-sans ${
           color === "primary"
             ? "bg-white text-gray-800"
@@ -31,7 +33,9 @@ const SelectField = ({
         }`}
         {...props}
       >
-        <option value="" disabled>{optDisabled}</option>
+        <option value="" disabled>
+          {optDisabled}
+        </option>
         {options?.map((option, index) => (
           <option key={index} value={option.value}>
             {option.label}

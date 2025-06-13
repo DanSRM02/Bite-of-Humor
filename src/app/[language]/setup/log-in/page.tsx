@@ -79,8 +79,7 @@ function LogIn() {
             variant={"primary"}
             size="medium"
             onClick={handleRedirect}
-            aria-label={translations.actions.submitButton}
-            tabIndex={0}
+            aria-label={translations.actions.submitButton}            
           >
             {translations.actions.submitButton}
           </Button>

@@ -2,6 +2,12 @@
 import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
 import type { Country, Locale } from "@/types/countryTypes";
 import { UnorderedListImpl } from "@/types/unorderedListType";
+import TextareaField, { TextareaFieldProps } from "@/components/inputs/field/textarea";
+import DefaultField, { DefaultFieldProps } from "@/components/inputs/field/default";
+import SelectField, { SelectFieldProps } from "@/components/inputs/field/select";
+import CheckboxField from "@/components/inputs/field/checkbox";
+import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
+import { ComponentType, FC, JSX } from "react";
 
 export const DEFAULT_LANG: string = "en";
 export const DEFAULT_LOCAL: string = "US";
@@ -49,6 +55,16 @@ export const _AVAILABLE_FLAGS: string[] = [
 ];
 
 // DATA CONST
+
+export const fieldTypeToComponent: Record<inputTypes, ComponentType<BaseFieldImpl>> = {
+  text: DefaultField,
+  textarea: TextareaField,
+  email: DefaultField,
+  password: DefaultField,
+  select: SelectField,
+  checkbox: CheckboxField,
+  search: DefaultField,
+};
 
 export const platformSections: UnorderedListImpl[] = [
   {

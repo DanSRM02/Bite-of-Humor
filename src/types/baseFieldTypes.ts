@@ -1,13 +1,6 @@
 export interface BaseFieldImpl {
   id: string;
-  type?:
-    | "text"
-    | "password"
-    | "email"
-    | "checkbox"
-    | "textarea"
-    | "select"
-    | "search";
+  type?: inputTypes;
   placeholder?: string;
   value?: string | string[];
   onChange?: (
@@ -20,3 +13,12 @@ export interface BaseFieldImpl {
   label?: string;
   error?: boolean;
 }
+
+export type inputTypes =
+  | "text"
+  | "password"
+  | "email"
+  | "checkbox"
+  | "textarea"
+  | "select"
+  | "search";

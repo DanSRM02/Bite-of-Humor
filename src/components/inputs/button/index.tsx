@@ -6,12 +6,9 @@ type ButtonProps = {
   size: string;
   children: ReactNode;
   type?: "button" | "submit" | "reset";
-  icon?: string;
-  tabIndex: number;
+  icon?: string;  
   refButton?: Ref<HTMLButtonElement> | null;
-  onClick?: () => void;
-  "aria-label"?: string;
-  "aria-pressed"?: boolean;
+  onClick?: () => void;    
   disabled?: boolean;
 };
 
@@ -22,9 +19,7 @@ const Button = ({
   variant,
   size,
   type = "button",
-  tabIndex,
-  disabled = false,
-  ...props
+  disabled = false,  
 }: ButtonProps) => {
   const buttonStyle = `btn-${variant}`;
   const sizeStyle = clsx({
@@ -38,12 +33,8 @@ const Button = ({
       ref={refButton}
       type={type}
       className={clsx(buttonStyle, sizeStyle)}
-      onClick={onClick}
-      tabIndex={tabIndex}
-      aria-label={props["aria-label"]}
-      aria-pressed={props["aria-pressed"]}
-      disabled={disabled}
-      {...props}
+      onClick={onClick}               
+      disabled={disabled}      
     >
       {children}
     </button>

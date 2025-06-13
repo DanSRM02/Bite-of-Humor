@@ -1,7 +1,8 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
 import { Ref } from "react";
+import { useTranslation } from "react-i18next";
 
-type CheckboxProps = BaseFieldImpl & {
+export type CheckboxProps = BaseFieldImpl & {
   color?: string;
   refInput?: Ref<HTMLInputElement>;
   checked?: boolean;
@@ -18,11 +19,12 @@ const CheckboxField = ({
   refInput,
   required = false,
 }: CheckboxProps) => {
+  const { t } = useTranslation();
   return (
-    <label className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none">
+    <label htmlFor={`comedian-${id}`} className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none">
       <input
         type={type}
-        id={id}
+        id={`comedian-${id}`}
         checked={checked}
         ref={refInput}
         onChange={onChange}
@@ -42,7 +44,7 @@ const CheckboxField = ({
           }`}
         ></span>
       </span>
-      {label && <span className="ml-2 font-medium cursor-pointer">{label}</span>}
+      {label && <span className="ml-2 font-medium cursor-pointer">{t(label)}</span>}
     </label>
   );
 };

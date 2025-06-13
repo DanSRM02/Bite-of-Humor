@@ -89,6 +89,7 @@
       "jokePlaceholder": "Enter your joke"
     },
     "actions": {
+      "legendHeading": "Comedian Sign-Up",
       "submitButton": "Join us"
     }
   },
@@ -104,6 +105,7 @@
       "emailLabel": "Comedian Email"
     },
     "actions": {
+      "legendHeading": "Comedian Login",
       "submitButton": "Enter into the Humor"
     }
   },

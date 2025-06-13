@@ -94,9 +94,7 @@ const Card = ({
                   onExplore();
                 }}
                 size="small"
-                variant="outline"
-                aria-label={`Explore ${t(title || "")}`}
-                tabIndex={0}
+                variant="outline"                             
               >
                 {`Explore ${t(title || "")}`}
               </Button>

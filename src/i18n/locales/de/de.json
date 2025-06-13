@@ -89,6 +89,7 @@
       "jokePlaceholder": "Gib deinen Witz ein"
     },
     "actions": {
+      "legendHeading": "Komiker Registrierung",
       "submitButton": "Mach mit"
     }
   },
@@ -104,6 +105,7 @@
       "emailLabel": "Komiker-E-Mail"
     },
     "actions": {
+      "legendHeading": "Komiker Anmeldung",
       "submitButton": "Tritt dem Humor bei"
     }
   },

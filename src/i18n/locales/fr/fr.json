@@ -89,6 +89,7 @@
       "jokePlaceholder": "Entrez votre blague"
     },
     "actions": {
+      "legendHeading": "Inscription Comédien",
       "submitButton": "Rejoignez-nous"
     }
   },
@@ -104,6 +105,7 @@
       "emailLabel": "Email du comédien"
     },
     "actions": {
+      "legendHeading": "Connexion Comédien",
       "submitButton": "Entrez dans l'Humour"
     }
   },
