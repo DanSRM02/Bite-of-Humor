@@ -12,14 +12,14 @@ type FormProps = {
   handleSubmit: () => string[];
 };
 
-export default function Form({
+const Form = ({
   legendHeading,
   handleClick,
   textButton,
   handleSubmit,
   inputFields,
   actionForm,
-}: FormProps) {
+}: FormProps) => {
   return (
     <form
       className="flex flex-col gap-6 w-full max-w-[45rem] mt-12"
@@ -43,4 +43,6 @@ export default function Form({
       </Button>
     </form>
   );
-}
+};
+
+export default Form;

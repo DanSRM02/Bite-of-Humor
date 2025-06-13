@@ -50,7 +50,7 @@ const Card = ({
       aria-label={t(title || "")}
       role="button"
       aria-expanded={isExpanded}
-      className={`flex flex-col pointer-course items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
+      className={`flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
         isExpanded ? "border-stone-800 shadow-xl" : "border-stone-300"
       }`}
     >
@@ -82,8 +82,8 @@ const Card = ({
         {isExpanded && features && (
           <div className="flex flex-col gap-3 mt-4">
             <div className="h-px bg-stone-300 w-full"></div>
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-2">
+            {features.map((feature) => (
+              <div key={feature} className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-stone-500 rounded-full"></div>
                 <span className="text-sm text-stone-700">{t(feature)}</span>
               </div>
