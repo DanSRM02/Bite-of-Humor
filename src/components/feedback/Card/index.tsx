@@ -5,13 +5,15 @@ import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { BiArrowFromLeft } from "react-icons/bi";
 
+type BadgeProp = string | { key: string; config?: Record<string, any> };
+
 type CardProps = {
   children?: ReactNode;
   img?: StaticImageData;
   icon?: ReactNode;
   title?: string;
   body?: string;
-  badge?: string;
+  badge?: BadgeProp;
   features?: string[];
   variant?: "default" | "expandable" | "joke";
   onExplore?: () => void;
@@ -43,10 +45,17 @@ const Card = ({
     }
   };
 
+  const renderBadge = (badge: BadgeProp) => {
+    if (typeof badge === "string") {
+      return t(badge);
+    }
+    const { key, config } = badge;
+    return t(key, config);
+  };
+
   const renderExpandable = () => (
     <article
       onClick={handleCardClick}
-       
       aria-label={t(title || "")}
       role="button"
       aria-expanded={isExpanded}
@@ -68,7 +77,7 @@ const Card = ({
               {t(title || "")}
             </h6>
             <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
-              {t(badge || "")}
+              {renderBadge(badge || "")}
             </span>
           </div>
         </div>
@@ -78,7 +87,9 @@ const Card = ({
         />
       </header>
       <div className="flex-grow">
-        <p className="text-base text-stone-600 leading-relaxed mb-4">{t(body || "")}</p>
+        <p className="text-base text-stone-600 leading-relaxed mb-4">
+          {t(body || "")}
+        </p>
         {isExpanded && features && (
           <div className="flex flex-col gap-3 mt-4">
             <div className="h-px bg-stone-300 w-full"></div>
@@ -94,7 +105,7 @@ const Card = ({
                   onExplore();
                 }}
                 size="small"
-                variant="outline"                             
+                variant="outline"
               >
                 {`Explore ${t(title || "")}`}
               </Button>
@@ -107,19 +118,22 @@ const Card = ({
 
   const renderJoke = () => (
     <article
-       
       aria-label={t(jokeSetup || "")}
       className="bg-white border border-stone-200 p-6 rounded-lg"
     >
-      <h6 className="text-lg font-semibold text-stone-800 mb-2">{t(jokeSetup || "")}</h6>
+      <h6 className="text-lg font-semibold text-stone-800 mb-2">
+        {t(jokeSetup || "")}
+      </h6>
 
       {jokeType === "twopart" ? (
-        <p className="text-base font-medium text-stone-800">{t(jokePunchline || "")}</p>
+        <p className="text-base font-medium text-stone-800">
+          {t(jokePunchline || "")}
+        </p>
       ) : (
         <p className="text-base font-semibold">{t(jokePunchline || "")}</p>
       )}
       <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
-        {t(badge || "")}
+        {renderBadge(badge || "")}
       </span>
 
       {children && <div className="mt-4">{children}</div>}
@@ -128,7 +142,6 @@ const Card = ({
 
   const renderDefault = () => (
     <article
-       
       aria-label={t(title || "")}
       className="bg-white border border-stone-200 p-6 rounded-lg"
     >
@@ -141,11 +154,13 @@ const Card = ({
       )}
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h6 className="text-lg font-semibold text-stone-800">{t(title || "")}</h6>
+          <h6 className="text-lg font-semibold text-stone-800">
+            {t(title || "")}
+          </h6>
           <p className="text-base text-stone-700">{t(body || "")}</p>
           {badge && (
             <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
-              {t(badge || "")}
+              {renderBadge(badge || "")}
             </span>
           )}
         </div>
