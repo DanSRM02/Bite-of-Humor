@@ -1,6 +1,6 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/LeadIn";
-import Form from "@/components/inputs/form";
+import Form from "@/components/inputs/Form";
 import { inputTypes } from "@/types/baseFieldTypes";
 import { redirect } from "next/navigation";
 
@@ -38,7 +38,7 @@ function LogIn() {
       <section
         className="flex justify-center items-center flex-wrap p-12 min-h-[35rem] gap-8 border-2 border-gray-300 rounded-lg"
         aria-label="Log in section"
-        tabIndex={0}
+         
       >
         <LeadIn
           heading={translations.intro.heading}

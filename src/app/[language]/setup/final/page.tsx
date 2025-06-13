@@ -7,7 +7,7 @@ import { CiHeart, CiFilter } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import { redirect } from "next/navigation";
-import Button from "@/components/inputs/button";
+import Button from "@/components/inputs/Button";
 import { platformSections } from "@/utils/const";
 
 function TheFinalSetupPage() {
@@ -91,12 +91,12 @@ function TheFinalSetupPage() {
       />
       <section
         aria-label="Platform features and dashboard"
-        tabIndex={0}
+         
         className="flex flex-col gap-20"
       >
         <article
           aria-label="Platform features list"
-          tabIndex={0}
+           
           className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(20rem,1fr))]"
         >
           {platformSectionCard.map((card) => (
@@ -114,7 +114,7 @@ function TheFinalSetupPage() {
         </article>
         <article
           aria-label="User dashboard actions"
-          tabIndex={0}
+           
           className="border-2 border-gray-300 rounded-lg"
         >
           <Card

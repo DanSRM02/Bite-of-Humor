@@ -18,7 +18,7 @@ function JokeExplorerPage() {
     <>
       <section
         aria-label="Joke explorer section"
-        tabIndex={0}
+         
         className="flex flex-col"
       >
         <span className="flex justify-center items-center gap-20">
@@ -31,7 +31,7 @@ function JokeExplorerPage() {
           <div
             className="flex flex-wrap justify-around items-center p-8 w-[85%] border border-solid border-gray-300 rounded-md"
             aria-label="Joke search and filters"
-            tabIndex={0}
+             
           >
             <LeadIn
               variant="secondary"
@@ -41,7 +41,7 @@ function JokeExplorerPage() {
             <span
               className="flex flex-wrap items-center gap-6"
               aria-label="Joke filter controls"
-              tabIndex={0}
+               
             >
               {/* JokeFilter */}
             </span>

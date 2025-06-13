@@ -25,7 +25,7 @@ const LeadIn = ({
       <article
         className="flex flex-col flex-wrap"
         aria-label={t(heading)}
-        tabIndex={0}
+         
       >
         <Heading level={5} className="max-w-[37rem] mt-[1.76rem] font-bold">
           {heading}
@@ -40,7 +40,7 @@ const LeadIn = ({
       <article
         className="flex items-center gap-26 flex-wrap"
         aria-label={t(heading)}
-        tabIndex={0}
+         
       >
         <Heading level={2} className="max-w-[37rem] mt-[1.76rem] font-bold">
           {t(heading)}
@@ -51,10 +51,10 @@ const LeadIn = ({
         <span className=" bg-white py-2 hover:text-white duration-300">
           <Link
             className="hover:bg-black p-3 rounded trasition-colors duration-300 "
-            tabIndex={0}
+             
             href={redirect}
           >
-            {textLink}
+            {t(textLink || "")}
           </Link>
         </span>
       </article>
@@ -66,7 +66,7 @@ const LeadIn = ({
       <article
         className="flex flex-col flex-wrap"
         aria-label={t(heading)}
-        tabIndex={0}
+         
       >
         <Heading className="max-w-[37rem] mt-[1.76rem] font-bold">
           {heading}

@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/inputs/button";
+import Button from "@/components/inputs/Button";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
@@ -46,7 +46,7 @@ const Card = ({
   const renderExpandable = () => (
     <article
       onClick={handleCardClick}
-      tabIndex={0}
+       
       aria-label={t(title || "")}
       role="button"
       aria-expanded={isExpanded}
@@ -107,7 +107,7 @@ const Card = ({
 
   const renderJoke = () => (
     <article
-      tabIndex={0}
+       
       aria-label={t(jokeSetup || "")}
       className="bg-white border border-stone-200 p-6 rounded-lg"
     >
@@ -128,7 +128,7 @@ const Card = ({
 
   const renderDefault = () => (
     <article
-      tabIndex={0}
+       
       aria-label={t(title || "")}
       className="bg-white border border-stone-200 p-6 rounded-lg"
     >

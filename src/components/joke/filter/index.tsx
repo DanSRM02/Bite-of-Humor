@@ -1,9 +1,9 @@
 "use client";
 import { FilterImpl } from "@/types/jokeAPITypes";
 import { useEffect, useState, ChangeEvent } from "react";
-import CheckboxField from "../../inputs/field/checkbox";
-import SelectField from "../../inputs/field/select";
-import DefaultField from "../../inputs/field/default";
+import CheckboxField from "../../inputs/Field/checkbox";
+import SelectField from "../../inputs/Field/select";
+import DefaultField from "../../inputs/Field/default";
 import useJoke from "@/services/useJoke";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
 

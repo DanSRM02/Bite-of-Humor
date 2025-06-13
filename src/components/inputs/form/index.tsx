@@ -1,15 +1,10 @@
-import { inputTypes } from "@/types/baseFieldTypes";
-import Button from "../button";
-import { fieldTypeToComponent } from "@/utils/const";
+import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import Button from "../Button";
 import Heading from "@/components/dataDisplay/Heading";
+import FormRendered from "@/components/dataDisplay/FormRendered";
 
 type FormProps = {
-  inputFields: {
-    placeholder: string;
-    label: string;
-    id: string;
-    type: inputTypes;
-  }[];
+  inputFields: BaseFieldImpl[];
   legendHeading: string;
   textButton: string;
   actionForm: string;
@@ -25,25 +20,6 @@ export default function Form({
   inputFields,
   actionForm,
 }: FormProps) {
-  const renderInputFields = () => {
-    return inputFields.map((inputField) => {
-      const InputField = fieldTypeToComponent[inputField.type];
-
-      if (!InputField) {
-        throw new Error("That Input doesn't exist");
-      }
-
-      return (
-        <InputField
-          key={inputField.id}
-          label={inputField.label}
-          id={inputField.id}
-          placeholder={inputField.placeholder}
-        />
-      );
-    });
-  };
-
   return (
     <form
       className="flex flex-col gap-6 w-full max-w-[45rem] mt-12"
@@ -55,7 +31,7 @@ export default function Form({
         <legend className="text-lg font-bold default-text-color px-4 mb-4 bg-white rounded-lg shadow-sm relative">
           <Heading level={6}>{legendHeading}</Heading>
         </legend>
-        {renderInputFields()}
+        <FormRendered inputFields={inputFields} />
       </fieldset>
       <Button
         type="button"

@@ -8,22 +8,29 @@ export type CheckboxProps = BaseFieldImpl & {
   checked?: boolean;
 };
 
-const CheckboxField = ({  
+const CheckboxField = ({
   disabled = false,
   error = false,
   onChange,
-  id,
-  type = "checkbox",
+  id,  
   label,
   checked,
   refInput,
   required = false,
 }: CheckboxProps) => {
   const { t } = useTranslation();
+
+  if (onChange) {
+    throw new Error("This change function don't work");
+  }
+
   return (
-    <label htmlFor={`comedian-${id}`} className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none">
+    <label
+      htmlFor={`comedian-${id}`}
+      className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none"
+    >
       <input
-        type={type}
+        type="checkbox"
         id={`comedian-${id}`}
         checked={checked}
         ref={refInput}
@@ -44,7 +51,9 @@ const CheckboxField = ({
           }`}
         ></span>
       </span>
-      {label && <span className="ml-2 font-medium cursor-pointer">{t(label)}</span>}
+      {label && (
+        <span className="ml-2 font-medium cursor-pointer">{t(label)}</span>
+      )}
     </label>
   );
 };

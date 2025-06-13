@@ -5,7 +5,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { redirect } from "next/navigation";
 import { LanguageContext } from "@/context/languageContext";
 import { modifyPositionElement } from "@/utils/modifyPositionElement";
-import Button from "@/components/inputs/button";
+import Button from "@/components/inputs/Button";
 
 function TheStartSetupPage() {
   const refButton = useRef<HTMLButtonElement>(null);
@@ -58,16 +58,16 @@ function TheStartSetupPage() {
   }
 
   return (
-    <main tabIndex={0} className="min-h-screen flex flex-col items-center justify-center" aria-label="First setup main content">
-      <h1 tabIndex={0} className="mb-2 font-bold" aria-label="Bite Of Humor heading">
+    <main   className="min-h-screen flex flex-col items-center justify-center" aria-label="First setup main content">
+      <h1   className="mb-2 font-bold" aria-label="Bite Of Humor heading">
         Bite Of Humor
       </h1>
-      <section tabIndex={0} className="flex flex-wrap justify-center gap-[6rem] mt-12"  aria-label="Setup question and interaction">
-        <article tabIndex={0} className="flex flex-col justify-center" aria-label="Setup introduction and description">
-          <h2 className="font-bold" tabIndex={0} aria-label={translations.intro.title}>
+      <section   className="flex flex-wrap justify-center gap-[6rem] mt-12"  aria-label="Setup question and interaction">
+        <article   className="flex flex-col justify-center" aria-label="Setup introduction and description">
+          <h2 className="font-bold"   aria-label={translations.intro.title}>
             {translations.intro.title}
           </h2>
-          <h5 tabIndex={0} className="font-bold opacity-50" aria-label={translations.intro.remark}>
+          <h5   className="font-bold opacity-50" aria-label={translations.intro.remark}>
             {translations.intro.remark}
           </h5>
           <p>

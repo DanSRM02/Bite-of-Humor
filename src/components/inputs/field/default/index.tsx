@@ -11,10 +11,14 @@ const DefaultField = ({
   id,
   label,
   placeholder,
+  onChange,
   type = "text",
   color = "primary",
 }: DefaultFieldProps) => {
   const { t } = useTranslation();
+  if (onChange) {
+    throw new Error("This change function don't work");
+  }
   return (
     <div className="flex flex-col">
       {label && (
@@ -23,6 +27,7 @@ const DefaultField = ({
         </label>
       )}
       <input
+        onChange={onChange}
         id={`comedian-${id}`}
         type={type}
         placeholder={t(placeholder || "")}

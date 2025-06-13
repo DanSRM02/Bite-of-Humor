@@ -20,25 +20,25 @@ const Footer: React.FC = () => {
       <footer
         className="flex justify-between p-12 gap-10"
         aria-label="Site footer"
-        tabIndex={0}
+         
       >
         <article
           className="flex flex-col justify-around"
           aria-label="Brand and social links"
-          tabIndex={0}
+           
         >
-          <h5 className="font-bold" tabIndex={0}>{t("footer.brandName")}</h5>
+          <h5 className="font-bold"  >{t("footer.brandName")}</h5>
           <div
             className="flex opacity-50 gap-4"
             aria-label="Social media links"
-            tabIndex={0}
+             
           >
             <Link
               href={"https://instagram.com"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              tabIndex={0}
+               
             >
               <FaInstagram size={20} aria-hidden="true" />
             </Link>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              tabIndex={0}
+               
             >
               <FaFacebook size={20} aria-hidden="true" />
             </Link>
@@ -56,12 +56,12 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              tabIndex={0}
+               
             >
               <FaYoutube size={20} aria-hidden="true" />
             </Link>
           </div>
-          <p tabIndex={0}>
+          <p  >
             {t("footer.copyright", {
               year: currentYear,
             })}
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
         <article
           className="flex flex-wrap justify-end gap-4"
           aria-label="Information links"
-          tabIndex={0}
+           
         >
           {linkGroups &&
             linkGroups.map((listData, index) => (

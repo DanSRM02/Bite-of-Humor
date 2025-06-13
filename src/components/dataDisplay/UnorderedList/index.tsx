@@ -14,11 +14,11 @@ const UnorderedList: React.FC<UnorderedListProps> = ({ items, children }) => {
   const { localizationRouter } = use<LanguageCtxImpl>(LanguageContext);
 
   const itemsMapped = items?.topics?.map((item) => (
-    <li key={item.link} tabIndex={0}>
+    <li key={item.link}  >
       <Link
         href={`/${localizationRouter}/${item.link}`}
         aria-label={item.subtitle}
-        tabIndex={0}
+         
       >
         {item.subtitle}
       </Link>
@@ -29,9 +29,9 @@ const UnorderedList: React.FC<UnorderedListProps> = ({ items, children }) => {
     <div
       className="w-48 leading-8 flex flex-col justify-center"
       aria-label={items?.title || "Information list"}
-      tabIndex={0}
+       
     >
-      {items && <h6 className="font-bold" tabIndex={0}>{items.title}</h6>}
+      {items && <h6 className="font-bold"  >{items.title}</h6>}
       <ul
         className="w-48 leading-8 flex flex-col justify-center"
         aria-label={items?.title ? `${items.title} topics` : "List topics"}

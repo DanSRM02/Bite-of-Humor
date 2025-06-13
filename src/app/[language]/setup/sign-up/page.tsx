@@ -1,7 +1,7 @@
 "use client";
 import { redirect } from "next/navigation";
 import LeadIn from "@/components/dataDisplay/LeadIn";
-import Form from "@/components/inputs/form";
+import Form from "@/components/inputs/Form";
 import { inputTypes } from "@/types/baseFieldTypes";
 
 function SignUp() {
@@ -46,7 +46,7 @@ function SignUp() {
       <section
         className="flex justify-center items-center flex-wrap p-12 gap-8 min-h-[37rem] border-2 border-gray-300 rounded-lg"
         aria-label="Sign up section"
-        tabIndex={0}
+         
       >
         <LeadIn
           heading={translations.intro.heading}

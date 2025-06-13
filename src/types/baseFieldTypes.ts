@@ -1,12 +1,12 @@
+import { ChangeEvent } from "react";
+
 export interface BaseFieldImpl {
   id: string;
   type?: inputTypes;
   placeholder?: string;
   value?: string | string[];
   onChange?: (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => void;
   disabled?: boolean;
   required?: boolean;

@@ -11,9 +11,9 @@ const Navigation: React.FC = () => {
       <header
         className="flex justify-between py-[3.5em] px-[5em] "
         aria-label="Main site navigation"
-        tabIndex={0}
+         
       >
-        <h5 className="font-bold" tabIndex={0}>
+        <h5 className="font-bold"  >
           Bite of Humor
         </h5>
         <nav className="flex items-center" aria-label="Primary navigation">
@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
                 href={"medium"}
                 className="hover:bg-black p-3 rounded trasition-colors duration-300"
                 aria-label={t("HeaderNavigation.navItems.home")}
-                tabIndex={0}
+                 
               >
                 {t("HeaderNavigation.navItems.home")}
               </Link>
@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
                 href={"sign-up"}
                 className="hover:bg-black p-3 rounded trasition-colors duration-300"
                 aria-label={t("HeaderNavigation.navItems.signUp")}
-                tabIndex={0}
+                 
               >
                 {t("HeaderNavigation.navItems.signUp")}
               </Link>
@@ -43,7 +43,7 @@ const Navigation: React.FC = () => {
                 href={"log-in"}
                 className="hover:bg-black p-3 rounded trasition-colors duration-300"
                 aria-label={t("HeaderNavigation.navItems.logIn")}
-                tabIndex={0}
+                 
               >
                 {t("HeaderNavigation.navItems.logIn")}
               </Link>
