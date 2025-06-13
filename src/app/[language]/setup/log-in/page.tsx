@@ -1,42 +1,38 @@
-"use client"
+"use client";
 import LeadIn from "@/components/dataDisplay/LeadIn";
-// import classes from "./LogIn.module.scss";
-import { useTranslation } from "react-i18next";
-import { useMemo } from "react";
-import Button from "@/components/inputs/button";
-import DefaultField from "@/components/inputs/field/default";
+import Form from "@/components/inputs/form";
+import { inputTypes } from "@/types/baseFieldTypes";
 import { redirect } from "next/navigation";
 
 function LogIn() {
-  const { t } = useTranslation();  
+  const translations = {
+    intro: {
+      heading: "ComedianLoginForm.introduction.heading",
+      paragraph: "ComedianLoginForm.introduction.paragraph",
+    },
+    fields: [
+      {
+        placeholder: "ComedianLoginForm.fields.namePlaceholder",
+        label: "ComedianLoginForm.fields.nameLabel",
+        id: "name",
+        type: "text" as inputTypes,
+      },
+      {
+        placeholder: "ComedianLoginForm.fields.emailPlaceholder",
+        label: "ComedianLoginForm.fields.emailLabel",
+        id: "email",
+        type: "email" as inputTypes,
+      },
+    ],
+    actions: {
+      legendHeading: "ComedianLoginForm.actions.legendHeading",
+      submitButton: "ComedianLoginForm.actions.submitButton",
+    },
+  };
 
   const handleRedirect = () => {
     redirect("select-country");
   };
-
-  const translations = useMemo(
-    () => ({
-      intro: {
-        heading: t("ComedianLoginForm.introduction.heading"),
-        paragraph: t("ComedianLoginForm.introduction.paragraph"),
-      },
-      fields: {
-        name: {
-          placeholder: t("ComedianLoginForm.fields.namePlaceholder"),
-          label: t("ComedianLoginForm.fields.nameLabel"),
-        },
-        email: {
-          placeholder: t("ComedianLoginForm.fields.emailPlaceholder"),
-          label: t("ComedianLoginForm.fields.emailLabel"),
-        },
-      },
-      actions: {
-        submitButton: t("ComedianLoginForm.actions.submitButton"),
-      },
-    }),
-    [t]
-  );
-
   return (
     <>
       <section
@@ -48,42 +44,14 @@ function LogIn() {
           heading={translations.intro.heading}
           paragraph={translations.intro.paragraph}
         />
-        <form
-          className="flex flex-col gap-6 w-full max-w-[550px]"
-          aria-label="Comedian log in form"
-        >
-          <fieldset className="border-2 border-gray-300 rounded-2xl p-8 mb-8 bg-gray-100 shadow-md relative min-w-0">
-            <legend className="text-lg font-bold default-text-color px-4 mb-4 bg-white rounded-lg shadow-sm relative">
-              {translations.intro.heading}
-            </legend>
-            <DefaultField
-              id="comedian-name"
-              placeholder={translations.fields.name.placeholder}
-              label={translations.fields.name.label}
-              color="primary"
-              type="text"
-              aria-label={translations.fields.name.label}
-            />
-
-            <DefaultField
-              id="comedian-email"
-              placeholder={translations.fields.email.placeholder}
-              label={translations.fields.email.label}
-              color="primary"
-              type="email"
-              aria-label={translations.fields.email.label}
-            />
-          </fieldset>
-          <Button
-            type="button"
-            variant={"primary"}
-            size="medium"
-            onClick={handleRedirect}
-            aria-label={translations.actions.submitButton}            
-          >
-            {translations.actions.submitButton}
-          </Button>
-        </form>
+        <Form
+          actionForm=""
+          inputFields={translations.fields}
+          textButton={translations.actions.submitButton}
+          legendHeading={translations.actions.legendHeading}
+          handleSubmit={() => []}
+          handleClick={handleRedirect}
+        />
       </section>
     </>
   );

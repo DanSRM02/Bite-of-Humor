@@ -1,14 +1,15 @@
 import type { ReactNode, Ref } from "react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 type ButtonProps = {
   variant: "primary" | "secondary" | string;
   size: string;
   children: ReactNode;
   type?: "button" | "submit" | "reset";
-  icon?: string;  
+  icon?: string;
   refButton?: Ref<HTMLButtonElement> | null;
-  onClick?: () => void;    
+  onClick?: () => void;
   disabled?: boolean;
 };
 
@@ -19,8 +20,9 @@ const Button = ({
   variant,
   size,
   type = "button",
-  disabled = false,  
+  disabled = false,
 }: ButtonProps) => {
+  const { t } = useTranslation();
   const buttonStyle = `btn-${variant}`;
   const sizeStyle = clsx({
     "px-6 py-3 text-lg": size === "large",
@@ -28,15 +30,17 @@ const Button = ({
     "px-2 py-1 text-sm": size === "small",
   });
 
+  const content = typeof children === "string" ? t(children) : children;
+
   return (
     <button
       ref={refButton}
       type={type}
       className={clsx(buttonStyle, sizeStyle)}
-      onClick={onClick}               
-      disabled={disabled}      
+      onClick={onClick}
+      disabled={disabled}
     >
-      {children}
+      {content}
     </button>
   );
 };
