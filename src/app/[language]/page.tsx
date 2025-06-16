@@ -3,7 +3,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { redirect } from "next/navigation";
-import { LanguageContext } from "@/context/languageContext";
+import { LanguageContext } from "@/contexts/languageContext";
 import { modifyPositionElement } from "@/utils/modifyPositionElement";
 import Button from "@/components/inputs/Button";
 

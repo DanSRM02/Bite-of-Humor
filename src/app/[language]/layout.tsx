@@ -1,4 +1,4 @@
-import LanguageProvider from "@/context/languageContext";
+import LanguageProvider from "@/contexts/languageContext";
 import { ReactNode } from "react";
 import "../globals.css";
 

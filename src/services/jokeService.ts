@@ -1,7 +1,7 @@
 import type { FilterImpl } from "@/types/jokeAPITypes";
 import apiClient from "./apiClient";
 
-export const getJokesInitialLoad = async (language: string = "en") => {
+export const getJokesInitialLoad = async (language: string) => {
   try {
     const response = await apiClient.get(
       `/joke/Any?safe-mode&lang=${language}&amount=10`
@@ -37,7 +37,7 @@ const createQueryString = (filter: FilterImpl, language: string) => {
   if (language) {
     queryParams.push(`lang=${language}`);
   }
-  if (filter.safeMode) {
+  if (filter.isSafeMode) {
     queryParams.push("safe-mode");
   }
   if (filter.searchTerm) {

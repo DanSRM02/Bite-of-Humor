@@ -1,5 +1,5 @@
 // import classes from "./UnorderedList.module.scss";
-import { LanguageContext } from "@/context/languageContext";
+import { LanguageContext } from "@/contexts/languageContext";
 import { LanguageCtxImpl } from "@/types/languageImpl";
 import { UnorderedListImpl } from "@/types/unorderedListType";
 import Link from "next/link";

@@ -12,17 +12,14 @@ const CheckboxField = ({
   disabled = false,
   error = false,
   onChange,
-  id,  
+  id,
   label,
   checked,
   refInput,
   required = false,
 }: CheckboxProps) => {
   const { t } = useTranslation();
-
-  if (onChange) {
-    throw new Error("This change function don't work");
-  }
+  
 
   return (
     <label
@@ -31,6 +28,7 @@ const CheckboxField = ({
     >
       <input
         type="checkbox"
+        name={id}
         id={`comedian-${id}`}
         checked={checked}
         ref={refInput}

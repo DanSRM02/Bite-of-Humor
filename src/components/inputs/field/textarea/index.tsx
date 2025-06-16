@@ -21,9 +21,6 @@ const TextareaField = ({
 }: TextareaFieldProps) => {
   const { t } = useTranslation();
 
-  if (onChange) {
-    throw new Error("This change function don't work");
-  }
   return (
     <div className="flex flex-col">
       {label && (
@@ -34,6 +31,7 @@ const TextareaField = ({
       <textarea
         onChange={onChange}
         id={`comedian-${t(id)}`}
+        name={id}
         placeholder={t(placeholder || "")}
         rows={rows}
         className={`border border-gray-300 rounded-lg p-4 text-base font-sans max-w-full max-h-min ${

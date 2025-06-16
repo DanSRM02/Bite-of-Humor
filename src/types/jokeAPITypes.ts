@@ -30,7 +30,7 @@ export interface JokeImpl {
 }
 
 export interface FilterImpl {
-  safeMode?: boolean;
+  isSafeMode?: boolean;
   searchTerm?: string;
   category?: string | string[];
 }

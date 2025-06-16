@@ -34,7 +34,7 @@ const SelectField = ({
             : "bg-gray-100 text-gray-800"
         }`}
       >
-        <option value="">
+        <option value="" disabled>
           {t(disableLabel || "")}
         </option>
         {options?.map((option) => (

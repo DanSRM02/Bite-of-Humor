@@ -117,8 +117,7 @@ const Card = ({
   );
 
   const renderJoke = () => (
-    <article
-      aria-label={t(jokeSetup || "")}
+    <article      
       className="bg-white border border-stone-200 p-6 rounded-lg"
     >
       <h6 className="text-lg font-semibold text-stone-800 mb-2">

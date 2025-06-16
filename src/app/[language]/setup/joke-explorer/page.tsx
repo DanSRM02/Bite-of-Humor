@@ -1,13 +1,71 @@
+"use client";
 import LeadIn from "@/components/dataDisplay/LeadIn";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
-import { FaArrowLeftLong } from "react-icons/fa6";
-import Link from "next/link";
-import { Suspense } from "react";
+import CardGrid from "@/components/layout/CardGrid";
+import { useContext, useEffect } from "react";
+import { inputTypes } from "@/types/baseFieldTypes";
+import FormRendered from "@/components/dataDisplay/FormRendered";
+import useJokeFilter from "@/hooks/useJokeFilter";
+import useJokeList from "@/hooks/useJokeList";
+import Card from "@/components/feedback/Card";
+import { LanguageContext } from "@/contexts/languageContext";
+import Chip from "@/components/feedback/Chip";
+
 function JokeExplorerPage() {
+  const { getFilteredJokes, jokeState } = useJokeList();
+  const { language } = useContext(LanguageContext);
+  const {
+    searchTerm,
+    category,
+    isDarkMode,
+    isSafeMode,
+    handleInputChange,
+  } = useJokeFilter();
+
+  const fields = [
+    {
+      id: "safeMode",
+      type: "checkbox" as inputTypes,
+      label: "JokePage.searchForm.safeModeLabel",
+      color: "primary",
+      checked: isDarkMode ? isSafeMode : false,
+      disabled: !isDarkMode,
+      onChange: handleInputChange,
+    },
+    {
+      id: "category",
+      type: "select" as inputTypes,
+      label: "JokePage.searchForm.categoryLabel",
+      color: "secondary",
+      value: category,
+      disableLabel: "Select a category",
+      onChange: handleInputChange,
+      options: _AVAILABLE_CATEGORIES.map((category) => ({
+        value: category,
+        label: category,
+      })),
+    },
+
+    {
+      id: "searchTerm",
+      type: "search" as inputTypes,
+      label: "JokePage.searchForm.label",
+      placeholder: "JokePage.searchForm.placeholder",
+      color: "secondary",
+      value: searchTerm,
+      onChange: handleInputChange,
+    },
+  ];
+
+  useEffect(() => {
+    getFilteredJokes({ category, searchTerm, isSafeMode }, language);
+  }, [category, searchTerm, isSafeMode, language]);
+
   const translations = {
     navkLink: {
       text: "plans.Link.text",
     },
+
     searchFilters: {
       heading: "JokePage.searchFilters.heading",
       paragraph: "JokePage.searchFilters.paragraph",
@@ -16,45 +74,42 @@ function JokeExplorerPage() {
 
   return (
     <>
-      <section
-        aria-label="Joke explorer section"
-         
-        className="flex flex-col"
-      >
-        <span className="flex justify-center items-center gap-20">
-          <Link href={"final"}>
-            <FaArrowLeftLong
-              size={"2rem"}
-              className="hover:fill-secondary-bg hover:border-b-2 hover:border-secondary-bg"
-            />
-          </Link>
+      <section aria-label="Joke explorer section" className="flex flex-col">
+        <span className="flex flex-wrap justify-center items-center gap-20">
+          <LeadIn
+            variant="fourth"
+            redirect={"final"}
+            heading={translations.searchFilters.heading}
+            paragraph={translations.searchFilters.paragraph}
+          />
           <div
-            className="flex flex-wrap justify-around items-center p-8 w-[85%] border border-solid border-gray-300 rounded-md"
-            aria-label="Joke search and filters"
-             
+            className="flex flex-wrap justify-around  items-center p-8 w-[55%] border border-solid border-gray-300 rounded-md"
+            aria-label="Joke Filter"
           >
-            <LeadIn
-              variant="secondary"
-              heading={translations.searchFilters.heading}
-              paragraph={translations.searchFilters.paragraph}
-            />
-            <span
-              className="flex flex-wrap items-center gap-6"
-              aria-label="Joke filter controls"
-               
-            >
-              {/* JokeFilter */}
-            </span>
+            <FormRendered inputFields={fields} />
           </div>
         </span>
         <br />
-
-        <menu
-          aria-label="Joke results list"
-          className="grid grid-cols-[repeaauto-fill,minmax(20rem,1fr))] m-8 gap-"
-        >
-          <Suspense>{/* <JokeGrid /> */}</Suspense>
-        </menu>
+        {category === "Dark" && (
+          <Chip color="yellow" textChip="JokePage.safeModeWarning" />
+        )}
+        {jokeState.isLoading && (
+          <Chip color="blue" textChip="JokePage.loadingMessage" />
+        )}
+        {jokeState.error && <Chip color="red" textChip={jokeState.error} />}
+        <br />
+        <CardGrid ariaLabel="Joke results list">
+          {jokeState.jokes?.map((joke) => (
+            <Card
+              key={joke.id}
+              badge={joke.category}
+              variant="joke"
+              jokeSetup={joke.setup || joke.joke}
+              jokePunchline={joke.delivery}
+              jokeType={joke.type}
+            />
+          ))}
+        </CardGrid>
       </section>
     </>
   );
