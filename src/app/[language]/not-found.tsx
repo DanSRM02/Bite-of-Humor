@@ -13,7 +13,7 @@ function NotFound() {
 
   const errorTitle = t("ErrorPage.content.title");
   const errorMessage = t("ErrorPage.content.message");
-  const goBackLabel = "ErrorPage.actions.goBack";
+  const goBackLabel = t("ErrorPage.actions.button");
 
   return (
     <>
