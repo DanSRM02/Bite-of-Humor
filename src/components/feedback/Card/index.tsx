@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/inputs/Button";
+import Button from "@/components/inputs/button";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";

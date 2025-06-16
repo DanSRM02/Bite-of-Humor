@@ -5,7 +5,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { redirect } from "next/navigation";
 import { LanguageContext } from "@/contexts/languageContext";
 import { modifyPositionElement } from "@/utils/modifyPositionElement";
-import Button from "@/components/inputs/Button";
+import Button from "@/components/inputs/button";
 
 function TheStartSetupPage() {
   const refButton = useRef<HTMLButtonElement>(null);

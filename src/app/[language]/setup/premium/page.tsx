@@ -1,9 +1,9 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/LeadIn";
-import Card from "@/components/feedback/Card";
+import LeadIn from "@/components/dataDisplay/leadIn";
+import Card from "@/components/feedback/card";
 import { useTranslation } from "react-i18next";
 import { plans } from "@/utils/const";
-import CardGrid from "@/components/layout/CardGrid";
+import CardGrid from "@/components/layout/cardGrid";
 
 function PremiumExperiencePage() {
   const { t } = useTranslation();

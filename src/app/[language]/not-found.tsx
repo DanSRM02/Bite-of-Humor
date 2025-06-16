@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import Button from "@/components/inputs/Button";
+import Button from "@/components/inputs/button";
 import { redirect } from "next/navigation";
 
 function NotFound() {

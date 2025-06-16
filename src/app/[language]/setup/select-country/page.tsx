@@ -1,10 +1,10 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/LeadIn";
+import LeadIn from "@/components/dataDisplay/leadIn";
 import { ChangeEvent, useEffect, useState } from "react";
 import { COUNTRIES, SUPPORTED_LANGS } from "@/utils/const";
 import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
-import FormRendered from "@/components/dataDisplay/FormRendered";
+import FormRendered from "@/components/dataDisplay/formRendered";
 
 function SelectCountry() {
   const router = useRouter();

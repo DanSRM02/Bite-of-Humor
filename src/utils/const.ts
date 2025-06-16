@@ -2,10 +2,10 @@
 import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
 import type { Country, Locale } from "@/types/countryTypes";
 import { UnorderedListImpl } from "@/types/unorderedListType";
-import TextareaField, { TextareaFieldProps } from "@/components/inputs/Field/textarea";
-import DefaultField, { DefaultFieldProps } from "@/components/inputs/Field/default";
-import SelectField, { SelectFieldProps } from "@/components/inputs/Field/select";
-import CheckboxField from "@/components/inputs/Field/checkbox";
+import TextareaField, { TextareaFieldProps } from "@/components/inputs/field/textarea";
+import DefaultField, { DefaultFieldProps } from "@/components/inputs/field/default";
+import SelectField, { SelectFieldProps } from "@/components/inputs/field/select";
+import CheckboxField from "@/components/inputs/field/checkbox";
 import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
 import { ComponentType, FC, JSX } from "react";
 

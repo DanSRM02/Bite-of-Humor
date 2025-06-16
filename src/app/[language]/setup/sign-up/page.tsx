@@ -1,6 +1,6 @@
 "use client";
 import { redirect } from "next/navigation";
-import LeadIn from "@/components/dataDisplay/LeadIn";
+import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/Form";
 import { inputTypes } from "@/types/baseFieldTypes";
 

@@ -2,7 +2,7 @@
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import Heading from "../Heading";
+import Heading from "../heading";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 type LeadInProps = {

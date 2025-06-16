@@ -1,8 +1,7 @@
 "use client";
 
-// import classes from "./Footer.module.scss";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import UnorderedList from "@/components/dataDisplay/UnorderedList";
+import UnorderedList from "@/components/dataDisplay/unorderedList";
 import { UnorderedListImpl } from "@/types/unorderedListType";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";

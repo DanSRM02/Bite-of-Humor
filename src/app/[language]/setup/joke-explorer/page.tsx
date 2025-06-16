@@ -1,15 +1,15 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/LeadIn";
+import LeadIn from "@/components/dataDisplay/leadIn";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
-import CardGrid from "@/components/layout/CardGrid";
+import CardGrid from "@/components/layout/cardGrid";
 import { useContext, useEffect } from "react";
 import { inputTypes } from "@/types/baseFieldTypes";
-import FormRendered from "@/components/dataDisplay/FormRendered";
+import FormRendered from "@/components/dataDisplay/formRendered";
 import useJokeFilter from "@/hooks/useJokeFilter";
 import useJokeList from "@/hooks/useJokeList";
-import Card from "@/components/feedback/Card";
+import Card from "@/components/feedback/card";
 import { LanguageContext } from "@/contexts/languageContext";
-import Chip from "@/components/feedback/Chip";
+import Chip from "@/components/feedback/chip";
 
 function JokeExplorerPage() {
   const { getFilteredJokes, jokeState } = useJokeList();

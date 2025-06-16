@@ -1,11 +1,11 @@
-import LeadIn from "@/components/dataDisplay/LeadIn";
-import Card from "@/components/feedback/Card";
+import LeadIn from "@/components/dataDisplay/leadIn";
+import Card from "@/components/feedback/card";
 import logoBoH from "@/assets/logo/logo-complete-recorted.png";
 import unitedStateImg from "@/assets/countries/dark_image_united.png";
 import franceImg from "@/assets/countries/funny_france.webp";
 import germanyImg from "@/assets/countries/funny_germany.webp";
 import Image from "next/image";
-import Heading from "@/components/dataDisplay/Heading";
+import Heading from "@/components/dataDisplay/heading";
 
 function MediumPage() {
 
