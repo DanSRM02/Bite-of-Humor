@@ -89,7 +89,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.
 
 ## 👤 Contact
 
-Jejé - [Your GitHub Profile](https://github.com/your-username) - your.email@example.com
+DANSRM02 - [Your GitHub Profile](https://github.com/DANSRM02) - danielmercenaries417@gmail.com
 
 ---
 *This README was generated with assistance from Google's Gemini.*
