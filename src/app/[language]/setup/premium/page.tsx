@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { plans } from "@/utils/const";
 import CardGrid from "@/components/layout/CardGrid";
 
-function PremiunExpPage() {
+function PremiumExperiencePage() {
   const { t } = useTranslation();
 
   const mappingPlan = plans.map((plan) => ({
@@ -59,4 +59,4 @@ function PremiunExpPage() {
   );
 }
 
-export default PremiunExpPage;
+export default PremiumExperiencePage;

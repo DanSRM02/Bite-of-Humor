@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bite of Humor 😂
 
-## Getting Started
+A modern and full-featured web application built with Next.js and TypeScript, designed for humor enthusiasts to discover, filter, and share jokes from around the world.
 
-First, run the development server:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📜 Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bite of Humor is a sophisticated web app that goes beyond a simple joke display. It features a powerful filtering system, full internationalization support, and a highly reusable component-based architecture. Users can explore a vast collection of jokes, apply advanced filters for category and safety, and even select their country and language for a localized experience. The application is built with a focus on modern, clean, and maintainable code practices.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📋 Table of Contents
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Key Features](#-key-features)
+- [Tech Stack](#️-tech-stack)
+- [Getting Started](#-getting-started)
+- [License](#-license)
+- [Contact](#-contact)
 
-## Learn More
+## 📸 Screenshot
 
-To learn more about Next.js, take a look at the following resources:
+![Bite of Humor Screenshot](httpshttps://i.imgur.com/8QO9y2B.png)
+*(Feel free to replace this with a newer screenshot of your project!)*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   **Joke Discovery:** Browse and read jokes fetched from a live API.
+-   **Advanced Filtering System:** A powerful form to filter jokes by:
+    -   Category (Programming, Dark, Pun, etc.)
+    -   Search Term
+    -   Safe Mode (to exclude certain types of jokes)
+-   **Internationalization (i18n):** Full support for multiple languages and country-specific configurations, managed with `i18next`.
+-   **Component-Driven UI:** Built with a library of reusable and professional components, including:
+    -   A generic `FormRendered` that can build any form from a configuration object.
+    -   A multi-variant, accessible `Card` component for displaying content.
+-   **Premium Plan Showcase:** A dedicated page to display different subscription tiers or plans.
+-   **(In Development):** User joke submission and community evaluation features.
 
-## Deploy on Vercel
+## 🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   **Framework:** [Next.js](https://nextjs.org/) (App Router)
+-   **Language:** [TypeScript](https://www.typescriptlang.org/)
+-   **UI Library:** [React](https://reactjs.org/)
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+-   **Internationalization:** [i18next](https://www.i18next.com/)
+-   **Data Fetching:** Custom Hooks using `axios` API.
+-   **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+You will need to have Node.js (v18 or later is recommended) and a package manager like `npm` or `yarn` installed.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    cd your-repo-name
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
+
+3.  **Set up environment variables:**
+    Create a file named `.env.local` in the root of your project and add any necessary environment variables.
+    ```
+    NEXT_PUBLIC_JOKE_API_URL=[https://v2.jokeapi.dev](https://v2.jokeapi.dev)
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details.
+
+## 👤 Contact
+
+Jejé - [Your GitHub Profile](https://github.com/your-username) - your.email@example.com
+
+---
+*This README was generated with assistance from Google's Gemini.*
