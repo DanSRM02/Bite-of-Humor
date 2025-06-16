@@ -57,8 +57,8 @@ You will need to have Node.js (v18 or later is recommended) and a package manage
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    cd your-repo-name
+    git clone [https://github.com/DanSRM02/Bite-of-Humor](https://github.com/DanSRM02/Bite-of-Humor)
+    cd Bite-of-humor
     ```
 
 2.  **Install dependencies:**
@@ -73,7 +73,7 @@ You will need to have Node.js (v18 or later is recommended) and a package manage
 3.  **Set up environment variables:**
     Create a file named `.env.local` in the root of your project and add any necessary environment variables.
     ```
-    NEXT_PUBLIC_JOKE_API_URL=[https://v2.jokeapi.dev](https://v2.jokeapi.dev)
+    NEXT_PUBLIC_JOKE_API_URL=[https://v2.jokeapi.dev]
     ```
 
 4.  **Run the development server:**
