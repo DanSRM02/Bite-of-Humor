@@ -9,14 +9,12 @@ type FormProps = {
   textButton: string;
   actionForm: string;
   handleClick: () => void;
-  handleSubmit: () => string[];
 };
 
 const Form = ({
   legendHeading,
   handleClick,
-  textButton,
-  handleSubmit,
+  textButton,  
   inputFields,
   actionForm,
 }: FormProps) => {
@@ -24,8 +22,7 @@ const Form = ({
     <form
       className="flex flex-col gap-6 w-full max-w-[45rem] mt-12"
       aria-label="Comedian sign up form"
-      action={actionForm}
-      onSubmit={handleSubmit}
+      action={actionForm}      
     >
       <fieldset className="border-2 border-gray-300 rounded-2xl p-8 mb-8 bg-gray-100 shadow-md relative min-w-0">
         <legend className="text-lg font-bold default-text-color px-4 mb-4 bg-white rounded-lg shadow-sm relative">

@@ -5,14 +5,15 @@ import { LuLaugh } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiHeart, CiFilter } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
-import { useMemo } from "react";
-import { redirect } from "next/navigation";
 import Button from "@/components/inputs/button";
 import { platformSections } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
+import { useRouter } from "next/navigation";
+
 
 function TheFinalSetupPage() {
   const { t } = useTranslation();
+  const router = useRouter();
 
   const handleRedirect = (typeButton: string) => {
     const routes: Record<string, string> = {
@@ -22,7 +23,7 @@ function TheFinalSetupPage() {
     };
 
     const route = routes[typeButton];
-    if (route) redirect(route);
+    if (route) router.push(route);
   };
 
   const platformSectionCard = platformSections.map((section) => ({

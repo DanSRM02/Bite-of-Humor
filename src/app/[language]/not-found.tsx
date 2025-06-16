@@ -2,13 +2,14 @@
 
 import { useTranslation } from "react-i18next";
 import Button from "@/components/inputs/button";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 function NotFound() {
   const { t } = useTranslation();
+  const router = useRouter();
 
   const handleRedirect = () => {
-    redirect("..");
+    router.push("..");
   };
 
   const errorTitle = t("ErrorPage.content.title");

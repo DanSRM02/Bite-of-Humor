@@ -89,7 +89,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.
 
 ## 👤 Contact
 
-DANSRM02 - [Your GitHub Profile](https://github.com/DANSRM02) - danielmercenaries417@gmail.com
+DANSRM02 - [(https://github.com/DANSRM02](https://github.com/DANSRM02) - danielmercenaries417@gmail.com
 
 ---
 *This README was generated with assistance from Google's Gemini.*

@@ -1,12 +1,10 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Card from "@/components/feedback/card";
-import { useTranslation } from "react-i18next";
 import { plans } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
 
-function PremiumExperiencePage() {
-  const { t } = useTranslation();
+function PremiumExperiencePage() {  
 
   const mappingPlan = plans.map((plan) => ({
     key: plan.title,
