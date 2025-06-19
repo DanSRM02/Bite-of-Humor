@@ -20,7 +20,10 @@ function TheFinalSetupPage() {
       filter: "joke-explorer",
       configuration: "configuration",
       premiumExperience: "premium",
+      socialFeatures: "build/home"
     };
+    console.log(typeButton);
+    
 
     const route = routes[typeButton];
     if (route) router.push(route);
