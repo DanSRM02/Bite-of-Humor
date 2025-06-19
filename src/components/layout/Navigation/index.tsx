@@ -22,8 +22,7 @@ const Navigation: React.FC = () => {
               <Link
                 href={"medium"}
                 className="hover:bg-black p-3 rounded trasition-colors duration-300"
-                aria-label={t("HeaderNavigation.navItems.home")}
-                 
+                aria-label={t("HeaderNavigation.navItems.home")}                 
               >
                 {t("HeaderNavigation.navItems.home")}
               </Link>
@@ -32,8 +31,7 @@ const Navigation: React.FC = () => {
               <Link
                 href={"sign-up"}
                 className="hover:bg-black p-3 rounded trasition-colors duration-300"
-                aria-label={t("HeaderNavigation.navItems.signUp")}
-                 
+                aria-label={t("HeaderNavigation.navItems.signUp")}                 
               >
                 {t("HeaderNavigation.navItems.signUp")}
               </Link>
@@ -42,8 +40,7 @@ const Navigation: React.FC = () => {
               <Link
                 href={"log-in"}
                 className="hover:bg-black p-3 rounded trasition-colors duration-300"
-                aria-label={t("HeaderNavigation.navItems.logIn")}
-                 
+                aria-label={t("HeaderNavigation.navItems.logIn")}                 
               >
                 {t("HeaderNavigation.navItems.logIn")}
               </Link>
