@@ -16,10 +16,6 @@ Bite of Humor is a sophisticated web app that goes beyond a simple joke display.
 - [License](#-license)
 - [Contact](#-contact)
 
-## 📸 Screenshot
-
-![Bite of Humor Screenshot](httpshttps://i.imgur.com/8QO9y2B.png)
-*(Feel free to replace this with a newer screenshot of your project!)*
 
 ## ✨ Key Features
 
@@ -57,7 +53,7 @@ You will need to have Node.js (v18 or later is recommended) and a package manage
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/DanSRM02/Bite-of-Humor](https://github.com/DanSRM02/Bite-of-Humor)
+    git clone [https://github.com/DanSRM02/Bite-of-Humor]
     cd Bite-of-humor
     ```
 
@@ -91,5 +87,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.
 
 DANSRM02 - [(https://github.com/DANSRM02](https://github.com/DANSRM02) - danielmercenaries417@gmail.com
 
----
-*This README was generated with assistance from Google's Gemini.*
