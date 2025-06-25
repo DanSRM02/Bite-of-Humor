@@ -7,7 +7,7 @@ import { BiArrowFromLeft } from "react-icons/bi";
 
 type BadgeProp = string | { key: string; config?: Record<string, any> };
 
-type CardProps = {
+export type CardProps = {
   children?: ReactNode;
   img?: StaticImageData;
   icon?: ReactNode;

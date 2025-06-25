@@ -47,7 +47,7 @@ function TheStartSetupPage() {
     }
 
     if (shouldRedirectToNextStep) {            
-      redirect(`/${localizationRouter}/setup/medium`);
+      redirect(`/${localizationRouter}/joke/setup/medium`);
     }
 
     const messageTranslated = t(

@@ -2,10 +2,11 @@ import type { ReactNode, Ref } from "react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
-type ButtonProps = {
+export type ButtonProps = {
   variant: "primary" | "secondary" | string;
   size: string;
   children: ReactNode;
+  label?: string,
   type?: "button" | "submit" | "reset";
   icon?: string;
   refButton?: Ref<HTMLButtonElement> | null;

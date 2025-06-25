@@ -9,6 +9,8 @@ import Button from "@/components/inputs/button";
 import { platformSections } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
 import { useRouter } from "next/navigation";
+import CardList from "@/components/dataDisplay/cardList";
+import ButtonList from "@/components/dataDisplay/buttonList";
 
 
 function TheFinalSetupPage() {
@@ -20,10 +22,8 @@ function TheFinalSetupPage() {
       filter: "joke-explorer",
       configuration: "configuration",
       premiumExperience: "premium",
-      socialFeatures: "build/home"
-    };
-    console.log(typeButton);
-    
+      socialFeatures: "../build/home"
+    };        
 
     const route = routes[typeButton];
     if (route) router.push(route);
@@ -88,18 +88,7 @@ function TheFinalSetupPage() {
         className="flex flex-col gap-20"
       >
         <CardGrid ariaLabel="Platform features list">
-          {platformSectionCard.map((card) => (
-            <Card
-              key={card.key}
-              title={card.title}
-              body={card.body}
-              icon={card.icon}
-              badge={card.badge}
-              features={card.features}
-              onExplore={card.onExplore}
-              variant={card.variant}
-            />
-          ))}
+         <CardList cards={platformSectionCard}  />
         </CardGrid>
         <article
           aria-label="User dashboard actions"
@@ -109,20 +98,8 @@ function TheFinalSetupPage() {
             title={dashboardTranslations.title}
             body={dashboardTranslations.body}
           >
-            <span className="flex justify-center items-center p-4 gap-4">
-              {dashboardButtons.map((btn) => (
-                <Button
-                  key={btn.label}
-                  onClick={btn.onClick}
-                  size="medium"
-                  variant="outline"
-                >
-                  <span className="flex items-center gap-2">
-                    {btn.icon}
-                    {btn.label}
-                  </span>
-                </Button>
-              ))}
+            <span className="flex justify-center items-center p-4 gap-4">    
+              <ButtonList buttons={dashboardButtons} />          
             </span>
           </Card>
         </article>

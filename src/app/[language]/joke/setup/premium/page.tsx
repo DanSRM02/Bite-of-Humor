@@ -1,8 +1,8 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import Card from "@/components/feedback/card";
 import { plans } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
+import CardList from "@/components/dataDisplay/cardList";
 
 function PremiumExperiencePage() {  
 
@@ -40,17 +40,7 @@ function PremiumExperiencePage() {
         />
 
         <CardGrid ariaLabel="plar">
-          {translations.plans.map((card) => (
-            <Card
-              key={card.key}
-              badge={card.badge}
-              title={card.title}
-              body={card.body}
-              features={card.features}
-              icon={card.icon}
-              variant={card.variant}
-            />
-          ))}
+         <CardList cards={translations.plans} />         
         </CardGrid>
       </section>
     </>
