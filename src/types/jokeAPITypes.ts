@@ -34,4 +34,3 @@ export interface FilterImpl {
   searchTerm?: string;
   category?: string | string[];
 }
-[];

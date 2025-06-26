@@ -1,4 +1,4 @@
-import Button, { ButtonProps } from "@/components/inputs/button";
+import Button from "@/components/inputs/button";
 import { ReactElement } from "react";
 
 type ButtonListItem = {

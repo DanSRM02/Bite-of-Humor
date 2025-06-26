@@ -59,7 +59,7 @@ function JokeExplorerPage() {
 
   useEffect(() => {
     getFilteredJokes({ category, searchTerm, isSafeMode }, language);
-  }, [category, searchTerm, isSafeMode, language]);
+  }, [category, searchTerm, isSafeMode, language, getFilteredJokes]);
 
   const translations = {
     navkLink: {

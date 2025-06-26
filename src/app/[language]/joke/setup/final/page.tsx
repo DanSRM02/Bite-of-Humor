@@ -5,7 +5,6 @@ import { LuLaugh } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiHeart, CiFilter } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
-import Button from "@/components/inputs/button";
 import { platformSections } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
 import { useRouter } from "next/navigation";

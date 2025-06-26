@@ -5,7 +5,7 @@ import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { BiArrowFromLeft } from "react-icons/bi";
 
-type BadgeProp = string | { key: string; config?: Record<string, any> };
+type BadgeProp = string | { key: string; config?: Record<string, number | undefined> };
 
 export type CardProps = {
   children?: ReactNode;

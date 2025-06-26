@@ -1,5 +1,4 @@
 import {
-  getJokesInitialLoad,
   getJokesWithFilter,
 } from "@/services/jokeService";
 import type { JokeImpl, FilterImpl } from "@/types/jokeAPITypes";
