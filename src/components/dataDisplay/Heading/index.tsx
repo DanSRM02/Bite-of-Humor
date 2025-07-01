@@ -1,6 +1,6 @@
-"use client"
-import { HTMLElementType, ReactNode } from "react";
-import { useTranslation } from "react-i18next";
+"use client";
+import { useTranslations } from "next-intl";
+import { ElementType, ReactNode } from "react";
 
 type HeadingProps = {
   children: string | ReactNode;
@@ -15,10 +15,14 @@ export default function Heading({
   level = 1,
   className,
 }: HeadingProps) {
-  const Heading: HTMLElementType = `h${level}` as HTMLElementType;
-  const { t } = useTranslation();
+  const Heading: ElementType = `h${level}` as ElementType;
+  const t = useTranslations();
 
   const content = typeof children === "string" ? t(children) : children;
 
-  return <Heading tabIndex={tabIndex} className={className}>{content}</Heading>;
+  return (
+    <Heading tabIndex={tabIndex} className={className}>
+      {content}
+    </Heading>
+  );
 }

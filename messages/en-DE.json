@@ -3,9 +3,9 @@
     "introduction": {
       "title": "Why are you here?",
       "remark": "You want to laugh or what?",
-      "paragraph1": "If the answer is “yes”, <strong> so sorry </strong> that's not the place.",
-      "paragraph2": "Or I'm <strong>joking?</strong>",
-      "paragraph3": "There's only <strong>one</strong> way to know..."
+      "paragraph1": "If the answer is “yes”, <important> so sorry </important> that's not the place.",
+      "paragraph2": "Or I'm <important>joking?</important>",
+      "paragraph3": "There's only <important>one</important> way to know..."
     },
     "actions": {
       "buttonMessages": {
@@ -143,10 +143,14 @@
       "heading": "Do you want a Premium Experience!",
       "paragraph": "Is that a joke! There's only one way to find out!"
     },
+    "common": {
+      "none": "None",
+      "all": "All"
+    },
     "basic": {
       "name": "Basic",
       "description": "A starter plan for casual joke lovers. Enjoy a limited selection of jokes and standard features.",
-      "price": "{{value, currency}}",
+      "price": "{value, number, currency}",
       "features": {
         "feature1": "Access to 100 jokes",
         "feature2": "SD streaming",
@@ -158,7 +162,7 @@
     "pro": {
       "name": "Pro",
       "description": "For dedicated humor fans. Unlock more jokes, better streaming, and exclusive content.",
-      "price": "{{value, currency}}",
+      "price": "{value, number, currency}",
       "features": {
         "feature1": "Access to 1000 jokes",
         "feature2": "HD streaming",
@@ -170,7 +174,7 @@
     "premium": {
       "name": "Premium",
       "description": "The ultimate experience for comedy connoisseurs. Unlimited jokes, top-tier streaming, and all extras.",
-      "price": "{{value, currency}}",
+      "price": "{value, number, currency}",
       "features": {
         "feature1": "Unlimited joke access",
         "feature2": "4K streaming",
@@ -254,7 +258,7 @@
   },
   "footer": {
     "brandName": "Bite of Humor",
-    "copyright": " {{year}}© Bite of Humor. All rights reserved.",
+    "copyright": " {year}© Bite of Humor. All rights reserved.",
     "linkGroups": [
       {
         "title": "Core Concepts",

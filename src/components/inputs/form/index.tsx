@@ -1,6 +1,6 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
 import Button from "../button";
-import Heading from "@/components/dataDisplay/heading";
+import Heading from "@/components/dataDisplay/Heading";
 import FormRendered from "@/components/dataDisplay/formRendered";
 
 type FormProps = {

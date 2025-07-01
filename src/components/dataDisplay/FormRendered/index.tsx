@@ -10,6 +10,8 @@ export default function FormRendered({ inputFields }: FormRenderedProps) {
     const { type, ...restProps } = field;
 
     const InputField = fieldTypeToComponent[type || "text"];
+    
+    
 
     if (!InputField) {
       throw new Error("That Input doesn't exist");

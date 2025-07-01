@@ -2,25 +2,23 @@
 import LeadIn from "@/components/dataDisplay/leadIn";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { inputTypes } from "@/types/baseFieldTypes";
 import FormRendered from "@/components/dataDisplay/formRendered";
 import useJokeFilter from "@/hooks/useJokeFilter";
 import useJokeList from "@/hooks/useJokeList";
 import Card from "@/components/feedback/card";
-import { LanguageContext } from "@/contexts/languageContext";
 import Chip from "@/components/feedback/chip";
+import { useLocale } from "next-intl";
 
 function JokeExplorerPage() {
   const { getFilteredJokes, jokeState } = useJokeList();
-  const { language } = useContext(LanguageContext);
-  const {
-    searchTerm,
-    category,
-    isDarkMode,
-    isSafeMode,
-    handleInputChange,
-  } = useJokeFilter();
+  const locale = useLocale();
+  const params = locale.split("-");
+  const language = params[0];
+
+  const { searchTerm, category, isDarkMode, isSafeMode, handleInputChange } =
+    useJokeFilter();
 
   const fields = [
     {
@@ -59,7 +57,7 @@ function JokeExplorerPage() {
 
   useEffect(() => {
     getFilteredJokes({ category, searchTerm, isSafeMode }, language);
-  }, [category, searchTerm, isSafeMode, language, getFilteredJokes]);
+  }, [category, searchTerm, isSafeMode, language]);
 
   const translations = {
     navkLink: {
@@ -78,7 +76,7 @@ function JokeExplorerPage() {
         <span className="flex flex-wrap justify-center items-center gap-20">
           <LeadIn
             variant="fourth"
-            redirect={"final"}
+            redirect={"/joke/setup/final"}
             heading={translations.searchFilters.heading}
             paragraph={translations.searchFilters.paragraph}
           />

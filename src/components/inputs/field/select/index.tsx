@@ -1,9 +1,10 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
+import { Ref } from "react";
 
 export type SelectFieldProps = BaseFieldImpl & {
   color?: string;
-  refSelect?: React.Ref<HTMLSelectElement>;
+  refSelect?: Ref<HTMLSelectElement>;
   options?: { label: string; value: string }[];
   disableLabel?: string;
 };
@@ -16,7 +17,7 @@ const SelectField = ({
   disableLabel,
   color = "primary",
 }: SelectFieldProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   return (
     <div className="flex flex-col items-center">
       {label && (
@@ -34,12 +35,12 @@ const SelectField = ({
             : "bg-gray-100 text-gray-800"
         }`}
       >
-        <option value="" disabled>
-          {t(disableLabel || "")}
+        <option value="">
+          {disableLabel }
         </option>
         {options?.map((option) => (
-          <option key={option.value} value={t(option.value)}>
-            {t(option.label)}
+          <option key={option.value} value={option.value}>
+            {option.label}
           </option>
         ))}
       </select>

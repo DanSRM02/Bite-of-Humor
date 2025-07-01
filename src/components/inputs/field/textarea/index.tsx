@@ -1,6 +1,6 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { useTranslations } from "next-intl";
 import { type ReactNode, Ref } from "react";
-import { useTranslation } from "react-i18next";
 
 export type TextareaFieldProps = BaseFieldImpl & {
   color?: string;
@@ -19,18 +19,18 @@ const TextareaField = ({
   color = "primary",
   ...props
 }: TextareaFieldProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div className="flex flex-col">
       {label && (
-        <label htmlFor={`comedian-${t(id)}`} className="font-semibold mb-2">
+        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
           {t(label)}
         </label>
       )}
       <textarea
         onChange={onChange}
-        id={`comedian-${t(id)}`}
+        id={`comedian-${id}`}
         name={id}
         placeholder={t(placeholder || "")}
         rows={rows}

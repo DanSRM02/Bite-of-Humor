@@ -9,8 +9,10 @@ import CheckboxField from "@/components/inputs/field/checkbox";
 import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
 import { ComponentType } from "react";
 
+
 export const DEFAULT_LANG: string = "en";
-export const DEFAULT_LOCAL: string = "US";
+export const DEFAULT_REGION: string = "US";
+export const DEFAULT_LOCALE: string = "en-US";
 export const SUPPORTED_LANGS: string[] = ["en", "fr", "de"];
 
 export const COUNTRIES: Country[] = [
@@ -30,6 +32,8 @@ export const SUPPORTED_LOCALES: Locale[] = [
   { language: "de-DE", currency: "EUR" },
   { language: "fr-DE", currency: "EUR" },
 ];
+
+export const SUPPORTED_LOCALES_STRING = SUPPORTED_LOCALES.map(locale => locale.language);
 
 // JOKE API
 
@@ -74,16 +78,19 @@ export const platformSections: UnorderedListImpl[] = [
     title: "communicationHub",
     icon: LuMail,
     features: ["feature1", "feature2", "feature3", "feature4"],
+    topics: [],
   },
   {
     title: "socialFeatures",
     icon: LuUsers,
     features: ["feature1", "feature2", "feature3", "feature4"],
+    topics: [],
   },
   {
     title: "premiumExperience",
     icon: LuCrown,
     features: ["feature1", "feature2", "feature3", "feature4"],
+    topics: [],
   },
 ];
 
@@ -93,6 +100,7 @@ export const plans: UnorderedListImpl[] = [
     icon: LuCircle,
     features: ["feature1", "feature2", "feature3", "feature4"],
     price: 0,
+    topics: [],
   },
   {
     title: "pro",
@@ -100,11 +108,13 @@ export const plans: UnorderedListImpl[] = [
     popular: true,
     features: ["feature1", "feature2", "feature3", "feature4"],
     price: 9.99,
+    topics: [],
   },
   {
     title: "premium",
     icon: LuCrown,
     features: ["feature1", "feature2", "feature3", "feature4"],
     price: 19.99,
+    topics: [],
   },
 ];

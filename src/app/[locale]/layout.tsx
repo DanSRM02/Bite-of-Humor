@@ -1,31 +1,32 @@
-import LanguageProvider from "@/contexts/languageContext";
 import { ReactNode } from "react";
 import "../globals.css";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 type LanguageWrapperProps = {
-  params: Promise<{ language: string }>;
+  params: Promise<{ locale: string }>;
   children: ReactNode;
 };
 
 export const metadata = {
-  title: "Bite of Humor",
-  description: "",
+  title: "Bite of Humor",  
 };
 export default async function LanguageWrapper({
   params,
   children,
 }: LanguageWrapperProps) {
-  const resolvedParams = await params;
-  const languageFromUrl = resolvedParams.language;
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html className=" text-xs sm:text-sm md:text-base " lang={languageFromUrl}>
+    <html className=" text-xs sm:text-sm md:text-base " lang={locale}>
       <head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
       <body>
-        <LanguageProvider languageParam={languageFromUrl}>
+        <NextIntlClientProvider messages={messages}>
           {children}
-        </LanguageProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

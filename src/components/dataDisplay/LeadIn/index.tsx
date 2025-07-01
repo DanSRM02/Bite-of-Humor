@@ -1,9 +1,9 @@
 "use client";
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
-import Heading from "../heading";
+import Heading from "../Heading";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 type LeadInProps = {
   heading: string;
@@ -19,7 +19,7 @@ const LeadIn = ({
   textLink,
   variant = "primary",
 }: LeadInProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const renderSecondary = () => {
     return (

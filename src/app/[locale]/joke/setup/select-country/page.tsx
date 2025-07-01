@@ -1,15 +1,17 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { COUNTRIES, SUPPORTED_LANGS } from "@/utils/const";
 import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
 import FormRendered from "@/components/dataDisplay/formRendered";
+import Button from "@/components/inputs/button";
 
 function SelectCountry() {
   const router = useRouter();
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [loadingButton, setLoadingButton] = useState(false);
 
   const handleSelect = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -17,9 +19,24 @@ function SelectCountry() {
     const fieldName = e.target.name;
     if (fieldName === "country") {
       setSelectedCountry(e.target.value);
-    } else if (fieldName === "language") {
+    }
+    if (fieldName === "language") {
       setSelectedLanguage(e.target.value);
     }
+  };
+
+  const handleRedirect = () => {        
+    setLoadingButton(true);   
+    if (selectedCountry && selectedLanguage) {    
+           
+      const newLangParam = `${selectedLanguage}-${selectedCountry}`;
+      const currentPath = location.pathname.split("/");
+      currentPath[1] = newLangParam;
+      const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;
+      router.push(pathToRedirect);    
+      setLoadingButton(false);
+    }
+    
   };
 
   const translations = {
@@ -31,7 +48,7 @@ function SelectCountry() {
       {
         label: "SelectCountry.searchCountryControls.selectLabel",
         type: "select" as inputTypes,
-        id: "country",      
+        id: "country",
         placeholder: "SelectCountry.searchCountryControls.selectPlaceholder",
         disableLabel: "SelectCountry.searchCountryControls.disableLabel",
         options: COUNTRIES.map((country) => ({
@@ -57,17 +74,6 @@ function SelectCountry() {
     ],
   };
 
-  useEffect(() => {
-    if (selectedCountry && selectedLanguage) {
-      const newLangParam = `${selectedLanguage}-${selectedCountry}`;
-      const currentPath = location.pathname.split("/");
-
-      currentPath[1] = newLangParam;
-      const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;
-      router.push(pathToRedirect);
-    }
-  }, [selectedCountry, selectedLanguage, router]);
-
   return (
     <>
       <section
@@ -88,6 +94,14 @@ function SelectCountry() {
           aria-label="Country options"
         >
           <FormRendered inputFields={translations.fields} />
+          <Button
+            loading={loadingButton}
+            onClick={handleRedirect}
+            size="medium"
+            variant="outline"
+          >
+            Enter
+          </Button>
         </article>
       </section>
     </>

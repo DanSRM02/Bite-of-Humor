@@ -11,6 +11,7 @@ const CardList = ({ cards }: CardListProps) => {
       body={card.body}
       icon={card.icon}
       badge={card.badge}
+      config={card.config}
       features={card.features}
       onExplore={card.onExplore}
       img={card.img}

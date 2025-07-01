@@ -1,6 +1,4 @@
-import {
-  getJokesWithFilter,
-} from "@/services/jokeService";
+import { getJokesWithFilter } from "@/services/jokeService";
 import type { JokeImpl, FilterImpl } from "@/types/jokeAPITypes";
 import type { Action, State } from "@/types/reducerTypes";
 import { useReducer } from "react";
@@ -26,11 +24,10 @@ const jokeReducer = (state: State<JokeImpl>, action: Action<JokeImpl>) => {
 export default function useJokeList() {
   const [jokeState, jokeDispatch] = useReducer(jokeReducer, initialState);
 
-  const getFilteredJokes = async (filter: FilterImpl, language: string) => {   
-    console.log(filter);
-    
+  const getFilteredJokes = async (filter: FilterImpl, language: string) => {
     try {
       jokeDispatch({ type: "FETCH_INIT" });
+      console.log(filter);      
       const response = await getJokesWithFilter(filter, language);
       jokeDispatch({
         type: "FETCH_SUCCESS",
@@ -45,7 +42,7 @@ export default function useJokeList() {
   };
 
   return {
-    jokeState,    
+    jokeState,
     getFilteredJokes,
   };
 }

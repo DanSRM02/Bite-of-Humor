@@ -5,10 +5,12 @@ type ButtonListItem = {
   label: string;
   icon: ReactElement;
   onClick: () => void;
+  variant?: string;
+  size?: string;
 };
 
-type ButtonListProps = {  
-  buttons: ButtonListItem[]
+type ButtonListProps = {
+  buttons: ButtonListItem[];
 };
 
 const ButtonList = ({ buttons }: ButtonListProps) => {
@@ -16,8 +18,8 @@ const ButtonList = ({ buttons }: ButtonListProps) => {
     <Button
       key={btn.label}
       onClick={btn.onClick}
-      size="medium"
-      variant="outline"
+      size={btn.size || "medium"}
+      variant={btn.variant || "outline"}
     >
       <span className="flex items-center gap-2">
         {btn.icon}

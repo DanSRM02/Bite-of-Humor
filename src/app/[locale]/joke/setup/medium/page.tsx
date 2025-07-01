@@ -1,11 +1,11 @@
-import LeadIn from "@/components/dataDisplay/leadIn";
-import Card from "@/components/feedback/card";
 import logoBoH from "@/assets/logo/logo-complete-recorted.png";
 import unitedStateImg from "@/assets/countries/dark_image_united.png";
 import franceImg from "@/assets/countries/funny_france.webp";
 import germanyImg from "@/assets/countries/funny_germany.webp";
 import Image from "next/image";
-import Heading from "@/components/dataDisplay/heading";
+import Heading from "@/components/dataDisplay/Heading";
+import Card from "@/components/feedback/card";
+import LeadIn from "@/components/dataDisplay/leadIn";
 
 function MediumPage() {
 
@@ -136,7 +136,7 @@ function MediumPage() {
           variant="tertiary"
           heading={translations.adviseSection.mainText.line1}
           paragraph={translations.adviseSection.mainText.line2}
-          textLink="Join Us"
+          textLink={translations.adviseSection.actionButton.text}
           redirect={"sign-up"}
         />
       </section>

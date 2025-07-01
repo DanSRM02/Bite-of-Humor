@@ -1,11 +1,10 @@
 "use client";
-
-import { useTranslation } from "react-i18next";
 import Button from "@/components/inputs/button";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
 function NotFound() {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const router = useRouter();
 
   const handleRedirect = () => {

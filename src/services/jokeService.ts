@@ -22,6 +22,8 @@ export const getJokesWithFilter = async (
   try {
     const url = `/joke/${category}?${queryString}`;
     const response = await apiClient.get(url);
+    console.log("Get data");
+    
 
     return response;
   } catch (error) {

@@ -34,3 +34,10 @@ export interface FilterImpl {
   searchTerm?: string;
   category?: string | string[];
 }
+
+export type badgeConfig = {
+  key: string,
+  config: {
+    value: number | undefined 
+  };
+}

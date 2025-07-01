@@ -1,6 +1,6 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { useTranslations } from "next-intl";
 import { Ref } from "react";
-import { useTranslation } from "react-i18next";
 
 export type CheckboxProps = BaseFieldImpl & {
   color?: string;
@@ -18,7 +18,7 @@ const CheckboxField = ({
   refInput,
   required = false,
 }: CheckboxProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   
 
   return (

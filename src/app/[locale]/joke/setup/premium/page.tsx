@@ -4,15 +4,12 @@ import { plans } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
 import CardList from "@/components/dataDisplay/cardList";
 
-function PremiumExperiencePage() {  
-
+function PremiumExperiencePage() {
   const mappingPlan = plans.map((plan) => ({
     key: plan.title,
     title: `plans.${plan.title}.name`,
-    badge: {
-      key: `plans.${plan.title}.price`,
-      config: { value: plan.price },
-    },
+    badge: `plans.${plan.title}.price`,
+    config: { value: plan.price || 10 },
     body: `plans.${plan.title}.description`,
     features: plan.features?.map(
       (feature) => `plans.${plan.title}.features.${feature}`
@@ -40,7 +37,7 @@ function PremiumExperiencePage() {
         />
 
         <CardGrid ariaLabel="plar">
-         <CardList cards={translations.plans} />         
+          <CardList cards={translations.plans} />
         </CardGrid>
       </section>
     </>

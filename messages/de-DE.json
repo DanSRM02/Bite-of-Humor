@@ -3,9 +3,9 @@
     "introduction": {
       "title": "Warum bist du hier?",
       "remark": "Willst du lachen oder was?",
-      "paragraph1": "Wenn die Antwort „Ja“ ist, <strong> tut es mir leid </strong>, aber das hier ist nicht der richtige Ort.",
-      "paragraph2": "Oder <strong>scherze</strong> ich nur?",
-      "paragraph3": "Es gibt nur <strong>einen</strong> Weg, das herauszufinden..."
+      "paragraph1": "Wenn die Antwort „Ja“ ist, <important> tut es mir leid </important>, aber das hier ist nicht der richtige Ort.",
+      "paragraph2": "Oder <important>scherze</important> ich nur?",
+      "paragraph3": "Es gibt nur <important>einen</important> Weg, das herauszufinden..."
     },
     "actions": {
       "buttonMessages": {
@@ -142,6 +142,10 @@
       "logIn": "Anmelden"
     }
   },
+  "common": {
+    "none": "Keine",
+    "all": "Alle"
+  },
   "plans": {
     "navLink": {
       "text": "Zum Finale"
@@ -153,7 +157,7 @@
     "basic": {
       "name": "Basis",
       "description": "Ideal für Einsteiger, die einen Vorgeschmack auf Humor wollen.",
-      "price": "{{value, currency}}",
+      "price": "{value, number, currency}",
       "features": {
         "feature1": "Zugang zu 100 Witzen",
         "feature2": "SD-Streaming",
@@ -165,7 +169,7 @@
     "pro": {
       "name": "Pro",
       "description": "Für Humorliebhaber, die mehr Vielfalt und bessere Qualität suchen.",
-      "price": "{{value, currency}}",
+      "price": "{value, number, currency}",
       "features": {
         "feature1": "Zugang zu 1000 Witzen",
         "feature2": "HD-Streaming",
@@ -177,7 +181,7 @@
     "premium": {
       "name": "Premium",
       "description": "Das ultimative Erlebnis für echte Comedy-Fans.",
-      "price": "{{value, currency}}",
+      "price": "{value, number, currency}",
       "features": {
         "feature1": "Unbegrenzter Witz-Zugang",
         "feature2": "4K-Streaming",
@@ -258,7 +262,7 @@
   },
   "footer": {
     "brandName": "Bite of Humor",
-    "copyright": "© {{year}} Bite of Humor. Alle Rechte vorbehalten.",
+    "copyright": "© {year} Bite of Humor. Alle Rechte vorbehalten.",
     "linkGroups": [
       {
         "title": "Kernkonzepte",

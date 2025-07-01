@@ -1,11 +1,13 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
+import LeadIn from "@/components/dataDisplay/leadIn";
+import { useTranslations } from "next-intl";
 
 function SignUp() {
   const router = useRouter();
+  const t = useTranslations();
   const translations = {
     intro: {
       heading: "ComedianSignUpForm.introduction.heading",
@@ -34,7 +36,7 @@ function SignUp() {
     ],
     actions: {
       legendHeading: "ComedianSignUpForm.actions.legendHeading",
-      submitButton: "ComedianSignUpForm.actions.submitButton",
+      submitButton: t("ComedianSignUpForm.actions.submitButton"),
     },
   };
 
