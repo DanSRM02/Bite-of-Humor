@@ -27,23 +27,28 @@ export type CardProps = {
 const Card = ({
   img,
   icon,
-  title = "",
-  body = "",
+  title = "common.none",
+  body = "common.none",
   badge,
   features,
   config,
   children,
   variant = "default",
   onExplore,
-  jokeSetup = "",
-  jokePunchline = "",
-  jokeType = "",
+  jokeSetup = "common.none",
+  jokePunchline = "common.none",
+  jokeType = "common.none",
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const t = useTranslations();
   const { number } = useFormatter();
+  let formattedBadge: string;
 
-  const formattedBadge = config ? number(config?.value, "currency") : t(badge || "common.none");
+  if (config?.value != null && badge) {
+    formattedBadge = number(config.value, "currency" );
+  } else if (badge) {
+    formattedBadge = t(badge);
+  }
 
   const handleCardClick = () => {
     if (variant === "expandable") {

@@ -11,20 +11,19 @@ export type SelectFieldProps = BaseFieldImpl & {
 
 const SelectField = ({
   id,
-  label,
+  label = "common.none",
   onChange,
   options,
-  disableLabel,
+  disableLabel = "common.none",
   color = "primary",
 }: SelectFieldProps) => {
   const t = useTranslations();
   return (
     <div className="flex flex-col items-center">
-      {label && (
-        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
-          {t(label)}
-        </label>
-      )}
+      <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
+        {t(label)}
+      </label>
+
       <select
         name={id}
         onChange={onChange}
@@ -35,12 +34,10 @@ const SelectField = ({
             : "bg-gray-100 text-gray-800"
         }`}
       >
-        <option value="">
-          {disableLabel }
-        </option>
+        <option value="">{t(disableLabel)}</option>
         {options?.map((option) => (
           <option key={option.value} value={option.value}>
-            {option.label}
+            {t(option.label)}
           </option>
         ))}
       </select>
