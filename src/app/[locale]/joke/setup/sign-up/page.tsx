@@ -56,7 +56,7 @@ function SignUp() {
         />
         <Form
           actionForm=""
-          handleClick={handleRedirect}
+          onClickButton={handleRedirect}
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}

@@ -49,7 +49,7 @@ function LogIn() {
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}
-          handleClick={handleRedirect}
+          onClickButton={handleRedirect}
         />
       </section>
     </>

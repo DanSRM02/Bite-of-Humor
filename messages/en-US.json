@@ -135,6 +135,10 @@
       "DE": "Germany"
     }
   },
+  "common": {
+    "none": "None",
+    "all": "All"
+  },
   "plans": {
     "navLink": {
       "text": "Go to Back"
@@ -143,10 +147,6 @@
       "heading": "Do you want a Premium Experience!",
       "paragraph": "Is that a joke! There's only one way to find out!"
     },
-    "common": {
-    "none": "None",
-    "all": "All"
-  },
     "basic": {
       "name": "Basic",
       "description": "A starter plan for casual joke lovers. Enjoy a limited selection of jokes and standard features.",

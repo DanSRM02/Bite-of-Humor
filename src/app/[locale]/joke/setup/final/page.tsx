@@ -4,7 +4,7 @@ import Card from "@/components/feedback/card";
 import { LuLaugh } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiHeart, CiFilter } from "react-icons/ci";
-import { platformSections } from "@/utils/const";
+import { platformSectionsFinal } from "@/utils/const";
 import CardGrid from "@/components/layout/cardGrid";
 import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";
@@ -28,7 +28,7 @@ function TheFinalSetupPage() {
     if (route) router.push(route);
   };
 
-  const platformSectionCard = platformSections.map((section) => ({
+  const platformSectionCard = platformSectionsFinal.map((section) => ({
     key: section.title,
     title: `TheFinalSetupPage.platformCards.${section.title}.title`,
     body: `TheFinalSetupPage.platformCards.${section.title}.description`,

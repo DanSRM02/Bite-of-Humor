@@ -162,10 +162,6 @@
         "feature5": "Kein exklusiver Inhalt"
       }
     },
-    "common": {
-      "none": "Keine",
-      "all": "Alle"
-    },
     "pro": {
       "name": "Pro",
       "description": "Für Humorliebhaber, die mehr Vielfalt und bessere Qualität suchen.",
@@ -190,6 +186,10 @@
         "feature5": "Exklusiver und Bonus-Inhalt"
       }
     }
+  },
+  "common": {
+    "none": "Aucun",
+    "all": "Tous"
   },
   "TheFinalSetupPage": {
     "leadIn": {

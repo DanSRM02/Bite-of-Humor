@@ -73,7 +73,7 @@ export const fieldTypeToComponent: Record<
   search: DefaultField,
 };
 
-export const platformSections: UnorderedListImpl[] = [
+export const platformSectionsFinal: UnorderedListImpl[] = [
   {
     title: "communicationHub",
     icon: LuMail,
@@ -88,6 +88,27 @@ export const platformSections: UnorderedListImpl[] = [
   },
   {
     title: "premiumExperience",
+    icon: LuCrown,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    topics: [],
+  },
+];
+
+export const platformSectionsHome: UnorderedListImpl[] = [
+  {
+    title: "workshop",
+    icon: LuMail,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    topics: [],
+  },
+  {
+    title: "nothingYet",
+    icon: LuUsers,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    topics: [],
+  },
+  {
+    title: "nothingYet",
     icon: LuCrown,
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],

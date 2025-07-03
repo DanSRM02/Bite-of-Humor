@@ -142,6 +142,10 @@
       "logIn": "Se connecter"
     }
   },
+  "common": {
+      "none": "Aucun",
+      "all": "Tous"
+    },
   "plans": {
     "navLink": {
       "text": "Aller à la finale"
@@ -161,11 +165,7 @@
         "feature4": "Support standard",
         "feature5": "Pas de contenu exclusif"
       }
-    },
-    "common": {
-      "none": "Aucun",
-      "all": "Tous"
-    },
+    },    
     "pro": {
       "name": "Pro",
       "description": "Un plan avancé pour ceux qui veulent plus de blagues et de flexibilité.",

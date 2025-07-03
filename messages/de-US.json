@@ -142,6 +142,10 @@
       "logIn": "Anmelden"
     }
   },
+  "common": {
+    "none": "Aucun",
+    "all": "Tous"
+  },
   "plans": {
     "navLink": {
       "text": "Zum Finale"

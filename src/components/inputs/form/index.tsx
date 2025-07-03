@@ -8,12 +8,12 @@ type FormProps = {
   legendHeading: string;
   textButton: string;
   actionForm: string;
-  handleClick: () => void;
+  onClickButton: () => void;
 };
 
 const Form = ({
   legendHeading,
-  handleClick,
+  onClickButton,
   textButton,  
   inputFields,
   actionForm,
@@ -34,7 +34,7 @@ const Form = ({
         type="button"
         variant={"primary"}
         size="medium"
-        onClick={handleClick}
+        onClick={onClickButton}
       >
         {textButton}
       </Button>
