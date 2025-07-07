@@ -2,9 +2,9 @@
 import Button from "@/components/inputs/button";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import { useFormatter } from "next-intl";
 import { useState, type ReactNode } from "react";
 import { BiArrowFromLeft } from "react-icons/bi";
+import { formatText } from "@/utils/verifyTextFormat";
 
 export type CardProps = {
   children?: ReactNode;
@@ -20,6 +20,7 @@ export type CardProps = {
   variant?: "default" | "expandable" | "joke";
   onExplore?: () => void;
   jokeSetup?: string;
+  isTextRaw?: boolean;
   jokePunchline?: string;
   jokeType?: string;
 };
@@ -29,26 +30,21 @@ const Card = ({
   icon,
   title = "common.none",
   body = "common.none",
-  badge,
+  badge = "common.none",
   features,
+  isTextRaw = false,
   config,
   children,
   variant = "default",
   onExplore,
-  jokeSetup = "common.none",
-  jokePunchline = "common.none",
-  jokeType = "common.none",
+  jokeSetup,
+  jokePunchline,
+  jokeType,
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const t = useTranslations();
-  const { number } = useFormatter();
-  let formattedBadge: string;
 
-  if (config?.value != null && badge) {
-    formattedBadge = number(config.value, "currency" );
-  } else if (badge) {
-    formattedBadge = t(badge);
-  }
+  const formattedBadge = formatText(isTextRaw, badge, t, config);
 
   const handleCardClick = () => {
     if (variant === "expandable") {
@@ -99,7 +95,9 @@ const Card = ({
             {features.map((feature) => (
               <div key={feature} className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-stone-500 rounded-full"></div>
-                <span className="text-sm text-stone-700">{t(feature)}</span>
+                <span className="text-sm text-stone-700">
+                  {formatText(isTextRaw, feature, t)}
+                </span>
               </div>
             ))}
             {onExplore && (
@@ -152,11 +150,6 @@ const Card = ({
         <div className="flex flex-col gap-2">
           <h6 className="text-lg font-semibold text-stone-800">{t(title)}</h6>
           <p className="text-base text-stone-700">{t(body)}</p>
-          {badge && (
-            <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
-              {t(badge)}
-            </span>
-          )}
         </div>
       </div>
       {children && <div className="mt-4">{children}</div>}

@@ -11,7 +11,6 @@ function SelectCountry() {
   const router = useRouter();
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [loadingButton, setLoadingButton] = useState(false);
 
   const handleSelect = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -25,16 +24,15 @@ function SelectCountry() {
     }
   };
 
-  const handleRedirect = () => {        
-    setLoadingButton(true);   
+  const handleRedirect = () => {          
     if (selectedCountry && selectedLanguage) {    
            
       const newLangParam = `${selectedLanguage}-${selectedCountry}`;
       const currentPath = location.pathname.split("/");
       currentPath[1] = newLangParam;
       const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;
+      console.log(pathToRedirect);
       router.push(pathToRedirect);    
-      setLoadingButton(false);
     }
     
   };
@@ -56,7 +54,6 @@ function SelectCountry() {
           value: country.code,
         })),
         color: "secondary",
-        onChange: handleSelect,
       },
       {
         label: "SelectCountry.searchLanguageControls.selectLabel",
@@ -69,7 +66,6 @@ function SelectCountry() {
           value: lang,
         })),
         color: "secondary",
-        onChange: handleSelect,
       },
     ],
   };
@@ -93,9 +89,8 @@ function SelectCountry() {
           className="flex justify-center items-center flex-wrap gap-10"
           aria-label="Country options"
         >
-          <FormRendered inputFields={translations.fields} />
+          <FormRendered inputFields={translations.fields} handlerChange={handleSelect}/>
           <Button
-            loading={loadingButton}
             onClick={handleRedirect}
             size="medium"
             variant="outline"

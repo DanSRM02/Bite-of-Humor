@@ -1,9 +1,9 @@
 "use client";
 import { Url } from "next/dist/shared/lib/router/router";
-import Link from "next/link";
-import Heading from "../Heading";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
+import Link from "next/dist/client/link";
+import { formatText } from "@/utils/verifyTextFormat";
 
 type LeadInProps = {
   heading: string;
@@ -11,23 +11,31 @@ type LeadInProps = {
   variant?: "primary" | "secondary" | "tertiary" | string;
   textLink?: string;
   redirect?: Url;
+  isTextRaw?: boolean;
 };
 const LeadIn = ({
-  heading,
-  paragraph,
+  heading = "common.none",
+  paragraph = "common.none",
   redirect = "",
-  textLink,
+  textLink = "common.none",
   variant = "primary",
+  isTextRaw = false,
 }: LeadInProps) => {
   const t = useTranslations();
+  const formattedTextHeading = formatText(isTextRaw, heading, t);
+  const formattedTextParragraph = formatText(isTextRaw, paragraph, t);
+  const formattedTextLink = formatText(isTextRaw, textLink, t);
 
   const renderSecondary = () => {
     return (
-      <article className="flex flex-col flex-wrap" aria-label={t(heading)}>
-        <Heading level={5} className="max-w-[37rem] mt-[1.76rem] font-bold">
-          {heading}
-        </Heading>
-        <p className="max-w-[45rem]">{t(paragraph)}</p>
+      <article
+        className="flex flex-col flex-wrap"
+        aria-label={formattedTextHeading}
+      >
+        <h5 className="max-w-[37rem] mt-[1.76rem] font-bold">
+          {formattedTextHeading}
+        </h5>
+        <p className="max-w-[45rem]">{formattedTextParragraph}</p>
       </article>
     );
   };
@@ -36,20 +44,20 @@ const LeadIn = ({
     return (
       <article
         className="flex items-center gap-26 flex-wrap"
-        aria-label={t(heading)}
+        aria-label={formattedTextHeading}
       >
-        <Heading level={2} className="max-w-[37rem] mt-[1.76rem] font-bold">
-          {t(heading)}
+        <h2 className="max-w-[37rem] mt-[1.76rem] font-bold">
+          {formattedTextHeading}
           <br />
-          {t(paragraph)}
-        </Heading>
+          {formattedTextParragraph}
+        </h2>
 
         <span className=" bg-white py-2 hover:text-white duration-300">
           <Link
             className="hover:bg-black p-3 rounded trasition-colors duration-300 "
             href={redirect}
           >
-            {t(textLink || "")}
+            {formattedTextLink}
           </Link>
         </span>
       </article>
@@ -58,11 +66,14 @@ const LeadIn = ({
 
   const renderDefault = () => {
     return (
-      <article className="flex flex-col flex-wrap" aria-label={t(heading)}>
-        <Heading className="max-w-[37rem] mt-[1.76rem] font-bold">
-          {heading}
-        </Heading>
-        <p className="max-w-[45rem]">{t(paragraph)}</p>
+      <article
+        className="flex flex-col flex-wrap"
+        aria-label={formattedTextHeading}
+      >
+        <h1 className="max-w-[37rem] mt-[1.76rem] font-bold">
+          {formattedTextHeading}
+        </h1>
+        <p className="max-w-[45rem]">{formattedTextParragraph}</p>
       </article>
     );
   };
@@ -76,11 +87,14 @@ const LeadIn = ({
             className="hover:fill-secondary-bg hover:border-b-2 hover:border-secondary-bg"
           />
         </Link>
-        <article className="flex flex-col flex-wrap" aria-label={t(heading)}>
-          <Heading className="max-w-[37rem] mt-[1.76rem] font-bold">
-            {heading}
-          </Heading>
-          <p className="max-w-[45rem]">{t(paragraph)}</p>
+        <article
+          className="flex flex-col flex-wrap"
+          aria-label={formattedTextHeading}
+        >
+          <h1 className="max-w-[37rem] mt-[1.76rem] font-bold">
+            {formattedTextHeading}
+          </h1>
+          <p className="max-w-[45rem]">{formattedTextParragraph}</p>
         </article>
       </span>
     );

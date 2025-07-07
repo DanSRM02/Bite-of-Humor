@@ -2,6 +2,7 @@ import { ChangeEvent } from "react";
 
 export interface BaseFieldImpl {
   id: string;
+  isTextRaw?: boolean;
   type?: inputTypes;
   placeholder?: string;
   value?: string | string[];

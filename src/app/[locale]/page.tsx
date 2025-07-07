@@ -39,6 +39,7 @@ function TheStartSetupPage() {
     const shouldRedirectToNextStep = timesClicked === 6;
     const shouldChangePosition = timesClicked <= 4;
     const shouldDefaultPosition = timesClicked === 5;
+    const shouldShowNewMessage = timesClicked <= 5;
 
     if (shouldChangePosition) {
       buttonUtil.changePosition({ maxOffsetX: 25, maxOffsetY: 25 });
@@ -48,14 +49,12 @@ function TheStartSetupPage() {
       buttonUtil.defaultPosition();
     }
 
-    const messageTranslated = t(
-      `actions.buttonMessages.message${timesClicked}`
-    );
+    if (shouldShowNewMessage) {
+      setNewMessage(t(`actions.buttonMessages.message${timesClicked}`));
+    }
 
     if (shouldRedirectToNextStep) {
       redirect("/joke/setup/medium");
-    } else {
-      setNewMessage(messageTranslated);
     }
   }
 

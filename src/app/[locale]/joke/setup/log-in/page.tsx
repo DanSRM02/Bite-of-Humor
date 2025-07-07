@@ -2,10 +2,12 @@
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
 function LogIn() {
   const router = useRouter();
+  const t = useTranslations();
   const translations = {
     intro: {
       heading: "ComedianLoginForm.introduction.heading",
@@ -27,7 +29,7 @@ function LogIn() {
     ],
     actions: {
       legendHeading: "ComedianLoginForm.actions.legendHeading",
-      submitButton: "ComedianLoginForm.actions.submitButton",
+      submitButton: t("ComedianLoginForm.actions.submitButton"),
     },
   };
 

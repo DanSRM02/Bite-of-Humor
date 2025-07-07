@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Navigation from "@/components/layout/Navigation";
+import Navigation from "@/components/layout/navigation";
 import Footer from "@/components/layout/footer";
 
 type SetupLayoutProps = {

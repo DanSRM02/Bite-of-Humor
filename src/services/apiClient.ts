@@ -9,6 +9,10 @@ const apiClient = axios.create({
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (axios.isCancel(error)) {
+      return Promise.reject(error);
+    }
+    
     if (axios.isAxiosError(error)) {
       if (error.response) {
         const { status, data } = error.response;

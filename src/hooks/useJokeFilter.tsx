@@ -5,7 +5,6 @@ export default function useJokeFilter() {
   const [isSafeMode, setSafeMode] = useState(true);
   const [category, setCategory] = useState("Any");
 
-  const isDarkMode = category !== "Dark";
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -25,9 +24,10 @@ export default function useJokeFilter() {
         break;
 
       case "category":
-        setCategory(value);
-        if (value === "Dark") {
-          setSafeMode((prevState) => !prevState);
+        setCategory(value);        
+        
+        if (value === "Dark") {          
+          setSafeMode(false);
         }
         break;
 
@@ -40,7 +40,6 @@ export default function useJokeFilter() {
     }
   };
   return {
-    isDarkMode,
     isSafeMode,
     searchTerm,
     category,

@@ -1,4 +1,5 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { formatText } from "@/utils/verifyTextFormat";
 import { useTranslations } from "next-intl";
 import { Ref } from "react";
 
@@ -12,14 +13,15 @@ const CheckboxField = ({
   disabled = false,
   error = false,
   onChange,
+  isTextRaw = false,
   id,
-  label,
+  label = "common.none",
   checked,
   refInput,
   required = false,
 }: CheckboxProps) => {
   const t = useTranslations();
-  
+  const formattedLabel = formatText(isTextRaw, label, t);
 
   return (
     <label
@@ -49,9 +51,8 @@ const CheckboxField = ({
           }`}
         ></span>
       </span>
-      {label && (
-        <span className="ml-2 font-medium cursor-pointer">{t(label)}</span>
-      )}
+
+      <span className="ml-2 font-medium cursor-pointer">{formattedLabel}</span>
     </label>
   );
 };

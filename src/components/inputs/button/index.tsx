@@ -11,16 +11,14 @@ export type ButtonProps = {
   refButton?: Ref<HTMLButtonElement> | null;
   onClick?: () => void;
   disabled?: boolean;  
-  loading?: boolean;
 };
 
 const Button = ({
   children,
   refButton,  
   onClick,
-  loading,
-  variant,
-  size,
+  variant = "primary",
+  size = "medium",
   type = "button",
   disabled = false,
 }: ButtonProps) => {  
@@ -30,13 +28,12 @@ const Button = ({
     "px-4 py-2 text-base": size === "medium",
     "px-2 py-1 text-sm": size === "small",
   });
-  const loadingStyle = loading ? "animate-spin" : ""
 
   return (
     <button
       ref={refButton}
       type={type}
-      className={clsx(buttonStyle, sizeStyle, loadingStyle)}
+      className={clsx(buttonStyle, sizeStyle)}
       onClick={onClick}
       disabled={disabled}
     >

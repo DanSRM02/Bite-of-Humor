@@ -24,14 +24,13 @@ const jokeReducer = (state: State<JokeImpl>, action: Action<JokeImpl>) => {
 export default function useJokeList() {
   const [jokeState, jokeDispatch] = useReducer(jokeReducer, initialState);
 
-  const getFilteredJokes = async (filter: FilterImpl, language: string) => {
+  const getFilteredJokes = async (filter: FilterImpl, language: string, signal: AbortSignal) => {
     try {
-      jokeDispatch({ type: "FETCH_INIT" });
-      console.log(filter);      
-      const response = await getJokesWithFilter(filter, language);
+      jokeDispatch({ type: "FETCH_INIT" });            
+      const response = await getJokesWithFilter(filter, language, signal);
       jokeDispatch({
         type: "FETCH_SUCCESS",
-        payload: response?.data.jokes,
+        payload: response?.data.jokes || [],
       });
     } catch (error) {
       jokeDispatch({

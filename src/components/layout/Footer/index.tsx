@@ -1,5 +1,5 @@
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import UnorderedList from "@/components/dataDisplay/UnorderedList";
+import UnorderedList from "@/components/dataDisplay/unorderedList";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { UnorderedListImpl } from "@/types/unorderedListType";

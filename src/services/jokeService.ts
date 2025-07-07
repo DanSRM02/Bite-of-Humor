@@ -6,7 +6,7 @@ export const getJokesInitialLoad = async (language: string) => {
     const response = await apiClient.get(
       `/joke/Any?safe-mode&lang=${language}&amount=10`
     );
-    return response;
+    return response.data.jokes;
   } catch (error) {
     throw error;
   }
@@ -14,16 +14,15 @@ export const getJokesInitialLoad = async (language: string) => {
 
 export const getJokesWithFilter = async (
   filter: FilterImpl,
-  language: string
+  language: string,
+  signal: AbortSignal
 ) => {
   const category = filter.category;
   const queryString = createQueryString(filter, language);
 
   try {
     const url = `/joke/${category}?${queryString}`;
-    const response = await apiClient.get(url);
-    console.log("Get data");
-    
+    const response = await apiClient.get(url, { signal: signal });
 
     return response;
   } catch (error) {
