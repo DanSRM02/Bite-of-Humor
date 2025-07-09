@@ -27,20 +27,18 @@ function PremiumExperiencePage() {
   };
 
   return (
-    <>
-      <section className="flex flex-col gap-8">
-        <LeadIn
-          heading={translations.leadIn.heading}
-          paragraph={translations.leadIn.paragraph}
-          redirect={"final"}
-          variant="fourth"
-        />
+    <section className="flex flex-col gap-8">
+      <LeadIn
+        heading={translations.leadIn.heading}
+        paragraph={translations.leadIn.paragraph}
+        redirect={"final"}
+        variant="fourth"
+      />
 
-        <CardGrid ariaLabel="plar">
-          <CardList cards={translations.plans} />
-        </CardGrid>
-      </section>
-    </>
+      <CardGrid ariaLabel="plar">
+        <CardList cards={translations.plans} />
+      </CardGrid>
+    </section>
   );
 }
 

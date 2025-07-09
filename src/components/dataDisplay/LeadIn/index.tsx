@@ -8,7 +8,7 @@ import { formatText } from "@/utils/verifyTextFormat";
 type LeadInProps = {
   heading: string;
   paragraph: string;
-  variant?: "primary" | "secondary" | "tertiary" | string;
+  variant?: "primary" | "secondary" | "tertiary" | "fourth";
   textLink?: string;
   redirect?: Url;
   isTextRaw?: boolean;

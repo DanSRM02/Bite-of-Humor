@@ -8,6 +8,7 @@ import SelectField from "@/components/inputs/field/select";
 import CheckboxField from "@/components/inputs/field/checkbox";
 import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
 import { ComponentType } from "react";
+import MultipleSelectField from "@/components/inputs/field/multipleSelect";
 
 
 export const DEFAULT_LANG: string = "en";
@@ -71,6 +72,7 @@ export const fieldTypeToComponent: Record<
   select: SelectField,
   checkbox: CheckboxField,
   search: DefaultField,
+  selectMultiple: MultipleSelectField
 };
 
 export const platformSectionsFinal: UnorderedListImpl[] = [

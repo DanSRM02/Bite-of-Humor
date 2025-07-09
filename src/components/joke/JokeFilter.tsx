@@ -7,10 +7,10 @@ import Chip from "../feedback/chip";
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
 import useJokeList from "@/hooks/useJokeList";
-import useJokeFilter from "@/hooks/useJokeFilter";
 import CardGrid from "../layout/cardGrid";
 import Card from "../feedback/card";
 import { JokeImpl } from "@/types/jokeAPITypes";
+import useInteractiveForm from "@/hooks/useInteractiveForm";
 
 type jokeFilterProps = {
   initialLoad: JokeImpl[];
@@ -26,10 +26,15 @@ export const JokeFilter = ({
 
   const [displayedJokes, setDisplayedJokes] = useState(initialLoad);
 
-  const { searchTerm, category, isSafeMode, handleInputChange } =
-    useJokeFilter();
+  const { formState, handleInputChange } = useInteractiveForm({
+    category: "Any",
+    searchTerm: "",
+    isSafeMode: true,
+  });
 
-  const isDarkMode = category === "Dark";
+  const { category, searchTerm, isSafeMode } = formState;
+
+  const isDarkMode = category !== "Dark";
 
   const fieldsWithDynamicAttributes = fieldsBlueprint.map((field) => {
     if (field.id === "category") {
@@ -73,7 +78,7 @@ export const JokeFilter = ({
       heading: "JokePage.searchFilters.heading",
       paragraph: "JokePage.searchFilters.paragraph",
     },
-  };  
+  };
 
   return (
     <>

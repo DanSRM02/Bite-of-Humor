@@ -1,22 +1,34 @@
+import Button from "@/components/inputs/button";
+import Header from "@/components/layout/header";
 import { ReactNode } from "react";
 
 type WorkshopLayoutProps = {
   children: ReactNode;
   preview: ReactNode;
+  form: ReactNode;
   feedback: ReactNode;
 };
 export default function WorkshopLayout({
   children,
+  form,
   preview,
   feedback,
 }: WorkshopLayoutProps) {
   return (
-    <main className="grid grid-cols-2 gap-2 justify-items-stretchz  ">
-      <section className="row-span-2 border-2 border-dashed ">
-        {children}
-      </section>
-      <section className="border-2 border-dashed">{preview}</section>
-      <section className="border-2 border-dashed">{feedback}</section>
-    </main>
+    <>
+      <Header title="Workshop" />
+      {children}      
+      <article className="flex justify-center flex-wrap gap-25">
+        <section className="flex flex-col flex-1 items-center">{form}</section>
+        <div className="hidden md:block w-px border-[.5px] border-dashed"></div>
+        <div className="flex-1 flex flex-col justify-center gap-15">
+          <section className="">{preview}</section>
+          <section className="">{feedback}</section>
+        </div>
+      </article>
+      <Button size="medium" variant="primary" formButton="complete-joke">
+        Send Joke
+      </Button>
+    </>
   );
 }

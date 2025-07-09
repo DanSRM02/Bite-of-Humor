@@ -23,10 +23,12 @@ export type CardProps = {
   isTextRaw?: boolean;
   jokePunchline?: string;
   jokeType?: string;
+  className?: string;
 };
 
 const Card = ({
   img,
+  className,
   icon,
   title = "common.none",
   body = "common.none",
@@ -126,18 +128,20 @@ const Card = ({
       ) : (
         <p className="text-base font-semibold">{jokePunchline}</p>
       )}
-      <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
-        {badge}
-      </span>
+      {badge && (
+        <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
+          {badge}
+        </span>
+      )}
 
-      {children && <div className="mt-4">{children}</div>}
+      {children && <div className={`${className}`}>{children}</div>}
     </article>
   );
 
   const renderDefault = () => (
     <article
       aria-label={t(title)}
-      className="bg-white border border-stone-200 p-6 rounded-lg"
+      className="bg-white border border-stone-200 p-6 rounded-lg "
     >
       {img && (
         <Image
@@ -152,7 +156,7 @@ const Card = ({
           <p className="text-base text-stone-700">{t(body)}</p>
         </div>
       </div>
-      {children && <div className="mt-4">{children}</div>}
+      {children && <div className={`${className}`}>{children}</div>}
     </article>
   );
 

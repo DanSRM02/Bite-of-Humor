@@ -1,5 +1,5 @@
 function FeedbackWorkshopJoke() {
-    return ( <h1 className="text-center">feedback joke</h1> );
+    return ( <h3 className="text-center"></h3> );
 }
 
 export default FeedbackWorkshopJoke;

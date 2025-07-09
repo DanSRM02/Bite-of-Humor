@@ -12,7 +12,7 @@ async function JokeExplorerPage() {
 
   const initialJokes: JokeImpl[] = await getJokesInitialLoad(currentLanguage);
 
-  const filterFields = [
+  const filterFieldsWithoutDynamicAttributes = [
     {
       id: "safeMode",
       type: "checkbox" as inputTypes,
@@ -27,7 +27,7 @@ async function JokeExplorerPage() {
       isTextRaw: false,
       disableLabel: "JokePage.searchForm.categoryLabel",
       options: _AVAILABLE_CATEGORIES.map((category) => ({
-        isTextRawOpt: true,
+        isTextRaw: true,
         value: category,
         label: category,
       })),
@@ -46,7 +46,7 @@ async function JokeExplorerPage() {
         <JokeFilter
           initialLoad={initialJokes}
           language={currentLanguage}
-          fieldsBlueprint={filterFields}
+          fieldsBlueprint={filterFieldsWithoutDynamicAttributes}
         />
       </section>
     </>

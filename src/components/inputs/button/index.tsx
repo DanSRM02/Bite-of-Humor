@@ -10,18 +10,20 @@ export type ButtonProps = {
   icon?: string;
   refButton?: Ref<HTMLButtonElement> | null;
   onClick?: () => void;
-  disabled?: boolean;  
+  disabled?: boolean;
+  formButton?: string;
 };
 
 const Button = ({
   children,
-  refButton,  
+  refButton,
+  formButton,
   onClick,
   variant = "primary",
   size = "medium",
   type = "button",
   disabled = false,
-}: ButtonProps) => {  
+}: ButtonProps) => {
   const buttonStyle = `btn-${variant}`;
   const sizeStyle = clsx({
     "px-6 py-3 text-lg": size === "large",
@@ -32,6 +34,7 @@ const Button = ({
   return (
     <button
       ref={refButton}
+      form={formButton}
       type={type}
       className={clsx(buttonStyle, sizeStyle)}
       onClick={onClick}

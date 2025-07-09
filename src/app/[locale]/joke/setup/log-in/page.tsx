@@ -47,6 +47,8 @@ function LogIn() {
           paragraph={translations.intro.paragraph}
         />
         <Form
+          idForm=""
+          onClickField={handleRedirect}
           actionForm=""
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}

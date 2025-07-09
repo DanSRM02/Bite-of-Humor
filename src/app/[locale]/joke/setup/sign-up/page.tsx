@@ -45,24 +45,24 @@ function SignUp() {
   };
 
   return (
-    <>
-      <section
-        className="flex justify-center items-center flex-wrap p-12 gap-8 min-h-[37rem] border-2 border-gray-300 rounded-lg"
-        aria-label="Sign up section"
-      >
-        <LeadIn
-          heading={translations.intro.heading}
-          paragraph={translations.intro.paragraph}
-        />
-        <Form
-          actionForm=""
-          onClickButton={handleRedirect}
-          inputFields={translations.fields}
-          textButton={translations.actions.submitButton}
-          legendHeading={translations.actions.legendHeading}
-        />
-      </section>
-    </>
+    <section
+      className="flex justify-center items-center flex-wrap p-12 gap-8 min-h-[37rem] border-2 border-gray-300 rounded-lg"
+      aria-label="Sign up section"
+    >
+      <LeadIn
+        heading={translations.intro.heading}
+        paragraph={translations.intro.paragraph}
+      />
+      <Form
+        idForm=""
+        onClickField={handleRedirect}
+        actionForm=""
+        onClickButton={handleRedirect}
+        inputFields={translations.fields}
+        textButton={translations.actions.submitButton}
+        legendHeading={translations.actions.legendHeading}
+      />
+    </section>
   );
 }
 

@@ -24,17 +24,14 @@ function SelectCountry() {
     }
   };
 
-  const handleRedirect = () => {          
-    if (selectedCountry && selectedLanguage) {    
-           
+  const handleRedirect = () => {
+    if (selectedCountry && selectedLanguage) {
       const newLangParam = `${selectedLanguage}-${selectedCountry}`;
       const currentPath = location.pathname.split("/");
       currentPath[1] = newLangParam;
-      const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;
-      console.log(pathToRedirect);
-      router.push(pathToRedirect);    
+      const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;      
+      router.push(pathToRedirect);
     }
-    
   };
 
   const translations = {
@@ -71,35 +68,32 @@ function SelectCountry() {
   };
 
   return (
-    <>
-      <section
-        className="bg-white rounded-2xl shadow-lg flex justify-center items-center flex-wrap gap-10 p-14"
-        aria-label="Select your country"
+    <section
+      className="bg-white rounded-2xl shadow-lg flex justify-center items-center flex-wrap gap-10 p-14"
+      aria-label="Select your country"
+    >
+      <aside
+        className="flex flex-col items-center gap-10"
+        aria-label="Country selection introduction"
       >
-        <aside
-          className="flex flex-col items-center gap-10"
-          aria-label="Country selection introduction"
-        >
-          <LeadIn
-            heading={translations.intro.heading}
-            paragraph={translations.intro.paragraph}
-          />
-        </aside>
-        <article
-          className="flex justify-center items-center flex-wrap gap-10"
-          aria-label="Country options"
-        >
-          <FormRendered inputFields={translations.fields} handlerChange={handleSelect}/>
-          <Button
-            onClick={handleRedirect}
-            size="medium"
-            variant="outline"
-          >
-            Enter
-          </Button>
-        </article>
-      </section>
-    </>
+        <LeadIn
+          heading={translations.intro.heading}
+          paragraph={translations.intro.paragraph}
+        />
+      </aside>
+      <article
+        className="flex justify-center items-center flex-wrap gap-10"
+        aria-label="Country options"
+      >
+        <FormRendered
+          inputFields={translations.fields}
+          handlerChange={handleSelect}
+        />
+        <Button onClick={handleRedirect} size="medium" variant="outline">
+          Enter
+        </Button>
+      </article>
+    </section>
   );
 }
 

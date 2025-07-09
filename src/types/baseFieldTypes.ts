@@ -15,6 +15,35 @@ export interface BaseFieldImpl {
   error?: boolean;
 }
 
+export type FieldBlueprintType = {
+  id: string;
+  name?: string;
+  type: inputTypes;
+  isTextRaw?: boolean;
+  label: string;
+  placeholder?: string;
+  options?: SelectOption[];
+  multipleOptions?: {
+    groupLabel: string;
+    options: SelectOption[];
+  }[];
+};
+
+export type FieldState = {
+  value?: string;
+  checked?: boolean;
+  disabled?: boolean;
+};
+
+export type FormFieldProps = FieldBlueprintType & FieldState;
+
+export type SelectOption = {
+  isTextRaw: boolean;
+  label: string;
+  value: string;
+  checked?: boolean;
+};
+
 export type inputTypes =
   | "text"
   | "password"
@@ -22,4 +51,5 @@ export type inputTypes =
   | "checkbox"
   | "textarea"
   | "select"
-  | "search";
+  | "search"
+  | "selectMultiple";
