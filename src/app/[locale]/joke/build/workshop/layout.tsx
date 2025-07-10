@@ -1,5 +1,6 @@
 import Button from "@/components/inputs/button";
 import Header from "@/components/layout/header";
+import { JokeSubmissionProvider } from "@/contexts/JokeSubmissionContext";
 import { ReactNode } from "react";
 
 type WorkshopLayoutProps = {
@@ -15,9 +16,9 @@ export default function WorkshopLayout({
   feedback,
 }: WorkshopLayoutProps) {
   return (
-    <>
+    <JokeSubmissionProvider>
       <Header title="Workshop" />
-      {children}      
+      {children}
       <article className="flex justify-center flex-wrap gap-25">
         <section className="flex flex-col flex-1 items-center">{form}</section>
         <div className="hidden md:block w-px border-[.5px] border-dashed"></div>
@@ -26,9 +27,14 @@ export default function WorkshopLayout({
           <section className="">{feedback}</section>
         </div>
       </article>
-      <Button size="medium" variant="primary" formButton="complete-joke">
+      <Button
+        size="medium"
+        variant="primary"
+        formButton="complete-joke"
+        type="submit"
+      >
         Send Joke
       </Button>
-    </>
+    </JokeSubmissionProvider>
   );
 }

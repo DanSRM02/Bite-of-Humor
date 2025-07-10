@@ -3,7 +3,7 @@ import { inputTypes, SelectOption } from "@/types/baseFieldTypes";
 import { _AVAILABLE_CATEGORIES, _AVAILABLE_FLAGS } from "@/utils/const";
 
 function WorkshopPage() {
-  const inputFieldsWithoutDynamicAttributes = [
+  const initialFieldsWithoutDynamicAttributes = [
     {
       type: "select" as inputTypes,
       label: "common.none",
@@ -51,26 +51,11 @@ function WorkshopPage() {
     },
   ];
 
-  const dynamicAttributes = {
-    category: "none",
-    setup: "none",
-    punchline: "none",
-    flags: {
-      nsfw: false,
-      religious: false,
-      political: false,
-      sexist: false,
-      explicit: false,
-      racist: false,
-    },
-  };
-
   return (
     <>
       <h3 className="font-medium">Form Joke</h3>
       <InteractiveForm
-        fieldsBlueprint={inputFieldsWithoutDynamicAttributes}
-        initialDynamicInputAttributes={dynamicAttributes}
+        fieldsBlueprint={initialFieldsWithoutDynamicAttributes}
       />
     </>
   );
