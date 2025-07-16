@@ -13,6 +13,7 @@ const DefaultField = ({
   label = "common.none",
   placeholder = "common.none",
   onChange,
+  nameInput,
   type = "text",
   isTextRaw = false,
   color = "primary",
@@ -24,14 +25,14 @@ const DefaultField = ({
   return (
     <div className="flex flex-col">
       {label && (
-        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
+        <label htmlFor={id} className="font-semibold mb-2">
           {formattedLabel}
         </label>
       )}
       <input
         onChange={onChange}
-        id={`comedian-${id}`}
-        name={id}
+        id={id}
+        name={nameInput}
         type={type}
         placeholder={formattedPlaceholder}
         className={`border border-gray-300 rounded-lg p-4 text-base ${

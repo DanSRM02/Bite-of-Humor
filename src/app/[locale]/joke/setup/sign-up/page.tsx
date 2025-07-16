@@ -1,12 +1,13 @@
-"use client";
 import Form from "@/components/inputs/form";
-import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import { useTranslations } from "next-intl";
+import {
+  initialStateFormSignUp,
+  signUpPostAction,
+} from "@/actions/registerComedianAction";
 
 function SignUp() {
-  const router = useRouter();
   const t = useTranslations();
   const translations = {
     intro: {
@@ -17,20 +18,23 @@ function SignUp() {
       {
         placeholder: "ComedianSignUpForm.fields.namePlaceholder",
         label: "ComedianSignUpForm.fields.nameLabel",
-        id: "name",
+        id: "comedian-name",
+        nameInput: "name",
         type: "text" as inputTypes,
       },
       {
         placeholder: "ComedianSignUpForm.fields.emailPlaceholder",
         label: "ComedianSignUpForm.fields.emailLabel",
-        id: "email",
+        id: "comedian-email",
+        nameInput: "email",
         type: "email" as inputTypes,
       },
 
       {
         placeholder: "ComedianSignUpForm.fields.jokePlaceholder",
         label: "ComedianSignUpForm.fields.jokeLabel",
-        id: "joke",
+        id: "comedian-joke",
+        nameInput: "joke",
         type: "textarea" as inputTypes,
       },
     ],
@@ -38,10 +42,6 @@ function SignUp() {
       legendHeading: "ComedianSignUpForm.actions.legendHeading",
       submitButton: t("ComedianSignUpForm.actions.submitButton"),
     },
-  };
-
-  const handleRedirect = () => {
-    router.push("select-country");
   };
 
   return (
@@ -54,10 +54,8 @@ function SignUp() {
         paragraph={translations.intro.paragraph}
       />
       <Form
-        idForm=""
-        onClickField={handleRedirect}
-        actionForm=""
-        onClickButton={handleRedirect}
+        actionForm={signUpPostAction}
+        initialStateForm={initialStateFormSignUp}
         inputFields={translations.fields}
         textButton={translations.actions.submitButton}
         legendHeading={translations.actions.legendHeading}

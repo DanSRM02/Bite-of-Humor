@@ -1,17 +1,23 @@
+"use client";
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import Button from "../button";
 import FormRendered from "@/components/dataDisplay/formRendered";
 import Heading from "@/components/dataDisplay/heading";
 import { ReactNode } from "react";
+import ButtonSubmitForm from "../button/submit";
+import { useActionState } from "react";
+import { FormStateAction } from "@/types/formTypes";
 
 type FormProps = {
-  idForm: string;
+  idForm?: string;
   inputFields: BaseFieldImpl[];
   legendHeading: string;
   textButton?: string;
-  actionForm: string;
-  onClickButton?: () => void;
-  onClickField: (
+  initialStateForm: FormStateAction;
+  actionForm: (
+    prevState: FormStateAction,
+    data: FormData
+  ) => Promise<FormStateAction>;
+  onClickField?: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
@@ -22,20 +28,22 @@ type FormProps = {
 const Form = (props: FormProps) => {
   const {
     legendHeading,
-    onClickButton,
     onClickField,
     textButton,
     inputFields,
+    initialStateForm,
     idForm,
     actionForm,
     children,
   } = props;
+  const [state, formAction] = useActionState(actionForm, initialStateForm);
+
   return (
     <form
       id={idForm}
       className="flex flex-col gap-6 w-full max-w-[45rem] mt-12"
       aria-label="Comedian sign up form"
-      action={actionForm}
+      action={formAction}
     >
       <fieldset className="border-2 border-gray-300 rounded-2xl p-8 mb-8 bg-gray-100 shadow-md relative min-w-0 flex flex-col gap-5">
         <legend className="text-lg font-bold default-text-color px-4 mb-4 bg-white rounded-lg shadow-sm relative ">
@@ -44,15 +52,8 @@ const Form = (props: FormProps) => {
         {children}
         <FormRendered inputFields={inputFields} handlerChange={onClickField} />
       </fieldset>
-      {textButton && onClickButton && (
-        <Button
-          type="button"
-          variant={"primary"}
-          size="medium"
-          onClick={onClickButton}
-        >
-          {textButton}
-        </Button>
+      {textButton && (
+        <ButtonSubmitForm textButton={textButton} actionState={state} />
       )}
     </form>
   );

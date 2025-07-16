@@ -1,13 +1,12 @@
-"use client";
+import { initialStateFormLogin, loginActionPost } from "@/actions/addComedianAction";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 
 function LogIn() {
-  const router = useRouter();
   const t = useTranslations();
+
   const translations = {
     intro: {
       heading: "ComedianLoginForm.introduction.heading",
@@ -17,14 +16,16 @@ function LogIn() {
       {
         placeholder: "ComedianLoginForm.fields.namePlaceholder",
         label: "ComedianLoginForm.fields.nameLabel",
-        id: "name",
+        id: "comedian-name",
         type: "text" as inputTypes,
+        nameInput: "name",
       },
       {
         placeholder: "ComedianLoginForm.fields.emailPlaceholder",
         label: "ComedianLoginForm.fields.emailLabel",
-        id: "email",
+        id: "comedian-email",
         type: "email" as inputTypes,
+        nameInput: "email",
       },
     ],
     actions: {
@@ -33,9 +34,6 @@ function LogIn() {
     },
   };
 
-  const handleRedirect = () => {
-    router.push("select-country");
-  };
   return (
     <>
       <section
@@ -47,13 +45,11 @@ function LogIn() {
           paragraph={translations.intro.paragraph}
         />
         <Form
-          idForm=""
-          onClickField={handleRedirect}
-          actionForm=""
+          actionForm={loginActionPost}
+          initialStateForm={initialStateFormLogin}
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}
-          onClickButton={handleRedirect}
         />
       </section>
     </>

@@ -3,6 +3,7 @@ import { ChangeEvent } from "react";
 export interface BaseFieldImpl {
   id: string;
   isTextRaw?: boolean;
+  nameInput: string;
   type?: inputTypes;
   placeholder?: string;
   value?: string | string[];
@@ -17,7 +18,7 @@ export interface BaseFieldImpl {
 
 export type FieldBlueprintType = {
   id: string;
-  name?: string;
+  nameInput: string;
   type: inputTypes;
   isTextRaw?: boolean;
   label: string;
@@ -38,6 +39,7 @@ export type FieldState = {
 export type FormFieldProps = FieldBlueprintType & FieldState;
 
 export type SelectOption = {
+  nameInput: string;
   isTextRaw: boolean;
   label: string;
   value: string;

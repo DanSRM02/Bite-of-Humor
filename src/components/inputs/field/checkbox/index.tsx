@@ -15,6 +15,7 @@ const CheckboxField = ({
   onChange,
   isTextRaw = false,
   id,
+  nameInput,
   label = "common.none",
   checked,
   refInput,
@@ -25,13 +26,13 @@ const CheckboxField = ({
 
   return (
     <label
-      htmlFor={`comedian-${id}`}
+      htmlFor={id}
       className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none"
     >
       <input
         type="checkbox"
-        name={id}
-        id={`comedian-${id}`}
+        name={nameInput}
+        id={id}
         checked={checked}
         ref={refInput}
         onChange={onChange}

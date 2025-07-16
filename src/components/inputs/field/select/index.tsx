@@ -17,6 +17,7 @@ const SelectField = ({
   onChange,
   isTextRaw = false,  
   options,
+  nameInput,
   disableLabel = "common.none",
   color = "primary",
 }: SelectFieldProps) => {
@@ -31,14 +32,14 @@ const SelectField = ({
 
   return (
     <div className="flex flex-col">
-      <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
+      <label htmlFor={id} className="font-semibold mb-2">
         {formattedLabel}
       </label>
 
       <select        
-        name={id}
+        name={nameInput}
         onChange={onChange}
-        id={`comedian-${id}`}
+        id={id}
         className={selectedClass}
       >
         <option value="">{formattedDisableLabel}</option>

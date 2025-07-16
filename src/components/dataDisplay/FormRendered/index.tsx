@@ -3,7 +3,7 @@ import { fieldTypeToComponent } from "@/utils/const";
 
 type FormRenderedProps = {
   inputFields: BaseFieldImpl[] | FormFieldProps[];
-  handlerChange: (
+  handlerChange?: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
@@ -22,7 +22,7 @@ export default function FormRendered({
     }
 
     return (
-      <InputField
+      <InputField      
         key={field.id}
         onChange={handlerChange}
         {...restProps}

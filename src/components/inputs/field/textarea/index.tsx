@@ -18,6 +18,7 @@ const TextareaField = ({
   isTextRaw = false,
   onChange,
   rows = 3,
+  nameInput,
   color = "primary",
   ...props
 }: TextareaFieldProps) => {
@@ -26,13 +27,13 @@ const TextareaField = ({
   const formattedLabel = formatText(isTextRaw, label, t);
   return (
     <div className="flex flex-col">
-      <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
+      <label htmlFor={id} className="font-semibold mb-2">
         {formattedLabel}
       </label>
       <textarea
         onChange={onChange}
-        id={`comedian-${id}`}
-        name={id}
+        id={id}
+        name={nameInput}
         placeholder={formattedPlaceholder}
         rows={rows}
         className={`border border-gray-300 rounded-lg p-4 text-base font-sans max-w-full max-h-min ${
