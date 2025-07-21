@@ -1,4 +1,3 @@
-import { getJokesWithFilter } from "@/services/jokeService";
 import type { JokeImpl, FilterImpl } from "@/types/jokeAPITypes";
 import type { Action, State } from "@/types/reducerTypes";
 import { useReducer } from "react";
@@ -24,14 +23,38 @@ const jokeReducer = (state: State<JokeImpl>, action: Action<JokeImpl>) => {
 export default function useJokeList() {
   const [jokeState, jokeDispatch] = useReducer(jokeReducer, initialState);
 
-  const getFilteredJokes = async (filter: FilterImpl, language: string, signal: AbortSignal) => {
+  const getFilteredJokes = async (
+    filter: FilterImpl,
+    language: string,
+    signal: AbortSignal
+  ) => {
     try {
-      jokeDispatch({ type: "FETCH_INIT" });            
-      const response = await getJokesWithFilter(filter, language, signal);
+      jokeDispatch({ type: "FETCH_INIT" });      
+
+      const params = new URLSearchParams();
+
+      params.append("lang", language);
+      params.append("category", filter.category || "Any");
+      params.append("searchTerm", filter.searchTerm || "");
+      params.append("safeMode", filter.isSafeMode ? "true" : "false");
+      
+      const url = `/api/jokes?${params.toString()}`;
+      
+      const response = await fetch(url, {
+        signal: signal,
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+
       jokeDispatch({
         type: "FETCH_SUCCESS",
-        payload: response?.data.jokes || [],
+        payload: data.jokes || [],
       });
+
     } catch (error) {
       jokeDispatch({
         type: "FETCH_FAILURE",

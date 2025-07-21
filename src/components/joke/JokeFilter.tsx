@@ -22,9 +22,9 @@ export const JokeFilter = ({
   fieldsBlueprint,
 }: jokeFilterProps) => {
   const { getFilteredJokes, jokeState } = useJokeList();
-  const { filterData, updateFilter } = useJokeFilter();
+  const { filterDataInputs, updateFilter } = useJokeFilter();
   const [displayedJokes, setDisplayedJokes] = useState(initialLoad);
-  
+
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -38,10 +38,9 @@ export const JokeFilter = ({
     });
   };
 
-  const { category, searchTerm, isSafeMode } = filterData;
+  const { category, searchTerm, isSafeMode, isMockData } = filterDataInputs;
 
   const isDarkMode = category === "Dark";
-    
 
   const fieldsWithDynamicAttributes = fieldsBlueprint.map((field) => {
     if (field.id === "category") {
@@ -50,6 +49,11 @@ export const JokeFilter = ({
     if (field.id === "searchTerm") {
       return { ...field, value: searchTerm };
     }
+
+    if (field.id === "isMockData") {
+      return { ...field, checked: isMockData };
+    }
+
     if (field.id === "isSafeMode") {
       return {
         ...field,
@@ -63,12 +67,17 @@ export const JokeFilter = ({
   useEffect(() => {
     const controller = new AbortController();
     const filter = { category, searchTerm, isSafeMode };
+    
     getFilteredJokes(filter, language, controller.signal);
 
     return () => {
       controller.abort();
     };
   }, [category, searchTerm, isSafeMode]);
+
+  useEffect(() => {
+    document.cookie = `useMockData=${isMockData}; path=/; max-age=31536000`;    
+  }, [isMockData]);
 
   useEffect(() => {
     if (Array.isArray(jokeState.jokes)) {
@@ -99,7 +108,10 @@ export const JokeFilter = ({
           className="flex flex-wrap justify-around items-center p-8 w-[55%] border border-solid border-gray-300 rounded-md"
           aria-label="Joke Filter"
         >
-          <FormRendered inputFields={fieldsWithDynamicAttributes}  handlerChange={handleInputChange}/>
+          <FormRendered
+            inputFields={fieldsWithDynamicAttributes}
+            handlerChange={handleInputChange}
+          />
         </div>
       </span>
       <br />

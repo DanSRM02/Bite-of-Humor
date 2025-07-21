@@ -43,6 +43,14 @@ async function JokeExplorerPage() {
       color: "secondary",
       nameInput: "searchTerm",
     },
+    {
+      id: "isMockData",
+      type: "checkbox" as inputTypes,
+      label: "Check to use mock data",
+      color: "primary",
+      nameInput: "isMockData",
+      isTextRaw: true,
+    }
   ];
   return (
     <JokeFilterProvider>

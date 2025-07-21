@@ -1,4 +1,3 @@
-import { Locale } from "@/types/countryTypes";
 import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
 import { UnorderedListImpl } from "@/types/unorderedListType";
 import TextareaField from "@/components/inputs/field/textarea";
@@ -8,26 +7,12 @@ import CheckboxField from "@/components/inputs/field/checkbox";
 import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
 import { ComponentType } from "react";
 import MultipleSelectField from "@/components/inputs/field/multipleSelect";
-
-export const DEFAULT_LOCALE: string = "en-US";
-
-export const SUPPORTED_LOCALES: Locale[] = [
-  { language: "en-US", currency: "USD" },
-  { language: "de-US", currency: "USD" },
-  { language: "fr-US", currency: "USD" },
-  { language: "fr-FR", currency: "EUR" },
-  { language: "en-FR", currency: "EUR" },
-  { language: "de-FR", currency: "EUR" },
-  { language: "en-DE", currency: "EUR" },
-  { language: "de-DE", currency: "EUR" },
-  { language: "fr-DE", currency: "EUR" },
-];
-
-export const SUPPORTED_LOCALES_STRING = SUPPORTED_LOCALES.map(
-  (locale) => locale.language
-);
-
-export const API_BASE: string = "https://v2.jokeapi.dev/";
+export { 
+  DEFAULT_LOCALE, 
+  SUPPORTED_LOCALES, 
+  SUPPORTED_LOCALES_STRING, 
+  API_BASE 
+} from "./baseConstants";
 
 export const _AVAILABLE_CATEGORIES: string[] = [
   "Any",
@@ -69,15 +54,11 @@ export const AVAILABLE_FLAGS_OPTIONS = [
 export const COUNTRIES = [
   { value: "US", label: "United States" },
   { value: "DE", label: "Germany" },
-  { value: "FR", label: "France" },
-  { value: "ES", label: "Spain" },
-  { value: "IT", label: "Italy" },
-  { value: "GB", label: "United Kingdom" },
+  { value: "FR", label: "France" },  
 ];
 
 export const SUPPORTED_LANGS = [
-  { value: "en", label: "English" },
-  { value: "es", label: "Spanish" },
+  { value: "en", label: "English" },  
   { value: "fr", label: "French" },
   { value: "de", label: "German" },
 ];

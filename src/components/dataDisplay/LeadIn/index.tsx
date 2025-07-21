@@ -2,7 +2,7 @@
 import { Url } from "next/dist/shared/lib/router/router";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
-import Link from "next/dist/client/link";
+import Link from "next/link";
 import { formatText } from "@/utils/verifyTextFormat";
 
 type LeadInProps = {

@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface JokeSubmissionDataImpl { 
-  [key: string]: string | object; 
+export interface JokeSubmissionDataImpl {
+  [key: string]: string | object;
+  id: string;
   category: string;
   setup: string;
   punchline: string;
@@ -18,5 +19,5 @@ export interface JokeSubmissionDataImpl {
 
 export type JokeSubmissionContextType = {
   jokeSubmissionData: JokeSubmissionDataImpl;
-  setJokeSubmissionData:  Dispatch<SetStateAction<JokeSubmissionDataImpl>>;
+  setJokeSubmissionData: Dispatch<SetStateAction<JokeSubmissionDataImpl>>;
 };

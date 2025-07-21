@@ -5,10 +5,11 @@ type JokeFilterData = {
   category: string;
   searchTerm: string;
   isSafeMode: boolean;
+  isMockData: boolean;
 };
 
 type JokeFilterContextType = {
-  filterData: JokeFilterData;
+  filterDataInputs: JokeFilterData;
   setFilterData: React.Dispatch<React.SetStateAction<JokeFilterData>>;
   updateFilter: (updates: Partial<JokeFilterData>) => void;
 };
@@ -16,10 +17,11 @@ type JokeFilterContextType = {
 const JokeFilterContext = createContext<JokeFilterContextType | undefined>(undefined);
 
 export function JokeFilterProvider({ children }: { children: ReactNode }) {
-  const [filterData, setFilterData] = useState<JokeFilterData>({
+  const [filterDataInputs, setFilterData] = useState<JokeFilterData>({
     category: "Any",
     searchTerm: "",
     isSafeMode: true,
+    isMockData: false,
   });
 
   const updateFilter = (updates: Partial<JokeFilterData>) => {
@@ -29,7 +31,7 @@ export function JokeFilterProvider({ children }: { children: ReactNode }) {
   return (
     <JokeFilterContext.Provider
       value={{
-        filterData,
+        filterDataInputs,
         setFilterData,
         updateFilter,
       }}
