@@ -30,7 +30,7 @@ export default function WorkshopLayout({
       <Button
         size="medium"
         variant="primary"
-        formButton="complete-joke"
+        form="complete-joke"
         type="submit"
       >
         Send Joke

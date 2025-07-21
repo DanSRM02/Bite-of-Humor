@@ -1,7 +1,7 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import { ChangeEvent, useState } from "react";
-import { COUNTRIES, SUPPORTED_LANGS } from "@/utils/const";
+import { COUNTRIES, SUPPORTED_LANGS } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
 import FormRendered from "@/components/dataDisplay/formRendered";
@@ -44,11 +44,12 @@ function SelectCountry() {
         label: "SelectCountry.searchCountryControls.selectLabel",
         type: "select" as inputTypes,
         id: "country",
+        nameInput: "country",
         placeholder: "SelectCountry.searchCountryControls.selectPlaceholder",
         disableLabel: "SelectCountry.searchCountryControls.disableLabel",
         options: COUNTRIES.map((country) => ({
-          label: `SelectCountry.countryNames.${country.code}`,
-          value: country.code,
+          label: `SelectCountry.countryNames.${country.value}`,
+          value: country.value,
         })),
         color: "secondary",
       },
@@ -56,11 +57,12 @@ function SelectCountry() {
         label: "SelectCountry.searchLanguageControls.selectLabel",
         type: "select" as inputTypes,
         id: "language",
+        nameInput: "language",
         placeholder: "SelectCountry.searchLanguageControls.selectPlaceholder",
         disableLabel: "SelectCountry.searchLanguageControls.disableLabel",
         options: SUPPORTED_LANGS.map((lang) => ({
-          label: `SelectCountry.languagesNames.${lang}`,
-          value: lang,
+          label: `SelectCountry.languagesNames.${lang.value}`,
+          value: lang.value,
         })),
         color: "secondary",
       },
@@ -89,7 +91,7 @@ function SelectCountry() {
           inputFields={translations.fields}
           handlerChange={handleSelect}
         />
-        <Button onClick={handleRedirect} size="medium" variant="outline">
+        <Button onClick={handleRedirect} size="medium" variant="secondary">
           Enter
         </Button>
       </article>

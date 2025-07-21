@@ -1,4 +1,5 @@
-import { initialStateFormLogin, loginActionPost } from "@/actions/addComedianAction";
+import { loginComedianAction } from "@/actions/comedianActions";
+import { initialLoginState } from "@/utils/initialStates";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
@@ -45,8 +46,8 @@ function LogIn() {
           paragraph={translations.intro.paragraph}
         />
         <Form
-          actionForm={loginActionPost}
-          initialStateForm={initialStateFormLogin}
+          actionForm={loginComedianAction}
+          initialStateForm={initialLoginState}
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}

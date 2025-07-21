@@ -34,7 +34,7 @@ const DefaultField = ({
         id={id}
         name={nameInput}
         type={type}
-        placeholder={formattedPlaceholder}
+        placeholder={formattedPlaceholder || undefined}
         className={`border border-gray-300 rounded-lg p-4 text-base ${
           color === "primary"
             ? "bg-white text-gray-800"

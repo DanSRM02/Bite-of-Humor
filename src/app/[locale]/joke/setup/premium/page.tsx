@@ -1,11 +1,11 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import { plans } from "@/utils/const";
+import { plansForPremiumPage } from "@/utils/constants";
 import CardGrid from "@/components/layout/cardGrid";
 import CardList from "@/components/dataDisplay/cardList";
 
 function PremiumExperiencePage() {
-  const mappingPlan = plans.map((plan) => ({
+  const mappingPlan = plansForPremiumPage.map((plan) => ({
     key: plan.title,
     title: `plans.${plan.title}.name`,
     badge: `plans.${plan.title}.price`,

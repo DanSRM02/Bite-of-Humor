@@ -1,16 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import FormRendered from "../dataDisplay/formRendered";
 import LeadIn from "../dataDisplay/leadIn";
 import Chip from "../feedback/chip";
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import { _AVAILABLE_CATEGORIES } from "@/utils/const";
 import useJokeList from "@/hooks/useJokeList";
 import CardGrid from "../layout/cardGrid";
 import Card from "../feedback/card";
 import { JokeImpl } from "@/types/jokeAPITypes";
-import useInteractiveForm from "@/hooks/useInteractiveForm";
+import { useJokeFilter } from "@/contexts/JokeFilterContext";
+import FormRendered from "../dataDisplay/formRendered";
 
 type jokeFilterProps = {
   initialLoad: JokeImpl[];
@@ -23,18 +22,26 @@ export const JokeFilter = ({
   fieldsBlueprint,
 }: jokeFilterProps) => {
   const { getFilteredJokes, jokeState } = useJokeList();
-
+  const { filterData, updateFilter } = useJokeFilter();
   const [displayedJokes, setDisplayedJokes] = useState(initialLoad);
+  
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
 
-  const { formState, handleInputChange } = useInteractiveForm({
-    category: "Any",
-    searchTerm: "",
-    isSafeMode: true,
-  });
+    updateFilter({
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
 
-  const { category, searchTerm, isSafeMode } = formState;
+  const { category, searchTerm, isSafeMode } = filterData;
 
-  const isDarkMode = category !== "Dark";
+  const isDarkMode = category === "Dark";
+    
 
   const fieldsWithDynamicAttributes = fieldsBlueprint.map((field) => {
     if (field.id === "category") {
@@ -43,10 +50,10 @@ export const JokeFilter = ({
     if (field.id === "searchTerm") {
       return { ...field, value: searchTerm };
     }
-    if (field.id === "safeMode") {
+    if (field.id === "isSafeMode") {
       return {
         ...field,
-        checked: !isDarkMode ? isSafeMode : false,
+        checked: isDarkMode ? false : isSafeMode,
         disabled: isDarkMode,
       };
     }
@@ -61,7 +68,7 @@ export const JokeFilter = ({
     return () => {
       controller.abort();
     };
-  }, [category, searchTerm, language]);
+  }, [category, searchTerm, isSafeMode]);
 
   useEffect(() => {
     if (Array.isArray(jokeState.jokes)) {
@@ -73,7 +80,6 @@ export const JokeFilter = ({
     navkLink: {
       text: "plans.Link.text",
     },
-
     searchFilters: {
       heading: "JokePage.searchFilters.heading",
       paragraph: "JokePage.searchFilters.paragraph",
@@ -90,13 +96,10 @@ export const JokeFilter = ({
           paragraph={translations.searchFilters.paragraph}
         />
         <div
-          className="flex flex-wrap justify-around  items-center p-8 w-[55%] border border-solid border-gray-300 rounded-md"
+          className="flex flex-wrap justify-around items-center p-8 w-[55%] border border-solid border-gray-300 rounded-md"
           aria-label="Joke Filter"
         >
-          <FormRendered
-            inputFields={fieldsWithDynamicAttributes}
-            handlerChange={handleInputChange}
-          />
+          <FormRendered inputFields={fieldsWithDynamicAttributes}  handlerChange={handleInputChange}/>
         </div>
       </span>
       <br />
@@ -116,10 +119,10 @@ export const JokeFilter = ({
             key={joke.id}
             badge={joke.category}
             variant="joke"
+            isTextRaw
             jokeSetup={joke.setup || joke.joke}
             jokePunchline={joke.delivery}
             jokeType={joke.type}
-            isTextRaw
           />
         ))}
       </CardGrid>

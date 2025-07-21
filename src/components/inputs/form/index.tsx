@@ -4,7 +4,7 @@ import FormRendered from "@/components/dataDisplay/formRendered";
 import Heading from "@/components/dataDisplay/heading";
 import { ReactNode } from "react";
 import ButtonSubmitForm from "../button/submit";
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 import { FormStateAction } from "@/types/formTypes";
 
 type FormProps = {
@@ -36,7 +36,7 @@ const Form = (props: FormProps) => {
     actionForm,
     children,
   } = props;
-  const [state, formAction] = useActionState(actionForm, initialStateForm);
+  const [state, formAction] = useFormState(actionForm, initialStateForm);
 
   return (
     <form

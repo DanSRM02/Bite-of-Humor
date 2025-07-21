@@ -1,7 +1,7 @@
 export function formatText(
   isTextRaw: boolean,
   key: string,
-  t: Function,
+  t: (key: string, config?: { value?: number }) => string,
   config?: { value?: number | string | bigint }
 ) {
   if (!key) return null;

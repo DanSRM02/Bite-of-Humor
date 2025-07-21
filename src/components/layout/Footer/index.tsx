@@ -28,7 +28,7 @@ const Footer = () => {
             aria-label="Social media links"
           >
             <Link
-              href={"https://instagram.com"}
+              href={"https:
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -36,7 +36,7 @@ const Footer = () => {
               <FaInstagram size={20} aria-hidden="true" />
             </Link>
             <Link
-              href={"https://facebook.com"}
+              href={"https:
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -44,7 +44,7 @@ const Footer = () => {
               <FaFacebook size={20} aria-hidden="true" />
             </Link>
             <Link
-              href={"https://youtube.com"}
+              href={"https:
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"

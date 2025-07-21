@@ -20,7 +20,7 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
     const valueToSet = type === "checkbox" ? valueCheckbox : value;
 
     setJokeSubmissionData((prevState) => {
-      if (name in prevState.flags) {
+      if (prevState.flags && typeof prevState.flags === 'object' && name in prevState.flags) {
         return {
           ...prevState,
           flags: { ...prevState.flags, [name]: valueCheckbox },
@@ -45,7 +45,7 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
           ...group,
           options: group.options.map((option) => ({
             ...option,
-            checked: jokeSubmissionData.flags[option.value],
+            checked: jokeSubmissionData.flags[option.value as keyof typeof jokeSubmissionData.flags],
           })),
         }));
         return { ...field, multipleOptions: newMultipleOptions };
@@ -53,7 +53,7 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
 
       return {
         ...field,
-        value: jokeSubmissionData[field.id],
+        value: String(jokeSubmissionData[field.id as keyof typeof jokeSubmissionData]),
       };
     }
   );
@@ -62,7 +62,8 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
     <Form
       idForm="complete-joke"
       inputFields={fieldsWithDynamicAttributes}
-      actionForm=""
+      actionForm={async () => ({ errors: [], message: "" })}
+      initialStateForm={{ errors: [], message: "" }}
       onClickField={handleInputChange}
       legendHeading="common.none"
     />

@@ -4,7 +4,7 @@ import CardList from "@/components/dataDisplay/cardList";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Card from "@/components/feedback/card";
 import CardGrid from "@/components/layout/cardGrid";
-import { platformSectionsHome } from "@/utils/const";
+import { platformSectionsHome } from "@/utils/constants";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 

@@ -4,7 +4,7 @@ import Card from "@/components/feedback/card";
 import { LuLaugh } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiHeart, CiFilter } from "react-icons/ci";
-import { platformSectionsFinal } from "@/utils/const";
+import { platformSectionsFinal } from "@/utils/constants";
 import CardGrid from "@/components/layout/cardGrid";
 import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";

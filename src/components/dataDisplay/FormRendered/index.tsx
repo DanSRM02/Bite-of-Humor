@@ -1,5 +1,5 @@
 import { BaseFieldImpl, FormFieldProps } from "@/types/baseFieldTypes";
-import { fieldTypeToComponent } from "@/utils/const";
+import { fieldTypeToComponent } from "@/utils/constants";
 
 type FormRenderedProps = {
   inputFields: BaseFieldImpl[] | FormFieldProps[];
@@ -22,7 +22,7 @@ export default function FormRendered({
     }
 
     return (
-      <InputField      
+      <InputField
         key={field.id}
         onChange={handlerChange}
         {...restProps}

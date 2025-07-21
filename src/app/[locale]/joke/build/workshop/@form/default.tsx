@@ -1,6 +1,6 @@
 import InteractiveForm from "@/components/inputs/form/interactive";
 import { inputTypes, SelectOption } from "@/types/baseFieldTypes";
-import { _AVAILABLE_CATEGORIES, _AVAILABLE_FLAGS } from "@/utils/const";
+import { AVAILABLE_CATEGORIES_OPTIONS, AVAILABLE_FLAGS_OPTIONS } from "@/utils/constants";
 
 function WorkshopPage() {
   const initialFieldsWithoutDynamicAttributes = [
@@ -9,12 +9,14 @@ function WorkshopPage() {
       label: "common.none",
       placeholder: "common.all",
       id: "category",
-      options: _AVAILABLE_CATEGORIES.map(
+      nameInput: "category",
+      options: AVAILABLE_CATEGORIES_OPTIONS.map(
         (category) =>
           ({
+            nameInput: "category",
             isTextRaw: true,
-            label: category,
-            value: category,
+            label: category.label,
+            value: category.value,
           } as SelectOption)
       ),
     },
@@ -23,15 +25,17 @@ function WorkshopPage() {
       label: "common.none",
       placeholder: "common.all",
       id: "flags",
+      nameInput: "flags",
       multipleOptions: [
         {
           groupLabel: "Flag",
-          options: _AVAILABLE_FLAGS.map(
+          options: AVAILABLE_FLAGS_OPTIONS.map(
             (flag) =>
               ({
+                nameInput: "flags",
                 isTextRaw: true,
-                label: flag,
-                value: flag,
+                label: flag.label,
+                value: flag.value,
               } as SelectOption)
           ),
         },
@@ -42,12 +46,14 @@ function WorkshopPage() {
       label: "common.none",
       placeholder: "common.all",
       id: "setup",
+      nameInput: "setup",
     },
     {
       type: "textarea" as inputTypes,
       label: "common.none",
       placeholder: "common.all",
       id: "punchline",
+      nameInput: "punchline",
     },
   ];
 

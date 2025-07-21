@@ -1,6 +1,5 @@
-// DEFAULT LANGUAGE CONFIG
+import { Locale } from "@/types/countryTypes";
 import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
-import type { Country, Locale } from "@/types/countryTypes";
 import { UnorderedListImpl } from "@/types/unorderedListType";
 import TextareaField from "@/components/inputs/field/textarea";
 import DefaultField from "@/components/inputs/field/default";
@@ -10,17 +9,7 @@ import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
 import { ComponentType } from "react";
 import MultipleSelectField from "@/components/inputs/field/multipleSelect";
 
-
-export const DEFAULT_LANG: string = "en";
-export const DEFAULT_REGION: string = "US";
 export const DEFAULT_LOCALE: string = "en-US";
-export const SUPPORTED_LANGS: string[] = ["en", "fr", "de"];
-
-export const COUNTRIES: Country[] = [
-  { code: "FR", name: "France", flag: "🇫🇷" },
-  { code: "DE", name: "Germany", flag: "🇩🇪" },
-  { code: "US", name: "United States", flag: "🇺🇸" },
-];
 
 export const SUPPORTED_LOCALES: Locale[] = [
   { language: "en-US", currency: "USD" },
@@ -34,9 +23,9 @@ export const SUPPORTED_LOCALES: Locale[] = [
   { language: "fr-DE", currency: "EUR" },
 ];
 
-export const SUPPORTED_LOCALES_STRING = SUPPORTED_LOCALES.map(locale => locale.language);
-
-// JOKE API
+export const SUPPORTED_LOCALES_STRING = SUPPORTED_LOCALES.map(
+  (locale) => locale.language
+);
 
 export const API_BASE: string = "https://v2.jokeapi.dev/";
 
@@ -50,6 +39,15 @@ export const _AVAILABLE_CATEGORIES: string[] = [
   "Dark",
 ];
 
+export const AVAILABLE_CATEGORIES_OPTIONS = [
+  { value: "Programming", label: "Programming" },
+  { value: "Miscellaneous", label: "Miscellaneous" },
+  { value: "Dark", label: "Dark" },
+  { value: "Pun", label: "Pun" },
+  { value: "Spooky", label: "Spooky" },
+  { value: "Christmas", label: "Christmas" },
+];
+
 export const _AVAILABLE_FLAGS: string[] = [
   "nsfw",
   "religious",
@@ -59,7 +57,30 @@ export const _AVAILABLE_FLAGS: string[] = [
   "explicit",
 ];
 
-// DATA CONST
+export const AVAILABLE_FLAGS_OPTIONS = [
+  { value: "nsfw", label: "NSFW" },
+  { value: "religious", label: "Religious" },
+  { value: "political", label: "Political" },
+  { value: "racist", label: "Racist" },
+  { value: "sexist", label: "Sexist" },
+  { value: "explicit", label: "Explicit" },
+];
+
+export const COUNTRIES = [
+  { value: "US", label: "United States" },
+  { value: "DE", label: "Germany" },
+  { value: "FR", label: "France" },
+  { value: "ES", label: "Spain" },
+  { value: "IT", label: "Italy" },
+  { value: "GB", label: "United Kingdom" },
+];
+
+export const SUPPORTED_LANGS = [
+  { value: "en", label: "English" },
+  { value: "es", label: "Spanish" },
+  { value: "fr", label: "French" },
+  { value: "de", label: "German" },
+];
 
 export const fieldTypeToComponent: Record<
   inputTypes,
@@ -117,7 +138,7 @@ export const platformSectionsHome: UnorderedListImpl[] = [
   },
 ];
 
-export const plans: UnorderedListImpl[] = [
+export const plansForPremiumPage: UnorderedListImpl[] = [
   {
     title: "basic",
     icon: LuCircle,
@@ -141,3 +162,47 @@ export const plans: UnorderedListImpl[] = [
     topics: [],
   },
 ];
+
+export const API_CONFIG = {
+  BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://v2.jokeapi.dev",
+  TIMEOUT: 10000,
+  RETRY_ATTEMPTS: 3,
+} as const;
+
+export const HTTP_STATUS = {
+  OK: 200,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  INTERNAL_SERVER_ERROR: 500,
+} as const;
+
+export const ERROR_CODES = {
+  INVALID_CATEGORY: 106,
+  NETWORK_ERROR: "NETWORK_ERROR",
+  TIMEOUT_ERROR: "TIMEOUT_ERROR",
+  VALIDATION_ERROR: "VALIDATION_ERROR",
+} as const;
+
+export const FORM_CONFIG = {
+  MIN_NAME_LENGTH: 2,
+  MIN_JOKE_LENGTH: 10,
+  MAX_NAME_LENGTH: 50,
+  MAX_JOKE_LENGTH: 1000,
+} as const;
+
+export const UI_CONFIG = {
+  LOADING_TEXT: "Loading...",
+  DEFAULT_JOKES_AMOUNT: 10,
+  MAX_JOKES_AMOUNT: 10,
+} as const;
+
+export const VALIDATION_MESSAGES = {
+  REQUIRED_FIELD: (field: string) => `${field} is required`,
+  MIN_LENGTH: (field: string, length: number) =>
+    `${field} must be at least ${length} characters long`,
+  MAX_LENGTH: (field: string, length: number) =>
+    `${field} must not exceed ${length} characters`,
+  INVALID_EMAIL: "Please enter a valid email address",
+} as const;

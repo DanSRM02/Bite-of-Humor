@@ -21,8 +21,12 @@ const MultipleSelectField = (props: MultipleSelectProps) => {
           {options.map((option, index) => (
             <CheckboxField
               key={index}
-              id={option.value}              
-              {...option}
+              id={option.value}
+              nameInput={option.nameInput}
+              label={option.label}
+              isTextRaw={option.isTextRaw}
+              value={option.value}
+              checked={option.checked}
               type="checkbox"
               onChange={onChange}
             />

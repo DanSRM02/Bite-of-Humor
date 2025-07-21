@@ -34,7 +34,7 @@ const TextareaField = ({
         onChange={onChange}
         id={id}
         name={nameInput}
-        placeholder={formattedPlaceholder}
+        placeholder={formattedPlaceholder || undefined}
         rows={rows}
         className={`border border-gray-300 rounded-lg p-4 text-base font-sans max-w-full max-h-min ${
           color === "primary"

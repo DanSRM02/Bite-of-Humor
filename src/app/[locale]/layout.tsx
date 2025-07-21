@@ -10,7 +10,7 @@ type LanguageWrapperProps = {
 
 export const metadata = {
   title: "Bite of Humor",  
-  
+  description: "..."
 };
 export default async function LanguageWrapper({
   params,
@@ -22,7 +22,7 @@ export default async function LanguageWrapper({
   return (
     <html className=" text-xs sm:text-sm md:text-base" lang={locale}>
       <head>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="stylesheet" href="https:
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

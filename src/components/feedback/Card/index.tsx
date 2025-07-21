@@ -108,7 +108,7 @@ const Card = ({
                   onExplore();
                 }}
                 size="small"
-                variant="outline"
+                variant="secondary"
               >
                 {`Explore ${t(title)}`}
               </Button>

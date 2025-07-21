@@ -94,7 +94,7 @@ function TheStartSetupPage() {
           <Button
             size="medium"
             variant="primary"
-            refButton={refButton}
+            ref={refButton}
             onClick={handleClick}
           >
             {newMessage}

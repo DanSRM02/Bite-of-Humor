@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface JokeSubmissionDataImpl { 
-  [key: string]: any; 
+  [key: string]: string | object; 
   category: string;
   setup: string;
   punchline: string;

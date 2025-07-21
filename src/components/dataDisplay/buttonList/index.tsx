@@ -1,4 +1,4 @@
-import Button from "@/components/inputs/button";
+import Button, { ButtonSize, ButtonVariant } from "@/components/inputs/button";
 import { ReactElement } from "react";
 
 type ButtonListItem = {
@@ -18,8 +18,8 @@ const ButtonList = ({ buttons }: ButtonListProps) => {
     <Button
       key={btn.label}
       onClick={btn.onClick}
-      size={btn.size || "medium"}
-      variant={btn.variant || "outline"}
+      size={(btn.size as ButtonSize) || "medium"}
+      variant={(btn.variant as ButtonVariant) || "secondary"}
     >
       <span className="flex items-center gap-2">
         {btn.icon}

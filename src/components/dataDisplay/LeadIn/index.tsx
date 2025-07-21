@@ -29,8 +29,7 @@ const LeadIn = ({
   const renderSecondary = () => {
     return (
       <article
-        className="flex flex-col flex-wrap"
-        aria-label={formattedTextHeading}
+        className="flex flex-col flex-wrap"        
       >
         <h5 className="max-w-[37rem] mt-[1.76rem] font-bold">
           {formattedTextHeading}
@@ -43,8 +42,7 @@ const LeadIn = ({
   const renderTertiary = () => {
     return (
       <article
-        className="flex items-center gap-26 flex-wrap"
-        aria-label={formattedTextHeading}
+        className="flex items-center gap-26 flex-wrap"        
       >
         <h2 className="max-w-[37rem] mt-[1.76rem] font-bold">
           {formattedTextHeading}
@@ -67,8 +65,7 @@ const LeadIn = ({
   const renderDefault = () => {
     return (
       <article
-        className="flex flex-col flex-wrap"
-        aria-label={formattedTextHeading}
+        className="flex flex-col flex-wrap"      
       >
         <h1 className="max-w-[37rem] mt-[1.76rem] font-bold">
           {formattedTextHeading}
@@ -88,8 +85,7 @@ const LeadIn = ({
           />
         </Link>
         <article
-          className="flex flex-col flex-wrap"
-          aria-label={formattedTextHeading}
+          className="flex flex-col flex-wrap"          
         >
           <h1 className="max-w-[37rem] mt-[1.76rem] font-bold">
             {formattedTextHeading}

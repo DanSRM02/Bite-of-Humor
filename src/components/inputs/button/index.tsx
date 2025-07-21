@@ -1,28 +1,33 @@
 import type { ReactNode, Ref } from "react";
 import clsx from "clsx";
 
-export type ButtonProps = {
-  variant: "primary" | "secondary" | string;
-  size: string;
+export type ButtonVariant = "primary" | "secondary";
+export type ButtonSize = "small" | "medium" | "large";
+
+export interface ButtonProps {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   children?: ReactNode;
-  label?: string;
   type?: "button" | "submit" | "reset";
-  icon?: string;
-  refButton?: Ref<HTMLButtonElement> | null;
+  ref?: Ref<HTMLButtonElement>;
   onClick?: () => void;
   disabled?: boolean;
-  formButton?: string;
-};
+  form?: string;
+  className?: string;
+  "aria-label"?: string;
+}
 
 const Button = ({
   children,
-  refButton,
-  formButton,
+  ref,
+  form,
   onClick,
   variant = "primary",
   size = "medium",
   type = "button",
   disabled = false,
+  className,
+  "aria-label": ariaLabel,
 }: ButtonProps) => {
   const buttonStyle = `btn-${variant}`;
   const sizeStyle = clsx({
@@ -33,12 +38,13 @@ const Button = ({
 
   return (
     <button
-      ref={refButton}
-      form={formButton}
+      ref={ref}
+      form={form}
       type={type}
-      className={clsx(buttonStyle, sizeStyle)}
+      className={clsx(buttonStyle, sizeStyle, className)}
       onClick={onClick}
       disabled={disabled}
+      aria-label={ariaLabel}
     >
       {children}
     </button>

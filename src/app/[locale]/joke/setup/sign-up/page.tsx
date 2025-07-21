@@ -2,10 +2,8 @@ import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import { useTranslations } from "next-intl";
-import {
-  initialStateFormSignUp,
-  signUpPostAction,
-} from "@/actions/registerComedianAction";
+import { signUpComedianAction } from "@/actions/comedianActions";
+import { initialSignUpState } from "@/utils/initialStates";
 
 function SignUp() {
   const t = useTranslations();
@@ -54,8 +52,8 @@ function SignUp() {
         paragraph={translations.intro.paragraph}
       />
       <Form
-        actionForm={signUpPostAction}
-        initialStateForm={initialStateFormSignUp}
+        actionForm={signUpComedianAction}
+        initialStateForm={initialSignUpState}
         inputFields={translations.fields}
         textButton={translations.actions.submitButton}
         legendHeading={translations.actions.legendHeading}

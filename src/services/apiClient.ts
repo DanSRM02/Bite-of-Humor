@@ -1,5 +1,5 @@
 import type { ApiErrorData } from "@/types/jokeAPITypes";
-import { API_BASE } from "@/utils/const";
+import { API_BASE } from "@/utils/constants";
 import axios from "axios";
 
 const apiClient = axios.create({
