@@ -12,7 +12,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (request.nextUrl.pathname.includes("/build")) {
+  if (request.nextUrl.pathname.includes("/build/home")) {
     const url = request.nextUrl.clone();
     url.pathname = `/${locale}/joke/setup/log-in`;
     return Response.json({

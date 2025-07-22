@@ -32,7 +32,7 @@ function WorkshopPage() {
           options: AVAILABLE_FLAGS_OPTIONS.map(
             (flag) =>
               ({
-                nameInput: "flags",
+                nameInput: flag.value,
                 isTextRaw: true,
                 label: flag.label,
                 value: flag.value,
