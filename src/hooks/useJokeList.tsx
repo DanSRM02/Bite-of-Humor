@@ -37,6 +37,7 @@ export default function useJokeList() {
       params.append("category", filter.category || "Any");
       params.append("searchTerm", filter.searchTerm || "");
       params.append("safeMode", filter.isSafeMode ? "true" : "false");
+      params.append("isMockData", String(filter.isMockData || false));
       
       const url = `/api/jokes?${params.toString()}`;
       

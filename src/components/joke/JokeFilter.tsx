@@ -41,6 +41,7 @@ export const JokeFilter = ({
   const { category, searchTerm, isSafeMode, isMockData } = filterDataInputs;
 
   const isDarkMode = category === "Dark";
+  const filter = { category, searchTerm, isSafeMode, isMockData };
 
   const fieldsWithDynamicAttributes = fieldsBlueprint.map((field) => {
     if (field.id === "category") {
@@ -66,8 +67,7 @@ export const JokeFilter = ({
 
   useEffect(() => {
     const controller = new AbortController();
-    const filter = { category, searchTerm, isSafeMode };
-    
+
     getFilteredJokes(filter, language, controller.signal);
 
     return () => {
@@ -76,7 +76,13 @@ export const JokeFilter = ({
   }, [category, searchTerm, isSafeMode]);
 
   useEffect(() => {
-    document.cookie = `useMockData=${isMockData}; path=/; max-age=31536000`;    
+    const controller = new AbortController();
+    document.cookie = `useMockData=${isMockData}; path=/; max-age=31536000`;
+    getFilteredJokes(filter, language, controller.signal);
+
+    return () => {
+      controller.abort();
+    };
   }, [isMockData]);
 
   useEffect(() => {

@@ -1,9 +1,21 @@
 import type { ApiErrorData } from "@/types/jokeAPITypes";
 import { API_BASE } from "@/utils/baseConstants";
+import { getMockDataSetting } from "@/utils/cookieHelper";
 import axios from "axios";
 
 const apiClient = axios.create({
   baseURL: API_BASE,
+});
+
+apiClient.interceptors.request.use((config) => {
+  const useMockData = config.headers["isMockData"];  
+
+  if (useMockData) {
+    config.url = "/api/jokes/mock";
+    config.baseURL = "http://localhost:3000";
+  }
+
+  return config;
 });
 
 apiClient.interceptors.response.use(
@@ -12,7 +24,7 @@ apiClient.interceptors.response.use(
     if (axios.isCancel(error)) {
       return Promise.reject(error);
     }
-    
+
     if (axios.isAxiosError(error)) {
       if (error.response) {
         const { status, data } = error.response;

@@ -7,11 +7,13 @@ export async function GET(request: NextRequest) {
   const safeMode = request.nextUrl.searchParams.get("safeMode") === "true";
   const category = request.nextUrl.searchParams.get("category") || "Any";
   const searchTerm = request.nextUrl.searchParams.get("searchTerm") || "";
+  const isMockData = request.nextUrl.searchParams.get("isMockData") === "true";
 
   const filter: FilterImpl = {
     isSafeMode: safeMode,
     category: category,
     searchTerm: searchTerm,
+    isMockData: isMockData,
   };
 
   try {

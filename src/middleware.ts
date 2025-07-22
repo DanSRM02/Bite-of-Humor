@@ -5,16 +5,10 @@ import { NextRequest, NextResponse } from "next/server";
 export async function middleware(request: NextRequest) {
   const middlewareRoutingi18n = createMiddleware(routing);
   const locale = routing.defaultLocale;
-
-  let useMockData = request.cookies.get("useMockData")?.value === "true";
+  
   const isApiRoute = request.nextUrl.pathname.startsWith("/api");
 
   if (isApiRoute) {
-    if (useMockData) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/api/jokes/mock";
-      return NextResponse.rewrite(url);
-    }
     return NextResponse.next();
   }
 
