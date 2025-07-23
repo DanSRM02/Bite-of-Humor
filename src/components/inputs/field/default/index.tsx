@@ -1,6 +1,7 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { formatText } from "@/utils/verifyTextFormat";
+import { useTranslations } from "next-intl";
 import { Ref } from "react";
-import { useTranslation } from "react-i18next";
 
 export type DefaultFieldProps = BaseFieldImpl & {
   color?: string;
@@ -9,27 +10,31 @@ export type DefaultFieldProps = BaseFieldImpl & {
 
 const DefaultField = ({
   id,
-  label,
-  placeholder,
+  label = "common.none",
+  placeholder = "common.none",
   onChange,
+  nameInput,
   type = "text",
+  isTextRaw = false,
   color = "primary",
 }: DefaultFieldProps) => {
-  const { t } = useTranslation();
-  
+  const t  = useTranslations();
+  const formattedPlaceholder = formatText(isTextRaw, placeholder, t);
+  const formattedLabel = formatText(isTextRaw, label, t)
+
   return (
     <div className="flex flex-col">
       {label && (
-        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
-          {t(label)}
+        <label htmlFor={id} className="font-semibold mb-2">
+          {formattedLabel}
         </label>
       )}
       <input
         onChange={onChange}
-        id={`comedian-${id}`}
-        name={id}
+        id={id}
+        name={nameInput}
         type={type}
-        placeholder={t(placeholder || "")}
+        placeholder={formattedPlaceholder || undefined}
         className={`border border-gray-300 rounded-lg p-4 text-base ${
           color === "primary"
             ? "bg-white text-gray-800"

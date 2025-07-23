@@ -1,0 +1,292 @@
+{
+  "FirstSetup": {
+    "introduction": {
+      "title": "Why are you here?",
+      "remark": "You want to laugh or what?",
+      "paragraph1": "If the answer is “yes”, <important> so sorry </important> that's not the place.",
+      "paragraph2": "Or I'm <important>joking?</important>",
+      "paragraph3": "There's only <important>one</important> way to know..."
+    },
+    "actions": {
+      "buttonMessages": {
+        "message1": "Enter into the real page!",
+        "message2": "I want to laugh, press again!",
+        "message3": "Hey come on, press again!",
+        "message4": "This is the last time, I promise!",
+        "message5": "Enter into the real page!"
+      }
+    }
+  },
+  "MediumSetup": {
+    "leadInMain": {
+      "heading": "What is Bite of Humor?",
+      "paragraph": "Bite of Humor is a digital experience crafted to inject a quick, clever dose of laughter into your day. Blending design with humor, it offers curated jokes, playful interactions, and creative content that aim to entertain while challenging the ordinary. It's not just about making you laugh—it's about making you think, smile, and enjoy the unexpected."
+    },
+    "jokesLanguagesSection": {
+      "title": "Jokes from multiple languages"
+    },
+    "cards": {
+      "unitedStates": {
+        "title": "United States",
+        "body": "An American eagle on grill duty? A superhero zipping by on a scooter? A tiny horse for a tiny cowboy? This scene's got more layers than a deep-fried Twinkie. What's the punchline in this stars-and-stripes spectacle?"
+      },
+      "france": {
+        "title": "France",
+        "body": "A baguette taking Eiffel Tower selfies? A mime trapped in an invisible box that's actually moving? A duck in a beret quacking about the intricacies of cheese? This scene is so French, it's practically sweating croissants."
+      },
+      "germany": {
+        "title": "Germany",
+        "body": "Bratwurst-powered robots competing for the most punctual delivery? A garden gnome leading a rebellion against kitsch? An engineer trying to explain humor with precision? This scene is more orderly than a freshly mown lawn on a Sunday morning."
+      }
+    },
+    "typesOfJokesSection": {
+      "title": "Types Of Jokes"
+    },
+    "leadInSubMain": {
+      "classicJokes": {
+        "heading": "Classic Jokes",
+        "paragraph": "Enjoy a collection of timeless jokes! These are the tried-and-true classics that have been shared and chuckled over for generations, often with familiar setups and satisfying punchlines."
+      },
+      "surrealAbsurdity": {
+        "heading": "Surreal Absurdity",
+        "paragraph": "Step into the bizarre and illogical! These jokes embrace the unexpected and nonsensical, where the humor comes from the delightful violation of reality and the sheer absurdity of the situation."
+      },
+      "dadJokes": {
+        "heading": "Dad Jokes",
+        "paragraph": "Get ready for the signature blend of corniness and puns! These dad jokes feature slightly longer setups that build anticipation for the inevitably groan-worthy (yet sometimes charming) punchline. You've been warned!"
+      }
+    },
+    "adviseSection": {
+      "mainText": {
+        "line1": "Tell us a joke to enter.",
+        "line2": "Make us laugh, or at least try."
+      },
+      "actionButton": {
+        "text": "Sign Up"
+      }
+    }
+  },
+  "ErrorPage": {
+    "content": {
+      "title": "Error Page",
+      "message": "An error occurred!"
+    },
+    "actions": {
+      "button": "Go to Home"
+    }
+  },
+  "ComedianSignUpForm": {
+    "introduction": {
+      "heading": "Claim Your Spotlight",
+      "paragraph": "Don't let those punchlines go unheard. Sign up now to build your comedian profile, share your best material, and connect with a community that loves to laugh."
+    },
+    "fields": {
+      "namePlaceholder": "Pick a comedian name",
+      "nameLabel": "Comedian Name",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Comedian Email",
+      "jokeLabel": "Comedian Joke",
+      "jokePlaceholder": "Enter your joke"
+    },
+    "actions": {
+      "legendHeading": "Comedian Sign-Up",
+      "submitButton": "Join us"
+    }
+  },
+  "ComedianLoginForm": {
+    "introduction": {
+      "heading": "Returning legend? Log in to keep the mic",
+      "paragraph": "A satire-powered playground blending cultural wit and creative rebellion — discover the story, the mission, and why laughter hits harder when it's honest."
+    },
+    "fields": {
+      "namePlaceholder": "Pick a comedian name",
+      "nameLabel": "Comedian Name",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Comedian Email"
+    },
+    "actions": {
+      "legendHeading": "Comedian Login",
+      "submitButton": "Enter into the Humor"
+    }
+  },
+  "SelectCountry": {
+    "introduction": {
+      "heading": "Choose Your Global Stage!",
+      "paragraph": "Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
+    },
+    "searchCountryControls": {
+      "selectLabel": "Search Your Country...",
+      "selectPlaceholder": "Continue with your Country",
+      "disableLabel": "Select a country"
+    },
+    "searchLanguageControls": {
+      "selectLabel": "Search Your Language...",
+      "selectPlaceholder": "Continue with your Language",
+      "disableLabel": "Select a language"
+    },
+    "languagesNames": {
+      "fr": "French",
+      "de": "German",
+      "en": "English"
+    },
+    "countryNames": {
+      "US": "United States",
+      "FR": "France",
+      "DE": "Germany"
+    }
+  },
+  "common": {
+    "none": "None",
+    "all": "All"
+  },
+  "plans": {
+    "navLink": {
+      "text": "Go to Back"
+    },
+    "LeadIn": {
+      "heading": "Do you want a Premium Experience!",
+      "paragraph": "Is that a joke! There's only one way to find out!"
+    },
+    "basic": {
+      "name": "Basic",
+      "description": "A starter plan for casual joke lovers. Enjoy a limited selection of jokes and standard features.",
+      "price": "{value, number, currency}",
+      "features": {
+        "feature1": "Access to 100 jokes",
+        "feature2": "SD streaming",
+        "feature3": "1 device",
+        "feature4": "Standard support",
+        "feature5": "No exclusive content"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "For dedicated humor fans. Unlock more jokes, better streaming, and exclusive content.",
+      "price": "{value, number, currency}",
+      "features": {
+        "feature1": "Access to 1000 jokes",
+        "feature2": "HD streaming",
+        "feature3": "3 devices",
+        "feature4": "Priority support",
+        "feature5": "Exclusive content"
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "The ultimate experience for comedy connoisseurs. Unlimited jokes, top-tier streaming, and all extras.",
+      "price": "{value, number, currency}",
+      "features": {
+        "feature1": "Unlimited joke access",
+        "feature2": "4K streaming",
+        "feature3": "5 devices",
+        "feature4": "Premium support",
+        "feature5": "Exclusive and bonus content"
+      }
+    }
+  },
+  "HeaderNavigation": {
+    "navItems": {
+      "home": "Home",
+      "signUp": "Sign Up",
+      "logIn": "Log In"
+    }
+  },
+  "TheFinalSetupPage": {
+    "leadIn": {
+      "heading": "Welcome to Bite of Humor",
+      "paragraph": "Your setup is complete! Explore the different sections of your personalized humor experience."
+    },
+    "platformCards": {
+      "communicationHub": {
+        "title": "Communication Hub",
+        "description": "Stay connected with your joke community",
+        "features": {
+          "feature1": "Daily joke newsletters",
+          "feature2": "Community notifications",
+          "feature3": "Personalized recommendations",
+          "feature4": "Weekly humor digest"
+        },
+        "badge": "Essential"
+      },
+      "socialFeatures": {
+        "title": "Social Features",
+        "description": "Connect and share with fellow joke enthusiasts",
+        "features": {
+          "feature1": "Share favorite jokes",
+          "feature2": "Follow other users",
+          "feature3": "Create joke collections",
+          "feature4": "Community discussions"
+        },
+        "badge": "Interactive"
+      },
+      "premiumExperience": {
+        "title": "Premium Experience",
+        "description": "Unlock advanced features and exclusive content",
+        "features": {
+          "feature1": "Unlimited joke access",
+          "feature2": "Advanced filtering",
+          "feature3": "Premium categories",
+          "feature4": "Ad-free experience"
+        },
+        "badge": "Exclusive"
+      }
+    },
+    "dashboardCard": {
+      "title": "Quick Access Dashboard",
+      "body": "Jump directly to your favorite platform features"
+    },
+    "dashboardButtons": {
+      "myFavorites": "My Favorites",
+      "advancedFilters": "Advanced Filters",
+      "preferences": "Preferences",
+      "settings": "Settings"
+    }
+  },
+  "JokePage": {
+    "searchFilters": {
+      "heading": "Search Filters",
+      "paragraph": "Customize your joke search experience"
+    },
+    "searchForm": {
+      "placeholder": "Search in jokes...",
+      "label": "Search by keyword",
+      "safeModeLabel": "Safe Mode",
+      "categoryLabel": "Select Category"
+    },
+    "loadingMessage": "Loading...",
+    "safeModeWarning": "Safe mode is not allowed for the 'Dark' category."
+  },
+  "footer": {
+    "brandName": "Bite of Humor",
+    "copyright": " {year}© Bite of Humor. All rights reserved.",
+    "linkGroups": [
+      {
+        "title": "Core Concepts",
+        "topics": [
+          { "subtitle": "What is Bite of Humor?", "link": "/core/what-is" },
+          { "subtitle": "Behind the Name", "link": "/core/name-origin" },
+          { "subtitle": "Logo Philosophy", "link": "/core/logo-philosophy" }
+        ]
+      },
+      {
+        "title": "About the Project",
+        "topics": [
+          { "subtitle": "Project Overview", "link": "/about/overview" },
+          { "subtitle": "Design Goals", "link": "/about/goals" },
+          {
+            "subtitle": "Creative Direction",
+            "link": "/about/creative-direction"
+          }
+        ]
+      },
+      {
+        "title": "Community",
+        "topics": [
+          { "subtitle": "Feedback Forum", "link": "/community/forum" },
+          { "subtitle": "Submit a Joke", "link": "/community/submit-joke" },
+          { "subtitle": "Design Challenges", "link": "/community/challenges" }
+        ]
+      }
+    ]
+  }
+}

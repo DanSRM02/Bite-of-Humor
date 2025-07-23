@@ -1,20 +1,33 @@
-import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import { fieldTypeToComponent } from "@/utils/const";
-
+import { BaseFieldImpl, FormFieldProps } from "@/types/baseFieldTypes";
+import { fieldTypeToComponent } from "@/utils/constants";
 
 type FormRenderedProps = {
-  inputFields: BaseFieldImpl[];
+  inputFields: BaseFieldImpl[] | FormFieldProps[];
+  handlerChange?: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => void;
 };
-export default function FormRendered({ inputFields }: FormRenderedProps) {
+export default function FormRendered({
+  inputFields,
+  handlerChange,
+}: FormRenderedProps) {
   return inputFields.map((field) => {
     const { type, ...restProps } = field;
-
     const InputField = fieldTypeToComponent[type || "text"];
 
     if (!InputField) {
       throw new Error("That Input doesn't exist");
     }
 
-    return <InputField key={field.id} {...restProps} required />;
+    return (
+      <InputField
+        key={field.id}
+        onChange={handlerChange}
+        {...restProps}
+        required
+      />
+    );
   });
 }

@@ -1,45 +1,52 @@
-import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import { useTranslation } from "react-i18next";
+import { BaseFieldImpl, SelectOption } from "@/types/baseFieldTypes";
+import { formatText } from "@/utils/verifyTextFormat";
+import clsx from "clsx";
+import { useTranslations } from "next-intl";
+import { Ref } from "react";
 
 export type SelectFieldProps = BaseFieldImpl & {
   color?: string;
-  refSelect?: React.Ref<HTMLSelectElement>;
-  options?: { label: string; value: string }[];
-  disableLabel?: string;
+  refSelect?: Ref<HTMLSelectElement>;
+  options?: SelectOption[];
+  disableLabel?: string;  
 };
 
 const SelectField = ({
   id,
-  label,
+  label = "common.none",
   onChange,
+  isTextRaw = false,  
   options,
-  disableLabel,
+  nameInput,
+  disableLabel = "common.none",
   color = "primary",
 }: SelectFieldProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
+  const formattedDisableLabel = formatText(isTextRaw, disableLabel, t);
+  const formattedLabel = formatText(isTextRaw, label, t);
+
+  const selectedClass = clsx(    
+    "border border-gray-300 rounded-lg p-4 text-base font-sans w-full",
+    color === "primary" ? "bg-white text-gray-800" : "bg-gray-100 text-gray-800"    
+  );
+
   return (
-    <div className="flex flex-col items-center">
-      {label && (
-        <label htmlFor={`comedian-${id}`} className="font-semibold mb-2">
-          {t(label)}
-        </label>
-      )}
-      <select
-        name={id}
+    <div className="flex flex-col">
+      <label htmlFor={id} className="font-semibold mb-2">
+        {formattedLabel}
+      </label>
+
+      <select        
+        name={nameInput}
         onChange={onChange}
-        id={`comedian-${id}`}
-        className={`border border-gray-300 rounded-lg p-4 text-base font-sans ${
-          color === "primary"
-            ? "bg-white text-gray-800"
-            : "bg-gray-100 text-gray-800"
-        }`}
+        id={id}
+        className={selectedClass}
       >
-        <option value="" disabled>
-          {t(disableLabel || "")}
-        </option>
+        <option value="">{formattedDisableLabel}</option>
+
         {options?.map((option) => (
-          <option key={option.value} value={t(option.value)}>
-            {t(option.label)}
+          <option key={option.value} value={option.value}>
+            {formatText(option.isTextRaw, option.label, t)}
           </option>
         ))}
       </select>

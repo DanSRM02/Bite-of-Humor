@@ -1,9 +1,30 @@
-import { NextResponse, NextRequest } from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "@/i18n/routing";
+import { NextRequest, NextResponse } from "next/server";
 
-export function middleware(request: NextRequest) {
-  return NextResponse.redirect(new URL("/en-US", request.url));
+export async function middleware(request: NextRequest) {
+  const middlewareRoutingi18n = createMiddleware(routing);
+  const locale = routing.defaultLocale;
+  
+  const isApiRoute = request.nextUrl.pathname.startsWith("/api");
+
+  if (isApiRoute) {
+    return NextResponse.next();
+  }
+
+  if (request.nextUrl.pathname.includes("/build/home")) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}/joke/setup/log-in`;
+    return Response.json({
+      message: "Redirecting to the login page for setup.",
+      redirectUrl: url.pathname,
+    });
+  }
+
+  const response = middlewareRoutingi18n(request);
+  return response;
 }
 
 export const config = {
-  matcher: "/",
+  matcher: ["/((?!_next|_vercel|.*\\..*).*)", "/api/jokes/mock/:path*"],
 };

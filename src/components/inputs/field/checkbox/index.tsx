@@ -1,6 +1,7 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { formatText } from "@/utils/verifyTextFormat";
+import { useTranslations } from "next-intl";
 import { Ref } from "react";
-import { useTranslation } from "react-i18next";
 
 export type CheckboxProps = BaseFieldImpl & {
   color?: string;
@@ -12,24 +13,26 @@ const CheckboxField = ({
   disabled = false,
   error = false,
   onChange,
+  isTextRaw = false,
   id,
-  label,
+  nameInput,
+  label = "common.none",
   checked,
   refInput,
   required = false,
 }: CheckboxProps) => {
-  const { t } = useTranslation();
-  
+  const t = useTranslations();
+  const formattedLabel = formatText(isTextRaw, label, t);
 
   return (
     <label
-      htmlFor={`comedian-${id}`}
+      htmlFor={id}
       className="flex flex-col-reverse items-center cursor-pointer gap-2 relative select-none"
     >
       <input
         type="checkbox"
-        name={id}
-        id={`comedian-${id}`}
+        name={nameInput}
+        id={id}
         checked={checked}
         ref={refInput}
         onChange={onChange}
@@ -49,9 +52,8 @@ const CheckboxField = ({
           }`}
         ></span>
       </span>
-      {label && (
-        <span className="ml-2 font-medium cursor-pointer">{t(label)}</span>
-      )}
+
+      <span className="ml-2 font-medium cursor-pointer">{formattedLabel}</span>
     </label>
   );
 };

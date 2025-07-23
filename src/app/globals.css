@@ -29,6 +29,10 @@
   --alert-info-text: #2980b9;
 }
 
+@theme {
+  --auto-cols: repeat(auto-fit,minmax(20rem,1fr))
+}
+
 @layer components {
   .btn-primary {
     background-color: var(--secondary-bg-color);

@@ -1,24 +1,25 @@
-"use client"
-import { HTMLElementType, ReactNode } from "react";
-import { useTranslation } from "react-i18next";
+"use client";
+import { formatText } from "@/utils/verifyTextFormat";
+import { useTranslations } from "next-intl";
+import { ElementType, ReactNode } from "react";
 
 type HeadingProps = {
   children: string | ReactNode;
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  level?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   className?: string;
   tabIndex?: number;
+  isTextRaw?: boolean;
 };
 
-export default function Heading({
-  tabIndex,
-  children,
-  level = 1,
-  className,
-}: HeadingProps) {
-  const Heading: HTMLElementType = `h${level}` as HTMLElementType;
-  const { t } = useTranslation();
+export default function Heading(props: HeadingProps) {
+  const { level = 1, isTextRaw = false, children, className } = props;
+  const Heading: ElementType = `h${level}` as ElementType;
+  const t = useTranslations();
 
-  const content = typeof children === "string" ? t(children) : children;
+  const content =
+    typeof children === "string"
+      ? formatText(isTextRaw, children, t)
+      : children;
 
-  return <Heading tabIndex={tabIndex} className={className}>{content}</Heading>;
+  return <Heading className={className}>{content}</Heading>;
 }

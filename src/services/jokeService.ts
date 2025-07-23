@@ -6,28 +6,82 @@ export const getJokesInitialLoad = async (language: string) => {
     const response = await apiClient.get(
       `/joke/Any?safe-mode&lang=${language}&amount=10`
     );
-    return response;
+
+    let jokes = [];
+    if (response.data.jokes) {
+      jokes = response.data.jokes;
+    } else if (response.data.id) {
+      jokes = [response.data];
+    }
+
+    return jokes;
   } catch (error) {
-    throw error;
+    const mockJokes = [
+      {
+        category: "Misc",
+        type: "twopart",
+        setup: "Welcome to Bite of Humor!",
+        delivery:
+          "We're experiencing some technical difficulties, but here's a joke anyway!",
+        flags: {
+          nsfw: false,
+          religious: false,
+          political: false,
+          racist: false,
+          sexist: false,
+          explicit: false,
+        },
+        id: 999,
+        safe: true,
+        lang: language,
+      },
+    ];
+
+    return mockJokes;
   }
 };
 
 export const getJokesWithFilter = async (
   filter: FilterImpl,
-  language: string
+  language: string,
+  signal?: AbortSignal
 ) => {
   const category = filter.category;
   const queryString = createQueryString(filter, language);
 
   try {
     const url = `/joke/${category}?${queryString}`;
-    const response = await apiClient.get(url);
-
-    return response;
-  } catch (error) {
-    if (error instanceof Error) {
-      throw error;
+    const headers = {
+      "isMockData": filter.isMockData,
     }
+
+    console.log("Request Headers:", headers);
+
+    const response = await apiClient.get(url, { signal, headers });
+
+    console.log("Response Data:", response.data);
+    
+
+    let jokes = [];
+    if (response.data.jokes) {
+      jokes = response.data.jokes;
+    } else if (response.data.id) {
+      jokes = [response.data];
+    }
+
+    return {
+      data: {
+        jokes: jokes,
+        success: true,
+        fallback: false,
+      },
+    };
+  } catch (error) {
+    return {
+      data: {
+        error: error instanceof Error ? error.message : "Unknown error",
+      },
+    };
   }
 };
 

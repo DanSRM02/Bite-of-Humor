@@ -8,7 +8,7 @@ const CardGrid = ({ children, ariaLabel }: CardGridProps) => {
   return (
     <article
       aria-label={ariaLabel}
-      className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(20rem,1fr))]"
+      className="grid gap-10 grid-cols-(--auto-cols)"
     >
       {children}
     </article>

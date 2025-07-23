@@ -32,6 +32,13 @@ export interface JokeImpl {
 export interface FilterImpl {
   isSafeMode?: boolean;
   searchTerm?: string;
-  category?: string | string[];
+  category?: string;
+  isMockData?: boolean;
 }
-[];
+
+export type badgeConfig = {
+  key: string,
+  config: {
+    value: number | undefined 
+  };
+}

@@ -1,6 +1,7 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
+import { formatText } from "@/utils/verifyTextFormat";
+import { useTranslations } from "next-intl";
 import { type ReactNode, Ref } from "react";
-import { useTranslation } from "react-i18next";
 
 export type TextareaFieldProps = BaseFieldImpl & {
   color?: string;
@@ -12,27 +13,28 @@ export type TextareaFieldProps = BaseFieldImpl & {
 
 const TextareaField = ({
   id,
-  label,
-  placeholder,
+  label = "common.none",
+  placeholder = "common.none",
+  isTextRaw = false,
   onChange,
   rows = 3,
+  nameInput,
   color = "primary",
   ...props
 }: TextareaFieldProps) => {
-  const { t } = useTranslation();
-
+  const t = useTranslations();
+  const formattedPlaceholder = formatText(isTextRaw, placeholder, t);
+  const formattedLabel = formatText(isTextRaw, label, t);
   return (
     <div className="flex flex-col">
-      {label && (
-        <label htmlFor={`comedian-${t(id)}`} className="font-semibold mb-2">
-          {t(label)}
-        </label>
-      )}
+      <label htmlFor={id} className="font-semibold mb-2">
+        {formattedLabel}
+      </label>
       <textarea
         onChange={onChange}
-        id={`comedian-${t(id)}`}
-        name={id}
-        placeholder={t(placeholder || "")}
+        id={id}
+        name={nameInput}
+        placeholder={formattedPlaceholder || undefined}
         rows={rows}
         className={`border border-gray-300 rounded-lg p-4 text-base font-sans max-w-full max-h-min ${
           color === "primary"

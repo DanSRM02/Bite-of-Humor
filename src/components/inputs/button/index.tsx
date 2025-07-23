@@ -1,28 +1,34 @@
 import type { ReactNode, Ref } from "react";
 import clsx from "clsx";
-import { useTranslation } from "react-i18next";
 
-type ButtonProps = {
-  variant: "primary" | "secondary" | string;
-  size: string;
-  children: ReactNode;
+export type ButtonVariant = "primary" | "secondary";
+export type ButtonSize = "small" | "medium" | "large";
+
+export interface ButtonProps {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  children?: ReactNode;
   type?: "button" | "submit" | "reset";
-  icon?: string;
-  refButton?: Ref<HTMLButtonElement> | null;
+  ref?: Ref<HTMLButtonElement>;
   onClick?: () => void;
   disabled?: boolean;
-};
+  form?: string;
+  className?: string;
+  "aria-label"?: string;
+}
 
 const Button = ({
   children,
-  refButton,
+  ref,
+  form,
   onClick,
-  variant,
-  size,
+  variant = "primary",
+  size = "medium",
   type = "button",
   disabled = false,
+  className,
+  "aria-label": ariaLabel,
 }: ButtonProps) => {
-  const { t } = useTranslation();
   const buttonStyle = `btn-${variant}`;
   const sizeStyle = clsx({
     "px-6 py-3 text-lg": size === "large",
@@ -30,17 +36,17 @@ const Button = ({
     "px-2 py-1 text-sm": size === "small",
   });
 
-  const content = typeof children === "string" ? t(children) : children;
-
   return (
     <button
-      ref={refButton}
+      ref={ref}
+      form={form}
       type={type}
-      className={clsx(buttonStyle, sizeStyle)}
+      className={clsx(buttonStyle, sizeStyle, className)}
       onClick={onClick}
       disabled={disabled}
+      aria-label={ariaLabel}
     >
-      {content}
+      {children}
     </button>
   );
 };

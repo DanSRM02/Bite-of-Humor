@@ -1,34 +1,41 @@
 "use client";
 import Button from "@/components/inputs/button";
+import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
-import { useTranslation } from "react-i18next";
 import { BiArrowFromLeft } from "react-icons/bi";
+import { formatText } from "@/utils/verifyTextFormat";
 
-type BadgeProp = string | { key: string; config?: Record<string, any> };
-
-type CardProps = {
+export type CardProps = {
   children?: ReactNode;
   img?: StaticImageData;
   icon?: ReactNode;
   title?: string;
   body?: string;
-  badge?: BadgeProp;
+  badge?: string;
+  config?: {
+    value: number | bigint;
+  };
   features?: string[];
   variant?: "default" | "expandable" | "joke";
   onExplore?: () => void;
   jokeSetup?: string;
+  isTextRaw?: boolean;
   jokePunchline?: string;
   jokeType?: string;
+  className?: string;
 };
 
 const Card = ({
   img,
+  className,
   icon,
-  title,
-  body,
-  badge,
+  title = "common.none",
+  body = "common.none",
+  badge = "common.none",
   features,
+  isTextRaw = false,
+  config,
   children,
   variant = "default",
   onExplore,
@@ -37,7 +44,9 @@ const Card = ({
   jokeType,
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const { t } = useTranslation();
+  const t = useTranslations();
+
+  const formattedBadge = formatText(isTextRaw, badge, t, config);
 
   const handleCardClick = () => {
     if (variant === "expandable") {
@@ -45,18 +54,10 @@ const Card = ({
     }
   };
 
-  const renderBadge = (badge: BadgeProp) => {
-    if (typeof badge === "string") {
-      return t(badge);
-    }
-    const { key, config } = badge;
-    return t(key, config);
-  };
-
   const renderExpandable = () => (
     <article
       onClick={handleCardClick}
-      aria-label={t(title || "")}
+      aria-label={t(title)}
       role="button"
       aria-expanded={isExpanded}
       className={`flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
@@ -74,10 +75,10 @@ const Card = ({
 
           <div className="ml-3">
             <h6 className="text-xl font-semibold text-stone-800 leading-snug">
-              {t(title || "")}
+              {t(title)}
             </h6>
             <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
-              {renderBadge(badge || "")}
+              {formattedBadge}
             </span>
           </div>
         </div>
@@ -88,7 +89,7 @@ const Card = ({
       </header>
       <div className="flex-grow">
         <p className="text-base text-stone-600 leading-relaxed mb-4">
-          {t(body || "")}
+          {t(body)}
         </p>
         {isExpanded && features && (
           <div className="flex flex-col gap-3 mt-4">
@@ -96,7 +97,9 @@ const Card = ({
             {features.map((feature) => (
               <div key={feature} className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-stone-500 rounded-full"></div>
-                <span className="text-sm text-stone-700">{t(feature)}</span>
+                <span className="text-sm text-stone-700">
+                  {formatText(isTextRaw, feature, t)}
+                </span>
               </div>
             ))}
             {onExplore && (
@@ -105,9 +108,9 @@ const Card = ({
                   onExplore();
                 }}
                 size="small"
-                variant="outline"
+                variant="secondary"
               >
-                {`Explore ${t(title || "")}`}
+                {`Explore ${t(title)}`}
               </Button>
             )}
           </div>
@@ -117,32 +120,28 @@ const Card = ({
   );
 
   const renderJoke = () => (
-    <article      
-      className="bg-white border border-stone-200 p-6 rounded-lg"
-    >
-      <h6 className="text-lg font-semibold text-stone-800 mb-2">
-        {t(jokeSetup || "")}
-      </h6>
+    <article className="bg-white border border-stone-200 p-6 rounded-lg">
+      <h6 className="text-lg font-semibold text-stone-800 mb-2">{jokeSetup}</h6>
 
       {jokeType === "twopart" ? (
-        <p className="text-base font-medium text-stone-800">
-          {t(jokePunchline || "")}
-        </p>
+        <p className="text-base font-medium text-stone-800">{jokePunchline}</p>
       ) : (
-        <p className="text-base font-semibold">{t(jokePunchline || "")}</p>
+        <p className="text-base font-semibold">{jokePunchline}</p>
       )}
-      <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
-        {renderBadge(badge || "")}
-      </span>
+      {badge && (
+        <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
+          {badge}
+        </span>
+      )}
 
-      {children && <div className="mt-4">{children}</div>}
+      {children && <div className={`${className}`}>{children}</div>}
     </article>
   );
 
   const renderDefault = () => (
     <article
-      aria-label={t(title || "")}
-      className="bg-white border border-stone-200 p-6 rounded-lg"
+      aria-label={t(title)}
+      className="bg-white border border-stone-200 p-6 rounded-lg "
     >
       {img && (
         <Image
@@ -153,18 +152,11 @@ const Card = ({
       )}
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h6 className="text-lg font-semibold text-stone-800">
-            {t(title || "")}
-          </h6>
-          <p className="text-base text-stone-700">{t(body || "")}</p>
-          {badge && (
-            <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
-              {renderBadge(badge || "")}
-            </span>
-          )}
+          <h6 className="text-lg font-semibold text-stone-800">{t(title)}</h6>
+          <p className="text-base text-stone-700">{t(body)}</p>
         </div>
       </div>
-      {children && <div className="mt-4">{children}</div>}
+      {children && <div className={`${className}`}>{children}</div>}
     </article>
   );
 

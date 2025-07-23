@@ -11,5 +11,5 @@ export type UnorderedListImpl = {
   price?: number;
   features?: string[];
   popular?: boolean;
-  topics?: UnorderedListTopic[];
+  topics: UnorderedListTopic[];
 };
