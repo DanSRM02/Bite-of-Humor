@@ -16,8 +16,6 @@ describe("Joke Service", () => {
   });
 
   it("should fetch jokes successfully without mock data", async () => {
-    
-
     const mockFilter: FilterImpl = {
       category: "Programming",
       isMockData: false,
@@ -25,15 +23,17 @@ describe("Joke Service", () => {
     const language = "en";
     const signal = new AbortController().signal;
 
-    const expectedUrl = `/joke/Programming?lang=en&safe-mode&amount=3`;
+    const expectedUrl = `/joke/Programming?lang=en&amount=10`;
 
     mock.onGet(expectedUrl).reply(200, {
-      jokes: [mockJokes],
+      jokes: mockJokes,
     });
 
     const response = await getJokesWithFilter(mockFilter, language, signal);
 
-  expect(response.data.jokes).toBeDefined();
+    expect(response.data).toBeDefined();
+    expect(response.data.jokes).toEqual(mockJokes);
+    expect(response.data.success).toBe(true);
   });
 
   it("should handle errors when fetching jokes", async () => {
@@ -43,6 +43,14 @@ describe("Joke Service", () => {
     };
     const language = "en";
     const signal = new AbortController().signal;
+
+    const expectedUrl = `/joke/NonExistentCategory?lang=en&amount=10`;
+
+    mock.onGet(expectedUrl).reply(404, {
+      error: true,
+      message: "No matching joke found",
+      code: 106,
+    });
 
     const response = await getJokesWithFilter(mockFilter, language, signal);
 
@@ -58,9 +66,18 @@ describe("Joke Service", () => {
     const language = "en";
     const signal = new AbortController().signal;
 
+    mock.onGet("/api/jokes/mock").reply(200, {
+      jokes: mockJokes,
+      success: true,
+      fallback: false,
+      error: null,
+      message: "Mock jokes fetched successfully",
+    });
+
     const response = await getJokesWithFilter(mockFilter, language, signal);
 
-    expect(response.data.jokes).toBeDefined();
+    expect(response.data).toBeDefined();
+    expect(response.data.jokes).toEqual(mockJokes);
     expect(response.data.success).toBe(true);
   });
 });
