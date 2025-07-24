@@ -33,7 +33,7 @@ export interface FilterImpl {
   isSafeMode?: boolean;
   searchTerm?: string;
   category?: string;
-  isMockData?: boolean;
+  isMockData: boolean;
 }
 
 export type badgeConfig = {

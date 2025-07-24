@@ -1,6 +1,5 @@
 import type { ApiErrorData } from "@/types/jokeAPITypes";
 import { API_BASE } from "@/utils/baseConstants";
-import { getMockDataSetting } from "@/utils/cookieHelper";
 import axios from "axios";
 
 const apiClient = axios.create({
@@ -28,7 +27,8 @@ apiClient.interceptors.response.use(
     if (axios.isAxiosError(error)) {
       if (error.response) {
         const { status, data } = error.response;
-        const dataType = data as ApiErrorData;
+        const dataType = data as ApiErrorData;        
+        
         if (status === 404) {
           return Promise.reject(new Error("Resource not found"));
         }
