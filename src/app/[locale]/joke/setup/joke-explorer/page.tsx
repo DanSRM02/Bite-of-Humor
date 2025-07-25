@@ -15,13 +15,6 @@ async function JokeExplorerPage() {
 
   const filterFieldsWithoutDynamicAttributes = [
     {
-      id: "isSafeMode",
-      type: "checkbox" as inputTypes,
-      label: "JokePage.searchForm.safeModeLabel",
-      color: "primary",
-      nameInput: "isSafeMode",
-    },
-    {
       id: "category",
       type: "select" as inputTypes,
       label: "JokePage.searchForm.categoryLabel",
@@ -44,13 +37,20 @@ async function JokeExplorerPage() {
       nameInput: "searchTerm",
     },
     {
+      id: "isSafeMode",
+      type: "checkbox" as inputTypes,
+      label: "JokePage.searchForm.safeModeLabel",
+      color: "primary",
+      nameInput: "isSafeMode",
+    },
+    {
       id: "isMockData",
       type: "checkbox" as inputTypes,
       label: "Check to use mock data",
       color: "primary",
       nameInput: "isMockData",
       isTextRaw: true,
-    }
+    },
   ];
   return (
     <JokeFilterProvider>

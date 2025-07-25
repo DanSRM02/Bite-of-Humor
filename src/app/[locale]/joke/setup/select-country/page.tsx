@@ -2,13 +2,14 @@
 import LeadIn from "@/components/dataDisplay/leadIn";
 import { ChangeEvent, useState } from "react";
 import { COUNTRIES, SUPPORTED_LANGS } from "@/utils/constants";
-import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
 import FormRendered from "@/components/dataDisplay/formRendered";
 import Button from "@/components/inputs/button";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 function SelectCountry() {
   const router = useRouter();
+  const pathname = usePathname();
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
@@ -25,13 +26,9 @@ function SelectCountry() {
   };
 
   const handleRedirect = () => {
-    if (selectedCountry && selectedLanguage) {
-      const newLangParam = `${selectedLanguage}-${selectedCountry}`;
-      const currentPath = location.pathname.split("/");
-      currentPath[1] = newLangParam;
-      const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;      
-      router.push(pathToRedirect);
-    }
+   const newLocale = `${selectedLanguage}-${selectedCountry}`;
+    const newPath = pathname.replace('/select-country', '/final');        
+    router.push(newPath, { locale: newLocale });
   };
 
   const translations = {

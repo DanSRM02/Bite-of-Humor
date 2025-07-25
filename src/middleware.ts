@@ -3,8 +3,7 @@ import { routing } from "@/i18n/routing";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const middlewareRoutingi18n = createMiddleware(routing);
-  const locale = routing.defaultLocale;
+  const middlewareRoutingi18n = createMiddleware(routing);  
   
   const isApiRoute = request.nextUrl.pathname.startsWith("/api");
 
@@ -12,12 +11,9 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (request.nextUrl.pathname.includes("/build/home")) {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${locale}/joke/setup/log-in`;
+  if (request.nextUrl.pathname.includes("/build/home")) {    
     return Response.json({
-      message: "Redirecting to the login page for setup.",
-      redirectUrl: url.pathname,
+      message: "Redirecting to the login page for setup.",      
     });
   }
 
