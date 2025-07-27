@@ -1,12 +1,12 @@
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import { useTranslations } from "next-intl";
 import { signUpComedianAction } from "@/actions/comedianActions";
 import { initialSignUpState } from "@/utils/initialStates";
+import { getTranslations } from "next-intl/server";
 
-function SignUp() {
-  const t = useTranslations();
+async function SignUp() {
+  const t = await getTranslations();
   const translations = {
     intro: {
       heading: "ComedianSignUpForm.introduction.heading",
@@ -48,6 +48,7 @@ function SignUp() {
       aria-label="Sign up section"
     >
       <LeadIn
+        variant="primary"
         heading={translations.intro.heading}
         paragraph={translations.intro.paragraph}
       />

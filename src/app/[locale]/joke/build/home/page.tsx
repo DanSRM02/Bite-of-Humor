@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ButtonList from "@/components/dataDisplay/buttonList";
 import CardList from "@/components/dataDisplay/cardList";
 import LeadIn from "@/components/dataDisplay/leadIn";
@@ -7,10 +7,7 @@ import CardGrid from "@/components/layout/cardGrid";
 import { platformSectionsHome } from "@/utils/constants";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-
-import { CiFilter, CiHeart } from "react-icons/ci";
-import { IoSettingsOutline } from "react-icons/io5";
-import { LuLaugh } from "react-icons/lu";
+import { Icon } from "@/components/feedback/icon";
 
 export default function HomePage() {
   const t = useTranslations();
@@ -37,8 +34,8 @@ export default function HomePage() {
       (featureKey) =>
         `TheFinalSetupPage.platformCards.${section.title}.features.${featureKey}`
     ),
-    icon: section.icon ? (
-      <section.icon aria-label={`${section.title} icon`} />
+    icon: section.iconName ? (
+      <Icon icon={section.iconName} aria-label={`${section.title} icon`} />
     ) : null,
     onExplore: () => handleRedirect(section.title),
     variant: "expandable" as const,
@@ -56,22 +53,24 @@ export default function HomePage() {
   const dashboardButtons = [
     {
       label: dashboardTranslations.myFavorites,
-      icon: <LuLaugh size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="lucide:laugh" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect(""),
     },
     {
       label: dashboardTranslations.advancedFilters,
-      icon: <CiHeart size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="ci:heart" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect(""),
     },
     {
       label: dashboardTranslations.preferences,
-      icon: <CiFilter size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="ci:filter" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect("filter"),
     },
     {
       label: dashboardTranslations.settings,
-      icon: <IoSettingsOutline size="1.2rem" aria-hidden="true" />,
+      icon: (
+        <Icon icon="ion:settings-outline" size="1.2rem" aria-hidden="true" />
+      ),
       onClick: () => handleRedirect("configuration"),
     },
   ];

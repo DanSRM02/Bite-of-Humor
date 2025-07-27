@@ -1,9 +1,7 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Card from "@/components/feedback/card";
-import { LuLaugh } from "react-icons/lu";
-import { IoSettingsOutline } from "react-icons/io5";
-import { CiHeart, CiFilter } from "react-icons/ci";
+import { Icon } from "@/components/feedback/icon";
 import { platformSectionsFinal } from "@/utils/constants";
 import CardGrid from "@/components/layout/cardGrid";
 import { useRouter } from "next/navigation";
@@ -37,8 +35,8 @@ function TheFinalSetupPage() {
       (featureKey) =>
         `TheFinalSetupPage.platformCards.${section.title}.features.${featureKey}`
     ),
-    icon: section.icon ? (
-      <section.icon aria-label={`${section.title} icon`} />
+    icon: section.iconName ? (
+      <Icon icon={section.iconName} aria-label={`${section.title} icon`} />
     ) : null,
     onExplore: () => handleRedirect(section.title),
     variant: "expandable" as const,
@@ -56,22 +54,22 @@ function TheFinalSetupPage() {
   const dashboardButtons = [
     {
       label: dashboardTranslations.myFavorites,
-      icon: <LuLaugh size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="lucide:laugh" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect(""),
     },
     {
       label: dashboardTranslations.advancedFilters,
-      icon: <CiHeart size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="ci:heart" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect(""),
     },
     {
       label: dashboardTranslations.preferences,
-      icon: <CiFilter size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="ci:filter" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect("filter"),
     },
     {
       label: dashboardTranslations.settings,
-      icon: <IoSettingsOutline size="1.2rem" aria-hidden="true" />,
+      icon: <Icon icon="ion:settings-outline" size="1.2rem" aria-hidden="true" />,
       onClick: () => handleRedirect("configuration"),
     },
   ];

@@ -3,10 +3,10 @@ import { initialLoginState } from "@/utils/initialStates";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-function LogIn() {
-  const t = useTranslations();
+async function LogIn() {
+  const t = await getTranslations();
 
   const translations = {
     intro: {

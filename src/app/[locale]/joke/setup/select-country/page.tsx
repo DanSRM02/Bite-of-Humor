@@ -26,8 +26,8 @@ function SelectCountry() {
   };
 
   const handleRedirect = () => {
-   const newLocale = `${selectedLanguage}-${selectedCountry}`;
-    const newPath = pathname.replace('/select-country', '/final');        
+    const newLocale = `${selectedLanguage}-${selectedCountry}`;
+    const newPath = pathname.replace("/select-country", "/final");
     router.push(newPath, { locale: newLocale });
   };
 

@@ -3,9 +3,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   experimental: {
-    optimizePackageImports: ['react-icons']
+    optimizePackageImports: ['@iconify/react']
   },
-  transpilePackages: ['react-icons']
+  transpilePackages: ['@iconify/react']
 };
 
 const withNextIntl = createNextIntlPlugin();

@@ -2,8 +2,7 @@ import { mockJokes } from "@/utils/mockData";
 import { NextRequest, NextResponse } from "next/server";
 
 export function GET(request: NextRequest) {
-  
-  console.log(request.headers);
+  const language = request.nextUrl.searchParams.get("lang") || "en";
   
 
   return NextResponse.json({

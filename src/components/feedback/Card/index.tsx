@@ -3,7 +3,7 @@ import Button from "@/components/inputs/button";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
-import { BiArrowFromLeft } from "react-icons/bi";
+import { Icon } from "@/components/feedback/icon";
 import { formatText } from "@/utils/verifyTextFormat";
 
 export type CardProps = {
@@ -82,7 +82,8 @@ const Card = ({
             </span>
           </div>
         </div>
-        <BiArrowFromLeft
+        <Icon 
+          icon="bi:arrow-left-right"
           aria-hidden="true"
           className={`transition-transform ${isExpanded ? "rotate-90" : ""}`}
         />

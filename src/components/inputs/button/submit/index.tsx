@@ -20,9 +20,11 @@ const ButtonSubmitForm = ({ textButton, actionState }: ButtonSubmitProps) => {
       </Button>
       {actionState.errors && (
         <ul className="text-center text-red-600">
-          <Heading level={5} isTextRaw>
-            {actionState.message}
-          </Heading>
+          {actionState.message && (
+            <Heading level={5} isTextRaw>
+              {actionState.message}
+            </Heading>
+          )}
           {actionState.errors.map((error, index) => (
             <li key={index}>{error}</li>
           ))}

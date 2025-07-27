@@ -1,4 +1,4 @@
-import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
+import { Icon } from "@/components/feedback/icon";
 import { UnorderedListImpl } from "@/types/unorderedListType";
 import TextareaField from "@/components/inputs/field/textarea";
 import DefaultField from "@/components/inputs/field/default";
@@ -80,19 +80,19 @@ export const fieldTypeToComponent: Record<
 export const platformSectionsFinal: UnorderedListImpl[] = [
   {
     title: "communicationHub",
-    icon: LuMail,
+    iconName: "lucide:mail",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
   {
     title: "socialFeatures",
-    icon: LuUsers,
+    iconName: "lucide:users",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
   {
     title: "premiumExperience",
-    icon: LuCrown,
+    iconName: "lucide:crown",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
@@ -101,19 +101,19 @@ export const platformSectionsFinal: UnorderedListImpl[] = [
 export const platformSectionsHome: UnorderedListImpl[] = [
   {
     title: "workshop",
-    icon: LuMail,
+    iconName: "lucide:mail",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
   {
     title: "nothingYet",
-    icon: LuUsers,
+    iconName: "lucide:users",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
   {
     title: "nothingYet",
-    icon: LuCrown,
+    iconName: "lucide:crown",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
@@ -122,14 +122,14 @@ export const platformSectionsHome: UnorderedListImpl[] = [
 export const plansForPremiumPage: UnorderedListImpl[] = [
   {
     title: "basic",
-    icon: LuCircle,
+    iconName: "lucide:circle",
     features: ["feature1", "feature2", "feature3", "feature4"],
     price: 0,
     topics: [],
   },
   {
     title: "pro",
-    icon: LuStar,
+    iconName: "lucide:star",
     popular: true,
     features: ["feature1", "feature2", "feature3", "feature4"],
     price: 9.99,
@@ -137,7 +137,7 @@ export const plansForPremiumPage: UnorderedListImpl[] = [
   },
   {
     title: "premium",
-    icon: LuCrown,
+    iconName: "lucide:crown",
     features: ["feature1", "feature2", "feature3", "feature4"],
     price: 19.99,
     topics: [],

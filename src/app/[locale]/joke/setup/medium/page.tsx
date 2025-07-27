@@ -8,7 +8,6 @@ import Card from "@/components/feedback/card";
 import LeadIn from "@/components/dataDisplay/leadIn";
 
 function MediumPage() {
-
   const translations = {
     leadIn: {
       heading: "MediumSetup.leadInMain.heading",
@@ -65,7 +64,6 @@ function MediumPage() {
           "bg-gray-100 m-[1rem] py-[4rem] rounded-[1rem] gap-[2.5rem] flex justify-center items-center min-w-[24rem]"
         }
         aria-label="Introduction section"
-         
       >
         <LeadIn
           heading={translations.leadIn.heading}
@@ -77,13 +75,12 @@ function MediumPage() {
           alt={translations.leadIn.logoAlt}
         />
       </section>
-      <Heading level={2} className="font-bold"  >
+      <Heading level={2} className="font-bold">
         {translations.jokesLanguagesSection.title}
       </Heading>
       <section
         className="grid grid-cols-3 gap-[1rem]"
         aria-label="Joke languages cards"
-         
       >
         <Card
           img={unitedStateImg}
@@ -101,13 +98,12 @@ function MediumPage() {
           body={translations.jokesLanguagesSection.cards.france.body}
         />
       </section>
-      <Heading level={2} className="font-bold"  >
+      <Heading level={2} className="font-bold">
         {translations.typesOfJokesSection.title}
       </Heading>
       <section
         className="flex flex-col mx-[5rem] [&>:nth-child(2)]:items-end"
         aria-label="Types of jokes"
-         
       >
         <LeadIn
           heading={translations.typesOfJokesSection.classicJokes.heading}
@@ -130,7 +126,6 @@ function MediumPage() {
       <section
         className="flex justify-center items-center gap-[5rem] py-[3rem] bg-gray-100 rounded-[1rem] "
         aria-label="Advice and action"
-         
       >
         <LeadIn
           variant="tertiary"

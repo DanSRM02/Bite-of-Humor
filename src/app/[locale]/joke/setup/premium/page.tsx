@@ -3,6 +3,7 @@ import LeadIn from "@/components/dataDisplay/leadIn";
 import { plansForPremiumPage } from "@/utils/constants";
 import CardGrid from "@/components/layout/cardGrid";
 import CardList from "@/components/dataDisplay/cardList";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 function PremiumExperiencePage() {
   const mappingPlan = plansForPremiumPage.map((plan) => ({
@@ -14,7 +15,7 @@ function PremiumExperiencePage() {
     features: plan.features?.map(
       (feature) => `plans.${plan.title}.features.${feature}`
     ),
-    icon: plan.icon ? <plan.icon aria-label={plan.title + " icon"} /> : null,
+    icon: <Icon icon={plan.iconName || ""} aria-label={plan.title + " icon"} />,
     variant: "expandable" as const,
   }));
 
@@ -35,7 +36,7 @@ function PremiumExperiencePage() {
         variant="fourth"
       />
 
-      <CardGrid ariaLabel="plar">
+      <CardGrid ariaLabel="plans list">
         <CardList cards={translations.plans} />
       </CardGrid>
     </section>
