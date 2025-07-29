@@ -11,12 +11,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (request.nextUrl.pathname.includes("/build/home")) {    
-    return Response.json({
-      message: "Redirecting to the login page for setup.",      
-    });
-  }
-
   const response = middlewareRoutingi18n(request);
   return response;
 }

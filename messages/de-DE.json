@@ -15,6 +15,9 @@
         "message4": "Das ist das letzte Mal, versprochen!",
         "message5": "Betritt die echte Seite!"
       }
+    },
+    "ariaLabels": {
+      "firstSetupMainContent": "Hauptinhalt der ersten Einrichtung"
     }
   },
   "MediumSetup": {
@@ -110,6 +113,11 @@
     }
   },
   "SelectCountry": {
+    "ariaLabels": {
+      "selectYourCountry": "Wählen Sie Ihr Land",
+      "countrySelectionIntroduction": "Länderauswahl-Einführung",
+      "countryOptions": "Länderoptionen"
+    },
     "introduction": {
       "heading": "Wähle deine globale Bühne!",
       "paragraph": "Bite of Humor verbindet dich mit Comedy aus aller Welt. Sag uns, wo du deine humorvolle Reise beginnen möchtest."
@@ -139,7 +147,9 @@
     "navItems": {
       "home": "Startseite",
       "signUp": "Registrieren",
-      "logIn": "Anmelden"
+      "logIn": "Anmelden",
+      "workshop": "Werkstatt",
+      "community": "Community"
     }
   },
   "common": {
@@ -242,8 +252,10 @@
       "settings": "Konfigurationen"
     }
   },
-
   "JokePage": {
+    "ariaLabels": {
+      "jokeExplorerSection": "Witz-Explorer-Bereich"
+    },
     "navLink": {
       "text": "Zum Finale"
     },
@@ -255,7 +267,8 @@
       "placeholder": "In Witzen suchen...",
       "label": "Suche nach Stichwort",
       "safeModeLabel": "Sicherer Modus",
-      "categoryLabel": "Kategorie auswählen"
+      "categoryLabel": "Kategorie auswählen",
+      "mockDataLabel": "Mock-Daten verwenden"
     },
     "loadingMessage": "Wird geladen...",
     "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt."
@@ -267,16 +280,31 @@
       {
         "title": "Kernkonzepte",
         "topics": [
-          { "subtitle": "Was ist Bite of Humor?", "link": "/core/what-is" },
-          { "subtitle": "Hinter dem Namen", "link": "/core/name-origin" },
-          { "subtitle": "Logo-Philosophie", "link": "/core/logo-philosophy" }
+          {
+            "subtitle": "Was ist Bite of Humor?",
+            "link": "/core/what-is"
+          },
+          {
+            "subtitle": "Hinter dem Namen",
+            "link": "/core/name-origin"
+          },
+          {
+            "subtitle": "Logo-Philosophie",
+            "link": "/core/logo-philosophy"
+          }
         ]
       },
       {
         "title": "Über das Projekt",
         "topics": [
-          { "subtitle": "Projektübersicht", "link": "/about/overview" },
-          { "subtitle": "Designziele", "link": "/about/goals" },
+          {
+            "subtitle": "Projektübersicht",
+            "link": "/about/overview"
+          },
+          {
+            "subtitle": "Designziele",
+            "link": "/about/goals"
+          },
           {
             "subtitle": "Kreative Leitung",
             "link": "/about/creative-direction"
@@ -286,8 +314,14 @@
       {
         "title": "Community",
         "topics": [
-          { "subtitle": "Feedback-Forum", "link": "/community/forum" },
-          { "subtitle": "Witz einreichen", "link": "/community/submit-joke" },
+          {
+            "subtitle": "Feedback-Forum",
+            "link": "/community/forum"
+          },
+          {
+            "subtitle": "Witz einreichen",
+            "link": "/community/submit-joke"
+          },
           {
             "subtitle": "Design-Herausforderungen",
             "link": "/community/challenges"
@@ -295,5 +329,95 @@
         ]
       }
     ]
+  },
+  "HomePage": {
+    "ariaLabels": {
+      "homeMainContent": "Hauptinhalt der Startseite",
+      "platformFeaturesList": "Liste der Plattformfunktionen",
+      "userDashboardActions": "Benutzer-Dashboard-Aktionen",
+      "workshopMainContent": "Hauptinhalt der Werkstatt",
+      "creationTools": "Bereich für Erstellungstools",
+      "userProjects": "Benutzerprojekte-Bereich"
+    },
+    "leadIn": {
+      "heading": "Ihr Humor-Hub",
+      "paragraph": "Greifen Sie auf alle Ihre bevorzugten Comedy-Funktionen von einem Ort aus zu. Erkunden, entdecken und genießen Sie!"
+    },
+    "platformCards": {
+      "myCreations": {
+        "title": "Meine Kreationen",
+        "description": "Sehen und verwalten Sie Ihre Comedy-Workshop-Ergebnisse",
+        "features": {
+          "feature1": "Ihre fertigen Witze",
+          "feature2": "Workshop-Fortschritt",
+          "feature3": "Leistungsanalyse",
+          "feature4": "Bearbeiten und verfeinern"
+        },
+        "badge": "Persönlich"
+      },
+      "humorHistory": {
+        "title": "Humor-Geschichte",
+        "description": "Erkunden Sie die weite Welt der Komödie und des Humors",
+        "features": {
+          "feature1": "Comedy-Zeitlinien",
+          "feature2": "Berühmte Komiker",
+          "feature3": "Witz-Evolution",
+          "feature4": "Kultureller Humor"
+        },
+        "badge": "Bildend"
+      },
+      "communityForum": {
+        "title": "Community-Forum",
+        "description": "Teilen Sie Ihre Witze und verbinden Sie sich mit anderen Komikern",
+        "features": {
+          "feature1": "Posten Sie Ihre Witze",
+          "feature2": "Feedback erhalten",
+          "feature3": "Witze anderer bewerten",
+          "feature4": "Comedy-Diskussionen"
+        },
+        "badge": "Sozial"
+      }
+    },
+    "buildTools": {
+      "title": "Build-Tools",
+      "body": "Alles was Sie brauchen um Ihre Comedy zu erstellen und zu veröffentlichen",
+      "actions": {
+        "createNew": "Neu Erstellen",
+        "viewDrafts": "Entwürfe Anzeigen",
+        "analytics": "Analysen",
+        "publish": "Veröffentlichen"
+      }
+    }
+  },
+  "WorkshopPage": {
+    "ariaLabels": {
+      "workshopMainContent": "Hauptinhalt der Werkstatt",
+      "creationTools": "Bereich für Erstellungstools",
+      "userProjects": "Benutzerprojekte-Bereich"
+    },
+    "leadIn": {
+      "heading": "Ihre Kreative Werkstatt",
+      "paragraph": "Bauen, gestalten und perfektionieren Sie Ihre Comedy-Kreationen. Hier geschieht die Magie!"
+    },
+    "sections": {
+      "tools": {
+        "title": "Comedy-Tools",
+        "description": "Alles was Sie brauchen, um den perfekten Witz zu kreieren"
+      },
+      "projects": {
+        "title": "Ihre Projekte",
+        "description": "Verfolgen Sie Ihre Comedy-Kreationen und Fortschritte"
+      },
+      "inspiration": {
+        "title": "Tägliche Inspiration",
+        "description": "Frische Ideen um Ihre Kreativität zu entfachen"
+      }
+    },
+    "actions": {
+      "createNew": "Neu Erstellen",
+      "saveProject": "Projekt Speichern",
+      "preview": "Vorschau",
+      "publish": "Veröffentlichen"
+    }
   }
 }

@@ -6,10 +6,12 @@ import { inputTypes } from "@/types/baseFieldTypes";
 import FormRendered from "@/components/dataDisplay/formRendered";
 import Button from "@/components/inputs/button";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 function SelectCountry() {
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("SelectCountry");
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
@@ -69,20 +71,20 @@ function SelectCountry() {
   return (
     <section
       className="bg-white rounded-2xl shadow-lg flex justify-center items-center flex-wrap gap-10 p-14"
-      aria-label="Select your country"
+      aria-label={t("ariaLabels.selectYourCountry")}
     >
       <aside
         className="flex flex-col items-center gap-10"
-        aria-label="Country selection introduction"
+        aria-label={t("ariaLabels.countrySelectionIntroduction")}
       >
         <LeadIn
-          heading={translations.intro.heading}
-          paragraph={translations.intro.paragraph}
+          heading={t(translations.intro.heading)}
+          paragraph={t(translations.intro.paragraph)}
         />
       </aside>
       <article
         className="flex justify-center items-center flex-wrap gap-10"
-        aria-label="Country options"
+        aria-label={t("ariaLabels.countryOptions")}
       >
         <FormRendered
           inputFields={translations.fields}

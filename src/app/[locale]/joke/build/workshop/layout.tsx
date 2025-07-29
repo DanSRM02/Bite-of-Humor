@@ -23,8 +23,8 @@ export default function WorkshopLayout({
         <section className="flex flex-col flex-1 items-center">{form}</section>
         <div className="hidden md:block w-px border-[.5px] border-dashed"></div>
         <div className="flex-1 flex flex-col justify-center gap-15">
-          <section className="">{preview}</section>
-          <section className="">{feedback}</section>
+          <section>{preview}</section>
+          <section>{feedback}</section>
         </div>
       </article>
       <Button

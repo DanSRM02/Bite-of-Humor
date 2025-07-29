@@ -3,22 +3,24 @@ import ButtonList from "@/components/dataDisplay/buttonList";
 import CardList from "@/components/dataDisplay/cardList";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Card from "@/components/feedback/card";
-import CardGrid from "@/components/layout/cardGrid";
 import { platformSectionsHome } from "@/utils/constants";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/feedback/icon";
 
 export default function HomePage() {
-  const t = useTranslations();
+  const t = useTranslations("HomePage");
   const router = useRouter();
 
   const handleRedirect = (typeButton: string) => {
     const routes: Record<string, string> = {
-      workshop: "workshop",
-      configuration: "configuration",
-      premiumExperience: "premium",
-      socialFeatures: "../build/home",
+      myCreations: "my-creations",
+      humorHistory: "humor-history", 
+      communityForum: "community-forum",
+      buildTools: "workshop",
+      analytics: "analytics",
+      drafts: "drafts",
+      publish: "publish"
     };
 
     const route = routes[typeButton];
@@ -27,12 +29,12 @@ export default function HomePage() {
 
   const platformSectionCard = platformSectionsHome.map((section) => ({
     key: section.title,
-    title: `TheFinalSetupPage.platformCards.${section.title}.title`,
-    body: `TheFinalSetupPage.platformCards.${section.title}.description`,
-    badge: `TheFinalSetupPage.platformCards.${section.title}.badge`,
+    title: `HomePage.platformCards.${section.title}.title`,
+    body: `HomePage.platformCards.${section.title}.description`,
+    badge: `HomePage.platformCards.${section.title}.badge`,
     features: section.features?.map(
       (featureKey) =>
-        `TheFinalSetupPage.platformCards.${section.title}.features.${featureKey}`
+        `HomePage.platformCards.${section.title}.features.${featureKey}`
     ),
     icon: section.iconName ? (
       <Icon icon={section.iconName} aria-label={`${section.title} icon`} />
@@ -41,67 +43,64 @@ export default function HomePage() {
     variant: "expandable" as const,
   }));
 
-  const dashboardTranslations = {
-    title: "TheFinalSetupPage.dashboardCard.title",
-    body: "TheFinalSetupPage.dashboardCard.body",
-    myFavorites: t("TheFinalSetupPage.dashboardButtons.myFavorites"),
-    advancedFilters: t("TheFinalSetupPage.dashboardButtons.advancedFilters"),
-    preferences: t("TheFinalSetupPage.dashboardButtons.preferences"),
-    settings: t("TheFinalSetupPage.dashboardButtons.settings"),
+  const buildToolsData = {
+    title: t("buildTools.title"),
+    body: t("buildTools.body"),
+    tools: [
+      {
+        label: t("buildTools.actions.createNew"),
+        icon: <Icon icon="lucide:plus-circle" size="1.2rem" aria-hidden="true" />,
+        onClick: () => handleRedirect("buildTools"),
+      },
+      {
+        label: t("buildTools.actions.viewDrafts"),
+        icon: <Icon icon="lucide:file-text" size="1.2rem" aria-hidden="true" />,
+        onClick: () => handleRedirect("drafts"),
+      },
+      {
+        label: t("buildTools.actions.analytics"),
+        icon: <Icon icon="lucide:bar-chart-3" size="1.2rem" aria-hidden="true" />,
+        onClick: () => handleRedirect("analytics"),
+      },
+      {
+        label: t("buildTools.actions.publish"),
+        icon: <Icon icon="lucide:rocket" size="1.2rem" aria-hidden="true" />,
+        onClick: () => handleRedirect("publish"),
+      },
+    ],
   };
 
-  const dashboardButtons = [
-    {
-      label: dashboardTranslations.myFavorites,
-      icon: <Icon icon="lucide:laugh" size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect(""),
-    },
-    {
-      label: dashboardTranslations.advancedFilters,
-      icon: <Icon icon="ci:heart" size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect(""),
-    },
-    {
-      label: dashboardTranslations.preferences,
-      icon: <Icon icon="ci:filter" size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect("filter"),
-    },
-    {
-      label: dashboardTranslations.settings,
-      icon: (
-        <Icon icon="ion:settings-outline" size="1.2rem" aria-hidden="true" />
-      ),
-      onClick: () => handleRedirect("configuration"),
-    },
-  ];
-
   return (
-    <>
-      <LeadIn
-        heading={dashboardTranslations.title}
-        paragraph={dashboardTranslations.body}
-      />
-      <section
-        aria-label="Platform features and dashboard"
-        className="flex flex-col gap-20"
-      >
-        <CardGrid ariaLabel="Platform features list">
+    <main aria-label={t("ariaLabels.homeMainContent")} className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-6 py-8">
+        <LeadIn
+          heading={t("leadIn.heading")}
+          paragraph={t("leadIn.paragraph")}        
+          isTextRaw={true}
+        />
+        
+        <section
+          aria-label={t("ariaLabels.platformFeaturesList")}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10"
+        >
           <CardList cards={platformSectionCard} />
-        </CardGrid>
+        </section>
+        
         <article
-          aria-label="User dashboard actions"
-          className="border-2 border-gray-300 rounded-lg"
+          aria-label={t("ariaLabels.userDashboardActions")}
+          className="bg-white shadow-lg border border-gray-200 rounded-2xl p-8"
         >
           <Card
-            title={dashboardTranslations.title}
-            body={dashboardTranslations.body}
+            title={buildToolsData.title}
+            body={buildToolsData.body}
+            isTextRaw={true}
           >
-            <span className="flex justify-center items-center p-4 gap-4">
-              <ButtonList buttons={dashboardButtons} />
-            </span>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+              <ButtonList buttons={buildToolsData.tools} />
+            </div>
           </Card>
         </article>
-      </section>
-    </>
+      </div>
+    </main>
   );
 }

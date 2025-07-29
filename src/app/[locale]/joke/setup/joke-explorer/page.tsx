@@ -3,13 +3,14 @@ import { getJokesInitialLoad } from "@/services/jokeService";
 import { inputTypes } from "@/types/baseFieldTypes";
 import { JokeImpl } from "@/types/jokeAPITypes";
 import { _AVAILABLE_CATEGORIES } from "@/utils/constants";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { JokeFilterProvider } from "@/contexts/JokeFilterContext";
 
 async function JokeExplorerPage() {
   const locale = await getLocale();
   const params = locale.split("-");
   const currentLanguage = params[0];
+  const t = await getTranslations("JokePage");
 
   const initialJokes: JokeImpl[] = await getJokesInitialLoad(currentLanguage);
 
@@ -46,15 +47,15 @@ async function JokeExplorerPage() {
     {
       id: "isMockData",
       type: "checkbox" as inputTypes,
-      label: "Check to use mock data",
+      label: "JokePage.searchForm.mockDataLabel",
       color: "primary",
       nameInput: "isMockData",
-      isTextRaw: true,
+      isTextRaw: false,
     },
   ];
   return (
     <JokeFilterProvider>
-      <section aria-label="Joke explorer section" className="flex flex-col">
+      <section aria-label={t("ariaLabels.jokeExplorerSection")} className="flex flex-col">
         <JokeFilter
           initialLoad={initialJokes}
           language={currentLanguage}

@@ -15,6 +15,96 @@
         "message4": "This is the last time, I promise!",
         "message5": "Enter into the real page!"
       }
+    },
+    "ariaLabels": {
+      "firstSetupMainContent": "First setup main content"
+    }
+  },
+  "HomePage": {
+    "ariaLabels": {
+      "homeMainContent": "Home page main content",
+      "platformFeaturesList": "Platform features list", 
+      "userDashboardActions": "User dashboard actions"
+    },
+    "leadIn": {
+      "heading": "Your Humor Hub",
+      "paragraph": "Access all your favorite comedy features from one place. Explore, discover, and enjoy!"
+    },
+    "platformCards": {
+      "myCreations": {
+        "title": "My Creations",
+        "description": "View and manage your comedy workshop results",
+        "features": {
+          "feature1": "Your completed jokes",
+          "feature2": "Workshop progress",
+          "feature3": "Performance analytics",
+          "feature4": "Edit and refine"
+        },
+        "badge": "Personal"
+      },
+      "humorHistory": {
+        "title": "Humor History",
+        "description": "Explore the vast world of comedy and humor",
+        "features": {
+          "feature1": "Comedy timelines",
+          "feature2": "Famous comedians",
+          "feature3": "Joke evolution",
+          "feature4": "Cultural humor"
+        },
+        "badge": "Educational"
+      },
+      "communityForum": {
+        "title": "Community Forum",
+        "description": "Share your jokes and connect with fellow comedians",
+        "features": {
+          "feature1": "Post your jokes",
+          "feature2": "Get feedback",
+          "feature3": "Rate others' jokes",
+          "feature4": "Comedy discussions"
+        },
+        "badge": "Social"
+      }
+    },
+    "buildTools": {
+      "title": "Build Tools",
+      "body": "Everything you need to craft and publish your comedy",
+      "actions": {
+        "createNew": "Create New",
+        "viewDrafts": "View Drafts",
+        "analytics": "Analytics",
+        "publish": "Publish"
+      }
+    }
+  },
+  "WorkshopPage": {
+    "ariaLabels": {
+      "workshopMainContent": "Workshop main content",
+      "creationTools": "Creation tools section",
+      "userProjects": "User projects area"
+    },
+    "leadIn": {
+      "heading": "Your Creative Workshop",
+      "paragraph": "Build, craft, and perfect your comedy creations. This is where the magic happens!"
+    },
+    "sections": {
+      "tools": {
+        "title": "Comedy Tools",
+        "description": "Everything you need to craft the perfect joke"
+      },
+      "projects": {
+        "title": "Your Projects",
+        "description": "Track your comedy creations and progress"
+      },
+      "inspiration": {
+        "title": "Daily Inspiration",
+        "description": "Fresh ideas to spark your creativity"
+      }
+    },
+    "actions": {
+      "createNew": "Create New",
+      "saveProject": "Save Project",
+      "preview": "Preview",
+      "publish": "Publish"
     }
   },
   "MediumSetup": {
@@ -110,6 +200,11 @@
     }
   },
   "SelectCountry": {
+    "ariaLabels": {
+      "selectYourCountry": "Select your country",
+      "countrySelectionIntroduction": "Country selection introduction",
+      "countryOptions": "Country options"
+    },
     "introduction": {
       "heading": "Choose Your Global Stage!",
       "paragraph": "Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
@@ -188,7 +283,9 @@
     "navItems": {
       "home": "Home",
       "signUp": "Sign Up",
-      "logIn": "Log In"
+      "logIn": "Log In",
+      "workshop": "Workshop",
+      "community": "Community"
     }
   },
   "TheFinalSetupPage": {
@@ -243,6 +340,9 @@
     }
   },
   "JokePage": {
+    "ariaLabels": {
+      "jokeExplorerSection": "Joke explorer section"
+    },
     "searchFilters": {
       "heading": "Search Filters",
       "paragraph": "Customize your joke search experience"
@@ -251,7 +351,8 @@
       "placeholder": "Search in jokes...",
       "label": "Search by keyword",
       "safeModeLabel": "Safe Mode",
-      "categoryLabel": "Select Category"
+      "categoryLabel": "Select Category",
+      "mockDataLabel": "Check to use mock data"
     },
     "loadingMessage": "Loading...",
     "safeModeWarning": "Safe mode is not allowed for the 'Dark' category."

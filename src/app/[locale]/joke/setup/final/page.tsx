@@ -3,7 +3,6 @@ import LeadIn from "@/components/dataDisplay/leadIn";
 import Card from "@/components/feedback/card";
 import { Icon } from "@/components/feedback/icon";
 import { platformSectionsFinal } from "@/utils/constants";
-import CardGrid from "@/components/layout/cardGrid";
 import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";
 import ButtonList from "@/components/dataDisplay/buttonList";
@@ -43,8 +42,8 @@ function TheFinalSetupPage() {
   }));
 
   const dashboardTranslations = {
-    title: "TheFinalSetupPage.dashboardCard.title",
-    body: "TheFinalSetupPage.dashboardCard.body",
+    title: t("TheFinalSetupPage.dashboardCard.title"),
+    body: t("TheFinalSetupPage.dashboardCard.body"),
     myFavorites: t("TheFinalSetupPage.dashboardButtons.myFavorites"),
     advancedFilters: t("TheFinalSetupPage.dashboardButtons.advancedFilters"),
     preferences: t("TheFinalSetupPage.dashboardButtons.preferences"),
@@ -75,33 +74,37 @@ function TheFinalSetupPage() {
   ];
 
   return (
-    <>
-      <LeadIn
-        heading={dashboardTranslations.title}
-        paragraph={dashboardTranslations.body}
-      />
-      <section
-        aria-label="Platform features and dashboard"
-        className="flex flex-col gap-20"
-      >
-        <CardGrid ariaLabel="Platform features list">
-         <CardList cards={platformSectionCard}  />
-        </CardGrid>
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-6 py-8">
+        <LeadIn
+          heading={t("TheFinalSetupPage.leadIn.heading")}
+          paragraph={t("TheFinalSetupPage.leadIn.paragraph")}
+          isTextRaw={true}
+        />
+        
+        <section
+          aria-label="Platform features and dashboard"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10"
+        >
+          <CardList cards={platformSectionCard} />
+        </section>
+        
         <article
           aria-label="User dashboard actions"
-          className="border-2 border-gray-300 rounded-lg"
+          className="bg-white shadow-lg border border-gray-200 rounded-2xl p-8"
         >
           <Card
             title={dashboardTranslations.title}
-            body={dashboardTranslations.body}
+            body={dashboardTranslations.body}      
+            isTextRaw={true}      
           >
-            <span className="flex justify-center items-center p-4 gap-4">    
-              <ButtonList buttons={dashboardButtons} />          
-            </span>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+              <ButtonList buttons={dashboardButtons} />
+            </div>
           </Card>
         </article>
-      </section>
-    </>
+      </div>
+    </main>
   );
 }
 

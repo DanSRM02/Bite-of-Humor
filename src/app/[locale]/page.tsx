@@ -61,18 +61,16 @@ function TheStartSetupPage() {
   return (
     <main
       className="min-h-screen flex flex-col items-center justify-center"
-      aria-label="First setup main content"
+      aria-label={t("ariaLabels.firstSetupMainContent")}
     >
-      <h1 className="mb-2 font-bold" aria-label="Bite Of Humor heading">
+      <h1 className="mb-2 font-bold">
         Bite Of Humor
       </h1>
       <section
         className="flex flex-wrap justify-center gap-[6rem] mt-12"
-        aria-label="Setup question and interaction"
       >
         <article
           className="flex flex-col justify-center"
-          aria-label="Setup introduction and description"
         >
           <h2 className="font-bold" aria-label={translations.intro.title}>
             {translations.intro.title}
@@ -89,7 +87,6 @@ function TheStartSetupPage() {
         </article>
         <article
           className="flex items-center justify-center p-[8rem] bg-stone-200"
-          aria-label="Setup action button"
         >
           <Button
             size="medium"

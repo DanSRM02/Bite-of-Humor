@@ -7,12 +7,18 @@ type SetupLayoutProps = {
 };
 
 export default function SetupLayout({ children }: SetupLayoutProps) {
+  const navLinks = [
+    { key: "navItems.home", href: "medium" },
+    { key: "navItems.signUp", href: "sign-up" },
+    { key: "navItems.logIn", href: "log-in" },
+  ];
+
   return (
     <div
       className="min-h-screen flex flex-col"
       aria-label="Public layout wrapper"
     >
-      <Navigation />
+      <Navigation links={navLinks} />
       <main
         className="mx-[5rem] flex flex-col flex-1 gap-[5rem] justify-center"
         aria-label="Main content area"

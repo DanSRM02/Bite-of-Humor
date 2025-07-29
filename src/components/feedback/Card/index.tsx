@@ -3,8 +3,9 @@ import Button from "@/components/inputs/button";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { useState, type ReactNode } from "react";
-import { Icon } from "@/components/feedback/icon";
+import { Icon } from "@iconify/react";
 import { formatText } from "@/utils/verifyTextFormat";
+import { flagConfig } from "@/utils/constants";
 
 export type CardProps = {
   children?: ReactNode;
@@ -24,6 +25,7 @@ export type CardProps = {
   jokePunchline?: string;
   jokeType?: string;
   className?: string;
+  flags?: Record<string, boolean>;
 };
 
 const Card = ({
@@ -38,6 +40,7 @@ const Card = ({
   config,
   children,
   variant = "default",
+  flags = {},
   onExplore,
   jokeSetup,
   jokePunchline,
@@ -57,7 +60,7 @@ const Card = ({
   const renderExpandable = () => (
     <article
       onClick={handleCardClick}
-      aria-label={t(title)}
+      aria-label={formatText(isTextRaw, title, t) || undefined}
       role="button"
       aria-expanded={isExpanded}
       className={`flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
@@ -75,7 +78,7 @@ const Card = ({
 
           <div className="ml-3">
             <h6 className="text-xl font-semibold text-stone-800 leading-snug">
-              {t(title)}
+              {formatText(isTextRaw, title, t)}
             </h6>
             <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
               {formattedBadge}
@@ -90,7 +93,7 @@ const Card = ({
       </header>
       <div className="flex-grow">
         <p className="text-base text-stone-600 leading-relaxed mb-4">
-          {t(body)}
+          {formatText(isTextRaw, body, t)}
         </p>
         {isExpanded && features && (
           <div className="flex flex-col gap-3 mt-4">
@@ -111,7 +114,7 @@ const Card = ({
                 size="small"
                 variant="secondary"
               >
-                {`Explore ${t(title)}`}
+                {`Explore ${formatText(isTextRaw, title, t)}`}
               </Button>
             )}
           </div>
@@ -119,11 +122,33 @@ const Card = ({
       </div>
     </article>
   );
-
+   
   const renderJoke = () => (
-    <article className="bg-white border border-stone-200 p-6 rounded-lg">
+    <article
+      className="bg-white p-6 rounded-lg relative"
+    >      
+      <div className="absolute top-2 right-2 flex gap-1">
+        {Object.entries(flags)
+          .filter(([_, isActive]) => isActive)
+          .map(([flagName]) => {
+            const config = flagConfig[flagName as keyof typeof flagConfig];
+            return (
+              <div
+                key={`indicator-${flagName}`}
+                className="h-5 w-5 rounded-full flex items-center justify-center border"
+                style={{
+                  backgroundColor: config.solidColor,
+                  borderColor: config.borderColor,
+                  borderWidth: 2,
+                }}
+                title={config.tooltip}
+              >
+                <Icon icon={config.iconComponent} className="text-xs text-white opacity-90" />
+              </div>
+            );
+          })}
+      </div>
       <h6 className="text-lg font-semibold text-stone-800 mb-2">{jokeSetup}</h6>
-
       {jokeType === "twopart" ? (
         <p className="text-base font-medium text-stone-800">{jokePunchline}</p>
       ) : (
@@ -134,14 +159,13 @@ const Card = ({
           {badge}
         </span>
       )}
-
       {children && <div className={`${className}`}>{children}</div>}
     </article>
   );
 
   const renderDefault = () => (
     <article
-      aria-label={t(title)}
+      aria-label={formatText(isTextRaw, title, t) || undefined}
       className="bg-white border border-stone-200 p-6 rounded-lg "
     >
       {img && (
@@ -153,8 +177,8 @@ const Card = ({
       )}
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h6 className="text-lg font-semibold text-stone-800">{t(title)}</h6>
-          <p className="text-base text-stone-700">{t(body)}</p>
+          <h6 className="text-lg font-semibold text-stone-800">{formatText(isTextRaw, title, t)}</h6>
+          <p className="text-base text-stone-700">{formatText(isTextRaw, body, t)}</p>
         </div>
       </div>
       {children && <div className={`${className}`}>{children}</div>}

@@ -1,4 +1,9 @@
-import { Icon } from "@/components/feedback/icon";
+import adultIcon from '@iconify-icons/bi/exclamation-circle-fill';
+import religiousIcon from '@iconify-icons/bi/book-fill';
+import politicalIcon from '@iconify-icons/bi/flag-fill';
+import racialIcon from '@iconify-icons/bi/people-fill';
+import genderIcon from '@iconify-icons/bi/gender-ambiguous';
+import explicitIcon from '@iconify-icons/bi/eye-slash-fill';
 import { UnorderedListImpl } from "@/types/unorderedListType";
 import TextareaField from "@/components/inputs/field/textarea";
 import DefaultField from "@/components/inputs/field/default";
@@ -7,11 +12,11 @@ import CheckboxField from "@/components/inputs/field/checkbox";
 import { BaseFieldImpl, inputTypes } from "@/types/baseFieldTypes";
 import { ComponentType } from "react";
 import MultipleSelectField from "@/components/inputs/field/multipleSelect";
-export { 
-  DEFAULT_LOCALE, 
-  SUPPORTED_LOCALES, 
-  SUPPORTED_LOCALES_STRING, 
-  API_BASE 
+export {
+  DEFAULT_LOCALE,
+  SUPPORTED_LOCALES,
+  SUPPORTED_LOCALES_STRING,
+  API_BASE,
 } from "./baseConstants";
 
 export const _AVAILABLE_CATEGORIES: string[] = [
@@ -54,14 +59,59 @@ export const AVAILABLE_FLAGS_OPTIONS = [
 export const COUNTRIES = [
   { value: "US", label: "United States" },
   { value: "DE", label: "Germany" },
-  { value: "FR", label: "France" },  
+  { value: "FR", label: "France" },
 ];
 
 export const SUPPORTED_LANGS = [
-  { value: "en", label: "English" },  
+  { value: "en", label: "English" },
   { value: "fr", label: "French" },
   { value: "de", label: "German" },
 ];
+
+export const flagConfig = {
+  nsfw: {
+    color: "#e11d48",
+    solidColor: "#e11d48",
+    borderColor: "#a21caf",
+    iconComponent: adultIcon,
+    tooltip: "Not Safe For Work",
+  },
+  religious: {
+    color: "#2563eb",
+    solidColor: "#2563eb",
+    borderColor: "#0ea5e9",
+    iconComponent: religiousIcon,
+    tooltip: "Religious Content",
+  },
+  political: {
+    color: "#f59e42",
+    solidColor: "#f59e42",
+    borderColor: "#ea580c",
+    iconComponent: politicalIcon,
+    tooltip: "Political Content",
+  },
+  racist: {
+    color: "#10b981",
+    solidColor: "#10b981",
+    borderColor: "#047857",
+    iconComponent: racialIcon,
+    tooltip: "Racial Content",
+  },
+  sexist: {
+    color: "#a21caf",
+    solidColor: "#a21caf",
+    borderColor: "#f472b6",
+    iconComponent: genderIcon,
+    tooltip: "Gender/Sexist Content",
+  },
+  explicit: {
+    color: "#fbbf24",
+    solidColor: "#fbbf24",
+    borderColor: "#b45309",
+    iconComponent: explicitIcon,
+    tooltip: "Explicit Content",
+  },
+};
 
 export const fieldTypeToComponent: Record<
   inputTypes,
@@ -74,7 +124,7 @@ export const fieldTypeToComponent: Record<
   select: SelectField,
   checkbox: CheckboxField,
   search: DefaultField,
-  selectMultiple: MultipleSelectField
+  selectMultiple: MultipleSelectField,
 };
 
 export const platformSectionsFinal: UnorderedListImpl[] = [
@@ -100,20 +150,20 @@ export const platformSectionsFinal: UnorderedListImpl[] = [
 
 export const platformSectionsHome: UnorderedListImpl[] = [
   {
-    title: "workshop",
-    iconName: "lucide:mail",
+    title: "myCreations",
+    iconName: "lucide:palette",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
   {
-    title: "nothingYet",
-    iconName: "lucide:users",
+    title: "humorHistory",
+    iconName: "lucide:book-open",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },
   {
-    title: "nothingYet",
-    iconName: "lucide:crown",
+    title: "communityForum",
+    iconName: "lucide:message-circle",
     features: ["feature1", "feature2", "feature3", "feature4"],
     topics: [],
   },

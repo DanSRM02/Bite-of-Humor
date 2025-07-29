@@ -12,7 +12,8 @@ function PreviewCardWorkshopJoke() {
         jokeSetup={jokeSubmissionData.setup}
         jokePunchline={jokeSubmissionData.punchline}
         variant="joke"
-        isTextRaw
+        isTextRaw={true}
+        flags={jokeSubmissionData.flags}
         badge={jokeSubmissionData.category}
       />
     </>

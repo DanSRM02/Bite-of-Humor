@@ -15,6 +15,9 @@
         "message4": "C'est la dernière fois, promis !",
         "message5": "Entrez sur la vraie page !"
       }
+    },
+    "ariaLabels": {
+      "firstSetupMainContent": "Contenu principal de la première configuration"
     }
   },
   "MediumSetup": {
@@ -133,13 +136,20 @@
       "US": "États-Unis",
       "FR": "France",
       "DE": "Allemagne"
+    },
+    "ariaLabels": {
+      "selectYourCountry": "Sélectionnez votre pays",
+      "countrySelectionIntroduction": "Introduction à la sélection de pays",
+      "countryOptions": "Options de pays"
     }
   },
   "HeaderNavigation": {
     "navItems": {
       "home": "Accueil",
       "signUp": "S'inscrire",
-      "logIn": "Se connecter"
+      "logIn": "Se connecter",
+      "workshop": "Atelier",
+      "community": "Communauté"
     }
   },
   "common": {
@@ -243,6 +253,9 @@
     }
   },
   "JokePage": {
+    "ariaLabels": {
+      "jokeExplorerSection": "Section d'exploration de blagues"
+    },
     "navLink": {
       "text": "Aller à la finale"
     },
@@ -255,7 +268,8 @@
       "placeholder": "Rechercher dans les blagues...",
       "label": "Recherche par mot-clé",
       "safeModeLabel": "Mode sécurisé",
-      "categoryLabel": "Sélectionner une catégorie"
+      "categoryLabel": "Sélectionner une catégorie",
+      "mockDataLabel": "Utiliser les données mock"
     },
     "loadingMessage": "Chargement..."
   },
@@ -270,15 +284,27 @@
             "subtitle": "Qu'est-ce que Bite of Humor ?",
             "link": "/core/what-is"
           },
-          { "subtitle": "Derrière le Nom", "link": "/core/name-origin" },
-          { "subtitle": "Philosophie du Logo", "link": "/core/logo-philosophy" }
+          {
+            "subtitle": "Derrière le Nom",
+            "link": "/core/name-origin"
+          },
+          {
+            "subtitle": "Philosophie du Logo",
+            "link": "/core/logo-philosophy"
+          }
         ]
       },
       {
         "title": "À Propos du Projet",
         "topics": [
-          { "subtitle": "Aperçu du Projet", "link": "/about/overview" },
-          { "subtitle": "Objectifs de Conception", "link": "/about/goals" },
+          {
+            "subtitle": "Aperçu du Projet",
+            "link": "/about/overview"
+          },
+          {
+            "subtitle": "Objectifs de Conception",
+            "link": "/about/goals"
+          },
           {
             "subtitle": "Direction Créative",
             "link": "/about/creative-direction"
@@ -288,14 +314,110 @@
       {
         "title": "Communauté",
         "topics": [
-          { "subtitle": "Forum de Discussion", "link": "/community/forum" },
+          {
+            "subtitle": "Forum de Discussion",
+            "link": "/community/forum"
+          },
           {
             "subtitle": "Proposer une Blague",
             "link": "/community/submit-joke"
           },
-          { "subtitle": "Défis de Conception", "link": "/community/challenges" }
+          {
+            "subtitle": "Défis de Conception",
+            "link": "/community/challenges"
+          }
         ]
       }
     ]
+  },
+  "HomePage": {
+    "ariaLabels": {
+      "homeMainContent": "Contenu principal de la page d'accueil",
+      "platformFeaturesList": "Liste des fonctionnalités de la plateforme",
+      "userDashboardActions": "Actions du tableau de bord utilisateur",
+      "workshopMainContent": "Contenu principal de l'atelier",
+      "creationTools": "Section outils de création",
+      "userProjects": "Zone des projets utilisateur"
+    },
+    "leadIn": {
+      "heading": "Votre Hub Humour",
+      "paragraph": "Accédez à toutes vos fonctionnalités comedy préférées depuis un seul endroit. Explorez, découvrez et profitez !"
+    },
+    "platformCards": {
+      "myCreations": {
+        "title": "Mes Créations",
+        "description": "Consultez et gérez les résultats de votre atelier de comédie",
+        "features": {
+          "feature1": "Vos blagues terminées",
+          "feature2": "Progrès de l'atelier",
+          "feature3": "Analyses de performance",
+          "feature4": "Modifier et peaufiner"
+        },
+        "badge": "Personnel"
+      },
+      "humorHistory": {
+        "title": "Histoire de l'Humour",
+        "description": "Explorez le vaste monde de la comédie et de l'humour",
+        "features": {
+          "feature1": "Chronologies comiques",
+          "feature2": "Comédiens célèbres",
+          "feature3": "Évolution des blagues",
+          "feature4": "Humour culturel"
+        },
+        "badge": "Éducatif"
+      },
+      "communityForum": {
+        "title": "Forum Communautaire",
+        "description": "Partagez vos blagues et connectez-vous avec d'autres comédiens",
+        "features": {
+          "feature1": "Publiez vos blagues",
+          "feature2": "Obtenez des commentaires",
+          "feature3": "Notez les blagues des autres",
+          "feature4": "Discussions comiques"
+        },
+        "badge": "Social"
+      }
+    },
+    "buildTools": {
+      "title": "Outils de Construction",
+      "body": "Tout ce dont vous avez besoin pour créer et publier votre comédie",
+      "actions": {
+        "createNew": "Créer Nouveau",
+        "viewDrafts": "Voir les Brouillons",
+        "analytics": "Analyses",
+        "publish": "Publier"
+      }
+    }
+  },
+  "WorkshopPage": {
+    "ariaLabels": {
+      "workshopMainContent": "Contenu principal de l'atelier",
+      "creationTools": "Section outils de création",
+      "userProjects": "Zone des projets utilisateur"
+    },
+    "leadIn": {
+      "heading": "Votre Atelier Créatif",
+      "paragraph": "Construisez, créez et perfectionnez vos créations comiques. C'est ici que la magie opère !"
+    },
+    "sections": {
+      "tools": {
+        "title": "Outils Comiques",
+        "description": "Tout ce dont vous avez besoin pour créer la blague parfaite"
+      },
+      "projects": {
+        "title": "Vos Projets",
+        "description": "Suivez vos créations comiques et votre progression"
+      },
+      "inspiration": {
+        "title": "Inspiration Quotidienne",
+        "description": "Idées fraîches pour stimuler votre créativité"
+      }
+    },
+    "actions": {
+      "createNew": "Créer Nouveau",
+      "saveProject": "Sauvegarder Projet",
+      "preview": "Aperçu",
+      "publish": "Publier"
+    }
   }
 }
