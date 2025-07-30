@@ -103,7 +103,7 @@ export const JokeFilter = ({
 
   return (
     <>
-      <span className="flex flex-wrap justify-center items-center gap-20">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-20 mb-8">
         <LeadIn
           variant="fourth"
           redirect={"/joke/setup/final"}
@@ -111,16 +111,16 @@ export const JokeFilter = ({
           paragraph={translations.searchFilters.paragraph}
         />
         <div
-          className="flex flex-wrap justify-around items-center p-8 w-[55%] border border-solid border-gray-300 rounded-md"
+          className="flex-1 max-w-none lg:max-w-[55%] p-4 sm:p-6 lg:p-8 border border-solid border-gray-300 rounded-md bg-white shadow-sm"
           aria-label="Joke Filter"
         >
           <FormRendered
             inputFields={fieldsWithDynamicAttributes}
             handlerChange={handleInputChange}
+            variant="filter"
           />
         </div>
-      </span>
-      <br />
+      </div>
       {isDarkMode && (
         <Chip color="yellow" textChip="JokePage.safeModeWarning" />
       )}
@@ -130,20 +130,21 @@ export const JokeFilter = ({
       {jokeState.error && (
         <Chip isTextRaw color="red" textChip={jokeState.error} />
       )}
-      <br />
-      <CardGrid ariaLabel="Joke results list">
-        {displayedJokes.map((joke) => (
-          <Card
-            key={joke.id}
-            badge={joke.category}
-            variant="joke"
-            isTextRaw
-            jokeSetup={joke.setup || joke.joke}
-            jokePunchline={joke.delivery}
-            jokeType={joke.type}
-          />
-        ))}
-      </CardGrid>
+      <div className="mt-6">
+        <CardGrid ariaLabel="Joke results list">
+          {displayedJokes.map((joke) => (
+            <Card
+              key={joke.id}
+              badge={joke.category}
+              variant="joke"
+              isTextRaw
+              jokeSetup={joke.setup || joke.joke}
+              jokePunchline={joke.delivery}
+              jokeType={joke.type}
+            />
+          ))}
+        </CardGrid>
+      </div>
     </>
   );
 };

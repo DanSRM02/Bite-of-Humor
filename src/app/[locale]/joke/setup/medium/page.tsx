@@ -58,30 +58,31 @@ function MediumPage() {
   };
 
   return (
-    <>
-      <section
-        className={
-          "bg-gray-100 m-[1rem] py-[4rem] rounded-[1rem] gap-[2.5rem] flex justify-center items-center min-w-[24rem]"
-        }
+    <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-8">
+      <section 
+        className="bg-gray-100 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded-lg flex flex-col lg:flex-row justify-center items-center gap-6 sm:gap-8 lg:gap-12 min-h-[300px]" 
         aria-label="Introduction section"
       >
-        <LeadIn
-          heading={translations.leadIn.heading}
-          paragraph={translations.leadIn.paragraph}
-        />
-        <Image
-          className="w-[18rem]"
-          src={logoBoH}
-          alt={translations.leadIn.logoAlt}
-        />
+        <div className="flex-1 text-center lg:text-left max-w-2xl">
+          <LeadIn
+            heading={translations.leadIn.heading}
+            paragraph={translations.leadIn.paragraph}
+          />
+        </div>
+        <div className="flex-shrink-0 order-first lg:order-last">
+          <Image
+            className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 h-auto"
+            src={logoBoH}
+            alt={translations.leadIn.logoAlt}
+          />
+        </div>
       </section>
-      <Heading level={2} className="font-bold">
+
+      <Heading level={2} className="font-bold text-center sm:text-left text-xl sm:text-2xl lg:text-3xl">
         {translations.jokesLanguagesSection.title}
       </Heading>
-      <section
-        className="grid grid-cols-3 gap-[1rem]"
-        aria-label="Joke languages cards"
-      >
+      
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" aria-label="Joke languages cards">
         <Card
           img={unitedStateImg}
           title={translations.jokesLanguagesSection.cards.unitedStates.title}
@@ -98,44 +99,47 @@ function MediumPage() {
           body={translations.jokesLanguagesSection.cards.france.body}
         />
       </section>
-      <Heading level={2} className="font-bold">
+
+      <Heading level={2} className="font-bold text-center sm:text-left text-xl sm:text-2xl lg:text-3xl">
         {translations.typesOfJokesSection.title}
       </Heading>
-      <section
-        className="flex flex-col mx-[5rem] [&>:nth-child(2)]:items-end"
-        aria-label="Types of jokes"
-      >
-        <LeadIn
-          heading={translations.typesOfJokesSection.classicJokes.heading}
-          paragraph={translations.typesOfJokesSection.classicJokes.paragraph}
-          variant="secondary"
-        />
-        <LeadIn
-          heading={translations.typesOfJokesSection.surrealAbsurdity.heading}
-          paragraph={
-            translations.typesOfJokesSection.surrealAbsurdity.paragraph
-          }
-          variant="secondary"
-        />
-        <LeadIn
-          heading={translations.typesOfJokesSection.dadJokes.heading}
-          paragraph={translations.typesOfJokesSection.dadJokes.paragraph}
-          variant="secondary"
-        />
+      
+      <section className="flex flex-col gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-8 lg:px-16 xl:px-20" aria-label="Types of jokes">
+        <div className="max-w-4xl mx-auto lg:self-start lg:text-left">
+          <LeadIn
+            heading={translations.typesOfJokesSection.classicJokes.heading}
+            paragraph={translations.typesOfJokesSection.classicJokes.paragraph}
+            variant="secondary"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto lg:self-end lg:text-right">
+          <LeadIn
+            heading={translations.typesOfJokesSection.surrealAbsurdity.heading}
+            paragraph={translations.typesOfJokesSection.surrealAbsurdity.paragraph}
+            variant="secondary"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto lg:self-start lg:text-left">
+          <LeadIn
+            heading={translations.typesOfJokesSection.dadJokes.heading}
+            paragraph={translations.typesOfJokesSection.dadJokes.paragraph}
+            variant="secondary"
+          />
+        </div>
       </section>
-      <section
-        className="flex justify-center items-center gap-[5rem] py-[3rem] bg-gray-100 rounded-[1rem] "
-        aria-label="Advice and action"
-      >
-        <LeadIn
-          variant="tertiary"
-          heading={translations.adviseSection.mainText.line1}
-          paragraph={translations.adviseSection.mainText.line2}
-          textLink={translations.adviseSection.actionButton.text}
-          redirect={"sign-up"}
-        />
+
+      <section className="flex flex-col lg:flex-row justify-center items-center gap-6 sm:gap-8 lg:gap-16 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 rounded-lg" aria-label="Advice and action">
+        <div className="flex-1 text-center lg:text-left max-w-2xl">
+          <LeadIn
+            variant="tertiary"
+            heading={translations.adviseSection.mainText.line1}
+            paragraph={translations.adviseSection.mainText.line2}
+            textLink={translations.adviseSection.actionButton.text}
+            redirect="sign-up"
+          />
+        </div>
       </section>
-    </>
+    </div>
   );
 }
 

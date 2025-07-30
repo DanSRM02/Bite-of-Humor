@@ -44,21 +44,25 @@ async function SignUp() {
 
   return (
     <section
-      className="flex justify-center items-center flex-wrap p-12 gap-8 min-h-[37rem] border-2 border-gray-300 rounded-lg"
+      className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-12 min-h-[500px] sm:min-h-[600px] lg:min-h-[37rem] border-2 border-gray-300 rounded-lg max-w-7xl mx-auto"
       aria-label="Sign up section"
     >
-      <LeadIn
-        variant="primary"
-        heading={translations.intro.heading}
-        paragraph={translations.intro.paragraph}
-      />
-      <Form
-        actionForm={signUpComedianAction}
-        initialStateForm={initialSignUpState}
-        inputFields={translations.fields}
-        textButton={translations.actions.submitButton}
-        legendHeading={translations.actions.legendHeading}
-      />
+      <div className="flex-1 max-w-md lg:max-w-lg text-center lg:text-left">
+        <LeadIn
+          variant="primary"
+          heading={translations.intro.heading}
+          paragraph={translations.intro.paragraph}
+        />
+      </div>
+      <div className="flex-1 w-full max-w-md lg:max-w-lg">
+        <Form
+          actionForm={signUpComedianAction}
+          initialStateForm={initialSignUpState}
+          inputFields={translations.fields}
+          textButton={translations.actions.submitButton}
+          legendHeading={translations.actions.legendHeading}
+        />
+      </div>
     </section>
   );
 }

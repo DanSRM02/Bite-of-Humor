@@ -28,18 +28,22 @@ function PremiumExperiencePage() {
   };
 
   return (
-    <section className="flex flex-col gap-8">
-      <LeadIn
-        heading={translations.leadIn.heading}
-        paragraph={translations.leadIn.paragraph}
-        redirect={"final"}
-        variant="fourth"
-      />
+    <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+      <div className="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
+        <LeadIn
+          heading={translations.leadIn.heading}
+          paragraph={translations.leadIn.paragraph}
+          redirect={"final"}
+          variant="fourth"
+        />
+      </div>
 
-      <CardGrid ariaLabel="plans list">
-        <CardList cards={translations.plans} />
-      </CardGrid>
-    </section>
+      <div className="w-full">
+        <CardGrid ariaLabel="plans list">
+          <CardList cards={translations.plans} />
+        </CardGrid>
+      </div>
+    </div>
   );
 }
 

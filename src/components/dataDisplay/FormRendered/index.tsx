@@ -1,6 +1,8 @@
 import { BaseFieldImpl, FormFieldProps } from "@/types/baseFieldTypes";
 import { fieldTypeToComponent } from "@/utils/constants";
 
+type FormVariant = "form" | "filter" | "inline";
+
 type FormRenderedProps = {
   inputFields: BaseFieldImpl[] | FormFieldProps[];
   handlerChange?: (
@@ -8,26 +10,52 @@ type FormRenderedProps = {
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) => void;
+  variant?: FormVariant;
+  className?: string;
 };
+
+const VARIANT_STYLES = {
+  container: {
+    form: "flex flex-col gap-4 sm:gap-5",
+    filter: "flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6",
+    inline: "flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4",
+  },
+  field: {
+    form: "w-full",
+    filter: "min-w-[150px] sm:min-w-[180px] flex-shrink-0",
+    inline: "flex-1 min-w-[200px]",
+  },
+} as const;
+
 export default function FormRendered({
   inputFields,
   handlerChange,
+  variant = "form",
+  className = "",
 }: FormRenderedProps) {
-  return inputFields.map((field) => {
-    const { type, ...restProps } = field;
-    const InputField = fieldTypeToComponent[type || "text"];
+  const containerStyles = VARIANT_STYLES.container[variant];
+  const fieldStyles = VARIANT_STYLES.field[variant];
 
-    if (!InputField) {
-      throw new Error("That Input doesn't exist");
-    }
+  return (
+    <div className={`${containerStyles} ${className}`}>
+      {inputFields.map((field) => {
+        const { type, ...restProps } = field;
+        const InputField = fieldTypeToComponent[type || "text"];
 
-    return (
-      <InputField
-        key={field.id}
-        onChange={handlerChange}
-        {...restProps}
-        required
-      />
-    );
-  });
+        if (!InputField) {
+          throw new Error(`Input field type "${type}" does not exist`);
+        }
+
+        return (
+          <div key={field.id} className={fieldStyles}>
+            <InputField
+              onChange={handlerChange}
+              {...restProps}
+              required
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
 }

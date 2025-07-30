@@ -7,6 +7,8 @@ import { Icon } from "@iconify/react";
 import { formatText } from "@/utils/verifyTextFormat";
 import { flagConfig } from "@/utils/constants";
 
+type CardVariant = "default" | "expandable" | "joke";
+
 export type CardProps = {
   children?: ReactNode;
   img?: StaticImageData;
@@ -18,7 +20,7 @@ export type CardProps = {
     value: number | bigint;
   };
   features?: string[];
-  variant?: "default" | "expandable" | "joke";
+  variant?: CardVariant;
   onExplore?: () => void;
   jokeSetup?: string;
   isTextRaw?: boolean;
@@ -27,6 +29,55 @@ export type CardProps = {
   className?: string;
   flags?: Record<string, boolean>;
 };
+
+const CARD_STYLES = {
+  base: {
+    default: "bg-white border border-stone-200 p-4 sm:p-6 rounded-lg",
+    expandable: "flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-4 sm:p-6 lg:p-8 border-2 transition-all duration-300",
+    joke: "bg-white p-3 sm:p-4 md:p-6 rounded-lg relative",
+  },
+  expandableBorder: {
+    expanded: "border-stone-800 shadow-xl",
+    collapsed: "border-stone-300",
+  },
+  header: {
+    container: "flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 mb-4",
+    iconWrapper: "flex items-center justify-center bg-stone-800 text-white p-2 sm:p-3 lg:p-4 rounded-md flex-shrink-0",
+    content: "ml-2 sm:ml-3 min-w-0 flex-1",
+    title: "text-lg sm:text-xl font-semibold text-stone-800 leading-snug break-words",
+    badge: "inline-block bg-stone-100 text-stone-800 px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium mt-1 sm:mt-0",
+  },
+  text: {
+    body: "text-sm sm:text-base text-stone-600 leading-relaxed mb-3 sm:mb-4",
+    feature: "text-xs sm:text-sm text-stone-700 leading-relaxed",
+  },
+  joke: {
+    title: "text-base sm:text-lg font-semibold text-stone-800 mb-2 pr-12 sm:pr-16 leading-tight",
+    punchline: "text-sm sm:text-base font-medium text-stone-800 pr-12 sm:pr-16 leading-relaxed",
+    punchlineSingle: "text-sm sm:text-base font-semibold pr-12 sm:pr-16 leading-relaxed",
+    badge: "inline-block bg-stone-100 text-stone-800 px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium mt-3 sm:mt-4",
+    flagContainer: "absolute top-1 right-1 sm:top-2 sm:right-2 flex gap-1 flex-wrap max-w-[100px] sm:max-w-none",
+    flag: "h-4 w-4 sm:h-5 sm:w-5 rounded-full flex items-center justify-center border flex-shrink-0",
+    flagIcon: "text-xs text-white opacity-90",
+  },
+  default: {
+    image: "w-full h-32 sm:h-40 md:h-48 object-cover rounded-md mb-3 sm:mb-4",
+    container: "flex flex-col gap-3 sm:gap-4",
+    textGroup: "flex flex-col gap-1 sm:gap-2",
+    title: "text-base sm:text-lg font-semibold text-stone-800 leading-tight",
+    body: "text-sm sm:text-base text-stone-700 leading-relaxed",
+  },
+  shared: {
+    children: "mt-3 sm:mt-4",
+    separator: "h-px bg-stone-300 w-full",
+    featureContainer: "flex flex-col gap-2 sm:gap-3 mt-3 sm:mt-4",
+    featureItem: "flex items-start gap-2 sm:gap-3",
+    bullet: "w-1 h-1 sm:w-1.5 sm:h-1.5 bg-stone-500 rounded-full flex-shrink-0 mt-2 sm:mt-1.5",
+    arrow: "transition-transform text-lg sm:text-xl flex-shrink-0 self-start sm:self-center",
+    button: "mt-2 sm:mt-3 self-start",
+    buttonText: "text-xs sm:text-sm",
+  },
+} as const;
 
 const Card = ({
   img,
@@ -50,6 +101,7 @@ const Card = ({
   const t = useTranslations();
 
   const formattedBadge = formatText(isTextRaw, badge, t, config);
+  const baseStyles = CARD_STYLES.base[variant];
 
   const handleCardClick = () => {
     if (variant === "expandable") {
@@ -57,142 +109,175 @@ const Card = ({
     }
   };
 
-  const renderExpandable = () => (
-    <article
-      onClick={handleCardClick}
-      aria-label={formatText(isTextRaw, title, t) || undefined}
-      role="button"
-      aria-expanded={isExpanded}
-      className={`flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-8 border-2 transition-all duration-300 ${
-        isExpanded ? "border-stone-800 shadow-xl" : "border-stone-300"
-      }`}
-    >
-      <header className="flex justify-between items-start mb-4">
-        <div className="flex items-center">
-          <div
-            aria-hidden="true"
-            className="flex items-center justify-center bg-stone-800 text-white p-4 rounded-md"
-          >
-            {icon}
-          </div>
+  const getActiveFlags = () => 
+    Object.entries(flags).filter(([_, isActive]) => isActive);
 
-          <div className="ml-3">
-            <h6 className="text-xl font-semibold text-stone-800 leading-snug">
-              {formatText(isTextRaw, title, t)}
-            </h6>
-            <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium">
-              {formattedBadge}
-            </span>
-          </div>
-        </div>
+  const renderFlag = (flagName: string) => {
+    const flagConfiguration = flagConfig[flagName as keyof typeof flagConfig];
+    
+    return (
+      <div
+        key={`flag-${flagName}`}
+        className={CARD_STYLES.joke.flag}
+        style={{
+          backgroundColor: flagConfiguration.solidColor,
+          borderColor: flagConfiguration.borderColor,
+          borderWidth: 2,
+        }}
+        title={flagConfiguration.tooltip}
+      >
         <Icon 
-          icon="bi:arrow-left-right"
-          aria-hidden="true"
-          className={`transition-transform ${isExpanded ? "rotate-90" : ""}`}
+          icon={flagConfiguration.iconComponent} 
+          className={CARD_STYLES.joke.flagIcon}
         />
-      </header>
-      <div className="flex-grow">
-        <p className="text-base text-stone-600 leading-relaxed mb-4">
-          {formatText(isTextRaw, body, t)}
-        </p>
-        {isExpanded && features && (
-          <div className="flex flex-col gap-3 mt-4">
-            <div className="h-px bg-stone-300 w-full"></div>
-            {features.map((feature) => (
-              <div key={feature} className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-stone-500 rounded-full"></div>
-                <span className="text-sm text-stone-700">
-                  {formatText(isTextRaw, feature, t)}
-                </span>
-              </div>
-            ))}
-            {onExplore && (
-              <Button
-                onClick={() => {
-                  onExplore();
-                }}
-                size="small"
-                variant="secondary"
-              >
-                {`Explore ${formatText(isTextRaw, title, t)}`}
-              </Button>
-            )}
-          </div>
-        )}
       </div>
-    </article>
+    );
+  };
+
+  const renderFlags = () => {
+    const activeFlags = getActiveFlags();
+    
+    if (activeFlags.length === 0) return null;
+
+    return (
+      <div className={CARD_STYLES.joke.flagContainer}>
+        {activeFlags.map(([flagName]) => renderFlag(flagName))}
+      </div>
+    );
+  };
+
+  const renderFeatures = () => (
+    <div className={CARD_STYLES.shared.featureContainer}>
+      <div className={CARD_STYLES.shared.separator}></div>
+      {features?.map((feature) => (
+        <div key={feature} className={CARD_STYLES.shared.featureItem}>
+          <div className={CARD_STYLES.shared.bullet}></div>
+          <span className={CARD_STYLES.text.feature}>
+            {formatText(isTextRaw, feature, t)}
+          </span>
+        </div>
+      ))}
+      {onExplore && (
+        <Button
+          onClick={onExplore}
+          size="small"
+          variant="secondary"
+          className={CARD_STYLES.shared.button}
+        >
+          <span className={CARD_STYLES.shared.buttonText}>
+            {`Explore ${formatText(isTextRaw, title, t)}`}
+          </span>
+        </Button>
+      )}
+    </div>
   );
+
+  const renderChildren = () => children && (
+    <div className={`${CARD_STYLES.shared.children} ${className}`}>
+      {children}
+    </div>
+  );
+
+  const renderExpandable = () => {
+    const borderStyle = isExpanded 
+      ? CARD_STYLES.expandableBorder.expanded 
+      : CARD_STYLES.expandableBorder.collapsed;
+
+    return (
+      <article
+        onClick={handleCardClick}
+        aria-label={formatText(isTextRaw, title, t) || undefined}
+        role="button"
+        aria-expanded={isExpanded}
+        className={`${baseStyles} ${borderStyle}`}
+      >
+        <header className={CARD_STYLES.header.container}>
+          <div className="flex items-center">
+            <div aria-hidden="true" className={CARD_STYLES.header.iconWrapper}>
+              {icon}
+            </div>
+            <div className={CARD_STYLES.header.content}>
+              <h6 className={CARD_STYLES.header.title}>
+                {formatText(isTextRaw, title, t)}
+              </h6>
+              <span className={CARD_STYLES.header.badge}>
+                {formattedBadge}
+              </span>
+            </div>
+          </div>
+          <Icon 
+            icon="bi:arrow-left-right"
+            aria-hidden="true"
+            className={`${CARD_STYLES.shared.arrow} ${isExpanded ? "rotate-90" : ""}`}
+          />
+        </header>
+        <div className="flex-grow">
+          <p className={CARD_STYLES.text.body}>
+            {formatText(isTextRaw, body, t)}
+          </p>
+          {isExpanded && features && renderFeatures()}
+        </div>
+      </article>
+    );
+  };
    
   const renderJoke = () => (
-    <article
-      className="bg-white p-6 rounded-lg relative"
-    >      
-      <div className="absolute top-2 right-2 flex gap-1">
-        {Object.entries(flags)
-          .filter(([_, isActive]) => isActive)
-          .map(([flagName]) => {
-            const config = flagConfig[flagName as keyof typeof flagConfig];
-            return (
-              <div
-                key={`indicator-${flagName}`}
-                className="h-5 w-5 rounded-full flex items-center justify-center border"
-                style={{
-                  backgroundColor: config.solidColor,
-                  borderColor: config.borderColor,
-                  borderWidth: 2,
-                }}
-                title={config.tooltip}
-              >
-                <Icon icon={config.iconComponent} className="text-xs text-white opacity-90" />
-              </div>
-            );
-          })}
-      </div>
-      <h6 className="text-lg font-semibold text-stone-800 mb-2">{jokeSetup}</h6>
+    <article className={baseStyles}>      
+      {renderFlags()}
+      <h6 className={CARD_STYLES.joke.title}>
+        {jokeSetup}
+      </h6>
       {jokeType === "twopart" ? (
-        <p className="text-base font-medium text-stone-800">{jokePunchline}</p>
+        <p className={CARD_STYLES.joke.punchline}>
+          {jokePunchline}
+        </p>
       ) : (
-        <p className="text-base font-semibold">{jokePunchline}</p>
+        <p className={CARD_STYLES.joke.punchlineSingle}>
+          {jokePunchline}
+        </p>
       )}
       {badge && (
-        <span className="inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-md text-sm font-medium mt-4">
+        <span className={CARD_STYLES.joke.badge}>
           {badge}
         </span>
       )}
-      {children && <div className={`${className}`}>{children}</div>}
+      {renderChildren()}
     </article>
   );
 
   const renderDefault = () => (
     <article
       aria-label={formatText(isTextRaw, title, t) || undefined}
-      className="bg-white border border-stone-200 p-6 rounded-lg "
+      className={baseStyles}
     >
       {img && (
         <Image
           src={img}
           alt={t(title || "Card image")}
-          className="w-full h-48 object-cover rounded-md mb-4"
+          className={CARD_STYLES.default.image}
         />
       )}
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <h6 className="text-lg font-semibold text-stone-800">{formatText(isTextRaw, title, t)}</h6>
-          <p className="text-base text-stone-700">{formatText(isTextRaw, body, t)}</p>
+      <div className={CARD_STYLES.default.container}>
+        <div className={CARD_STYLES.default.textGroup}>
+          <h6 className={CARD_STYLES.default.title}>
+            {formatText(isTextRaw, title, t)}
+          </h6>
+          <p className={CARD_STYLES.default.body}>
+            {formatText(isTextRaw, body, t)}
+          </p>
         </div>
       </div>
-      {children && <div className={`${className}`}>{children}</div>}
+      {renderChildren()}
     </article>
   );
 
-  switch (variant) {
-    case "expandable":
-      return renderExpandable();
-    case "joke":
-      return renderJoke();
-    default:
-      return renderDefault();
-  }
+  const RENDER_MAP = {
+    expandable: renderExpandable,
+    joke: renderJoke,
+    default: renderDefault,
+  } as const;
+
+  return RENDER_MAP[variant]();
 };
 
 export default Card;

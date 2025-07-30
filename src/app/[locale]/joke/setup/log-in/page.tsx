@@ -36,15 +36,17 @@ async function LogIn() {
   };
 
   return (
-    <>
-      <section
-        className="flex justify-center items-center flex-wrap p-12 min-h-[35rem] gap-8 border-2 border-gray-300 rounded-lg"
-        aria-label="Log in section"
-      >
+    <section
+      className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-12 min-h-[400px] sm:min-h-[500px] lg:min-h-[35rem] border-2 border-gray-300 rounded-lg max-w-7xl mx-auto"
+      aria-label="Log in section"
+    >
+      <div className="flex-1 max-w-md lg:max-w-lg text-center lg:text-left">
         <LeadIn
           heading={translations.intro.heading}
           paragraph={translations.intro.paragraph}
         />
+      </div>
+      <div className="flex-1 w-full max-w-md lg:max-w-lg">
         <Form
           actionForm={loginComedianAction}
           initialStateForm={initialLoginState}
@@ -52,8 +54,8 @@ async function LogIn() {
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}
         />
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

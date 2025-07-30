@@ -72,30 +72,30 @@ export default function HomePage() {
 
   return (
     <main aria-label={t("ariaLabels.homeMainContent")} className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <LeadIn
           heading={t("leadIn.heading")}
           paragraph={t("leadIn.paragraph")}        
-          isTextRaw={true}
+          isTextRaw
         />
         
         <section
           aria-label={t("ariaLabels.platformFeaturesList")}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10"
         >
           <CardList cards={platformSectionCard} />
         </section>
         
         <article
           aria-label={t("ariaLabels.userDashboardActions")}
-          className="bg-white shadow-lg border border-gray-200 rounded-2xl p-8"
+          className="bg-white shadow-lg border border-gray-200 rounded-2xl p-4 sm:p-6 md:p-8"
         >
           <Card
             title={buildToolsData.title}
             body={buildToolsData.body}
-            isTextRaw={true}
+            isTextRaw
           >
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6">
               <ButtonList buttons={buildToolsData.tools} />
             </div>
           </Card>

@@ -28,15 +28,17 @@ function SelectCountry() {
   };
 
   const handleRedirect = () => {
-    const newLocale = `${selectedLanguage}-${selectedCountry}`;
-    const newPath = pathname.replace("/select-country", "/final");
-    router.push(newPath, { locale: newLocale });
+    if (selectedCountry && selectedLanguage) {
+      const newLocale = `${selectedLanguage}-${selectedCountry}`;
+      const newPath = pathname.replace("/select-country", "/final");
+      router.push(newPath, { locale: newLocale });
+    }
   };
 
   const translations = {
     intro: {
-      heading: "SelectCountry.introduction.heading",
-      paragraph: "SelectCountry.introduction.paragraph",
+      heading: "introduction.heading",
+      paragraph: "introduction.paragraph",
     },
     fields: [
       {
@@ -69,32 +71,42 @@ function SelectCountry() {
   };
 
   return (
-    <section
-      className="bg-white rounded-2xl shadow-lg flex justify-center items-center flex-wrap gap-10 p-14"
-      aria-label={t("ariaLabels.selectYourCountry")}
-    >
-      <aside
-        className="flex flex-col items-center gap-10"
-        aria-label={t("ariaLabels.countrySelectionIntroduction")}
+    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <section
+        className="bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 p-6 sm:p-8 lg:p-14 w-full max-w-6xl mx-auto"
+        aria-label={t("ariaLabels.selectYourCountry")}
       >
-        <LeadIn
-          heading={t(translations.intro.heading)}
-          paragraph={t(translations.intro.paragraph)}
-        />
-      </aside>
-      <article
-        className="flex justify-center items-center flex-wrap gap-10"
-        aria-label={t("ariaLabels.countryOptions")}
-      >
-        <FormRendered
-          inputFields={translations.fields}
-          handlerChange={handleSelect}
-        />
-        <Button onClick={handleRedirect} size="medium" variant="secondary">
-          Enter
-        </Button>
-      </article>
-    </section>
+        <aside
+          className="flex flex-col items-center text-center lg:text-left lg:items-start flex-1 max-w-md lg:max-w-lg"
+          aria-label={t("ariaLabels.countrySelectionIntroduction")}
+        >
+          <LeadIn
+            heading={t(translations.intro.heading)}
+            paragraph={t(translations.intro.paragraph)}
+            isTextRaw
+          />
+        </aside>
+        <article
+          className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-8 w-full lg:w-auto flex-1 max-w-md lg:max-w-lg"
+          aria-label={t("ariaLabels.countryOptions")}
+        >
+          <FormRendered
+            inputFields={translations.fields}
+            handlerChange={handleSelect}
+            variant="inline"
+            className="w-full"
+          />
+          <Button 
+            onClick={handleRedirect} 
+            size="medium" 
+            variant="secondary"
+            className="w-full sm:w-auto min-w-[120px]"
+          >
+            Enter
+          </Button>
+        </article>
+      </section>
+    </div>
   );
 }
 

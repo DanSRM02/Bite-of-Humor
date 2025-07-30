@@ -55,13 +55,20 @@ async function JokeExplorerPage() {
   ];
   return (
     <JokeFilterProvider>
-      <section aria-label={t("ariaLabels.jokeExplorerSection")} className="flex flex-col">
-        <JokeFilter
-          initialLoad={initialJokes}
-          language={currentLanguage}
-          fieldsBlueprint={filterFieldsWithoutDynamicAttributes}
-        />
-      </section>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+          <section 
+            aria-label={t("ariaLabels.jokeExplorerSection")} 
+            className="flex flex-col gap-6 sm:gap-8 lg:gap-10"
+          >
+            <JokeFilter
+              initialLoad={initialJokes}
+              language={currentLanguage}
+              fieldsBlueprint={filterFieldsWithoutDynamicAttributes}
+            />
+          </section>
+        </div>
+      </div>
     </JokeFilterProvider>
   );
 }
