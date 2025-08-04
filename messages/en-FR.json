@@ -20,6 +20,140 @@
       "firstSetupMainContent": "First setup main content"
     }
   },
+  "HomePage": {
+    "ariaLabels": {
+      "homeMainContent": "Home page main content",
+      "platformFeaturesList": "Platform features list", 
+      "userDashboardActions": "User dashboard actions"
+    },
+    "leadIn": {
+      "heading": "Your Humor Hub",
+      "paragraph": "Access all your favorite comedy features from one place. Explore, discover, and enjoy!"
+    },
+    "platformCards": {
+      "myCreations": {
+        "title": "My Creations",
+        "description": "View and manage your comedy workshop results",
+        "features": {
+          "feature1": "Your completed jokes",
+          "feature2": "Workshop progress",
+          "feature3": "Performance analytics",
+          "feature4": "Edit and refine"
+        },
+        "badge": "Personal"
+      },
+      "humorHistory": {
+        "title": "Humor History",
+        "description": "Explore the vast world of comedy and humor",
+        "features": {
+          "feature1": "Comedy timelines",
+          "feature2": "Famous comedians",
+          "feature3": "Joke evolution",
+          "feature4": "Cultural humor"
+        },
+        "badge": "Educational"
+      },
+      "communityForum": {
+        "title": "Community Forum",
+        "description": "Share your jokes and connect with fellow comedians",
+        "features": {
+          "feature1": "Post your jokes",
+          "feature2": "Get feedback",
+          "feature3": "Rate others' jokes",
+          "feature4": "Comedy discussions"
+        },
+        "badge": "Social"
+      }
+    },
+    "buildTools": {
+      "title": "Build Tools",
+      "body": "Everything you need to craft and publish your comedy",
+      "actions": {
+        "createNew": "Create New",
+        "viewDrafts": "View Drafts",
+        "analytics": "Analytics",
+        "publish": "Publish"
+      }
+    }
+  },
+  "WorkshopPage": {
+    "ariaLabels": {
+      "workshopMainContent": "Workshop main content",
+      "creationTools": "Creation tools section",
+      "userProjects": "User projects area"
+    },
+    "leadIn": {
+      "heading": "Your Creative Workshop",
+      "paragraph": "Build, craft, and perfect your comedy creations. This is where the magic happens!"
+    },
+    "header": {
+      "steps": {
+        "write": {
+          "heading": "1. Write",
+          "paragraph": "Fill out the form with your joke setup and punchline"
+        },
+        "preview": {
+          "heading": "2. Preview",
+          "paragraph": "Watch your joke come to life with dynamic styling"
+        },
+        "submit": {
+          "heading": "3. Submit",
+          "paragraph": "Get instant feedback and share your humor with the world"
+        }
+      }
+    },
+    "sections": {
+      "tools": {
+        "title": "Comedy Tools",
+        "description": "Everything you need to craft the perfect joke"
+      },
+      "projects": {
+        "title": "Your Projects",
+        "description": "Track your comedy creations and progress"
+      },
+      "inspiration": {
+        "title": "Daily Inspiration",
+        "description": "Fresh ideas to spark your creativity"
+      }
+    },
+    "actions": {
+      "createNew": "Create New",
+      "saveProject": "Save Project",
+      "preview": "Preview",
+      "publish": "Publish"
+    },
+    "form": {
+      "title": "Create Your Joke",
+      "legend": "Joke Creation Form",
+      "preview": "Preview Joke",
+      "feedback": {
+        "title": "AI Feedback Coming Soon",
+        "description": "We're developing an AI system to provide real-time joke analysis and improvement suggestions.",
+        "status": "In Development"
+      },
+      "fields": {
+        "category": {
+          "label": "Category",
+          "placeholder": "Select a category"
+        },
+        "flags": {
+          "label": "Content Flags",
+          "placeholder": "Select content flags",
+          "groupLabel": "Flag Options"
+        },
+        "setup": {
+          "label": "Setup",
+          "placeholder": "Enter your joke setup..."
+        },
+        "punchline": {
+          "label": "Punchline",
+          "placeholder": "Enter your punchline..."
+        }
+      },
+      "submit": "Create Joke",
+      "sendButton": "Send Joke"
+    }
+  },
   "MediumSetup": {
     "leadInMain": {
       "heading": "What is Bite of Humor?",
@@ -71,8 +205,8 @@
   },
   "ErrorPage": {
     "content": {
-      "title": "Error Page",
-      "message": "An error occurred!"
+      "title": "Page Not Found",
+      "message": "Sorry, the page you're looking for doesn't exist or has been moved."
     },
     "actions": {
       "button": "Go to Home"
@@ -113,6 +247,11 @@
     }
   },
   "SelectCountry": {
+    "ariaLabels": {
+      "selectYourCountry": "Select your country",
+      "countrySelectionIntroduction": "Country selection introduction",
+      "countryOptions": "Country options"
+    },
     "introduction": {
       "heading": "Choose Your Global Stage!",
       "paragraph": "Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
@@ -136,16 +275,27 @@
       "US": "United States",
       "FR": "France",
       "DE": "Germany"
-    },
-    "ariaLabels": {
-      "selectYourCountry": "Select your country",
-      "countrySelectionIntroduction": "Country selection introduction",
-      "countryOptions": "Country options"
     }
   },
   "common": {
     "none": "None",
-    "all": "All"
+    "all": "All",
+    "flags": {
+      "nsfw": "NSFW",
+      "religious": "Religious", 
+      "political": "Political",
+      "racist": "Racist",
+      "sexist": "Sexist",
+      "explicit": "Explicit"
+    },
+    "categories": {
+      "Programming": "Programming",
+      "Miscellaneous": "Miscellaneous", 
+      "Dark": "Dark",
+      "Pun": "Pun",
+      "Spooky": "Spooky",
+      "Christmas": "Christmas"
+    }
   },
   "plans": {
     "navLink": {
@@ -277,31 +427,16 @@
       {
         "title": "Core Concepts",
         "topics": [
-          {
-            "subtitle": "What is Bite of Humor?",
-            "link": "/core/what-is"
-          },
-          {
-            "subtitle": "Behind the Name",
-            "link": "/core/name-origin"
-          },
-          {
-            "subtitle": "Logo Philosophy",
-            "link": "/core/logo-philosophy"
-          }
+          { "subtitle": "What is Bite of Humor?", "link": "/core/what-is" },
+          { "subtitle": "Behind the Name", "link": "/core/name-origin" },
+          { "subtitle": "Logo Philosophy", "link": "/core/logo-philosophy" }
         ]
       },
       {
         "title": "About the Project",
         "topics": [
-          {
-            "subtitle": "Project Overview",
-            "link": "/about/overview"
-          },
-          {
-            "subtitle": "Design Goals",
-            "link": "/about/goals"
-          },
+          { "subtitle": "Project Overview", "link": "/about/overview" },
+          { "subtitle": "Design Goals", "link": "/about/goals" },
           {
             "subtitle": "Creative Direction",
             "link": "/about/creative-direction"
@@ -311,110 +446,40 @@
       {
         "title": "Community",
         "topics": [
-          {
-            "subtitle": "Feedback Forum",
-            "link": "/community/forum"
-          },
-          {
-            "subtitle": "Submit a Joke",
-            "link": "/community/submit-joke"
-          },
-          {
-            "subtitle": "Design Challenges",
-            "link": "/community/challenges"
-          }
+          { "subtitle": "Feedback Forum", "link": "/community/forum" },
+          { "subtitle": "Submit a Joke", "link": "/community/submit-joke" },
+          { "subtitle": "Design Challenges", "link": "/community/challenges" }
         ]
       }
     ]
   },
-  "HomePage": {
-    "ariaLabels": {
-      "homeMainContent": "Home page main content",
-      "platformFeaturesList": "Platform features list",
-      "userDashboardActions": "User dashboard actions",
-      "workshopMainContent": "Workshop main content",
-      "creationTools": "Creation tools section",
-      "userProjects": "User projects area"
+  "validation": {
+    "category": {
+      "required": "Category is required",
+      "invalid": "Invalid category selected"
     },
-    "leadIn": {
-      "heading": "Your Humor Hub",
-      "paragraph": "Access all your favorite comedy features from one place. Explore, discover, and enjoy!"
+    "setup": {
+      "required": "Joke setup is required",
+      "minWords": "Joke setup must contain at least 3 words",
+      "maxLength": "Joke setup cannot exceed 200 characters"
     },
-    "platformCards": {
-      "myCreations": {
-        "title": "My Creations",
-        "description": "View and manage your comedy workshop results",
-        "features": {
-          "feature1": "Your completed jokes",
-          "feature2": "Workshop progress",
-          "feature3": "Performance analytics",
-          "feature4": "Edit and refine"
-        },
-        "badge": "Personal"
-      },
-      "humorHistory": {
-        "title": "Humor History",
-        "description": "Explore the vast world of comedy and humor",
-        "features": {
-          "feature1": "Comedy timelines",
-          "feature2": "Famous comedians",
-          "feature3": "Joke evolution",
-          "feature4": "Cultural humor"
-        },
-        "badge": "Educational"
-      },
-      "communityForum": {
-        "title": "Community Forum",
-        "description": "Share your jokes and connect with fellow comedians",
-        "features": {
-          "feature1": "Post your jokes",
-          "feature2": "Get feedback",
-          "feature3": "Rate others' jokes",
-          "feature4": "Comedy discussions"
-        },
-        "badge": "Social"
-      }
+    "punchline": {
+      "required": "Punchline is required",
+      "minWords": "Punchline must contain at least 1 word",
+      "maxLength": "Punchline cannot exceed 150 characters"
     },
-    "buildTools": {
-      "title": "Build Tools",
-      "body": "Everything you need to craft and publish your comedy",
-      "actions": {
-        "createNew": "Create New",
-        "viewDrafts": "View Drafts",
-        "analytics": "Analytics",
-        "publish": "Publish"
-      }
+    "darkCategory": {
+      "explicitRequired": "Dark humor category must have the explicit flag enabled"
     }
   },
-  "WorkshopPage": {
-    "ariaLabels": {
-      "workshopMainContent": "Workshop main content",
-      "creationTools": "Creation tools section",
-      "userProjects": "User projects area"
+  "jokeSubmission": {
+    "errors": {
+      "fixErrors": "Please fix the following errors:",
+      "submissionFailed": "Submission failed",
+      "generalError": "An error occurred while submitting your joke"
     },
-    "leadIn": {
-      "heading": "Your Creative Workshop",
-      "paragraph": "Build, craft, and perfect your comedy creations. This is where the magic happens!"
-    },
-    "sections": {
-      "tools": {
-        "title": "Comedy Tools",
-        "description": "Everything you need to craft the perfect joke"
-      },
-      "projects": {
-        "title": "Your Projects",
-        "description": "Track your comedy creations and progress"
-      },
-      "inspiration": {
-        "title": "Daily Inspiration",
-        "description": "Fresh ideas to spark your creativity"
-      }
-    },
-    "actions": {
-      "createNew": "Create New",
-      "saveProject": "Save Project",
-      "preview": "Preview",
-      "publish": "Publish"
+    "success": {
+      "submitted": "Your joke has been submitted successfully and is pending review!"
     }
   }
 }

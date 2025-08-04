@@ -13,9 +13,9 @@ export function JokeSubmissionProvider({ children }: { children: ReactNode }) {
   const [jokeSubmissionData, setJokeSubmissionData] =
     useState<JokeSubmissionDataImpl>({
       id: "",
-      category: "None",
-      setup: "None",
-      punchline: "None",
+      category: "common.none",
+      setup: "",
+      punchline: "",
       flags: {
         nsfw: false,
         religious: false,

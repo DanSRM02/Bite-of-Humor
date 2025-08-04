@@ -30,12 +30,12 @@ export const _AVAILABLE_CATEGORIES: string[] = [
 ];
 
 export const AVAILABLE_CATEGORIES_OPTIONS = [
-  { value: "Programming", label: "Programming" },
-  { value: "Miscellaneous", label: "Miscellaneous" },
-  { value: "Dark", label: "Dark" },
-  { value: "Pun", label: "Pun" },
-  { value: "Spooky", label: "Spooky" },
-  { value: "Christmas", label: "Christmas" },
+  { value: "Programming", label: "common.categories.Programming" },
+  { value: "Miscellaneous", label: "common.categories.Miscellaneous" },
+  { value: "Dark", label: "common.categories.Dark" },
+  { value: "Pun", label: "common.categories.Pun" },
+  { value: "Spooky", label: "common.categories.Spooky" },
+  { value: "Christmas", label: "common.categories.Christmas" },
 ];
 
 export const _AVAILABLE_FLAGS: string[] = [
@@ -48,12 +48,12 @@ export const _AVAILABLE_FLAGS: string[] = [
 ];
 
 export const AVAILABLE_FLAGS_OPTIONS = [
-  { value: "nsfw", label: "NSFW" },
-  { value: "religious", label: "Religious" },
-  { value: "political", label: "Political" },
-  { value: "racist", label: "Racist" },
-  { value: "sexist", label: "Sexist" },
-  { value: "explicit", label: "Explicit" },
+  { value: "nsfw", label: "common.flags.nsfw" },
+  { value: "religious", label: "common.flags.religious" },
+  { value: "political", label: "common.flags.political" },
+  { value: "racist", label: "common.flags.racist" },
+  { value: "sexist", label: "common.flags.sexist" },
+  { value: "explicit", label: "common.flags.explicit" },
 ];
 
 export const COUNTRIES = [

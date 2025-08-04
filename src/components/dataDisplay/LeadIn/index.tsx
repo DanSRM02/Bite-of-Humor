@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { formatText } from "@/utils/verifyTextFormat";
 import { Icon } from "@/components/feedback/icon";
-import arrowLeftLong from '@iconify-icons/fa6-solid/arrow-left-long';
+import arrowLeftLong from "@iconify-icons/fa6-solid/arrow-left-long";
 
 type LeadInProps = {
   heading: string;
@@ -33,28 +33,33 @@ const LeadIn = ({
         <h5 className="max-w-[37rem] mt-4 sm:mt-6 md:mt-7 font-bold text-lg sm:text-xl">
           {formattedTextHeading}
         </h5>
-        <p className="max-w-[45rem] text-sm sm:text-base leading-relaxed">{formattedTextParragraph}</p>
+        <p className="max-w-[45rem] text-sm sm:text-base leading-relaxed">
+          {formattedTextParragraph}
+        </p>
       </article>
     );
   };
 
   const renderTertiary = () => {
     return (
-      <article className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-26 flex-wrap">
-        <h2 className="max-w-[37rem] mt-4 sm:mt-6 md:mt-7 font-bold text-xl sm:text-2xl md:text-3xl">
-          {formattedTextHeading}
-          <br />
-          {formattedTextParragraph}
-        </h2>
+      <article className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
+        <div className="flex flex-col gap-4 flex-1">
+          <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
+            {formattedTextHeading}
+          </h2>
+          <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
+            {formattedTextParragraph}
+          </p>
+        </div>
 
-        <span className="bg-white py-2 hover:text-white duration-300">
+        <div className="flex-shrink-0">
           <Link
-            className="hover:bg-black p-3 rounded transition-colors duration-300 text-sm sm:text-base"
+            className="inline-block bg-white text-gray-800 hover:bg-gray-50 px-6 py-3 rounded-md transition-colors duration-300 text-base sm:text-lg font-semibold"
             href={redirect}
           >
             {formattedTextLink}
           </Link>
-        </span>
+        </div>
       </article>
     );
   };
@@ -76,7 +81,7 @@ const LeadIn = ({
     return (
       <span className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-15">
         <Link href={redirect} className="self-start sm:self-center">
-          <Icon 
+          <Icon
             icon={arrowLeftLong}
             size="1.5rem"
             className="hover:fill-secondary-bg hover:border-b-2 hover:border-secondary-bg sm:text-2xl"
@@ -86,7 +91,9 @@ const LeadIn = ({
           <h1 className="max-w-[37rem] mt-2 sm:mt-4 md:mt-7 font-bold text-xl sm:text-2xl md:text-3xl">
             {formattedTextHeading}
           </h1>
-          <p className="max-w-[45rem] text-sm sm:text-base leading-relaxed">{formattedTextParragraph}</p>
+          <p className="max-w-[45rem] text-sm sm:text-base leading-relaxed">
+            {formattedTextParragraph}
+          </p>
         </article>
       </span>
     );

@@ -71,11 +71,11 @@
   },
   "ErrorPage": {
     "content": {
-      "title": "Page d'Erreur",
-      "message": "Une erreur est survenue !"
+      "title": "Page non trouvée",
+      "message": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée."
     },
     "actions": {
-      "button": "Retourner à la page précédente"
+      "button": "Aller à l'accueil"
     }
   },
   "ComedianSignUpForm": {
@@ -154,7 +154,23 @@
   },
   "common": {
     "none": "Aucun",
-    "all": "Tous"
+    "all": "Tous",
+    "flags": {
+      "nsfw": "Contenu Adulte",
+      "religious": "Religieux",
+      "political": "Politique",
+      "racist": "Raciste",
+      "sexist": "Sexiste",
+      "explicit": "Explicite"
+    },
+    "categories": {
+      "Programming": "Programmation",
+      "Miscellaneous": "Divers",
+      "Dark": "Sombre",
+      "Pun": "Jeu de Mots",
+      "Spooky": "Effrayant",
+      "Christmas": "Noël"
+    }
   },
   "plans": {
     "navLink": {
@@ -399,6 +415,22 @@
       "heading": "Votre Atelier Créatif",
       "paragraph": "Construisez, créez et perfectionnez vos créations comiques. C'est ici que la magie opère !"
     },
+    "header": {
+      "steps": {
+        "write": {
+          "heading": "1. Écrire",
+          "paragraph": "Remplissez le formulaire avec la configuration et la chute de votre blague"
+        },
+        "preview": {
+          "heading": "2. Aperçu",
+          "paragraph": "Regardez votre blague prendre vie avec un style dynamique"
+        },
+        "submit": {
+          "heading": "3. Soumettre",
+          "paragraph": "Obtenez des commentaires instantanés et partagez votre humour avec le monde"
+        }
+      }
+    },
     "sections": {
       "tools": {
         "title": "Outils Comiques",
@@ -418,6 +450,66 @@
       "saveProject": "Sauvegarder Projet",
       "preview": "Aperçu",
       "publish": "Publier"
+    },
+    "form": {
+      "title": "Créez Votre Blague",
+      "legend": "Formulaire de Création de Blague",
+      "preview": "Aperçu de la Blague",
+      "feedback": {
+        "title": "Retour IA Bientôt Disponible",
+        "description": "Nous développons un système IA pour fournir une analyse de blagues en temps réel et des suggestions d'amélioration.",
+        "status": "En Développement"
+      },
+      "fields": {
+        "category": {
+          "label": "Catégorie",
+          "placeholder": "Sélectionnez une catégorie"
+        },
+        "flags": {
+          "label": "Indicateurs de Contenu",
+          "placeholder": "Sélectionnez des indicateurs de contenu",
+          "groupLabel": "Options d'Indicateurs"
+        },
+        "setup": {
+          "label": "Configuration",
+          "placeholder": "Entrez la configuration de votre blague..."
+        },
+        "punchline": {
+          "label": "Chute",
+          "placeholder": "Entrez votre chute..."
+        }
+      },
+      "submit": "Créer la Blague",
+      "sendButton": "Envoyer la Blague"
+    }
+  },
+  "validation": {
+    "category": {
+      "required": "La catégorie est requise",
+      "invalid": "Catégorie invalide sélectionnée"
+    },
+    "setup": {
+      "required": "La configuration de la blague est requise",
+      "minWords": "La configuration doit contenir au moins 3 mots",
+      "maxLength": "La configuration ne peut pas dépasser 200 caractères"
+    },
+    "punchline": {
+      "required": "La chute est requise",
+      "minWords": "La chute doit contenir au moins 1 mot",
+      "maxLength": "La chute ne peut pas dépasser 150 caractères"
+    },
+    "darkCategory": {
+      "explicitRequired": "L'humour noir doit avoir le flag explicite activé"
+    }
+  },
+  "jokeSubmission": {
+    "errors": {
+      "fixErrors": "Veuillez corriger les erreurs suivantes:",
+      "submissionFailed": "Échec de la soumission",
+      "generalError": "Une erreur s'est produite lors de la soumission de votre blague"
+    },
+    "success": {
+      "submitted": "Votre blague a été soumise avec succès et est en attente de révision!"
     }
   }
 }

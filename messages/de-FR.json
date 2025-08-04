@@ -71,11 +71,11 @@
   },
   "ErrorPage": {
     "content": {
-      "title": "Fehlerseite",
-      "message": "Ein Fehler ist aufgetreten!"
+      "title": "Seite nicht gefunden",
+      "message": "Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben."
     },
     "actions": {
-      "button": "Zurück zur vorherigen Seite"
+      "button": "Zur Startseite"
     }
   },
   "ComedianSignUpForm": {
@@ -113,6 +113,11 @@
     }
   },
   "SelectCountry": {
+    "ariaLabels": {
+      "selectYourCountry": "Wählen Sie Ihr Land",
+      "countrySelectionIntroduction": "Länderauswahl-Einführung",
+      "countryOptions": "Länderoptionen"
+    },
     "introduction": {
       "heading": "Wähle deine globale Bühne!",
       "paragraph": "Bite of Humor verbindet dich mit Comedy aus aller Welt. Sag uns, wo du deine humorvolle Reise beginnen möchtest."
@@ -136,11 +141,6 @@
       "US": "Vereinigte Staaten",
       "FR": "Frankreich",
       "DE": "Deutschland"
-    },
-    "ariaLabels": {
-      "selectYourCountry": "Wählen Sie Ihr Land",
-      "countrySelectionIntroduction": "Länderauswahl-Einführung",
-      "countryOptions": "Länderoptionen"
     }
   },
   "HeaderNavigation": {
@@ -150,6 +150,26 @@
       "logIn": "Anmelden",
       "workshop": "Werkstatt",
       "community": "Community"
+    }
+  },
+  "common": {
+    "none": "Keine",
+    "all": "Alle",
+    "flags": {
+      "nsfw": "Nicht Jugendfrei",
+      "religious": "Religiös",
+      "political": "Politisch", 
+      "racist": "Rassistisch",
+      "sexist": "Sexistisch",
+      "explicit": "Explizit"
+    },
+    "categories": {
+      "Programming": "Programmierung",
+      "Miscellaneous": "Verschiedenes",
+      "Dark": "Dunkel", 
+      "Pun": "Wortspiel",
+      "Spooky": "Gruselig",
+      "Christmas": "Weihnachten"
     }
   },
   "plans": {
@@ -196,10 +216,6 @@
         "feature5": "Exklusiver und Bonus-Inhalt"
       }
     }
-  },
-  "common": {
-    "none": "Aucun",
-    "all": "Tous"
   },
   "TheFinalSetupPage": {
     "leadIn": {
@@ -399,6 +415,22 @@
       "heading": "Ihre Kreative Werkstatt",
       "paragraph": "Bauen, gestalten und perfektionieren Sie Ihre Comedy-Kreationen. Hier geschieht die Magie!"
     },
+    "header": {
+      "steps": {
+        "write": {
+          "heading": "1. Schreiben",
+          "paragraph": "Füllen Sie das Formular mit Ihrem Witz-Aufbau und der Pointe aus"
+        },
+        "preview": {
+          "heading": "2. Vorschau",
+          "paragraph": "Sehen Sie, wie Ihr Witz mit dynamischem Styling zum Leben erwacht"
+        },
+        "submit": {
+          "heading": "3. Absenden",
+          "paragraph": "Erhalten Sie sofortiges Feedback und teilen Sie Ihren Humor mit der Welt"
+        }
+      }
+    },
     "sections": {
       "tools": {
         "title": "Comedy-Tools",
@@ -418,6 +450,66 @@
       "saveProject": "Projekt Speichern",
       "preview": "Vorschau",
       "publish": "Veröffentlichen"
+    },
+    "form": {
+      "title": "Erstellen Sie Ihren Witz",
+      "legend": "Witz-Erstellungsformular",
+      "preview": "Witz-Vorschau",
+      "feedback": {
+        "title": "KI-Feedback kommt bald",
+        "description": "Wir entwickeln ein KI-System, das Echtzeit-Witzanalyse und Verbesserungsvorschläge bietet.",
+        "status": "In Entwicklung"
+      },
+      "fields": {
+        "category": {
+          "label": "Kategorie",
+          "placeholder": "Wählen Sie eine Kategorie"
+        },
+        "flags": {
+          "label": "Inhalts-Flags",
+          "placeholder": "Wählen Sie Inhalts-Flags",
+          "groupLabel": "Flag-Optionen"
+        },
+        "setup": {
+          "label": "Aufbau",
+          "placeholder": "Geben Sie Ihren Witz-Aufbau ein..."
+        },
+        "punchline": {
+          "label": "Pointe",
+          "placeholder": "Geben Sie Ihre Pointe ein..."
+        }
+      },
+      "submit": "Witz Erstellen",
+      "sendButton": "Witz Senden"
+    }
+  },
+  "validation": {
+    "category": {
+      "required": "Kategorie ist erforderlich",
+      "invalid": "Ungültige Kategorie ausgewählt"
+    },
+    "setup": {
+      "required": "Witz-Setup ist erforderlich",
+      "minWords": "Witz-Setup muss mindestens 3 Wörter enthalten",
+      "maxLength": "Witz-Setup darf 200 Zeichen nicht überschreiten"
+    },
+    "punchline": {
+      "required": "Pointe ist erforderlich",
+      "minWords": "Pointe muss mindestens 1 Wort enthalten",
+      "maxLength": "Pointe darf 150 Zeichen nicht überschreiten"
+    },
+    "darkCategory": {
+      "explicitRequired": "Schwarzer Humor muss das Explicit-Flag aktiviert haben"
+    }
+  },
+  "jokeSubmission": {
+    "errors": {
+      "fixErrors": "Bitte beheben Sie die folgenden Fehler:",
+      "submissionFailed": "Übermittlung fehlgeschlagen",
+      "generalError": "Ein Fehler ist beim Einreichen Ihres Witzes aufgetreten"
+    },
+    "success": {
+      "submitted": "Ihr Witz wurde erfolgreich eingereicht und wartet auf Überprüfung!"
     }
   }
 }

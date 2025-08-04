@@ -86,6 +86,22 @@
       "heading": "Your Creative Workshop",
       "paragraph": "Build, craft, and perfect your comedy creations. This is where the magic happens!"
     },
+    "header": {
+      "steps": {
+        "write": {
+          "heading": "1. Write",
+          "paragraph": "Fill out the form with your joke setup and punchline"
+        },
+        "preview": {
+          "heading": "2. Preview",
+          "paragraph": "Watch your joke come to life with dynamic styling"
+        },
+        "submit": {
+          "heading": "3. Submit",
+          "paragraph": "Get instant feedback and share your humor with the world"
+        }
+      }
+    },
     "sections": {
       "tools": {
         "title": "Comedy Tools",
@@ -105,6 +121,37 @@
       "saveProject": "Save Project",
       "preview": "Preview",
       "publish": "Publish"
+    },
+    "form": {
+      "title": "Create Your Joke",
+      "legend": "Joke Creation Form",
+      "preview": "Preview Joke",
+      "feedback": {
+        "title": "AI Feedback Coming Soon",
+        "description": "We're developing an AI system to provide real-time joke analysis and improvement suggestions.",
+        "status": "In Development"
+      },
+      "fields": {
+        "category": {
+          "label": "Category",
+          "placeholder": "Select a category"
+        },
+        "flags": {
+          "label": "Content Flags",
+          "placeholder": "Select content flags",
+          "groupLabel": "Flag Options"
+        },
+        "setup": {
+          "label": "Setup",
+          "placeholder": "Enter your joke setup..."
+        },
+        "punchline": {
+          "label": "Punchline",
+          "placeholder": "Enter your punchline..."
+        }
+      },
+      "submit": "Create Joke",
+      "sendButton": "Send Joke"
     }
   },
   "MediumSetup": {
@@ -158,8 +205,8 @@
   },
   "ErrorPage": {
     "content": {
-      "title": "Error Page",
-      "message": "An error occurred!"
+      "title": "Page Not Found",
+      "message": "Sorry, the page you're looking for doesn't exist or has been moved."
     },
     "actions": {
       "button": "Go to Home"
@@ -232,7 +279,23 @@
   },
   "common": {
     "none": "None",
-    "all": "All"
+    "all": "All",
+    "flags": {
+      "nsfw": "NSFW",
+      "religious": "Religious", 
+      "political": "Political",
+      "racist": "Racist",
+      "sexist": "Sexist",
+      "explicit": "Explicit"
+    },
+    "categories": {
+      "Programming": "Programming",
+      "Miscellaneous": "Miscellaneous", 
+      "Dark": "Dark",
+      "Pun": "Pun",
+      "Spooky": "Spooky",
+      "Christmas": "Christmas"
+    }
   },
   "plans": {
     "navLink": {
@@ -389,5 +452,34 @@
         ]
       }
     ]
+  },
+  "validation": {
+    "category": {
+      "required": "Category is required",
+      "invalid": "Invalid category selected"
+    },
+    "setup": {
+      "required": "Joke setup is required",
+      "minWords": "Joke setup must contain at least 3 words",
+      "maxLength": "Joke setup cannot exceed 200 characters"
+    },
+    "punchline": {
+      "required": "Punchline is required",
+      "minWords": "Punchline must contain at least 1 word",
+      "maxLength": "Punchline cannot exceed 150 characters"
+    },
+    "darkCategory": {
+      "explicitRequired": "Dark humor category must have the explicit flag enabled"
+    }
+  },
+  "jokeSubmission": {
+    "errors": {
+      "fixErrors": "Please fix the following errors:",
+      "submissionFailed": "Submission failed",
+      "generalError": "An error occurred while submitting your joke"
+    },
+    "success": {
+      "submitted": "Your joke has been submitted successfully and is pending review!"
+    }
   }
 }

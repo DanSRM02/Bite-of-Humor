@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";
 import ButtonList from "@/components/dataDisplay/buttonList";
 import { useTranslations } from "next-intl";
+import QuickHeader from "@/components/layout/quickHeader";
+import NavigationContext from "@/components/layout/navigation/context";
 
 
 function TheFinalSetupPage() {
@@ -74,39 +76,42 @@ function TheFinalSetupPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+    <>
+      <QuickHeader />
+      <main  className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <LeadIn
             heading={t("TheFinalSetupPage.leadIn.heading")}
             paragraph={t("TheFinalSetupPage.leadIn.paragraph")}
-            isTextRaw={true}
+            isTextRaw
           />
-        </div>
-        
-        <section
-          aria-label="Platform features and dashboard"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16"
-        >
-          <CardList cards={platformSectionCard} />
-        </section>
-        
-        <article
-          aria-label="User dashboard actions"
-          className="bg-white shadow-lg border border-gray-200 rounded-2xl p-6 sm:p-8 lg:p-10 max-w-6xl mx-auto"
-        >
-          <Card
-            title={dashboardTranslations.title}
-            body={dashboardTranslations.body}      
-            isTextRaw={true}      
+          
+          <section
+            aria-label="Platform features and dashboard"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mt-6">
-              <ButtonList buttons={dashboardButtons} />
-            </div>
-          </Card>
-        </article>
-      </div>
-    </div>
+            <CardList cards={platformSectionCard} />
+          </section>
+          
+          <article
+            aria-label="User dashboard actions"
+            className="bg-white shadow-lg border border-gray-200 rounded-2xl p-4 sm:p-6 md:p-8"
+          >
+            <Card
+              title={dashboardTranslations.title}
+              body={dashboardTranslations.body}
+              isTextRaw
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6">
+                <ButtonList buttons={dashboardButtons} />
+              </div>
+            </Card>
+          </article>
+
+          <NavigationContext currentStep="final" />
+        </div>
+      </main>
+    </>
   );
 }
 

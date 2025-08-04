@@ -3,6 +3,7 @@ import { FieldBlueprintType, FormFieldProps } from "@/types/baseFieldTypes";
 import React, { ChangeEvent } from "react";
 import Form from "..";
 import { useJokeSubmission } from "@/contexts/JokeSubmissionContext";
+import { submitJokeAction } from "@/actions/jokeSubmissionActions";
 
 type InteractiveFormProps = {
   fieldsBlueprint: FieldBlueprintType[];
@@ -68,10 +69,10 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
     <Form
       idForm="complete-joke"
       inputFields={fieldsWithDynamicAttributes}
-      actionForm={async () => ({ errors: [], message: "" })}
+      actionForm={submitJokeAction}
       initialStateForm={{ errors: [], message: "" }}
       onClickField={handleInputChange}
-      legendHeading="common.none"
+      legendHeading="WorkshopPage.form.legend"
     />
   );
 };

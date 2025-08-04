@@ -4,7 +4,7 @@ import FormRendered from "@/components/dataDisplay/formRendered";
 import Heading from "@/components/dataDisplay/heading";
 import { ReactNode } from "react";
 import ButtonSubmitForm from "../button/submit";
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 import { FormStateAction } from "@/types/formTypes";
 
 type FormProps = {
@@ -36,7 +36,7 @@ const Form = (props: FormProps) => {
     actionForm,
     children,
   } = props;
-  const [state, formAction] = useActionState(actionForm, initialStateForm);
+  const [state, formAction] = useFormState(actionForm, initialStateForm);
 
   return (
     <form
@@ -54,6 +54,22 @@ const Form = (props: FormProps) => {
       </fieldset>
       {textButton && (
         <ButtonSubmitForm textButton={textButton} actionState={state} />
+      )}
+      {!textButton && (state.errors?.length > 0 || state.message) && (
+        <div className="text-center">
+          {state.message && (
+            <Heading level={5} isTextRaw>
+              {state.message}
+            </Heading>
+          )}
+          {state.errors?.length > 0 && (
+            <ul className="text-red-600">
+              {state.errors.map((error, index) => (
+                <li key={index}>{error}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
     </form>
   );

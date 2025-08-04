@@ -32,9 +32,9 @@ export type CardProps = {
 
 const CARD_STYLES = {
   base: {
-    default: "bg-white border border-stone-200 p-4 sm:p-6 rounded-lg",
-    expandable: "flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-4 sm:p-6 lg:p-8 border-2 transition-all duration-300",
-    joke: "bg-white p-3 sm:p-4 md:p-6 rounded-lg relative",
+    default: "bg-white border border-stone-200 p-4 sm:p-6 rounded-lg overflow-hidden",
+    expandable: "flex flex-col cursor-pointer items-stretch bg-white rounded-lg p-4 sm:p-6 lg:p-8 border-2 transition-all duration-300 overflow-hidden",
+    joke: "bg-white p-3 sm:p-4 md:p-6 rounded-lg relative overflow-hidden min-h-0 max-w-full",
   },
   expandableBorder: {
     expanded: "border-stone-800 shadow-xl",
@@ -52,11 +52,11 @@ const CARD_STYLES = {
     feature: "text-xs sm:text-sm text-stone-700 leading-relaxed",
   },
   joke: {
-    title: "text-base sm:text-lg font-semibold text-stone-800 mb-2 pr-12 sm:pr-16 leading-tight",
-    punchline: "text-sm sm:text-base font-medium text-stone-800 pr-12 sm:pr-16 leading-relaxed",
-    punchlineSingle: "text-sm sm:text-base font-semibold pr-12 sm:pr-16 leading-relaxed",
-    badge: "inline-block bg-stone-100 text-stone-800 px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium mt-3 sm:mt-4",
-    flagContainer: "absolute top-1 right-1 sm:top-2 sm:right-2 flex gap-1 flex-wrap max-w-[100px] sm:max-w-none",
+    title: "text-base sm:text-lg font-semibold text-stone-800 mb-2 pr-12 sm:pr-16 leading-tight break-words overflow-wrap-anywhere hyphens-auto",
+    punchline: "text-sm sm:text-base font-medium text-stone-800 pr-12 sm:pr-16 leading-relaxed break-words overflow-wrap-anywhere hyphens-auto",
+    punchlineSingle: "text-sm sm:text-base font-semibold pr-12 sm:pr-16 leading-relaxed break-words overflow-wrap-anywhere hyphens-auto",
+    badge: "inline-block bg-stone-100 text-stone-800 px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium mt-3 sm:mt-4 break-words",
+    flagContainer: "absolute top-2 right-2 flex gap-1.5 flex-wrap max-w-[120px] z-10",
     flag: "h-4 w-4 sm:h-5 sm:w-5 rounded-full flex items-center justify-center border flex-shrink-0",
     flagIcon: "text-xs text-white opacity-90",
   },
@@ -221,24 +221,24 @@ const Card = ({
     );
   };
    
-  const renderJoke = () => (
-    <article className={baseStyles}>      
+  const renderJoke = () => (    
+    <article className={baseStyles}>
       {renderFlags()}
       <h6 className={CARD_STYLES.joke.title}>
-        {jokeSetup}
+        {jokeSetup || t("common.none")}
       </h6>
       {jokeType === "twopart" ? (
         <p className={CARD_STYLES.joke.punchline}>
-          {jokePunchline}
+          {jokePunchline || t("common.none")}
         </p>
       ) : (
         <p className={CARD_STYLES.joke.punchlineSingle}>
-          {jokePunchline}
+          {jokePunchline|| t("common.none")}
         </p>
       )}
       {badge && (
         <span className={CARD_STYLES.joke.badge}>
-          {badge}
+          {formattedBadge}
         </span>
       )}
       {renderChildren()}

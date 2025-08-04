@@ -1,6 +1,7 @@
 import Button from "@/components/inputs/button";
 import Header from "@/components/layout/header";
 import { JokeSubmissionProvider } from "@/contexts/JokeSubmissionContext";
+import { getTranslations } from "next-intl/server";
 import { ReactNode } from "react";
 
 type WorkshopLayoutProps = {
@@ -9,12 +10,15 @@ type WorkshopLayoutProps = {
   form: ReactNode;
   feedback: ReactNode;
 };
-export default function WorkshopLayout({
+
+export default async function WorkshopLayout({
   children,
   form,
   preview,
   feedback,
 }: WorkshopLayoutProps) {
+  const t = await getTranslations();
+
   return (
     <JokeSubmissionProvider>
       <Header title="Workshop" />
@@ -50,7 +54,7 @@ export default function WorkshopLayout({
               type="submit"
               className="w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl transition-shadow duration-200"
             >
-              Send Joke
+              {t("WorkshopPage.form.sendButton")}
             </Button>
           </div>
         </article>
