@@ -3,12 +3,12 @@ import ButtonList from "@/components/dataDisplay/buttonList";
 import CardList from "@/components/dataDisplay/cardList";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Card from "@/components/feedback/card";
-import QuickHeader from "@/components/layout/quickHeader";
 import NavigationContext from "@/components/layout/navigation/context";
 import { platformSectionsHome } from "@/utils/constants";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/feedback/icon";
+import { TheatricalBackground } from "@/components/animations/theatrical";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -17,12 +17,12 @@ export default function HomePage() {
   const handleRedirect = (typeButton: string) => {
     const routes: Record<string, string> = {
       myCreations: "my-creations",
-      humorHistory: "humor-history", 
+      humorHistory: "humor-history",
       communityForum: "community-forum",
-      buildTools: "workshop",
+      workshop: "workshop",
       analytics: "analytics",
       drafts: "drafts",
-      publish: "publish"
+      publish: "publish",
     };
 
     const route = routes[typeButton];
@@ -51,8 +51,10 @@ export default function HomePage() {
     tools: [
       {
         label: t("buildTools.actions.createNew"),
-        icon: <Icon icon="lucide:plus-circle" size="1.2rem" aria-hidden="true" />,
-        onClick: () => handleRedirect("buildTools"),
+        icon: (
+          <Icon icon="lucide:plus-circle" size="1.2rem" aria-hidden="true" />
+        ),
+        onClick: () => handleRedirect("workshop"),
       },
       {
         label: t("buildTools.actions.viewDrafts"),
@@ -61,7 +63,9 @@ export default function HomePage() {
       },
       {
         label: t("buildTools.actions.analytics"),
-        icon: <Icon icon="lucide:bar-chart-3" size="1.2rem" aria-hidden="true" />,
+        icon: (
+          <Icon icon="lucide:bar-chart-3" size="1.2rem" aria-hidden="true" />
+        ),
         onClick: () => handleRedirect("analytics"),
       },
       {
@@ -73,23 +77,25 @@ export default function HomePage() {
   };
 
   return (
-    <>
-      <QuickHeader />
-      <main aria-label={t("ariaLabels.homeMainContent")} className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <TheatricalBackground type="writersroom" className="min-h-screen">
+      <main
+        aria-label={t("ariaLabels.homeMainContent")}
+        className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100"
+      >
         <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <LeadIn
             heading={t("leadIn.heading")}
-            paragraph={t("leadIn.paragraph")}        
+            paragraph={t("leadIn.paragraph")}
             isTextRaw
           />
-          
+
           <section
             aria-label={t("ariaLabels.platformFeaturesList")}
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10"
           >
             <CardList cards={platformSectionCard} />
           </section>
-          
+
           <article
             aria-label={t("ariaLabels.userDashboardActions")}
             className="bg-white shadow-lg border border-gray-200 rounded-2xl p-4 sm:p-6 md:p-8"
@@ -104,10 +110,10 @@ export default function HomePage() {
               </div>
             </Card>
           </article>
-          
+
           <NavigationContext currentStep="build" />
         </div>
       </main>
-    </>
+    </TheatricalBackground>
   );
 }

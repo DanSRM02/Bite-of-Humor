@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { modifyPositionElement } from "@/utils/modifyPositionElement";
 import Button from "@/components/inputs/button";
 import { useTranslations } from "next-intl";
+import { TheatricalBackground } from "@/components/animations/theatrical";
 
 function TheStartSetupPage() {
   const refButton = useRef<HTMLButtonElement>(null);
@@ -42,7 +43,11 @@ function TheStartSetupPage() {
     const shouldShowNewMessage = timesClicked <= 5;
 
     if (shouldChangePosition) {
-      buttonUtil.changePosition({ maxOffsetX: 25, maxOffsetY: 25 });
+      if (timesClicked >= 3) {
+        buttonUtil.escapeEffect();
+      } else {
+        buttonUtil.changePosition({ maxOffsetX: 25, maxOffsetY: 25 });
+      }
     }
 
     if (shouldDefaultPosition) {
@@ -59,46 +64,40 @@ function TheStartSetupPage() {
   }
 
   return (
-    <main
-      className="min-h-screen flex flex-col items-center justify-center"
-      aria-label={t("ariaLabels.firstSetupMainContent")}
-    >
-      <h1 className="mb-2 font-bold">
-        Bite Of Humor
-      </h1>
-      <section
-        className="flex flex-wrap justify-center gap-[6rem] mt-12"
+    <TheatricalBackground type="backstage" className="min-h-screen">
+      <main
+        className="min-h-screen flex flex-col items-center justify-center"
+        aria-label={t("ariaLabels.firstSetupMainContent")}
       >
-        <article
-          className="flex flex-col justify-center"
-        >
-          <h2 className="font-bold" aria-label={translations.intro.title}>
-            {translations.intro.title}
-          </h2>
-          <h5
-            className="font-bold opacity-50"
-            aria-label={translations.intro.remark}
-          >
-            {translations.intro.remark}
-          </h5>
-          <p>{translations.intro.paragraph1}</p>
-          <p>{translations.intro.paragraph2}</p>
-          <p>{translations.intro.paragraph3}</p>
-        </article>
-        <article
-          className="flex items-center justify-center p-[8rem] bg-stone-200"
-        >
-          <Button
-            size="medium"
-            variant="primary"
-            ref={refButton}
-            onClick={handleClick}
-          >
-            {newMessage}
-          </Button>
-        </article>
-      </section>
-    </main>
+        <h1 className="mb-2 font-bold">Bite Of Humor</h1>
+        <section className="flex flex-wrap justify-center gap-[6rem] mt-12">
+          <article className="flex flex-col justify-center">
+            <h2 className="font-bold" aria-label={translations.intro.title}>
+              {translations.intro.title}
+            </h2>
+            <h5
+              className="font-bold opacity-50"
+              aria-label={translations.intro.remark}
+            >
+              {translations.intro.remark}
+            </h5>
+            <p>{translations.intro.paragraph1}</p>
+            <p>{translations.intro.paragraph2}</p>
+            <p>{translations.intro.paragraph3}</p>
+          </article>
+          <article className="flex items-center justify-center p-[8rem] bg-stone-200">
+            <Button
+              size="medium"
+              variant="primary"
+              ref={refButton}
+              onClick={handleClick}
+            >
+              {newMessage}
+            </Button>
+          </article>
+        </section>
+      </main>
+    </TheatricalBackground>
   );
 }
 
