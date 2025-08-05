@@ -44,7 +44,7 @@ export async function signUpComedianAction(
   }
   
   revalidatePath("/", "layout");
-  redirect("/joke/setup/final");
+  redirect(`/${locale}/joke/setup/final`);
 }
 
 export async function signInComedianAction(
@@ -85,5 +85,5 @@ export async function signInComedianAction(
   }
   
   revalidatePath("/", "layout");
-  redirect("/joke/setup/final");
+  redirect(`/${locale}/joke/setup/final`);
 }

@@ -15,8 +15,7 @@ export const comedianSignIn = async (signInData: ComedianLoginData) => {
     }
 
     return data.user;
-  } catch (error) {
-    console.error("Error signing in:", error);
+  } catch (error) {    
     throw error;
   }
 };
@@ -38,8 +37,7 @@ export async function comedianSignUp(signUpData: ComedianSignUpData) {
     if (error) throw error;
 
     return data.user;
-  } catch (error) {
-    console.error("Error signing up:", error);
+  } catch (error) {    
     throw error;
   }
 }
@@ -73,7 +71,7 @@ export const isAuthenticated = async (): Promise<boolean> => {
     const user = await getCurrentUser();
     return user !== null;
   } catch (error) {
-    console.error("Error checking authentication:", error);
+    
     return false;
   }
 };
@@ -115,8 +113,7 @@ export const getUserMetadata = async () => {
         user.user_metadata?.comedian_name || user.email?.split("@")[0],
       avatarUrl: user.user_metadata?.avatar_url,
     };
-  } catch (error) {
-    console.error("Error getting user metadata:", error);
-    return null;
+  } catch (error) {    
+    return error;
   }
 };
