@@ -193,20 +193,20 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "home": "Accueil Central",
+      "home": "Découvrir",
       "signUp": "Rejoindre",
       "logIn": "Se connecter",
       "logOut": "Se déconnecter",
       "workshop": "Atelier Comédie",
       "community": "Communauté",
-      "dashboard": "Mon Tableau de Bord"
+      "dashboard": "Coulisses"
     },
     "userGreeting": "Bonjour, {name}!"
   },
   "QuickNavigation": {
     "setup": "Explorateur de Blagues",
     "build": "Créer des Blagues",
-    "workshop": "Atelier"
+    "punch-line": "Chute"
   },
   "common": {
     "none": "Aucun",
@@ -275,40 +275,40 @@
   },
   "TheFinalSetupPage": {
     "leadIn": {
-      "heading": "Bienvenue chez Bite of Humor",
-      "paragraph": "Votre configuration est terminée ! Explorez les différentes sections de votre expérience humoristique personnalisée."
+      "heading": "L'Intrigue Se Complique...",
+      "paragraph": "Vous êtes arrivé jusqu'ici. Maintenant, la vraie question est : êtes-vous prêt pour ce qui suit ?"
     },
     "platformCards": {
       "communicationHub": {
-        "title": "Centre de Communication",
-        "description": "Restez connecté avec votre communauté de blagues",
+        "title": "Le Coffre-Fort",
+        "description": "Là où vivent les bonnes choses. Explorez ce qui fait rire, pleurer et tout remettre en question.",
         "features": {
-          "feature1": "Newsletters de blagues quotidiennes",
-          "feature2": "Notifications de la communauté",
-          "feature3": "Recommandations personnalisées",
-          "feature4": "Résumé hebdomadaire de l'humour"
+          "feature1": "Perles comiques sélectionnées",
+          "feature2": "Les tendances de l'humour",
+          "feature3": "Blagues qui ont cassé internet",
+          "feature4": "Celles qui nous ont échappé"
         },
         "badge": "Essentiel"
       },
       "socialFeatures": {
-        "title": "Fonctionnalités Sociales",
-        "description": "Connectez-vous et partagez avec d'autres passionnés de blagues",
+        "title": "L'Atelier",
+        "description": "Temps de se salir les mains. C'est ici que les idées deviennent légendes (ou échecs spectaculaires).",
         "features": {
-          "feature1": "Partager les blagues préférées",
-          "feature2": "Suivre d'autres utilisateurs",
-          "feature3": "Créer des collections de blagues",
-          "feature4": "Discussions communautaires"
+          "feature1": "Votre terrain de jeu créatif",
+          "feature2": "Construisez quelque chose de mémorable",
+          "feature3": "Testez votre timing comique",
+          "feature4": "Partagez votre chef-d'œuvre"
         },
-        "badge": "Interactif"
+        "badge": "Créatif"
       },
       "premiumExperience": {
-        "title": "Expérience Premium",
-        "description": "Débloquez des fonctionnalités avancées et du contenu exclusif",
+        "title": "Le Salon VIP",
+        "description": "Pour ceux qui veulent l'expérience complète. Aucun compromis, aucun regret, aucune pub.",
         "features": {
-          "feature1": "Accès illimité aux blagues",
-          "feature2": "Filtrage avancé",
-          "feature3": "Catégories premium",
-          "feature4": "Expérience sans publicité"
+          "feature1": "Accédez à tout, partout",
+          "feature2": "Passez les files d'attente",
+          "feature3": "Exclusivités des coulisses",
+          "feature4": "Le traitement premium"
         },
         "badge": "Exclusif"
       }

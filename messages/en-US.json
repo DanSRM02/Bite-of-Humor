@@ -27,52 +27,52 @@
       "userDashboardActions": "User dashboard actions"
     },
     "leadIn": {
-      "heading": "Your Humor Hub",
-      "paragraph": "Access all your favorite comedy features from one place. Explore, discover, and enjoy!"
+      "heading": "Your Creative Studio",
+      "paragraph": "Everything you need to craft, build, and perfect your comedy masterpieces. Let's create something amazing!"
     },
     "platformCards": {
       "myCreations": {
-        "title": "My Creations",
-        "description": "View and manage your comedy workshop results",
+        "title": "My Workshop",
+        "description": "Your personal creative space where ideas come to life",
         "features": {
-          "feature1": "Your completed jokes",
-          "feature2": "Workshop progress",
-          "feature3": "Performance analytics",
-          "feature4": "Edit and refine"
+          "feature1": "Active projects in progress",
+          "feature2": "Draft jokes and concepts", 
+          "feature3": "Creative tools and templates",
+          "feature4": "Your comedy evolution"
         },
-        "badge": "Personal"
+        "badge": "Creative"
       },
       "humorHistory": {
-        "title": "Humor History",
-        "description": "Explore the vast world of comedy and humor",
+        "title": "Comedy Inspiration",
+        "description": "Study the masters and fuel your creative process",
         "features": {
-          "feature1": "Comedy timelines",
-          "feature2": "Famous comedians",
-          "feature3": "Joke evolution",
-          "feature4": "Cultural humor"
+          "feature1": "Legendary joke structures",
+          "feature2": "Comedy writing techniques",
+          "feature3": "Timing and delivery tips",
+          "feature4": "Genre and style guides"
         },
-        "badge": "Educational"
+        "badge": "Learning"
       },
       "communityForum": {
-        "title": "Community Forum",
-        "description": "Share your jokes and connect with fellow comedians",
+        "title": "Creator Network",
+        "description": "Connect with fellow comedy creators and collaborators", 
         "features": {
-          "feature1": "Post your jokes",
-          "feature2": "Get feedback",
-          "feature3": "Rate others' jokes",
-          "feature4": "Comedy discussions"
+          "feature1": "Share works in progress",
+          "feature2": "Get creative feedback",
+          "feature3": "Find collaboration partners",
+          "feature4": "Join writing challenges"
         },
-        "badge": "Social"
+        "badge": "Community"
       }
     },
     "buildTools": {
-      "title": "Build Tools",
-      "body": "Everything you need to craft and publish your comedy",
+      "title": "Creation Toolkit",
+      "body": "Your comprehensive suite of comedy creation and publishing tools",
       "actions": {
-        "createNew": "Create New",
-        "viewDrafts": "View Drafts",
-        "analytics": "Analytics",
-        "publish": "Publish"
+        "createNew": "Start Creating",
+        "viewDrafts": "My Drafts",
+        "analytics": "Performance",
+        "publish": "Go Live"
       }
     }
   },
@@ -392,8 +392,8 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "dashboard": "My Dashboard",     
-      "home": "Home Hub",
+      "dashboard": "Backstage",     
+      "home": "Discover",
       "signUp": "Join Now",
       "logIn": "Sign In",
       "logOut": "Sign Out",
@@ -405,44 +405,44 @@
   "QuickNavigation": {
     "setup": "Joke Explorer",
     "build": "Create Jokes",
-    "workshop": "Workshop"
+    "punch-line": "Punchline"
   },
   "TheFinalSetupPage": {
     "leadIn": {
-      "heading": "Welcome to Bite of Humor",
-      "paragraph": "Your setup is complete! Explore the different sections of your personalized humor experience."
+      "heading": "The Plot Thickens...",
+      "paragraph": "You've made it this far. Now the real question is: are you ready for what comes next?"
     },
     "platformCards": {
       "communicationHub": {
-        "title": "Communication Hub",
-        "description": "Stay connected with your joke community",
+        "title": "The Vault",
+        "description": "Where the good stuff lives. Explore what makes people laugh, cry, and question everything.",
         "features": {
-          "feature1": "Daily joke newsletters",
-          "feature2": "Community notifications",
-          "feature3": "Personalized recommendations",
-          "feature4": "Weekly humor digest"
+          "feature1": "Curated comedy gems",
+          "feature2": "What's trending in humor",
+          "feature3": "Jokes that broke the internet",
+          "feature4": "The ones that got away"
         },
         "badge": "Essential"
       },
       "socialFeatures": {
-        "title": "Social Features",
-        "description": "Connect and share with fellow joke enthusiasts",
+        "title": "The Workshop",
+        "description": "Time to get your hands dirty. This is where ideas become legends (or spectacular failures).",
         "features": {
-          "feature1": "Share favorite jokes",
-          "feature2": "Follow other users",
-          "feature3": "Create joke collections",
-          "feature4": "Community discussions"
+          "feature1": "Your creative playground",
+          "feature2": "Build something memorable",
+          "feature3": "Test your comedic timing",
+          "feature4": "Share your masterpiece"
         },
-        "badge": "Interactive"
+        "badge": "Creative"
       },
       "premiumExperience": {
-        "title": "Premium Experience",
-        "description": "Unlock advanced features and exclusive content",
+        "title": "The VIP Lounge",
+        "description": "For those who want the full experience. No compromises, no regrets, no ads.",
         "features": {
-          "feature1": "Unlimited joke access",
-          "feature2": "Advanced filtering",
-          "feature3": "Premium categories",
-          "feature4": "Ad-free experience"
+          "feature1": "Access everything, everywhere",
+          "feature2": "Skip the lines",
+          "feature3": "Exclusive behind-the-scenes",
+          "feature4": "The premium treatment"
         },
         "badge": "Exclusive"
       }

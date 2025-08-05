@@ -193,20 +193,20 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "home": "Home Zentrale",
+      "home": "Entdecken",
       "signUp": "Jetzt Beitreten",
       "logIn": "Anmelden",
       "logOut": "Abmelden",
       "workshop": "Comedy Werkstatt",
       "community": "Community",
-      "dashboard": "Mein Dashboard"
+      "dashboard": "Backstage"
     },
      "userGreeting": "Hallo, {name}!"
   },
   "QuickNavigation": {
     "setup": "Witz Explorer",
     "build": "Witze Erstellen",
-    "workshop": "Werkstatt"
+    "punch-line": "Pointe"
   },
   "common": {
     "none": "Keine",
@@ -275,40 +275,40 @@
   },
   "TheFinalSetupPage": {
     "leadIn": {
-      "heading": "Willkommen bei Bite of Humor",
-      "paragraph": "Deine Einrichtung ist abgeschlossen! Erkunde die verschiedenen Bereiche deines personalisierten Humorerlebnisses."
+      "heading": "Die Handlung Wird Komplexer...",
+      "paragraph": "Sie sind so weit gekommen. Jetzt ist die eigentliche Frage: Sind Sie bereit für das, was als nächstes kommt?"
     },
     "platformCards": {
       "communicationHub": {
-        "title": "Kommunikationszentrum",
-        "description": "Bleib mit deiner Witz-Community verbunden",
+        "title": "Der Tresor",
+        "description": "Wo die guten Sachen leben. Erkunden Sie, was Menschen zum Lachen, Weinen und alles Hinterfragen bringt.",
         "features": {
-          "feature1": "Tägliche Witz-Newsletter",
-          "feature2": "Community-Benachrichtigungen",
-          "feature3": "Personalisierte Empfehlungen",
-          "feature4": "Wöchentlicher Humor-Digest"
+          "feature1": "Kuratierte Comedy-Perlen",
+          "feature2": "Was im Humor trending ist",
+          "feature3": "Witze, die das Internet brachen",
+          "feature4": "Die, die uns entkommen sind"
         },
         "badge": "Wesentlich"
       },
       "socialFeatures": {
-        "title": "Soziale Funktionen",
-        "description": "Verbinde dich und teile mit anderen Witz-Enthusiasten",
+        "title": "Die Werkstatt",
+        "description": "Zeit, sich die Hände schmutzig zu machen. Hier werden Ideen zu Legenden (oder spektakulären Fehlschlägen).",
         "features": {
-          "feature1": "Lieblingswitze teilen",
-          "feature2": "Anderen Benutzern folgen",
-          "feature3": "Witzsammlungen erstellen",
-          "feature4": "Community-Diskussionen"
+          "feature1": "Ihr kreativer Spielplatz",
+          "feature2": "Bauen Sie etwas Unvergessliches",
+          "feature3": "Testen Sie Ihr Comedy-Timing",
+          "feature4": "Teilen Sie Ihr Meisterwerk"
         },
-        "badge": "Interaktiv"
+        "badge": "Kreativ"
       },
       "premiumExperience": {
-        "title": "Premium-Erlebnis",
-        "description": "Schalte erweiterte Funktionen und exklusive Inhalte frei",
+        "title": "Die VIP-Lounge",
+        "description": "Für diejenigen, die die volle Erfahrung wollen. Keine Kompromisse, keine Reue, keine Werbung.",
         "features": {
-          "feature1": "Unbegrenzter Witzzugriff",
-          "feature2": "Erweiterte Filterung",
-          "feature3": "Premium-Kategorien",
-          "feature4": "Werbefreies Erlebnis"
+          "feature1": "Zugang zu allem, überall",
+          "feature2": "Überspringen Sie die Warteschlangen",
+          "feature3": "Exklusive Hinter-den-Kulissen",
+          "feature4": "Die Premium-Behandlung"
         },
         "badge": "Exklusiv"
       }
