@@ -392,19 +392,19 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "dashboard": "Dashboard",
-      "home": "Home",
-      "signUp": "Sign Up",
-      "logIn": "Log In",
-      "logOut": "Log Out",
-      "workshop": "Workshop",
+      "dashboard": "My Dashboard",
+      "home": "Home Hub",
+      "signUp": "Join Now",
+      "logIn": "Sign In",
+      "logOut": "Sign Out",
+      "workshop": "Comedy Workshop",
       "community": "Community"
     },
     "userGreeting": "Hello, {name}!"
   },
   "QuickNavigation": {
-    "setup": "Setup",
-    "build": "Build",
+    "setup": "Joke Explorer",
+    "build": "Create Jokes",
     "workshop": "Workshop"
   },
   "TheFinalSetupPage": {
@@ -474,7 +474,46 @@
       "mockDataLabel": "Check to use mock data"
     },
     "loadingMessage": "Loading...",
-    "safeModeWarning": "Safe mode is not allowed for the 'Dark' category."
+    "safeModeWarning": "Safe mode is not allowed for the 'Dark' category.",
+    "noJokesFound": "No jokes found matching your criteria"
+  },
+  "PremiumPage": {
+    "plans": {
+      "heading": "Choose Your Comedy Journey",
+      "paragraph": "Unlock premium features and take your humor experience to the next level"
+    },
+    "benefits": {
+      "heading": "Why Choose Premium?",
+      "security": {
+        "title": "Secure & Safe",
+        "description": "Your data is protected with enterprise-grade security"
+      },
+      "access": {
+        "title": "Instant Access",
+        "description": "Start using premium features immediately after signup"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Get help whenever you need it from our expert team"
+      },
+      "quality": {
+        "title": "Premium Quality",
+        "description": "Access curated, high-quality comedy content"
+      },
+      "community": {
+        "title": "Community Access",
+        "description": "Join our exclusive community of comedy enthusiasts"
+      }
+    },
+    "stats": {
+      "users": "Happy Users",
+      "uptime": "Uptime"
+    },
+    "accessibility": {
+      "plansSection": "Available premium plans",
+      "featuresSection": "Premium features and benefits", 
+      "statsSection": "Platform statistics"
+    }
   },
   "footer": {
     "brandName": "Bite of Humor",
@@ -536,6 +575,43 @@
     },
     "success": {
       "submitted": "Your joke has been submitted successfully and is pending review!"
+    }
+  },
+  "NavigationContext": {
+    "title": "What's Next?",
+    "subtitle": "Continue your journey with these recommended actions",
+    "cards": {
+      "setup": {
+        "nextBuilding": {
+          "title": "Next: Start Building",
+          "description": "Ready to create your first joke? Enter our workshop and bring your humor to life.",
+          "actionText": "Open Workshop"
+        }
+      },
+      "build": {
+        "exploreJokes": {
+          "title": "Explore Jokes",
+          "description": "Discover popular jokes and get inspired by the community's best content.",
+          "actionText": "View Jokes"
+        },
+        "viewAnalytics": {
+          "title": "View Analytics",
+          "description": "Track your jokes' performance and see how your audience interacts with your content.",
+          "actionText": "View Analytics"
+        }
+      },
+      "final": {
+        "startCreating": {
+          "title": "Start Creating",
+          "description": "You're all set! Time to build your first masterpiece and share it with the world.",
+          "actionText": "Create First Joke"
+        },
+        "exploreCommunity": {
+          "title": "Explore Community",
+          "description": "Join thousands of creators and discover what makes the community laugh.",
+          "actionText": "Join Community"
+        }
+      }
     }
   }
 }

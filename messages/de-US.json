@@ -193,19 +193,19 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "dashboard": "Dashboard",
-      "home": "Startseite",
-      "signUp": "Registrieren",
+      "dashboard": "Mein Dashboard",
+      "home": "Home Zentrale",
+      "signUp": "Jetzt Beitreten",
       "logIn": "Anmelden",
       "logOut": "Abmelden",
-      "workshop": "Werkstatt",
+      "workshop": "Comedy Werkstatt",
       "community": "Community"
     },
      "userGreeting": "Hallo, {name}!"
   },
   "QuickNavigation": {
-    "setup": "Einrichtung",
-    "build": "Erstellen",
+    "setup": "Witz Explorer",
+    "build": "Witze Erstellen",
     "workshop": "Werkstatt"
   },
   "common": {
@@ -343,7 +343,46 @@
       "mockDataLabel": "Mock-Daten verwenden"
     },
     "loadingMessage": "Wird geladen...",
-    "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt."
+    "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt.",
+    "noJokesFound": "Keine Witze gefunden, die Ihren Kriterien entsprechen"
+  },
+  "PremiumPage": {
+    "plans": {
+      "heading": "Wählen Sie Ihre Comedy-Reise",
+      "paragraph": "Schalten Sie Premium-Funktionen frei und bringen Sie Ihr Humor-Erlebnis auf die nächste Stufe"
+    },
+    "benefits": {
+      "heading": "Warum Premium Wählen?",
+      "security": {
+        "title": "Sicher & Geschützt",
+        "description": "Ihre Daten sind durch Unternehmenssicherheit geschützt"
+      },
+      "access": {
+        "title": "Sofortiger Zugang",
+        "description": "Nutzen Sie Premium-Funktionen sofort nach der Anmeldung"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Erhalten Sie Hilfe, wann immer Sie sie von unserem Expertenteam benötigen"
+      },
+      "quality": {
+        "title": "Premium-Qualität",
+        "description": "Zugang zu kuratierten, hochwertigen Comedy-Inhalten"
+      },
+      "community": {
+        "title": "Community-Zugang",
+        "description": "Treten Sie unserer exklusiven Gemeinschaft von Comedy-Enthusiasten bei"
+      }
+    },
+    "stats": {
+      "users": "Zufriedene Nutzer",
+      "uptime": "Verfügbarkeit"
+    },
+    "accessibility": {
+      "plansSection": "Verfügbare Premium-Pläne",
+      "featuresSection": "Premium-Features und Vorteile",
+      "statsSection": "Plattform-Statistiken"
+    }
   },
   "footer": {
     "brandName": "Bite of Humor",
@@ -566,6 +605,43 @@
     },
     "success": {
       "submitted": "Ihr Witz wurde erfolgreich eingereicht und wartet auf Überprüfung!"
+    }
+  },
+  "NavigationContext": {
+    "title": "Was kommt als Nächstes?",
+    "subtitle": "Setzen Sie Ihre Reise mit diesen empfohlenen Aktionen fort",
+    "cards": {
+      "setup": {
+        "nextBuilding": {
+          "title": "Nächster Schritt: Mit dem Erstellen beginnen",
+          "description": "Bereit, Ihren ersten Witz zu erstellen? Betreten Sie unsere Werkstatt und erwecken Sie Ihren Humor zum Leben.",
+          "actionText": "Werkstatt öffnen"
+        }
+      },
+      "build": {
+        "exploreJokes": {
+          "title": "Witze erkunden", 
+          "description": "Entdecken Sie beliebte Witze und lassen Sie sich von den besten Inhalten der Community inspirieren.",
+          "actionText": "Witze ansehen"
+        },
+        "viewAnalytics": {
+          "title": "Statistiken anzeigen",
+          "description": "Verfolgen Sie die Leistung Ihrer Witze und sehen Sie, wie Ihr Publikum mit Ihren Inhalten interagiert.",
+          "actionText": "Statistiken anzeigen"
+        }
+      },
+      "final": {
+        "startCreating": {
+          "title": "Mit dem Erstellen beginnen",
+          "description": "Sie sind bereit! Zeit, Ihr erstes Meisterwerk zu erstellen und es mit der Welt zu teilen.",
+          "actionText": "Ersten Witz erstellen"
+        },
+        "exploreCommunity": {
+          "title": "Community erkunden",
+          "description": "Schließen Sie sich Tausenden von Erstellern an und entdecken Sie, was die Community zum Lachen bringt.",
+          "actionText": "Community beitreten"
+        }
+      }
     }
   }
 }

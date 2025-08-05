@@ -193,19 +193,19 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "home": "Accueil",
-      "signUp": "S'inscrire",
+      "home": "Accueil Central",
+      "signUp": "Rejoindre",
       "logIn": "Se connecter",
       "logOut": "Se déconnecter",
-      "workshop": "Atelier",
+      "workshop": "Atelier Comédie",
       "community": "Communauté",
-      "dashboard": "Tableau de bord"
+      "dashboard": "Mon Tableau de Bord"
     },
     "userGreeting": "Bonjour, {name}!"
   },
   "QuickNavigation": {
-    "setup": "Configuration",
-    "build": "Créer",
+    "setup": "Explorateur de Blagues",
+    "build": "Créer des Blagues",
     "workshop": "Atelier"
   },
   "common": {
@@ -343,7 +343,46 @@
       "categoryLabel": "Sélectionner une catégorie",
       "mockDataLabel": "Utiliser les données mock"
     },
-    "loadingMessage": "Chargement..."
+    "loadingMessage": "Chargement...",
+    "noJokesFound": "Aucune blague trouvée correspondant à vos critères"
+  },
+  "PremiumPage": {
+    "plans": {
+      "heading": "Choisissez Votre Parcours Comédie",
+      "paragraph": "Débloquez les fonctionnalités premium et élevez votre expérience d'humour au niveau supérieur"
+    },
+    "benefits": {
+      "heading": "Pourquoi Choisir Premium ?",
+      "security": {
+        "title": "Sécurisé et Protégé",
+        "description": "Vos données sont protégées par une sécurité de niveau entreprise"
+      },
+      "access": {
+        "title": "Accès Instantané",
+        "description": "Commencez à utiliser les fonctionnalités premium immédiatement après inscription"
+      },
+      "support": {
+        "title": "Support 24/7",
+        "description": "Obtenez de l'aide quand vous en avez besoin de notre équipe d'experts"
+      },
+      "quality": {
+        "title": "Qualité Premium",
+        "description": "Accès à du contenu comique curé et de haute qualité"
+      },
+      "community": {
+        "title": "Accès Communauté",
+        "description": "Rejoignez notre communauté exclusive d'enthousiastes de la comédie"
+      }
+    },
+    "stats": {
+      "users": "Utilisateurs Satisfaits",
+      "uptime": "Disponibilité"
+    },
+    "accessibility": {
+      "plansSection": "Plans premium disponibles",
+      "featuresSection": "Fonctionnalités et avantages premium",
+      "statsSection": "Statistiques de la plateforme"
+    }
   },
   "footer": {
     "brandName": "Bite of Humor",
@@ -566,6 +605,43 @@
     },
     "success": {
       "submitted": "Votre blague a été soumise avec succès et est en attente de révision!"
+    }
+  },
+  "NavigationContext": {
+    "title": "Que faire ensuite ?",
+    "subtitle": "Continuez votre parcours avec ces actions recommandées",
+    "cards": {
+      "setup": {
+        "nextBuilding": {
+          "title": "Suivant : Commencer à créer",
+          "description": "Prêt à créer votre première blague ? Entrez dans notre atelier et donnez vie à votre humour.",
+          "actionText": "Ouvrir l'atelier"
+        }
+      },
+      "build": {
+        "exploreJokes": {
+          "title": "Explorer les blagues", 
+          "description": "Découvrez les blagues populaires et inspirez-vous du meilleur contenu de la communauté.",
+          "actionText": "Voir les blagues"
+        },
+        "viewAnalytics": {
+          "title": "Voir les statistiques",
+          "description": "Suivez les performances de vos blagues et voyez comment votre audience interagit avec votre contenu.",
+          "actionText": "Voir les statistiques"
+        }
+      },
+      "final": {
+        "startCreating": {
+          "title": "Commencer à créer",
+          "description": "Vous êtes prêt ! Il est temps de créer votre premier chef-d'œuvre et de le partager avec le monde.",
+          "actionText": "Créer la première blague"
+        },
+        "exploreCommunity": {
+          "title": "Explorer la communauté",
+          "description": "Rejoignez des milliers de créateurs et découvrez ce qui fait rire la communauté.",
+          "actionText": "Rejoindre la communauté"
+        }
+      }
     }
   }
 }
