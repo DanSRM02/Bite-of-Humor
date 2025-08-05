@@ -61,16 +61,16 @@ type NavigationContextProps = {
 };
 
 const NavigationContext = ({ currentStep = "setup" }: NavigationContextProps) => {
-  const t = useTranslations();
+  const t = useTranslations("NavigationContext");
 
   const getContextCards = () => {
     switch (currentStep) {
       case "setup":
         return [
           {
-            title: "Next: Start Building",
-            description: "Ready to create your first joke? Jump into our workshop and bring your humor to life.",
-            actionText: "Open Workshop",
+            title: t("cards.setup.nextBuilding.title"),
+            description: t("cards.setup.nextBuilding.description"),
+            actionText: t("cards.setup.nextBuilding.actionText"),
             actionRoute: "/joke/build/workshop",
             iconName: "lucide:hammer",
             variant: "primary" as const
@@ -80,17 +80,17 @@ const NavigationContext = ({ currentStep = "setup" }: NavigationContextProps) =>
       case "build":
         return [
           {
-            title: "Explore Jokes",
-            description: "Discover trending jokes and get inspired by the community's best content.",
-            actionText: "Browse Jokes",
+            title: t("cards.build.exploreJokes.title"),
+            description: t("cards.build.exploreJokes.description"),
+            actionText: t("cards.build.exploreJokes.actionText"),
             actionRoute: "/joke/setup/joke-explorer",
             iconName: "lucide:compass",
             variant: "secondary" as const
           },
           {
-            title: "View Analytics",
-            description: "Track your jokes' performance and see how your audience engages with your content.",
-            actionText: "See Stats",
+            title: t("cards.build.viewAnalytics.title"),
+            description: t("cards.build.viewAnalytics.description"),
+            actionText: t("cards.build.viewAnalytics.actionText"),
             actionRoute: "/joke/analytics",
             iconName: "lucide:bar-chart-3",
             variant: "accent" as const
@@ -100,18 +100,18 @@ const NavigationContext = ({ currentStep = "setup" }: NavigationContextProps) =>
       case "final":
         return [
           {
-            title: "Start Creating",
-            description: "You're all set! Time to build your first masterpiece and share it with the world.",
-            actionText: "Create First Joke",
-            actionRoute: "/joke/build/workshop",
+            title: t("cards.final.startCreating.title"),
+            description: t("cards.final.startCreating.description"),
+            actionText: t("cards.final.startCreating.actionText"),
+            actionRoute: "/joke/build/home",
             iconName: "lucide:rocket",
             variant: "primary" as const
           },
           {
-            title: "Explore Community",
-            description: "Join thousands of creators and discover what makes the community laugh.",
-            actionText: "Join Community",
-            actionRoute: "/joke/community",
+            title: t("cards.final.exploreCommunity.title"),
+            description: t("cards.final.exploreCommunity.description"),
+            actionText: t("cards.final.exploreCommunity.actionText"),
+            actionRoute: "/joke/build/community",
             iconName: "lucide:users",
             variant: "secondary" as const
           }
@@ -130,10 +130,10 @@ const NavigationContext = ({ currentStep = "setup" }: NavigationContextProps) =>
     <section className="mt-8 sm:mt-12 lg:mt-16">
       <div className="text-center mb-6">
         <h2 className="text-lg font-semibold text-stone-800 mb-2">
-          What's Next?
+          {t("title")}
         </h2>
         <p className="text-sm text-stone-600">
-          Continue your journey with these recommended actions
+          {t("subtitle")}
         </p>
       </div>
       

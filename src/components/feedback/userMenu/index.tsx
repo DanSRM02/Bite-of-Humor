@@ -44,7 +44,6 @@ const AuthenticatedUserMenu = ({
           : "flex items-center gap-2 ml-4 pl-4 border-l border-stone-200"
       }
     >
-      {/* User Greeting */}
       <div
         className={
           isMobile
@@ -58,8 +57,6 @@ const AuthenticatedUserMenu = ({
           </span>
         )}
       </div>
-
-      {/* Action Buttons */}
       <div className={isMobile ? "space-y-2" : "flex gap-2"}>
         <Button
           onClick={handleDashboardClick}

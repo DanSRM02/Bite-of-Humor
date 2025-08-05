@@ -111,7 +111,7 @@ export const JokeFilter = ({
           paragraph={translations.searchFilters.paragraph}
         />
         <div
-          className="flex-1 max-w-none lg:max-w-[55%] p-4 sm:p-6 lg:p-8 border border-solid border-gray-300 rounded-md bg-white shadow-sm"
+          className="flex-1 max-w-none lg:max-w-[55%] p-4 sm:p-6 lg:p-8 border border-stone-300 rounded-lg bg-stone-50 shadow-sm"
           aria-label="Joke Filter"
         >
           <FormRendered
@@ -122,13 +122,16 @@ export const JokeFilter = ({
         </div>
       </div>
       {isDarkMode && (
-        <Chip color="yellow" textChip="JokePage.safeModeWarning" />
+        <Chip variant="warning" textChip="JokePage.safeModeWarning" />
       )}
       {jokeState.isLoading && (
-        <Chip color="blue" textChip="JokePage.loadingMessage" />
+        <Chip variant="info" textChip="JokePage.loadingMessage" />
       )}
       {jokeState.error && (
-        <Chip isTextRaw color="red" textChip={jokeState.error} />
+        <Chip variant="error" isTextRaw textChip={jokeState.error} />
+      )}
+      {!jokeState.isLoading && !jokeState.error && displayedJokes.length === 0 && (
+        <Chip variant="neutral" textChip="JokePage.noJokesFound" />
       )}
       <div className="mt-6">
         <CardGrid ariaLabel="Joke results list">

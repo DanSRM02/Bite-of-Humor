@@ -49,8 +49,9 @@ export default function FormRendered({
         return (
           <div key={field.id} className={fieldStyles}>
             <InputField
-              onChange={handlerChange}
               {...restProps}
+              type={type}
+              onChange={handlerChange}
               required
             />
           </div>

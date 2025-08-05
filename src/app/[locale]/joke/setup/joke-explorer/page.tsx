@@ -55,7 +55,7 @@ async function JokeExplorerPage() {
   ];
   return (
     <JokeFilterProvider>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="min-h-screen bg-gradient-to-br from-stone-50 to-stone-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
           <section 
             aria-label={t("ariaLabels.jokeExplorerSection")} 
