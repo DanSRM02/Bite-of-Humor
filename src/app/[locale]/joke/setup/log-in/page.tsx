@@ -1,9 +1,10 @@
-import { loginComedianAction } from "@/actions/comedianActions";
+
 import { initialLoginState } from "@/utils/initialStates";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
 import { getTranslations } from "next-intl/server";
+import { signInComedianAction } from "@/actions/comedianActions";
 
 async function LogIn() {
   const t = await getTranslations();
@@ -15,18 +16,18 @@ async function LogIn() {
     },
     fields: [
       {
-        placeholder: "ComedianLoginForm.fields.namePlaceholder",
-        label: "ComedianLoginForm.fields.nameLabel",
-        id: "comedian-name",
-        type: "text" as inputTypes,
-        nameInput: "name",
-      },
-      {
         placeholder: "ComedianLoginForm.fields.emailPlaceholder",
         label: "ComedianLoginForm.fields.emailLabel",
         id: "comedian-email",
         type: "email" as inputTypes,
         nameInput: "email",
+      },
+      {
+        placeholder: "ComedianLoginForm.fields.passwordPlaceholder",
+        label: "ComedianLoginForm.fields.passwordLabel",
+        id: "comedian-password",
+        type: "password" as inputTypes,
+        nameInput: "password",
       },
     ],
     actions: {
@@ -48,7 +49,7 @@ async function LogIn() {
       </div>
       <div className="flex-1 w-full max-w-md lg:max-w-lg">
         <Form
-          actionForm={loginComedianAction}
+          actionForm={signInComedianAction}
           initialStateForm={initialLoginState}
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}

@@ -88,12 +88,42 @@
       "nameLabel": "Komikername",
       "emailPlaceholder": "email@janesfakedomain.net",
       "emailLabel": "Komiker-E-Mail",
+      "passwordPlaceholder": "Erstelle ein starkes Passwort",
+      "passwordLabel": "Passwort",
       "jokeLabel": "Komikerwitz",
       "jokePlaceholder": "Gib deinen Witz ein"
     },
     "actions": {
       "legendHeading": "Komiker Registrierung",
       "submitButton": "Mach mit"
+    },
+    "errors": {
+      "validationFailed": "Bitte überprüfen Sie die angegebenen Informationen",
+      "general": "Ein Fehler ist bei der Registrierung aufgetreten",
+      "registrationFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    },
+    "success": {
+      "registered": "Registrierung erfolgreich! Willkommen in der Community."
+    },
+    "validation": {
+      "email": {
+        "required": "E-Mail ist erforderlich",
+        "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      },
+      "password": {
+        "required": "Passwort ist erforderlich",
+        "minLength": "Das Passwort muss mindestens 6 Zeichen lang sein"
+      },
+      "name": {
+        "required": "Name ist erforderlich",
+        "minLength": "Der Name muss mindestens 2 Zeichen lang sein",
+        "maxLength": "Der Name darf 50 Zeichen nicht überschreiten"
+      },
+      "joke": {
+        "required": "Ein Beispielwitz ist für die Registrierung erforderlich",
+        "minLength": "Der Witz muss mindestens 10 Zeichen lang sein",
+        "maxLength": "Der Witz darf 300 Zeichen nicht überschreiten"
+      }
     }
   },
   "ComedianLoginForm": {
@@ -102,14 +132,32 @@
       "paragraph": "Ein von Satire angetriebener Spielplatz, der kulturellen Witz und kreative Rebellion vermischt – entdecke die Geschichte, die Mission und warum Lachen härter trifft, wenn es ehrlich ist."
     },
     "fields": {
-      "namePlaceholder": "Wähle einen Komikernamen",
-      "nameLabel": "Komikername",
       "emailPlaceholder": "email@janesfakedomain.net",
-      "emailLabel": "Komiker-E-Mail"
+      "emailLabel": "Komiker-E-Mail",
+      "passwordPlaceholder": "Gib dein Passwort ein",
+      "passwordLabel": "Passwort"
     },
     "actions": {
       "legendHeading": "Komiker Anmeldung",
       "submitButton": "Tritt dem Humor bei"
+    },
+    "errors": {
+      "validationFailed": "Bitte überprüfen Sie Ihre Anmeldedaten",
+      "general": "Ein Fehler ist bei der Anmeldung aufgetreten",
+      "loginFailed": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie E-Mail und Passwort."
+    },
+    "success": {
+      "loggedIn": "Willkommen zurück! Sie sind jetzt angemeldet."
+    },
+    "validation": {
+      "email": {
+        "required": "E-Mail ist erforderlich",
+        "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      },
+      "password": {
+        "required": "Passwort ist erforderlich",
+        "minLength": "Das Passwort muss mindestens 6 Zeichen lang sein"
+      }
     }
   },
   "SelectCountry": {
@@ -145,12 +193,20 @@
   },
   "HeaderNavigation": {
     "navItems": {
+      "dashboard": "Dashboard",
       "home": "Startseite",
       "signUp": "Registrieren",
       "logIn": "Anmelden",
+      "logOut": "Abmelden",
       "workshop": "Werkstatt",
       "community": "Community"
-    }
+    },
+     "userGreeting": "Hallo, {name}!"
+  },
+  "QuickNavigation": {
+    "setup": "Einrichtung",
+    "build": "Erstellen",
+    "workshop": "Werkstatt"
   },
   "common": {
     "none": "Keine",

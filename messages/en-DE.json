@@ -23,7 +23,7 @@
   "HomePage": {
     "ariaLabels": {
       "homeMainContent": "Home page main content",
-      "platformFeaturesList": "Platform features list", 
+      "platformFeaturesList": "Platform features list",
       "userDashboardActions": "User dashboard actions"
     },
     "leadIn": {
@@ -222,12 +222,42 @@
       "nameLabel": "Comedian Name",
       "emailPlaceholder": "email@janesfakedomain.net",
       "emailLabel": "Comedian Email",
+      "passwordPlaceholder": "Create a strong password",
+      "passwordLabel": "Password",
       "jokeLabel": "Comedian Joke",
       "jokePlaceholder": "Enter your joke"
     },
     "actions": {
       "legendHeading": "Comedian Sign-Up",
       "submitButton": "Join us"
+    },
+    "errors": {
+      "validationFailed": "Please check the information provided",
+      "general": "An error occurred during registration",
+      "registrationFailed": "Registration failed. Please try again."
+    },
+    "success": {
+      "registered": "Registration successful! Welcome to the community."
+    },
+    "validation": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      },
+      "password": {
+        "required": "Password is required",
+        "minLength": "Password must be at least 6 characters long"
+      },
+      "name": {
+        "required": "Name is required",
+        "minLength": "Name must be at least 2 characters long",
+        "maxLength": "Name cannot exceed 50 characters"
+      },
+      "joke": {
+        "required": "A sample joke is required for registration",
+        "minLength": "Joke must be at least 10 characters long",
+        "maxLength": "Joke cannot exceed 300 characters"
+      }
     }
   },
   "ComedianLoginForm": {
@@ -236,14 +266,32 @@
       "paragraph": "A satire-powered playground blending cultural wit and creative rebellion — discover the story, the mission, and why laughter hits harder when it's honest."
     },
     "fields": {
-      "namePlaceholder": "Pick a comedian name",
-      "nameLabel": "Comedian Name",
       "emailPlaceholder": "email@janesfakedomain.net",
-      "emailLabel": "Comedian Email"
+      "emailLabel": "Comedian Email",
+      "passwordPlaceholder": "Enter your password",
+      "passwordLabel": "Password"
     },
     "actions": {
       "legendHeading": "Comedian Login",
       "submitButton": "Enter into the Humor"
+    },
+    "errors": {
+      "validationFailed": "Please check your credentials",
+      "general": "An error occurred during login",
+      "loginFailed": "Login failed. Please check your email and password."
+    },
+    "success": {
+      "loggedIn": "Welcome back! You're now logged in."
+    },
+    "validation": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      },
+      "password": {
+        "required": "Password is required",
+        "minLength": "Password must be at least 6 characters long"
+      }
     }
   },
   "SelectCountry": {
@@ -282,7 +330,7 @@
     "all": "All",
     "flags": {
       "nsfw": "NSFW",
-      "religious": "Religious", 
+      "religious": "Religious",
       "political": "Political",
       "racist": "Racist",
       "sexist": "Sexist",
@@ -290,7 +338,7 @@
     },
     "categories": {
       "Programming": "Programming",
-      "Miscellaneous": "Miscellaneous", 
+      "Miscellaneous": "Miscellaneous",
       "Dark": "Dark",
       "Pun": "Pun",
       "Spooky": "Spooky",
@@ -344,12 +392,20 @@
   },
   "HeaderNavigation": {
     "navItems": {
+      "dashboard": "Dashboard",
       "home": "Home",
       "signUp": "Sign Up",
       "logIn": "Log In",
+      "logOut": "Log Out",
       "workshop": "Workshop",
       "community": "Community"
-    }
+    },
+    "userGreeting": "Hello, {name}!"
+  },
+  "QuickNavigation": {
+    "setup": "Setup",
+    "build": "Build",
+    "workshop": "Workshop"
   },
   "TheFinalSetupPage": {
     "leadIn": {

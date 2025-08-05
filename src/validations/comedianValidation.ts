@@ -1,97 +1,102 @@
-import { validateRequired, validateEmail, validateMinLength, validateMaxLength } from "@/validations/validation";
+import { ComedianLoginData, ComedianSignUpData } from "@/types/authTypes";
+import {
+  validateRequired,
+  validateEmail,
+  validateMinLength,
+  validateMaxLength,
+} from "@/validations/validation";
 
-export type ComedianLoginData = {
-  email: string;
-  name: string;
-};
-
-export type ComedianSignUpData = {
-  email: string;
-  name: string;
-  joke: string;
-};
-
-export const validateComedianLoginFormData = (formData: FormData): { isValid: boolean; errors: string[] } => {
+export const validateComedianLoginFormData = (
+  formData: FormData
+): { isValid: boolean; errors: string[] } => {
   const errors: string[] = [];
-  
+
   const email = formData.get("email") as string;
-  const name = formData.get("name") as string;
-  
+  const password = formData.get("password") as string;
+
   if (!validateRequired(email)) {
-    errors.push("Email is required");
+    errors.push("ComedianLoginForm.validation.email.required");
   } else if (!validateEmail(email)) {
-    errors.push("Please enter a valid email address");
+    errors.push("ComedianLoginForm.validation.email.invalid");
   }
-  
-  if (!validateRequired(name)) {
-    errors.push("Name is required");
-  } else {
-    if (!validateMinLength(name, 2)) {
-      errors.push("Name must be at least 2 characters long");
-    }
-    if (!validateMaxLength(name, 50)) {
-      errors.push("Name cannot exceed 50 characters");
-    }
+
+  if (!validateRequired(password)) {
+    errors.push("ComedianLoginForm.validation.password.required");
+  } else if (!validateMinLength(password, 6)) {
+    errors.push("ComedianLoginForm.validation.password.minLength");
   }
-  
+
   return {
     isValid: errors.length === 0,
-    errors
+    errors,
   };
 };
 
-export const validateComedianSignUpFormData = (formData: FormData): { isValid: boolean; errors: string[] } => {
+export const validateComedianSignUpFormData = (
+  formData: FormData
+): { isValid: boolean; errors: string[] } => {
   const errors: string[] = [];
-  
+
   const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
   const name = formData.get("name") as string;
   const joke = formData.get("joke") as string;
-  
-  if (!validateRequired(email)) {
-    errors.push("Email is required");
-  } else if (!validateEmail(email)) {
-    errors.push("Please enter a valid email address");
-  }
-  
+
   if (!validateRequired(name)) {
-    errors.push("Name is required");
+    errors.push("ComedianSignUpForm.validation.name.required");
   } else {
     if (!validateMinLength(name, 2)) {
-      errors.push("Name must be at least 2 characters long");
+      errors.push("ComedianSignUpForm.validation.name.minLength");
     }
     if (!validateMaxLength(name, 50)) {
-      errors.push("Name cannot exceed 50 characters");
+      errors.push("ComedianSignUpForm.validation.name.maxLength");
     }
   }
-  
+
+  if (!validateRequired(email)) {
+    errors.push("ComedianSignUpForm.validation.email.required");
+  } else if (!validateEmail(email)) {
+    errors.push("ComedianSignUpForm.validation.email.invalid");
+  }
+
+  if (!validateRequired(password)) {
+    errors.push("ComedianSignUpForm.validation.password.required");
+  } else if (!validateMinLength(password, 6)) {
+    errors.push("ComedianSignUpForm.validation.password.minLength");
+  }
+
   if (!validateRequired(joke)) {
-    errors.push("A sample joke is required for registration");
+    errors.push("ComedianSignUpForm.validation.joke.required");
   } else {
     if (!validateMinLength(joke, 10)) {
-      errors.push("Joke must be at least 10 characters long");
+      errors.push("ComedianSignUpForm.validation.joke.minLength");
     }
     if (!validateMaxLength(joke, 300)) {
-      errors.push("Joke cannot exceed 300 characters");
+      errors.push("ComedianSignUpForm.validation.joke.maxLength");
     }
   }
-  
+
   return {
     isValid: errors.length === 0,
-    errors
+    errors,
   };
 };
 
-
-export const extractComedianLoginData = (formData: FormData): ComedianLoginData => {
+export const extractComedianLoginData = (
+  formData: FormData
+): ComedianLoginData => {
   return {
     email: formData.get("email") as string,
-    name: formData.get("name") as string,
+    password: formData.get("password") as string,
   };
 };
 
-export const extractComedianSignUpData = (formData: FormData): ComedianSignUpData => {
+export const extractComedianSignUpData = (
+  formData: FormData
+): ComedianSignUpData => {
   return {
     email: formData.get("email") as string,
+    password: formData.get("password") as string,
     name: formData.get("name") as string,
     joke: formData.get("joke") as string,
   };

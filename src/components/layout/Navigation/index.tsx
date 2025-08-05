@@ -3,7 +3,10 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
+import Button from "@/components/inputs/button";
+import AuthenticatedUserMenu from "@/components/feedback/userMenu";
 
 type NavigationLink = {
   key: string;
@@ -16,73 +19,97 @@ type NavigationProps = {
 
 const Navigation = ({ links }: NavigationProps) => {
   const t = useTranslations("HeaderNavigation");
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavigationClick = (href: string) => {
+    router.push(href);
+    setIsMenuOpen(false);
+  };
+
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
+
+  const renderNavigationItems = (isMobile = false) => {
+    return (
+      <>
+        {links.map((link) => (
+          <li key={link.key}>
+            <Button
+              onClick={() => handleNavigationClick(link.href)}
+              variant="secondary"
+              size={isMobile ? "medium" : "small"}
+              className={
+                isMobile
+                  ? "w-full text-left justify-start"
+                  : "hover:bg-black hover:text-white text-sm lg:text-base"
+              }
+              aria-label={t(link.key)}
+            >
+              {t(link.key)}
+            </Button>
+          </li>
+        ))}
+
+        <li>
+          <AuthenticatedUserMenu 
+            isMobile={isMobile} 
+            onMenuClose={handleMenuClose} 
+          />
+        </li>
+      </>
+    );
+  };
+
   return (
     <>
       <header
-        className="flex justify-between items-center py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-8 lg:py-12 lg:px-12 xl:py-14 xl:px-20"
+        className="flex justify-between items-center py-3 px-4 sm:py-4 sm:px-6 md:py-6 md:px-8 lg:py-8 lg:px-12 xl:py-10 xl:px-20"
         aria-label="Main site navigation"
       >
-        <Link href={"/"}>
-          <h5 className="font-bold text-lg sm:text-xl">Bite of Humor</h5>
+        <Link href="/" aria-label="Go to homepage">
+          <h5 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+            Bite of Humor
+          </h5>
         </Link>
 
         <nav
-          className="hidden md:flex items-center"
+          className="hidden lg:flex items-center"
           aria-label="Primary navigation"
         >
-          <ul className="flex gap-4 lg:gap-8">
-            {links.map((link) => (
-              <li key={link.key} className="hover:text-white">
-                <Link
-                  href={link.href}
-                  className="hover:bg-black p-2 lg:p-3 rounded transition-colors duration-300 text-sm lg:text-base"
-                  aria-label={t(link.key)}
-                >
-                  {t(link.key)}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex gap-2 xl:gap-4 items-center">
+            {renderNavigationItems(false)}
           </ul>
         </nav>
 
-        <button
+        <Button
           onClick={toggleMenu}
-          className="md:hidden p-2 rounded hover:bg-gray-100 transition-colors duration-300"
+          variant="secondary"
+          size="small"
+          className="lg:hidden hover:bg-stone-100"
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
         >
           <Icon
             icon={isMenuOpen ? "lucide:x" : "lucide:menu"}
-            width="1.5rem"
-            height="1.5rem"
+            width="1.25rem"
+            height="1.25rem"
           />
-        </button>
+        </Button>
       </header>
 
       {isMenuOpen && (
         <nav
-          className="md:hidden bg-white border-b border-gray-200 shadow-lg"
+          className="lg:hidden bg-white border-b border-stone-200 shadow-lg"
           aria-label="Mobile navigation"
         >
-          <ul className="flex flex-col p-4 space-y-2">
-            {links.map((link) => (
-              <li key={link.key}>
-                <Link
-                  href={link.href}
-                  className="block p-3 rounded hover:bg-gray-100 transition-colors duration-300"
-                  aria-label={t(link.key)}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t(link.key)}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex flex-col p-3 sm:p-4 space-y-1">
+            {renderNavigationItems(true)}
           </ul>
         </nav>
       )}

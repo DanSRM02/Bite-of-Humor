@@ -1,5 +1,5 @@
 import type { FilterImpl } from "@/types/jokeAPITypes";
-import apiClient from "./apiClient";
+import apiClient from "../utils/axios/apiClient";
 
 export const getJokesInitialLoad = async (language: string) => {
   try {
@@ -16,28 +16,8 @@ export const getJokesInitialLoad = async (language: string) => {
 
     return jokes;
   } catch (error) {
-    const mockJokes = [
-      {
-        category: "Misc",
-        type: "twopart",
-        setup: "Welcome to Bite of Humor!",
-        delivery:
-          "We're experiencing some technical difficulties, but here's a joke anyway!",
-        flags: {
-          nsfw: false,
-          religious: false,
-          political: false,
-          racist: false,
-          sexist: false,
-          explicit: false,
-        },
-        id: 999,
-        safe: true,
-        lang: language,
-      },
-    ];
-
-    return mockJokes;
+    console.error("Error fetching jokes:", error);
+    return [];
   }
 };
 
@@ -52,10 +32,10 @@ export const getJokesWithFilter = async (
   try {
     const url = `/joke/${category}?${queryString}`;
     const headers = {
-      "isMockData": filter.isMockData,
-    }    
+      isMockData: filter.isMockData,
+    };
 
-    const response = await apiClient.get(url, { signal, headers });        
+    const response = await apiClient.get(url, { signal, headers });
 
     let jokes = [];
     if (response.data.jokes) {

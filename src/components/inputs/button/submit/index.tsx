@@ -4,6 +4,7 @@ import Button from "..";
 import { useFormStatus } from "react-dom";
 import { FormStateAction } from "@/types/formTypes";
 import Heading from "@/components/dataDisplay/heading";
+import { useTranslations } from "next-intl";
 
 type ButtonSubmitProps = {
   textButton: string;
@@ -12,11 +13,12 @@ type ButtonSubmitProps = {
 
 const ButtonSubmitForm = ({ textButton, actionState }: ButtonSubmitProps) => {
   const status = useFormStatus();
+  const t =  useTranslations();
 
   return (
     <>
       <Button type="submit" variant={"primary"} size="medium">
-        {status.pending ? "Cargando..." : textButton}
+        {status.pending ? t("JokePage.loadingMessage") : textButton}
       </Button>
       {actionState.errors && (
         <ul className="text-center text-red-600">

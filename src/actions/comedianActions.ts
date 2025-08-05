@@ -2,59 +2,88 @@
 
 import { FormStateAction } from "@/types/formTypes";
 import {
-  validateComedianLoginFormData,
   validateComedianSignUpFormData,
-  extractComedianLoginData,
   extractComedianSignUpData,
+  validateComedianLoginFormData,
+  extractComedianLoginData,
 } from "@/validations/comedianValidation";
+import { comedianSignUp, comedianSignIn } from "@/services/authService";
+import { getTranslations, getLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
-
-export async function loginComedianAction(
-  prevState: FormStateAction,
-  formData: FormData
-): Promise<FormStateAction> {
-  try {
-    const validation = validateComedianLoginFormData(formData);
-
-    if (!validation.isValid) {
-      return {
-        errors: validation.errors,
-        message: "Please fix the following errors:",
-      };
-    }
-
-    const loginData = extractComedianLoginData(formData);
-  } catch (error) {
-    console.error("Login error:", error);
-    return {
-      errors: ["Login failed"],
-      message: "An error occurred during login",
-    };
-  }
-  redirect("/joke/setup/select-country");
-}
+import { revalidatePath } from "next/cache";
 
 export async function signUpComedianAction(
   prevState: FormStateAction,
   formData: FormData
-): Promise<FormStateAction> {
+) {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale });
+
   try {
     const validation = validateComedianSignUpFormData(formData);
 
     if (!validation.isValid) {
+      const translatedErrors = validation.errors.map((errorKey) => t(errorKey));
+
       return {
-        errors: validation.errors,
-        message: "Please fix the following errors:",
+        errors: translatedErrors,
+        message: t("ComedianSignUpForm.errors.validationFailed"),
       };
     }
 
     const signUpData = extractComedianSignUpData(formData);
-  } catch (error) {
-    console.error("SignUp error:", error);
+
+    await comedianSignUp(signUpData);
+
+    
+  } catch (error: any) {
     return {
-      errors: ["Registration failed"],
-      message: "An error occurred during registration",
+      errors: [error.message || t("ComedianSignUpForm.errors.general")],
+      message: t("ComedianSignUpForm.errors.registrationFailed"),
     };
   }
-  redirect("/joke/setup/select-country");
+  
+  revalidatePath("/", "layout");
+  redirect("/joke/setup/final");
+}
+
+export async function signInComedianAction(
+  prevState: FormStateAction,
+  formData: FormData
+) {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale });
+
+  try {
+    const validation = validateComedianLoginFormData(formData);
+
+    if (!validation.isValid) {
+      const translatedErrors = validation.errors.map((errorKey) => t(errorKey));
+
+      return {
+        errors: translatedErrors,
+        message: t("ComedianLoginForm.errors.validationFailed"),
+      };
+    }
+
+    const signInData = extractComedianLoginData(formData);
+
+    const user = await comedianSignIn(signInData);
+    
+    if (!user) {
+      return {
+        errors: [t("ComedianLoginForm.errors.invalidCredentials")],
+        message: t("ComedianLoginForm.errors.loginFailed"),
+      };
+    }
+    
+  } catch (error: any) {
+    return {
+      errors: [error.message || t("ComedianLoginForm.errors.general")],
+      message: t("ComedianLoginForm.errors.loginFailed"),
+    };
+  }
+  
+  revalidatePath("/", "layout");
+  redirect("/joke/setup/final");
 }

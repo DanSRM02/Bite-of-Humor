@@ -88,12 +88,42 @@
       "nameLabel": "Nom de comédien",
       "emailPlaceholder": "email@fauxdomaine.net",
       "emailLabel": "Email du comédien",
+      "passwordPlaceholder": "Créez un mot de passe fort",
+      "passwordLabel": "Mot de passe",
       "jokeLabel": "Blague du comédien",
       "jokePlaceholder": "Entrez votre blague"
     },
     "actions": {
       "legendHeading": "Inscription Comédien",
       "submitButton": "Rejoignez-nous"
+    },
+    "errors": {
+      "validationFailed": "Veuillez vérifier les informations fournies",
+      "general": "Une erreur s'est produite lors de l'inscription",
+      "registrationFailed": "Inscription échouée. Veuillez réessayer."
+    },
+    "success": {
+      "registered": "Inscription réussie ! Bienvenue dans la communauté."
+    },
+    "validation": {
+      "email": {
+        "required": "L'email est requis",
+        "invalid": "Veuillez saisir une adresse email valide"
+      },
+      "password": {
+        "required": "Le mot de passe est requis",
+        "minLength": "Le mot de passe doit contenir au moins 6 caractères"
+      },
+      "name": {
+        "required": "Le nom est requis",
+        "minLength": "Le nom doit contenir au moins 2 caractères",
+        "maxLength": "Le nom ne peut pas dépasser 50 caractères"
+      },
+      "joke": {
+        "required": "Un exemple de blague est requis pour l'inscription",
+        "minLength": "La blague doit contenir au moins 10 caractères",
+        "maxLength": "La blague ne peut pas dépasser 300 caractères"
+      }
     }
   },
   "ComedianLoginForm": {
@@ -102,14 +132,32 @@
       "paragraph": "Un terrain de jeu alimenté par la satire qui mélange esprit culturel et rébellion créative — découvrez l'histoire, la mission et pourquoi le rire frappe plus fort quand il est honnête."
     },
     "fields": {
-      "namePlaceholder": "Choisissez un nom de comédien",
-      "nameLabel": "Nom de comédien",
       "emailPlaceholder": "email@fauxdomaine.net",
-      "emailLabel": "Email du comédien"
+      "emailLabel": "Email du comédien",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "passwordLabel": "Mot de passe"
     },
     "actions": {
       "legendHeading": "Connexion Comédien",
       "submitButton": "Entrez dans l'Humour"
+    },
+    "errors": {
+      "validationFailed": "Veuillez vérifier vos identifiants",
+      "general": "Une erreur s'est produite lors de la connexion",
+      "loginFailed": "Connexion échouée. Veuillez vérifier votre email et mot de passe."
+    },
+    "success": {
+      "loggedIn": "Content de vous revoir ! Vous êtes maintenant connecté."
+    },
+    "validation": {
+      "email": {
+        "required": "L'email est requis",
+        "invalid": "Veuillez saisir une adresse email valide"
+      },
+      "password": {
+        "required": "Le mot de passe est requis",
+        "minLength": "Le mot de passe doit contenir au moins 6 caractères"
+      }
     }
   },
   "SelectCountry": {
@@ -148,9 +196,17 @@
       "home": "Accueil",
       "signUp": "S'inscrire",
       "logIn": "Se connecter",
+      "logOut": "Se déconnecter",
       "workshop": "Atelier",
-      "community": "Communauté"
-    }
+      "community": "Communauté",
+      "dashboard": "Tableau de bord"
+    },
+    "userGreeting": "Bonjour, {name}!"
+  },
+  "QuickNavigation": {
+    "setup": "Configuration",
+    "build": "Créer",
+    "workshop": "Atelier"
   },
   "common": {
     "none": "Aucun",

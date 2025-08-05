@@ -1,5 +1,5 @@
 import MockAdapter from "axios-mock-adapter";
-import apiClient from "../apiClient";
+import apiClient from "../../utils/axios/apiClient";
 import { mockJokes } from "@/utils/mockData";
 
 describe("API Client", () => {

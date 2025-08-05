@@ -27,7 +27,13 @@ async function SignUp() {
         nameInput: "email",
         type: "email" as inputTypes,
       },
-
+      {
+        placeholder: "ComedianSignUpForm.fields.passwordPlaceholder",
+        label: "ComedianSignUpForm.fields.passwordLabel",
+        id: "comedian-password",
+        nameInput: "password",
+        type: "password" as inputTypes,
+      },
       {
         placeholder: "ComedianSignUpForm.fields.jokePlaceholder",
         label: "ComedianSignUpForm.fields.jokeLabel",
