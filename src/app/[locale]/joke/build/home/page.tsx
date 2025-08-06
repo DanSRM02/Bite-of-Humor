@@ -1,8 +1,6 @@
 "use client";
-import ButtonList from "@/components/dataDisplay/buttonList";
 import CardList from "@/components/dataDisplay/cardList";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import Card from "@/components/feedback/card";
 import NavigationContext from "@/components/layout/navigation/context";
 import { platformSectionsHome } from "@/utils/constants";
 import { useTranslations } from "next-intl";
@@ -16,13 +14,10 @@ export default function HomePage() {
 
   const handleRedirect = (typeButton: string) => {
     const routes: Record<string, string> = {
-      myCreations: "my-creations",
+      myCreations: "workshop",
       humorHistory: "humor-history",
       communityForum: "community-forum",
-      workshop: "workshop",
-      analytics: "analytics",
-      drafts: "drafts",
-      publish: "publish",
+      creationToolkit: "workshop",
     };
 
     const route = routes[typeButton];
@@ -45,37 +40,6 @@ export default function HomePage() {
     variant: "expandable" as const,
   }));
 
-  const buildToolsData = {
-    title: t("buildTools.title"),
-    body: t("buildTools.body"),
-    tools: [
-      {
-        label: t("buildTools.actions.createNew"),
-        icon: (
-          <Icon icon="lucide:plus-circle" size="1.2rem" aria-hidden="true" />
-        ),
-        onClick: () => handleRedirect("workshop"),
-      },
-      {
-        label: t("buildTools.actions.viewDrafts"),
-        icon: <Icon icon="lucide:file-text" size="1.2rem" aria-hidden="true" />,
-        onClick: () => handleRedirect("drafts"),
-      },
-      {
-        label: t("buildTools.actions.analytics"),
-        icon: (
-          <Icon icon="lucide:bar-chart-3" size="1.2rem" aria-hidden="true" />
-        ),
-        onClick: () => handleRedirect("analytics"),
-      },
-      {
-        label: t("buildTools.actions.publish"),
-        icon: <Icon icon="lucide:rocket" size="1.2rem" aria-hidden="true" />,
-        onClick: () => handleRedirect("publish"),
-      },
-    ],
-  };
-
   return (
     <TheatricalBackground type="writersroom" className="min-h-screen">
       <main
@@ -95,21 +59,6 @@ export default function HomePage() {
           >
             <CardList cards={platformSectionCard} />
           </section>
-
-          <article
-            aria-label={t("ariaLabels.userDashboardActions")}
-            className="bg-white shadow-lg border border-gray-200 rounded-2xl p-4 sm:p-6 md:p-8"
-          >
-            <Card
-              title={buildToolsData.title}
-              body={buildToolsData.body}
-              isTextRaw
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6">
-                <ButtonList buttons={buildToolsData.tools} />
-              </div>
-            </Card>
-          </article>
 
           <NavigationContext currentStep="build" />
         </div>

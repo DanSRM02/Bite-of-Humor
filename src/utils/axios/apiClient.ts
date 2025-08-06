@@ -10,7 +10,13 @@ apiClient.interceptors.request.use((config) => {
   const useMockData = config.headers["isMockData"];
 
   if (useMockData) {
-    config.url = "/api/jokes/mock";
+    const originalUrl = config.url || "";
+    const urlParts = originalUrl.split("?");
+    const queryString = urlParts[1] || "";
+    
+    const mockUrl = `/api/jokes/mock${queryString ? `?${queryString}` : ""}`;
+    
+    config.url = mockUrl;
     config.baseURL = "http://localhost:3000";
   }
 
