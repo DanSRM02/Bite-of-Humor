@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Button from "@/components/inputs/button";
 import AuthenticatedUserMenu from "@/components/feedback/userMenu";
+import LanguageSelector from "@/components/inputs/languageSelector";
 
 type NavigationLink = {
   key: string;
@@ -55,11 +56,12 @@ const Navigation = ({ links }: NavigationProps) => {
             </Button>
           </li>
         ))}
+        <LanguageSelector />
 
         <li>
-          <AuthenticatedUserMenu 
-            isMobile={isMobile} 
-            onMenuClose={handleMenuClose} 
+          <AuthenticatedUserMenu
+            isMobile={isMobile}
+            onMenuClose={handleMenuClose}
           />
         </li>
       </>

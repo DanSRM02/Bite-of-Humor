@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navigation from "@/components/layout/navigation";
 import Footer from "@/components/layout/footer";
+import LanguageSelector from "@/components/inputs/languageSelector";
 
 type SetupLayoutProps = {
   children: ReactNode;
@@ -24,7 +25,7 @@ export default function SetupLayout({ children }: SetupLayoutProps) {
         aria-label="Main content area"
       >
         {children}
-      </main>
+      </main>      
       <Footer />
     </div>
   );
