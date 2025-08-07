@@ -17,7 +17,7 @@ apiClient.interceptors.request.use((config) => {
     const mockUrl = `/api/jokes/mock${queryString ? `?${queryString}` : ""}`;
     
     config.url = mockUrl;
-    config.baseURL = "http://localhost:3000";
+    config.baseURL = "http://localhost:3000";        
   }
 
   return config;

@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
-import Navigation from "@/components/layout/navigation";
 import Footer from "@/components/layout/footer";
-import LanguageSelector from "@/components/inputs/languageSelector";
+import Navigation from "@/components/layout/navigation";
 
 type SetupLayoutProps = {
   children: ReactNode;

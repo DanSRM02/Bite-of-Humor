@@ -35,7 +35,7 @@ export const getJokesWithFilter = async (
       isMockData: filter.isMockData,
     };
 
-    const response = await apiClient.get(url, { signal, headers });
+    const response = await apiClient.get(url, { signal, headers });       
 
     let jokes = [];
     if (response.data.jokes) {

@@ -365,11 +365,3 @@ export const mockJokes = [
     safe: true,
   },
 ];
-
-// Debug: Log available languages in mock data
-console.log("📚 Mock Data Languages Available:");
-const languageCount = mockJokes.reduce((acc, joke) => {
-  acc[joke.lang] = (acc[joke.lang] || 0) + 1;
-  return acc;
-}, {} as Record<string, number>);
-console.log(languageCount);

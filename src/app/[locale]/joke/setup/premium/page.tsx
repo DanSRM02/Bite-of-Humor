@@ -4,7 +4,7 @@ import { plansForPremiumPage } from "@/utils/constants";
 import CardGrid from "@/components/layout/cardGrid";
 import Card from "@/components/feedback/card";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import BenefitItem from "@/components/premium/BenefitItem";
+import BenefitItem from "@/components/premium/benefitItem";
 import { useTranslations } from "next-intl";
 
 function PremiumExperiencePage() {

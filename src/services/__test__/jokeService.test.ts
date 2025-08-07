@@ -66,18 +66,14 @@ describe("Joke Service", () => {
     const language = "en";
     const signal = new AbortController().signal;
 
-    mock.onGet("/api/jokes/mock").reply(200, {
+    mock.onGet("/api/jokes/mock?lang=en&amount=10").reply(200, {
       jokes: mockJokes,
-      success: true,
-      fallback: false,
-      error: null,
-      message: "Mock jokes fetched successfully",
     });
 
     const response = await getJokesWithFilter(mockFilter, language, signal);
 
-    expect(response.data).toBeDefined();
-    expect(response.data.jokes).toEqual(mockJokes);
+    expect(response.data).toBeDefined();        
     expect(response.data.success).toBe(true);
+    expect(response.data.jokes).toEqual(mockJokes);
   });
 });
