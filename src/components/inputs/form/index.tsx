@@ -2,9 +2,8 @@
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
 import FormRendered from "@/components/dataDisplay/formRendered";
 import Heading from "@/components/dataDisplay/heading";
-import { ReactNode } from "react";
+import { ReactNode, useActionState } from "react";
 import ButtonSubmitForm from "../button/submit";
-import { useFormState } from "react-dom";
 import { FormStateAction } from "@/types/formTypes";
 
 type FormProps = {
@@ -36,7 +35,7 @@ const Form = (props: FormProps) => {
     actionForm,
     children,
   } = props;
-  const [state, formAction] = useFormState(actionForm, initialStateForm);
+  const [state, formAction] = useActionState(actionForm, initialStateForm);
 
   return (
     <form
