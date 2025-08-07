@@ -1,10 +1,13 @@
 import InteractiveForm from "@/components/inputs/form/interactive";
 import { inputTypes, SelectOption } from "@/types/baseFieldTypes";
 import { AVAILABLE_CATEGORIES_OPTIONS, AVAILABLE_FLAGS_OPTIONS } from "@/utils/constants";
+import { submitJokeAction } from "@/actions/jokeSubmissionActions";
+import { initialJokeSubmissionState } from "@/utils/initialStates";
 import { getTranslations } from "next-intl/server";
 
-async function WorkshopPage() {
+async function WorkshopFormPage() {
   const t = await getTranslations();
+  
   const initialFieldsWithoutDynamicAttributes = [
     {
       type: "select" as inputTypes,
@@ -66,9 +69,11 @@ async function WorkshopPage() {
       <h3 className="font-medium">{t("WorkshopPage.form.title")}</h3>
       <InteractiveForm
         fieldsBlueprint={initialFieldsWithoutDynamicAttributes}
+        actionForm={submitJokeAction}
+        initialStateForm={initialJokeSubmissionState}
       />
     </>
   );
 }
 
-export default WorkshopPage;
+export default WorkshopFormPage;

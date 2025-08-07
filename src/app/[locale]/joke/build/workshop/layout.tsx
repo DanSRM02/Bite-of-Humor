@@ -1,7 +1,5 @@
-import Button from "@/components/inputs/button";
 import Header from "@/components/layout/header";
 import { JokeSubmissionProvider } from "@/contexts/JokeSubmissionContext";
-import { getTranslations } from "next-intl/server";
 import { ReactNode } from "react";
 
 type WorkshopLayoutProps = {
@@ -11,14 +9,12 @@ type WorkshopLayoutProps = {
   feedback: ReactNode;
 };
 
-export default async function WorkshopLayout({
+export default function WorkshopLayout({
   children,
   form,
   preview,
   feedback,
 }: WorkshopLayoutProps) {
-  const t = await getTranslations();
-
   return (
     <JokeSubmissionProvider>
       <Header title="Workshop" />
@@ -31,31 +27,19 @@ export default async function WorkshopLayout({
                 {form}
               </div>
             </section>
-            
+
             <div className="hidden lg:flex items-center">
               <div className="w-px h-full bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
             </div>
-            
+
             <div className="w-full max-w-2xl mx-auto lg:flex-1 lg:mx-0 space-y-6 lg:space-y-8">
-              <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
-                {preview}
-              </section>
               <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
                 {feedback}
               </section>
+              <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
+                {preview}
+              </section>
             </div>
-          </div>
-          
-          <div className="mt-8 lg:mt-12 flex justify-center">
-            <Button
-              size="medium"
-              variant="primary"
-              form="complete-joke"
-              type="submit"
-              className="w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl transition-shadow duration-200"
-            >
-              {t("WorkshopPage.form.sendButton")}
-            </Button>
           </div>
         </article>
       </div>

@@ -1,16 +1,19 @@
 "use server";
 
+import { insertJoke } from "@/services/jokeService";
 import { FormStateAction } from "@/types/formTypes";
 import {
   validateJokeSubmissionFormData,
   extractJokeSubmissionData,
 } from "@/validations/jokeSubmissionValidation";
 import { getTranslations, getLocale } from "next-intl/server";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export async function submitJokeAction(
   prevState: FormStateAction,
   formData: FormData
-) {
+): Promise<FormStateAction> {
   const locale = await getLocale();
   const t = await getTranslations({ locale });
 
@@ -27,10 +30,24 @@ export async function submitJokeAction(
     }
 
     const jokeData = extractJokeSubmissionData(formData);
-  } catch (error) {    
+
+    const response = await insertJoke(jokeData);
+
+    if (!response) {
+      return {
+        errors: [t("jokeSubmission.errors.generalError")],
+        message: t("jokeSubmission.errors.submissionFailed"),
+      };
+    }
+    
+    
+  } catch (error: any) {
     return {
       errors: [t("jokeSubmission.errors.submissionFailed")],
       message: t("jokeSubmission.errors.generalError"),
     };
   }
+
+  revalidatePath("/", "layout");
+  redirect(`/${locale}/joke/setup/final`);
 }

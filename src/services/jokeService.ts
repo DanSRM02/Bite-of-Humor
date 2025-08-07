@@ -1,5 +1,7 @@
-import type { FilterImpl } from "@/types/jokeAPITypes";
+import type { FilterImpl, JokeImpl } from "@/types/jokeAPITypes";
 import apiClient from "../utils/axios/apiClient";
+import { createClientServer } from "@/utils/supabase/server";
+import { JokeSubmissionData } from "@/validations/jokeSubmissionValidation";
 
 export const getJokesInitialLoad = async (language: string) => {
   try {
@@ -35,7 +37,7 @@ export const getJokesWithFilter = async (
       isMockData: filter.isMockData,
     };
 
-    const response = await apiClient.get(url, { signal, headers });       
+    const response = await apiClient.get(url, { signal, headers });
 
     let jokes = [];
     if (response.data.jokes) {
@@ -59,6 +61,65 @@ export const getJokesWithFilter = async (
     };
   }
 };
+
+export async function insertJoke(joke: JokeSubmissionData) {
+  try {
+    const supabase = await createClientServer();
+    
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
+    
+    if (userError || !user) {
+      throw new Error("User must be authenticated to submit jokes");
+    }
+
+    let flagId = null;
+
+    if (joke.flags) {
+      const { data: flagData, error: flagError } = await supabase
+        .from("Flag")
+        .insert({
+          nsfw: joke.flags.nsfw,
+          racist: joke.flags.racist,
+          sexist: joke.flags.sexist,
+          religious: joke.flags.religious,
+          political: joke.flags.political,
+          explicit: joke.flags.explicit,          
+        })
+        .select('id')
+        .single();
+
+      if (flagError) {
+        console.error("Error inserting flags:", flagError);
+        throw flagError;
+      }
+
+      flagId = flagData?.id;
+      console.log("Flags inserted successfully:", flagData);
+    }
+
+    const { data: jokeData, error: jokeError } = await supabase
+      .from("Joke")
+      .insert({
+        category: joke.category,
+        setup: joke.setup,
+        punchline: joke.punchline,
+        user_id: user.id,
+        flag_id: flagId,
+      })
+      .select()
+      .single();
+
+    if (jokeError) {
+      console.error("Error inserting joke:", jokeError);
+      throw jokeError;
+    }
+
+    return jokeData;
+  } catch (error) {
+    console.error("Error inserting joke:", error);
+    throw error;
+  }
+}
 
 const createQueryString = (filter: FilterImpl, language: string) => {
   const queryParams = [];

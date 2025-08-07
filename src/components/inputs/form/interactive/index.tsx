@@ -3,14 +3,24 @@ import { FieldBlueprintType, FormFieldProps } from "@/types/baseFieldTypes";
 import React, { ChangeEvent } from "react";
 import Form from "..";
 import { useJokeSubmission } from "@/contexts/JokeSubmissionContext";
-import { submitJokeAction } from "@/actions/jokeSubmissionActions";
+import { FormStateAction } from "@/types/formTypes";
+import { useTranslations } from "next-intl";
 
 type InteractiveFormProps = {
   fieldsBlueprint: FieldBlueprintType[];
+  actionForm: (prevState: FormStateAction, formData: FormData) => Promise<FormStateAction>;
+  initialStateForm: FormStateAction;
+  onSubmissionSuccess?: () => void;
 };
 
-const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
+const InteractiveForm = ({ 
+  fieldsBlueprint, 
+  actionForm, 
+  initialStateForm,
+  onSubmissionSuccess 
+}: InteractiveFormProps) => {
   const { jokeSubmissionData, setJokeSubmissionData } = useJokeSubmission();
+  const t = useTranslations();
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -50,7 +60,7 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
           ...group,
           options: group.options.map((option) => ({
             ...option,
-            checked: jokeSubmissionData.flags[option.value] ?? false, 
+            checked: jokeSubmissionData.flags[option.value] ?? false,
           })),
         }));
         return { ...field, multipleOptions: newMultipleOptions };
@@ -69,10 +79,11 @@ const InteractiveForm = ({ fieldsBlueprint }: InteractiveFormProps) => {
     <Form
       idForm="complete-joke"
       inputFields={fieldsWithDynamicAttributes}
-      actionForm={submitJokeAction}
-      initialStateForm={{ errors: [], message: "" }}
+      actionForm={actionForm}
+      initialStateForm={initialStateForm}
       onClickField={handleInputChange}
       legendHeading="WorkshopPage.form.legend"
+      textButton={t("WorkshopPage.form.sendButton")}
     />
   );
 };

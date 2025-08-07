@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Button from "..";
 import { useFormStatus } from "react-dom";
+import Button from "..";
 import { FormStateAction } from "@/types/formTypes";
 import Heading from "@/components/dataDisplay/heading";
 import { useTranslations } from "next-intl";
