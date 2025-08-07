@@ -1,7 +1,7 @@
 import React from "react";
 
 type AudienceProps = {
-  audienceRef: React.RefObject<HTMLDivElement>;
+  audienceRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const AUDIENCE_STYLES = {

@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { 
-  Curtains, 
-  Spotlight, 
-  Audience, 
-  WritersRoomElements, 
-  StageElements, 
-  BackstageElements 
+import {
+  Curtains,
+  Spotlight,
+  Audience,
+  WritersRoomElements,
+  StageElements,
+  BackstageElements,
 } from "./elements";
 import { createAnimation, type AnimationRefs } from "./animations";
 
@@ -18,10 +18,10 @@ type TheatricalBackgroundProps = {
   className?: string;
 };
 
-const TheatricalBackground = ({ 
-  type, 
-  children, 
-  className = "" 
+const TheatricalBackground = ({
+  type = "stage",
+  children,
+  className = "",
 }: TheatricalBackgroundProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const curtainLeftRef = useRef<HTMLDivElement>(null);
@@ -32,6 +32,8 @@ const TheatricalBackground = ({
   const writersElementsRef = useRef<HTMLDivElement>(null);
   const stageElementsRef = useRef<HTMLDivElement>(null);
   const backstageElementsRef = useRef<HTMLDivElement>(null);
+  
+  const fallbackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -52,35 +54,36 @@ const TheatricalBackground = ({
     return () => {
       timeline.kill();
     };
-  }, [type]); // Removemos 'children' para evitar re-renderizados innecesarios
+  }, [type]);
 
   return (
-    <div 
-      ref={containerRef}
-      className={`relative overflow-hidden ${className}`}
-    >
-      <Curtains leftRef={curtainLeftRef} rightRef={curtainRightRef} />
-      <Spotlight spotlightRef={spotlightRef} type={type} />
-      
-      {/* Elementos específicos según el tipo */}
+    <div ref={containerRef} className={`relative overflow-hidden ${className}`}>
+      <Curtains 
+        leftRef={curtainLeftRef || fallbackRef} 
+        rightRef={curtainRightRef || fallbackRef} 
+      />
+      <Spotlight 
+        spotlightRef={spotlightRef || fallbackRef} 
+        type={type} 
+      />
+
       {type === "writersroom" && (
-        <WritersRoomElements elementsRef={writersElementsRef} />
-      )}
-      
-      {type === "stage" && (
-        <>
-          <Audience audienceRef={audienceRef} />
-          <StageElements elementsRef={stageElementsRef} />
-        </>
-      )}
-      
-      {type === "backstage" && (
-        <BackstageElements elementsRef={backstageElementsRef} />
+        <WritersRoomElements elementsRef={writersElementsRef || fallbackRef} />
       )}
 
-      {/* Contenido */}
-      <div ref={contentRef} className="relative z-10">
-        {children}
+      {type === "stage" && (
+        <>
+          <Audience audienceRef={audienceRef || fallbackRef} />
+          <StageElements elementsRef={stageElementsRef || fallbackRef} />
+        </>
+      )}
+
+      {type === "backstage" && (
+        <BackstageElements elementsRef={backstageElementsRef || fallbackRef} />
+      )}
+
+      <div ref={contentRef || fallbackRef} className="relative z-10">
+        {children || <div>No content provided</div>}
       </div>
     </div>
   );

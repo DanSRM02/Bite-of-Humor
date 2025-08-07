@@ -1,7 +1,7 @@
 import React from "react";
 
 type BackstageElementsProps = {
-  elementsRef: React.RefObject<HTMLDivElement>;
+  elementsRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const BackstageElements = ({ elementsRef }: BackstageElementsProps) => {

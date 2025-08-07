@@ -1,7 +1,7 @@
 import React from "react";
 
 type WritersRoomElementsProps = {
-  elementsRef: React.RefObject<HTMLDivElement>;
+  elementsRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const WritersRoomElements = ({ elementsRef }: WritersRoomElementsProps) => {

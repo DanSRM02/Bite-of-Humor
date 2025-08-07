@@ -1,8 +1,8 @@
 import React from "react";
 
 type CurtainsProps = {
-  leftRef: React.RefObject<HTMLDivElement>;
-  rightRef: React.RefObject<HTMLDivElement>;
+  leftRef: React.RefObject<HTMLDivElement | null>;
+  rightRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const CURTAIN_STYLES = {

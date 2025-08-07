@@ -2,7 +2,7 @@ import React from "react";
 import { TheatricalType } from "../../TheatricalBackground";
 
 type SpotlightProps = {
-  spotlightRef: React.RefObject<HTMLDivElement>;
+  spotlightRef: React.RefObject<HTMLDivElement | null>;
   type: TheatricalType;
 };
 

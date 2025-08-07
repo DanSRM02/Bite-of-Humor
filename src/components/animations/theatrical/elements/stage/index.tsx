@@ -1,7 +1,7 @@
 import React from "react";
 
 type StageElementsProps = {
-  elementsRef: React.RefObject<HTMLDivElement>;
+  elementsRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const StageElements = ({ elementsRef }: StageElementsProps) => {

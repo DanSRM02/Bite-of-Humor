@@ -1,4 +1,3 @@
-// Barrel exports para todos los elementos teatrales
 export { default as WritersRoomElements } from "./writersRoom/index";
 export { default as StageElements } from "./stage/index";
 export { default as BackstageElements } from "./backstage/index";
