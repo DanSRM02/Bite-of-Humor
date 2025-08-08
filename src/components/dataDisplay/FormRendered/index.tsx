@@ -17,8 +17,8 @@ type FormRenderedProps = {
 const VARIANT_STYLES = {
   container: {
     form: "flex flex-col gap-4 sm:gap-5",
-    filter: "flex flex-col gap-4",
-    inline: "flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4",
+    filter: "flex flex-col lg:flex-row gap-4",
+    inline: "flex flex-col sm:flex-row  gap-3 sm:gap-4",
   },
   field: {
     form: "w-full",
