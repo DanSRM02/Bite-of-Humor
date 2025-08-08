@@ -1,4 +1,4 @@
-import {  DEFAULT_LOCALE, SUPPORTED_LOCALES_STRING } from "@/utils/const";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES_STRING } from "@/utils/baseConstants";
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({

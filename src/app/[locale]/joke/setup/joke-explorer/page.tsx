@@ -1,115 +1,75 @@
-"use client";
-import LeadIn from "@/components/dataDisplay/leadIn";
-import { _AVAILABLE_CATEGORIES } from "@/utils/const";
-import CardGrid from "@/components/layout/cardGrid";
-import { useEffect } from "react";
+import { JokeFilter } from "@/components/joke/jokeFilter";
+import { getJokesInitialLoad } from "@/services/jokeService";
 import { inputTypes } from "@/types/baseFieldTypes";
-import FormRendered from "@/components/dataDisplay/formRendered";
-import useJokeFilter from "@/hooks/useJokeFilter";
-import useJokeList from "@/hooks/useJokeList";
-import Card from "@/components/feedback/card";
-import Chip from "@/components/feedback/chip";
-import { useLocale } from "next-intl";
+import { JokeImpl } from "@/types/jokeAPITypes";
+import { _AVAILABLE_CATEGORIES } from "@/utils/constants";
+import { getLocale, getTranslations } from "next-intl/server";
+import { JokeFilterProvider } from "@/contexts/JokeFilterContext";
 
-function JokeExplorerPage() {
-  const { getFilteredJokes, jokeState } = useJokeList();
-  const locale = useLocale();
+async function JokeExplorerPage() {
+  const locale = await getLocale();
   const params = locale.split("-");
-  const language = params[0];
+  const currentLanguage = params[0];
+  const t = await getTranslations("JokePage");
 
-  const { searchTerm, category, isDarkMode, isSafeMode, handleInputChange } =
-    useJokeFilter();
+  const initialJokes: JokeImpl[] = await getJokesInitialLoad(currentLanguage);
 
-  const fields = [
-    {
-      id: "safeMode",
-      type: "checkbox" as inputTypes,
-      label: "JokePage.searchForm.safeModeLabel",
-      color: "primary",
-      checked: isDarkMode ? isSafeMode : false,
-      disabled: !isDarkMode,
-      onChange: handleInputChange,
-    },
+  const filterFieldsWithoutDynamicAttributes = [
     {
       id: "category",
       type: "select" as inputTypes,
       label: "JokePage.searchForm.categoryLabel",
+      nameInput: "category",
       color: "secondary",
-      value: category,
-      disableLabel: "Select a category",
-      onChange: handleInputChange,
+      isTextRaw: false,
+      disableLabel: "JokePage.searchForm.categoryLabel",
       options: _AVAILABLE_CATEGORIES.map((category) => ({
+        isTextRaw: true,
         value: category,
         label: category,
       })),
     },
-
     {
       id: "searchTerm",
       type: "search" as inputTypes,
       label: "JokePage.searchForm.label",
       placeholder: "JokePage.searchForm.placeholder",
       color: "secondary",
-      value: searchTerm,
-      onChange: handleInputChange,
+      nameInput: "searchTerm",
+    },
+    {
+      id: "isSafeMode",
+      type: "checkbox" as inputTypes,
+      label: "JokePage.searchForm.safeModeLabel",
+      color: "primary",
+      nameInput: "isSafeMode",
+    },
+    {
+      id: "isMockData",
+      type: "checkbox" as inputTypes,
+      label: "JokePage.searchForm.mockDataLabel",
+      color: "primary",
+      nameInput: "isMockData",
+      isTextRaw: false,
     },
   ];
-
-  useEffect(() => {
-    getFilteredJokes({ category, searchTerm, isSafeMode }, language);
-  }, [category, searchTerm, isSafeMode, language]);
-
-  const translations = {
-    navkLink: {
-      text: "plans.Link.text",
-    },
-
-    searchFilters: {
-      heading: "JokePage.searchFilters.heading",
-      paragraph: "JokePage.searchFilters.paragraph",
-    },
-  };
-
   return (
-    <>
-      <section aria-label="Joke explorer section" className="flex flex-col">
-        <span className="flex flex-wrap justify-center items-center gap-20">
-          <LeadIn
-            variant="fourth"
-            redirect={"/joke/setup/final"}
-            heading={translations.searchFilters.heading}
-            paragraph={translations.searchFilters.paragraph}
-          />
-          <div
-            className="flex flex-wrap justify-around  items-center p-8 w-[55%] border border-solid border-gray-300 rounded-md"
-            aria-label="Joke Filter"
+    <JokeFilterProvider>
+      <div className="min-h-screen bg-gradient-to-br from-stone-50 to-stone-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+          <section 
+            aria-label={t("ariaLabels.jokeExplorerSection")} 
+            className="flex flex-col gap-6 sm:gap-8 lg:gap-10"
           >
-            <FormRendered inputFields={fields} />
-          </div>
-        </span>
-        <br />
-        {category === "Dark" && (
-          <Chip color="yellow" textChip="JokePage.safeModeWarning" />
-        )}
-        {jokeState.isLoading && (
-          <Chip color="blue" textChip="JokePage.loadingMessage" />
-        )}
-        {jokeState.error && <Chip color="red" textChip={jokeState.error} />}
-        <br />
-        <CardGrid ariaLabel="Joke results list">
-          {jokeState.jokes?.map((joke) => (
-            <Card
-              key={joke.id}
-              badge={joke.category}
-              variant="joke"
-              jokeSetup={joke.setup || joke.joke}
-              jokePunchline={joke.delivery}
-              jokeType={joke.type}
+            <JokeFilter
+              initialLoad={initialJokes}
+              language={currentLanguage}
+              fieldsBlueprint={filterFieldsWithoutDynamicAttributes}
             />
-          ))}
-        </CardGrid>
-      </section>
-    </>
+          </section>
+        </div>
+      </div>
+    </JokeFilterProvider>
   );
 }
 

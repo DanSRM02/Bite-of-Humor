@@ -39,7 +39,7 @@ Bite of Humor is a sophisticated web app that goes beyond a simple joke display.
 -   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 -   **Internationalization:** [i18next](https://www.i18next.com/)
 -   **Data Fetching:** Custom Hooks using `axios` API.
--   **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+-   **Icons:** [Iconify](https://iconify.design/) via [@iconify/react](https://github.com/iconify/iconify/tree/main/packages/react)
 
 ## 🚀 Getting Started
 

@@ -15,6 +15,9 @@
         "message4": "Das ist das letzte Mal, versprochen!",
         "message5": "Betritt die echte Seite!"
       }
+    },
+    "ariaLabels": {
+      "firstSetupMainContent": "Hauptinhalt der ersten Einrichtung"
     }
   },
   "MediumSetup": {
@@ -66,13 +69,49 @@
       }
     }
   },
+  "CommunityPage": {
+    "title": "Community-Witze",
+    "description": "Entdecken Sie lustige Witze von Komikern aus aller Welt. Lachen Sie mit und finden Sie Ihren nächsten Lieblingswitz!",
+    "filters": {
+      "title": "Witze Filtern",
+      "category": {
+        "label": "Kategorie",
+        "placeholder": "Kategorie auswählen"
+      },
+      "search": {
+        "label": "Suchen",
+        "placeholder": "Witze suchen..."
+      },
+      "sortBy": {
+        "label": "Sortieren nach",
+        "placeholder": "Sortierreihenfolge",
+        "newest": "Neueste zuerst",
+        "oldest": "Älteste zuerst",
+        "popular": "Beliebteste"
+      }
+    },
+    "jokesGrid": {
+      "title": "Neueste Witze",
+      "subtitle": "Frischer Humor aus unserer Community"
+    },
+    "loading": "Community-Witze werden geladen...",
+    "noJokes": {
+      "title": "Keine Witze Gefunden",
+      "description": "Seien Sie der Erste, der einen Witz mit der Community teilt!"
+    },
+    "callToAction": {
+      "title": "Teilen Sie Ihren Humor",
+      "description": "Treten Sie unserer Community bei und verbreiten Sie Freude mit Ihren Witzen.",
+      "button": "Witz Erstellen"
+    }
+  },
   "ErrorPage": {
     "content": {
-      "title": "Fehlerseite",
-      "message": "Ein Fehler ist aufgetreten!"
+      "title": "Seite nicht gefunden",
+      "message": "Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben."
     },
     "actions": {
-      "button": "Zurück zur vorherigen Seite"
+      "button": "Zur Startseite"
     }
   },
   "ComedianSignUpForm": {
@@ -85,12 +124,42 @@
       "nameLabel": "Komikername",
       "emailPlaceholder": "email@janesfakedomain.net",
       "emailLabel": "Komiker-E-Mail",
+      "passwordPlaceholder": "Erstelle ein starkes Passwort",
+      "passwordLabel": "Passwort",
       "jokeLabel": "Komikerwitz",
       "jokePlaceholder": "Gib deinen Witz ein"
     },
     "actions": {
       "legendHeading": "Komiker Registrierung",
       "submitButton": "Mach mit"
+    },
+    "errors": {
+      "validationFailed": "Bitte überprüfen Sie die angegebenen Informationen",
+      "general": "Ein Fehler ist bei der Registrierung aufgetreten",
+      "registrationFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    },
+    "success": {
+      "registered": "Registrierung erfolgreich! Willkommen in der Community."
+    },
+    "validation": {
+      "email": {
+        "required": "E-Mail ist erforderlich",
+        "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      },
+      "password": {
+        "required": "Passwort ist erforderlich",
+        "minLength": "Das Passwort muss mindestens 6 Zeichen lang sein"
+      },
+      "name": {
+        "required": "Name ist erforderlich",
+        "minLength": "Der Name muss mindestens 2 Zeichen lang sein",
+        "maxLength": "Der Name darf 50 Zeichen nicht überschreiten"
+      },
+      "joke": {
+        "required": "Ein Beispielwitz ist für die Registrierung erforderlich",
+        "minLength": "Der Witz muss mindestens 10 Zeichen lang sein",
+        "maxLength": "Der Witz darf 300 Zeichen nicht überschreiten"
+      }
     }
   },
   "ComedianLoginForm": {
@@ -99,17 +168,40 @@
       "paragraph": "Ein von Satire angetriebener Spielplatz, der kulturellen Witz und kreative Rebellion vermischt – entdecke die Geschichte, die Mission und warum Lachen härter trifft, wenn es ehrlich ist."
     },
     "fields": {
-      "namePlaceholder": "Wähle einen Komikernamen",
-      "nameLabel": "Komikername",
       "emailPlaceholder": "email@janesfakedomain.net",
-      "emailLabel": "Komiker-E-Mail"
+      "emailLabel": "Komiker-E-Mail",
+      "passwordPlaceholder": "Gib dein Passwort ein",
+      "passwordLabel": "Passwort"
     },
     "actions": {
       "legendHeading": "Komiker Anmeldung",
       "submitButton": "Tritt dem Humor bei"
+    },
+    "errors": {
+      "validationFailed": "Bitte überprüfen Sie Ihre Anmeldedaten",
+      "general": "Ein Fehler ist bei der Anmeldung aufgetreten",
+      "loginFailed": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie E-Mail und Passwort."
+    },
+    "success": {
+      "loggedIn": "Willkommen zurück! Sie sind jetzt angemeldet."
+    },
+    "validation": {
+      "email": {
+        "required": "E-Mail ist erforderlich",
+        "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      },
+      "password": {
+        "required": "Passwort ist erforderlich",
+        "minLength": "Das Passwort muss mindestens 6 Zeichen lang sein"
+      }
     }
   },
   "SelectCountry": {
+    "ariaLabels": {
+      "selectYourCountry": "Wählen Sie Ihr Land",
+      "countrySelectionIntroduction": "Länderauswahl-Einführung",
+      "countryOptions": "Länderoptionen"
+    },
     "introduction": {
       "heading": "Wähle deine globale Bühne!",
       "paragraph": "Bite of Humor verbindet dich mit Comedy aus aller Welt. Sag uns, wo du deine humorvolle Reise beginnen möchtest."
@@ -137,9 +229,39 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "home": "Startseite",
-      "signUp": "Registrieren",
-      "logIn": "Anmelden"
+      "home": "Comedy-Bibliothek",
+      "signUp": "Comedy-Club Beitreten",
+      "logIn": "Comedy-Club Anmeldung",
+      "logOut": "Abmelden",
+      "workshop": "Witz-Builder Studio",
+      "community": "Community Witze-Hub",
+      "dashboard": "Backstage"
+    },
+     "userGreeting": "Hallo, {name}!"
+  },
+  "QuickNavigation": {
+    "setup": "Witz Explorer",
+    "build": "Witze Erstellen",
+    "punch-line": "Pointe"
+  },
+  "common": {
+    "none": "Keine",
+    "all": "Alle",
+    "flags": {
+      "nsfw": "Nicht Jugendfrei",
+      "religious": "Religiös",
+      "political": "Politisch", 
+      "racist": "Rassistisch",
+      "sexist": "Sexistisch",
+      "explicit": "Explizit"
+    },
+    "categories": {
+      "Programming": "Programmierung",
+      "Miscellaneous": "Verschiedenes",
+      "Dark": "Dunkel", 
+      "Pun": "Wortspiel",
+      "Spooky": "Gruselig",
+      "Christmas": "Weihnachten"
     }
   },
   "plans": {
@@ -161,10 +283,6 @@
         "feature4": "Standard-Support",
         "feature5": "Kein exklusiver Inhalt"
       }
-    },
-    "common": {
-      "none": "Keine",
-      "all": "Alle"
     },
     "pro": {
       "name": "Pro",
@@ -193,40 +311,40 @@
   },
   "TheFinalSetupPage": {
     "leadIn": {
-      "heading": "Willkommen bei Bite of Humor",
-      "paragraph": "Deine Einrichtung ist abgeschlossen! Erkunde die verschiedenen Bereiche deines personalisierten Humorerlebnisses."
+      "heading": "Die Handlung Wird Komplexer...",
+      "paragraph": "Sie sind so weit gekommen. Jetzt ist die eigentliche Frage: Sind Sie bereit für das, was als nächstes kommt?"
     },
     "platformCards": {
       "communicationHub": {
-        "title": "Kommunikationszentrum",
-        "description": "Bleib mit deiner Witz-Community verbunden",
+        "title": "Der Tresor",
+        "description": "Wo die guten Sachen leben. Erkunden Sie, was Menschen zum Lachen, Weinen und alles Hinterfragen bringt.",
         "features": {
-          "feature1": "Tägliche Witz-Newsletter",
-          "feature2": "Community-Benachrichtigungen",
-          "feature3": "Personalisierte Empfehlungen",
-          "feature4": "Wöchentlicher Humor-Digest"
+          "feature1": "Kuratierte Comedy-Perlen",
+          "feature2": "Was im Humor trending ist",
+          "feature3": "Witze, die das Internet brachen",
+          "feature4": "Die, die uns entkommen sind"
         },
         "badge": "Wesentlich"
       },
       "socialFeatures": {
-        "title": "Soziale Funktionen",
-        "description": "Verbinde dich und teile mit anderen Witz-Enthusiasten",
+        "title": "Die Werkstatt",
+        "description": "Zeit, sich die Hände schmutzig zu machen. Hier werden Ideen zu Legenden (oder spektakulären Fehlschlägen).",
         "features": {
-          "feature1": "Lieblingswitze teilen",
-          "feature2": "Anderen Benutzern folgen",
-          "feature3": "Witzsammlungen erstellen",
-          "feature4": "Community-Diskussionen"
+          "feature1": "Ihr kreativer Spielplatz",
+          "feature2": "Bauen Sie etwas Unvergessliches",
+          "feature3": "Testen Sie Ihr Comedy-Timing",
+          "feature4": "Teilen Sie Ihr Meisterwerk"
         },
-        "badge": "Interaktiv"
+        "badge": "Kreativ"
       },
       "premiumExperience": {
-        "title": "Premium-Erlebnis",
-        "description": "Schalte erweiterte Funktionen und exklusive Inhalte frei",
+        "title": "Die VIP-Lounge",
+        "description": "Für diejenigen, die die volle Erfahrung wollen. Keine Kompromisse, keine Reue, keine Werbung.",
         "features": {
-          "feature1": "Unbegrenzter Witzzugriff",
-          "feature2": "Erweiterte Filterung",
-          "feature3": "Premium-Kategorien",
-          "feature4": "Werbefreies Erlebnis"
+          "feature1": "Zugang zu allem, überall",
+          "feature2": "Überspringen Sie die Warteschlangen",
+          "feature3": "Exklusive Hinter-den-Kulissen",
+          "feature4": "Die Premium-Behandlung"
         },
         "badge": "Exklusiv"
       }
@@ -242,8 +360,10 @@
       "settings": "Konfigurationen"
     }
   },
-
   "JokePage": {
+    "ariaLabels": {
+      "jokeExplorerSection": "Witz-Explorer-Bereich"
+    },
     "navLink": {
       "text": "Zum Finale"
     },
@@ -255,10 +375,50 @@
       "placeholder": "In Witzen suchen...",
       "label": "Suche nach Stichwort",
       "safeModeLabel": "Sicherer Modus",
-      "categoryLabel": "Kategorie auswählen"
+      "categoryLabel": "Kategorie auswählen",
+      "mockDataLabel": "Mock-Daten verwenden"
     },
     "loadingMessage": "Wird geladen...",
-    "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt."
+    "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt.",
+    "noJokesFound": "Keine Witze gefunden, die Ihren Kriterien entsprechen"
+  },
+  "PremiumPage": {
+    "plans": {
+      "heading": "Wählen Sie Ihre Comedy-Reise",
+      "paragraph": "Schalten Sie Premium-Funktionen frei und bringen Sie Ihr Humor-Erlebnis auf die nächste Stufe"
+    },
+    "benefits": {
+      "heading": "Warum Premium Wählen?",
+      "security": {
+        "title": "Sicher & Geschützt",
+        "description": "Ihre Daten sind durch Unternehmenssicherheit geschützt"
+      },
+      "access": {
+        "title": "Sofortiger Zugang",
+        "description": "Nutzen Sie Premium-Funktionen sofort nach der Anmeldung"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Erhalten Sie Hilfe, wann immer Sie sie von unserem Expertenteam benötigen"
+      },
+      "quality": {
+        "title": "Premium-Qualität",
+        "description": "Zugang zu kuratierten, hochwertigen Comedy-Inhalten"
+      },
+      "community": {
+        "title": "Community-Zugang",
+        "description": "Treten Sie unserer exklusiven Gemeinschaft von Comedy-Enthusiasten bei"
+      }
+    },
+    "stats": {
+      "users": "Zufriedene Nutzer",
+      "uptime": "Verfügbarkeit"
+    },
+    "accessibility": {
+      "plansSection": "Verfügbare Premium-Pläne",
+      "featuresSection": "Premium-Features und Vorteile",
+      "statsSection": "Plattform-Statistiken"
+    }
   },
   "footer": {
     "brandName": "Bite of Humor",
@@ -267,16 +427,31 @@
       {
         "title": "Kernkonzepte",
         "topics": [
-          { "subtitle": "Was ist Bite of Humor?", "link": "/core/what-is" },
-          { "subtitle": "Hinter dem Namen", "link": "/core/name-origin" },
-          { "subtitle": "Logo-Philosophie", "link": "/core/logo-philosophy" }
+          {
+            "subtitle": "Was ist Bite of Humor?",
+            "link": "/core/what-is"
+          },
+          {
+            "subtitle": "Hinter dem Namen",
+            "link": "/core/name-origin"
+          },
+          {
+            "subtitle": "Logo-Philosophie",
+            "link": "/core/logo-philosophy"
+          }
         ]
       },
       {
         "title": "Über das Projekt",
         "topics": [
-          { "subtitle": "Projektübersicht", "link": "/about/overview" },
-          { "subtitle": "Designziele", "link": "/about/goals" },
+          {
+            "subtitle": "Projektübersicht",
+            "link": "/about/overview"
+          },
+          {
+            "subtitle": "Designziele",
+            "link": "/about/goals"
+          },
           {
             "subtitle": "Kreative Leitung",
             "link": "/about/creative-direction"
@@ -286,8 +461,14 @@
       {
         "title": "Community",
         "topics": [
-          { "subtitle": "Feedback-Forum", "link": "/community/forum" },
-          { "subtitle": "Witz einreichen", "link": "/community/submit-joke" },
+          {
+            "subtitle": "Feedback-Forum",
+            "link": "/community/forum"
+          },
+          {
+            "subtitle": "Witz einreichen",
+            "link": "/community/submit-joke"
+          },
           {
             "subtitle": "Design-Herausforderungen",
             "link": "/community/challenges"
@@ -295,5 +476,252 @@
         ]
       }
     ]
+  },
+  "HomePage": {
+    "ariaLabels": {
+      "homeMainContent": "Hauptinhalt der Startseite",
+      "platformFeaturesList": "Liste der Plattformfunktionen",
+      "userDashboardActions": "Benutzer-Dashboard-Aktionen",
+      "workshopMainContent": "Hauptinhalt der Werkstatt",
+      "creationTools": "Bereich für Erstellungstools",
+      "userProjects": "Benutzerprojekte-Bereich"
+    },
+    "leadIn": {
+      "heading": "Ihr Kreatives Studio",
+      "paragraph": "Alles was Sie brauchen, um Ihre Comedy-Meisterwerke zu erstellen, zu bauen und zu perfektionieren. Lassen Sie uns etwas Großartiges schaffen!"
+    },
+    "platformCards": {
+      "myCreations": {
+        "title": "Meine Werkstatt",
+        "description": "Ihr persönlicher kreativer Raum, wo Ideen zum Leben erwachen",
+        "features": {
+          "feature1": "Aktive Projekte in Bearbeitung",
+          "feature2": "Witz-Entwürfe und Konzepte",
+          "feature3": "Kreative Tools und Vorlagen",
+          "feature4": "Ihre Comedy-Evolution"
+        },
+        "badge": "Kreativ"
+      },
+      "humorHistory": {
+        "title": "Comedy-Inspiration",
+        "description": "Studieren Sie die Meister und befeuern Sie Ihren kreativen Prozess",
+        "features": {
+          "feature1": "Legendäre Witz-Strukturen",
+          "feature2": "Comedy-Schreibtechniken",
+          "feature3": "Timing- und Delivery-Tipps",
+          "feature4": "Genre- und Stil-Guides"
+        },
+        "badge": "Lernen"
+      },
+      "communityForum": {
+        "title": "Ersteller-Netzwerk",
+        "description": "Verbinden Sie sich mit anderen Comedy-Erstellern und Kollaborateuren",
+        "features": {
+          "feature1": "Arbeiten in Bearbeitung teilen",
+          "feature2": "Kreatives Feedback erhalten",
+          "feature3": "Kollaborationspartner finden",
+          "feature4": "An Schreibherausforderungen teilnehmen"
+        },
+        "badge": "Gemeinschaft"
+      }
+    },
+    "buildTools": {
+      "title": "Kreativ-Toolkit",
+      "body": "Ihre umfassende Suite von Comedy-Erstellungs- und Veröffentlichungstools",
+      "actions": {
+        "createNew": "Erstellen Beginnen",
+        "viewDrafts": "Meine Entwürfe",
+        "analytics": "Performance",
+        "publish": "Live Schalten"
+      }
+    }
+  },
+  "WorkshopPage": {
+    "ariaLabels": {
+      "workshopMainContent": "Hauptinhalt der Werkstatt",
+      "creationTools": "Bereich für Erstellungstools",
+      "userProjects": "Benutzerprojekte-Bereich"
+    },
+    "leadIn": {
+      "heading": "Ihre Kreative Werkstatt",
+      "paragraph": "Bauen, gestalten und perfektionieren Sie Ihre Comedy-Kreationen. Hier geschieht die Magie!"
+    },
+    "header": {
+      "steps": {
+        "write": {
+          "heading": "1. Schreiben",
+          "paragraph": "Füllen Sie das Formular mit Ihrem Witz-Aufbau und der Pointe aus"
+        },
+        "preview": {
+          "heading": "2. Vorschau",
+          "paragraph": "Sehen Sie, wie Ihr Witz mit dynamischem Styling zum Leben erwacht"
+        },
+        "submit": {
+          "heading": "3. Absenden",
+          "paragraph": "Erhalten Sie sofortiges Feedback und teilen Sie Ihren Humor mit der Welt"
+        }
+      }
+    },
+    "sections": {
+      "tools": {
+        "title": "Comedy-Tools",
+        "description": "Alles was Sie brauchen, um den perfekten Witz zu kreieren"
+      },
+      "projects": {
+        "title": "Ihre Projekte",
+        "description": "Verfolgen Sie Ihre Comedy-Kreationen und Fortschritte"
+      },
+      "inspiration": {
+        "title": "Tägliche Inspiration",
+        "description": "Frische Ideen um Ihre Kreativität zu entfachen"
+      }
+    },
+    "actions": {
+      "createNew": "Neu Erstellen",
+      "saveProject": "Projekt Speichern",
+      "preview": "Vorschau",
+      "publish": "Veröffentlichen"
+    },
+    "form": {
+      "title": "Erstellen Sie Ihren Witz",
+      "legend": "Witz-Erstellungsformular",
+      "preview": "Witz-Vorschau",
+      "feedback": {
+        "title": "KI-Feedback kommt bald",
+        "description": "Wir entwickeln ein KI-System, das Echtzeit-Witzanalyse und Verbesserungsvorschläge bietet.",
+        "status": "In Entwicklung"
+      },
+      "fields": {
+        "category": {
+          "label": "Kategorie",
+          "placeholder": "Wählen Sie eine Kategorie"
+        },
+        "flags": {
+          "label": "Inhalts-Flags",
+          "placeholder": "Wählen Sie Inhalts-Flags",
+          "groupLabel": "Flag-Optionen"
+        },
+        "setup": {
+          "label": "Aufbau",
+          "placeholder": "Geben Sie Ihren Witz-Aufbau ein..."
+        },
+        "punchline": {
+          "label": "Pointe",
+          "placeholder": "Geben Sie Ihre Pointe ein..."
+        }
+      },
+      "submit": "Witz Erstellen",
+      "sendButton": "Witz Senden"
+    }
+  },
+  "validation": {
+    "category": {
+      "required": "Kategorie ist erforderlich",
+      "invalid": "Ungültige Kategorie ausgewählt"
+    },
+    "setup": {
+      "required": "Witz-Setup ist erforderlich",
+      "minWords": "Witz-Setup muss mindestens 3 Wörter enthalten",
+      "maxLength": "Witz-Setup darf 200 Zeichen nicht überschreiten"
+    },
+    "punchline": {
+      "required": "Pointe ist erforderlich",
+      "minWords": "Pointe muss mindestens 1 Wort enthalten",
+      "maxLength": "Pointe darf 150 Zeichen nicht überschreiten"
+    },
+    "darkCategory": {
+      "explicitRequired": "Schwarzer Humor muss das Explicit-Flag aktiviert haben"
+    }
+  },
+  "jokeSubmission": {
+    "errors": {
+      "fixErrors": "Bitte beheben Sie die folgenden Fehler:",
+      "submissionFailed": "Übermittlung fehlgeschlagen",
+      "generalError": "Ein Fehler ist beim Einreichen Ihres Witzes aufgetreten"
+    },
+    "success": {
+      "submitted": "Ihr Witz wurde erfolgreich eingereicht und wartet auf Überprüfung!"
+    }
+  },
+  "NavigationContext": {
+    "title": "Was kommt als Nächstes?",
+    "subtitle": "Setzen Sie Ihre Reise mit diesen empfohlenen Aktionen fort",
+    "cards": {
+      "final": {
+        "startCreating": {
+          "title": "Mit dem Erstellen beginnen",
+          "description": "Sie sind bereit! Zeit, Ihr erstes Meisterwerk zu erstellen und es mit der Welt zu teilen.",
+          "actionText": "Ersten Witz erstellen"
+        },
+        "exploreCommunity": {
+          "title": "Community erkunden",
+          "description": "Schließen Sie sich Tausenden von Erstellern an und entdecken Sie, was die Community zum Lachen bringt.",
+          "actionText": "Community beitreten"
+        }
+      }
+    }
+  },
+  "CentralHub": {
+    "leadIn": {
+      "heading": "Humor-Kommandozentrale",
+      "paragraph": "Ihr zentraler Hub zum Erstellen, Teilen und Erkunden der Welt des Humors. Wählen Sie Ihr Abenteuer und bringen Sie die Welt zum Lachen!"
+    },
+    "sections": {
+      "buildWorkshop": {
+        "title": "Kreativer Workshop",
+        "description": "Erstellen und gestalten Sie Ihre komödiantischen Meisterwerke mit leistungsstarken Tools und KI-Unterstützung.",
+        "badge": "Erstellen",
+        "features": {
+          "jokeBuilder": "Erweiterte Witz-Erstellung",
+          "templates": "Professionelle Vorlagen",
+          "aiAssistance": "KI-gestützte Vorschläge",
+          "collaboration": "Team-Kollaborationstools"
+        }
+      },
+      "punchlineCommunity": {
+        "title": "Community-Bühne",
+        "description": "Teilen Sie Ihre Arbeit, erhalten Sie Feedback und verbinden Sie sich mit Komikern weltweit.",
+        "badge": "Teilen",
+        "features": {
+          "shareJokes": "Teilen und präsentieren",
+          "feedback": "Community-Feedback",
+          "voting": "Abstimmung und Bewertungen",
+          "trending": "Trending-Inhalte"
+        }
+      },
+      "setupExplorer": {
+        "title": "Witz-Explorer",
+        "description": "Entdecken Sie erstaunliche Inhalte, erkunden Sie Kategorien und finden Sie überall Inspiration.",
+        "badge": "Entdecken",
+        "features": {
+          "discover": "Inhalts-Entdeckung",
+          "categories": "Organisierte Kategorien",
+          "filters": "Intelligente Filterung",
+          "favorites": "Persönliche Favoriten"
+        }
+      },
+      "setupPremium": {
+        "title": "Premium-Erlebnis",
+        "description": "Schöpfen Sie das volle Potenzial mit exklusiven Funktionen, Analysen und prioritärem Support aus.",
+        "badge": "Premium",
+        "features": {
+          "advancedTools": "Erweiterte Erstellungstools",
+          "analytics": "Leistungsanalysen",
+          "exportOptions": "Export-Optionen",
+          "prioritySupport": "Prioritärer Support"
+        }
+      },
+      "setupProfile": {
+        "title": "Profil & Einstellungen",
+        "description": "Verwalten Sie Ihr Konto, Ihre Vorlieben und personalisieren Sie Ihr Comedy-Erlebnis.",
+        "badge": "Einstellungen",
+        "features": {
+          "personalSettings": "Persönliche Einstellungen",
+          "preferences": "Inhalts-Vorlieben",
+          "account": "Konto-Verwaltung",
+          "history": "Aktivitätsverlauf"
+        }
+      }
+    }
   }
 }

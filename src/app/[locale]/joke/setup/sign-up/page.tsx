@@ -1,13 +1,12 @@
-"use client";
 import Form from "@/components/inputs/form";
-import { useRouter } from "next/navigation";
 import { inputTypes } from "@/types/baseFieldTypes";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import { useTranslations } from "next-intl";
+import { signUpComedianAction } from "@/actions/comedianActions";
+import { initialSignUpState } from "@/utils/initialStates";
+import { getTranslations } from "next-intl/server";
 
-function SignUp() {
-  const router = useRouter();
-  const t = useTranslations();
+async function SignUp() {
+  const t = await getTranslations();
   const translations = {
     intro: {
       heading: "ComedianSignUpForm.introduction.heading",
@@ -17,20 +16,29 @@ function SignUp() {
       {
         placeholder: "ComedianSignUpForm.fields.namePlaceholder",
         label: "ComedianSignUpForm.fields.nameLabel",
-        id: "name",
+        id: "comedian-name",
+        nameInput: "name",
         type: "text" as inputTypes,
       },
       {
         placeholder: "ComedianSignUpForm.fields.emailPlaceholder",
         label: "ComedianSignUpForm.fields.emailLabel",
-        id: "email",
+        id: "comedian-email",
+        nameInput: "email",
         type: "email" as inputTypes,
       },
-
+      {
+        placeholder: "ComedianSignUpForm.fields.passwordPlaceholder",
+        label: "ComedianSignUpForm.fields.passwordLabel",
+        id: "comedian-password",
+        nameInput: "password",
+        type: "password" as inputTypes,
+      },
       {
         placeholder: "ComedianSignUpForm.fields.jokePlaceholder",
         label: "ComedianSignUpForm.fields.jokeLabel",
-        id: "joke",
+        id: "comedian-joke",
+        nameInput: "joke",
         type: "textarea" as inputTypes,
       },
     ],
@@ -40,29 +48,28 @@ function SignUp() {
     },
   };
 
-  const handleRedirect = () => {
-    router.push("select-country");
-  };
-
   return (
-    <>
-      <section
-        className="flex justify-center items-center flex-wrap p-12 gap-8 min-h-[37rem] border-2 border-gray-300 rounded-lg"
-        aria-label="Sign up section"
-      >
+    <section
+      className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-12 min-h-[500px] sm:min-h-[600px] lg:min-h-[37rem] border-2 border-gray-300 rounded-lg max-w-7xl mx-auto"
+      aria-label="Sign up section"
+    >
+      <div className="flex-1 max-w-md lg:max-w-lg text-center lg:text-left">
         <LeadIn
+          variant="primary"
           heading={translations.intro.heading}
           paragraph={translations.intro.paragraph}
         />
+      </div>
+      <div className="flex-1 w-full max-w-md lg:max-w-lg">
         <Form
-          actionForm=""
-          handleClick={handleRedirect}
+          actionForm={signUpComedianAction}
+          initialStateForm={initialSignUpState}
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}
         />
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

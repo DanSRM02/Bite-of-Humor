@@ -1,48 +1,28 @@
-"use client";
-import Button from "@/components/inputs/button";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { Link } from "@/i18n/navigation";
 
-function NotFound() {
-  const t = useTranslations();
-  const router = useRouter();
-
-  const handleRedirect = () => {
-    router.push("..");
-  };
-
-  const errorTitle = t("ErrorPage.content.title");
-  const errorMessage = t("ErrorPage.content.message");
-  const goBackLabel = t("ErrorPage.actions.button");
+export default function NotFoundPage() {
+  const t = useTranslations("ErrorPage");
 
   return (
-    <>
-      <main
-        aria-label="Error page"
-        className="flex flex-col items-center justify-center min-h-screen p-8 bg-third-bg"
-      >
-        <div
-          aria-label="Error message container"
-          className="flex flex-col items-center justify-center border border-solid border-gray-300 max-w-[50rem] w-full p-12 text-center rounded-md"
-        >
-          <div aria-hidden="true" className="text-4xl mb-6">
-            ⚠️
-          </div>
-          <h2 className="text-2xl font-bold text-secondary-bg mb-4 leading-tight">
-            {errorTitle}
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-[40rem]">
-            {errorMessage}
-          </p>
-          <div className="flex flex-row items-center justify-center gap-4 flex-wrap">
-            <Button variant="primary" size="medium" onClick={handleRedirect}>
-              {goBackLabel}
-            </Button>
-          </div>
+    <main className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
+      <div className="flex flex-col items-center justify-center border border-gray-300 max-w-2xl w-full p-12 text-center rounded-lg bg-white shadow-sm">
+        <div className="text-6xl mb-6" role="img" aria-label="Error icon">
+          🔍
         </div>
-      </main>
-    </>
+
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          {t("content.title")}
+        </h1>
+
+        <p className="text-lg text-gray-600 mb-8 max-w-md">
+          {t("content.message")}
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link href="/">{t("actions.button")}</Link>
+        </div>
+      </div>
+    </main>
   );
 }
-
-export default NotFound;

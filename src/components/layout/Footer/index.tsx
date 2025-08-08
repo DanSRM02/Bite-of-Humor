@@ -1,5 +1,8 @@
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import UnorderedList from "@/components/dataDisplay/UnorderedList";
+import { Icon } from "@/components/feedback/icon";
+import instagram from "@iconify-icons/fa/instagram";
+import facebook from "@iconify-icons/fa/facebook";
+import youtube from "@iconify-icons/fa/youtube";
+import UnorderedList from "@/components/dataDisplay/unorderedList";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { UnorderedListImpl } from "@/types/unorderedListType";
@@ -10,7 +13,7 @@ const Footer = () => {
   const copyrigthTest = t("footer.copyright", {
     year: currentYear,
   });
-  const linkGroups = t.raw("footer.linkGroups") as UnorderedListImpl[];  
+  const linkGroups = t.raw("footer.linkGroups") as UnorderedListImpl[];
 
   return (
     <>
@@ -28,28 +31,28 @@ const Footer = () => {
             aria-label="Social media links"
           >
             <Link
-              href={"https://instagram.com"}
+              href={"https://www.instagram.com/biteofhumor"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <FaInstagram size={20} aria-hidden="true" />
+              <Icon icon={instagram} size={20} aria-hidden="true" />
             </Link>
             <Link
-              href={"https://facebook.com"}
+              href={"https://www.facebook.com/biteofhumor"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <FaFacebook size={20} aria-hidden="true" />
+              <Icon icon={facebook} size={20} aria-hidden="true" />
             </Link>
             <Link
-              href={"https://youtube.com"}
+              href={"https://www.youtube.com/biteofhumor"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
             >
-              <FaYoutube size={20} aria-hidden="true" />
+              <Icon icon={youtube} size={20} aria-hidden="true" />
             </Link>
           </div>
           <p>{copyrigthTest}</p>

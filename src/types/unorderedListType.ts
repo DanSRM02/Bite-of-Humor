@@ -8,6 +8,7 @@ export type UnorderedListTopic = {
 export type UnorderedListImpl = {
   title: string;
   icon?: ElementType;
+  iconName?: string;
   price?: number;
   features?: string[];
   popular?: boolean;

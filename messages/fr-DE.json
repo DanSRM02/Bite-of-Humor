@@ -5,7 +5,7 @@
       "remark": "Vous voulez rire ou quoi ?",
       "paragraph1": "Si la réponse est “oui”, <important> désolé </important> mais ce n'est pas le bon endroit.",
       "paragraph2": "Ou suis-je en train de <important> plaisanter ?</important>",
-      "paragraph3": "Il n'y a qu'<important>une seule</important> façon de le savoir..."
+      "paragraph3": "Il n'y a qu <important>une seule</important> façon de le savoir..."
     },
     "actions": {
       "buttonMessages": {
@@ -15,6 +15,9 @@
         "message4": "C'est la dernière fois, promis !",
         "message5": "Entrez sur la vraie page !"
       }
+    },
+    "ariaLabels": {
+      "firstSetupMainContent": "Contenu principal de la première configuration"
     }
   },
   "MediumSetup": {
@@ -66,13 +69,49 @@
       }
     }
   },
+  "CommunityPage": {
+    "title": "Blagues de la Communauté",
+    "description": "Découvrez des blagues hilarantes créées par des comédiens du monde entier. Rejoignez les rires et trouvez votre prochaine blague préférée !",
+    "filters": {
+      "title": "Filtrer les Blagues",
+      "category": {
+        "label": "Catégorie",
+        "placeholder": "Sélectionner une catégorie"
+      },
+      "search": {
+        "label": "Rechercher",
+        "placeholder": "Rechercher des blagues..."
+      },
+      "sortBy": {
+        "label": "Trier par",
+        "placeholder": "Ordre de tri",
+        "newest": "Plus Récentes",
+        "oldest": "Plus Anciennes",
+        "popular": "Plus Populaires"
+      }
+    },
+    "jokesGrid": {
+      "title": "Dernières Blagues",
+      "subtitle": "Humour frais de notre communauté"
+    },
+    "loading": "Chargement des blagues de la communauté...",
+    "noJokes": {
+      "title": "Aucune Blague Trouvée",
+      "description": "Soyez le premier à partager une blague avec la communauté !"
+    },
+    "callToAction": {
+      "title": "Partagez Votre Humour",
+      "description": "Rejoignez notre communauté et répandez la joie avec vos blagues.",
+      "button": "Créer une Blague"
+    }
+  },
   "ErrorPage": {
     "content": {
-      "title": "Page d'Erreur",
-      "message": "Une erreur est survenue !"
+      "title": "Page non trouvée",
+      "message": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée."
     },
     "actions": {
-      "button": "Retourner à la page précédente"
+      "button": "Aller à l'accueil"
     }
   },
   "ComedianSignUpForm": {
@@ -85,12 +124,42 @@
       "nameLabel": "Nom de comédien",
       "emailPlaceholder": "email@fauxdomaine.net",
       "emailLabel": "Email du comédien",
+      "passwordPlaceholder": "Créez un mot de passe fort",
+      "passwordLabel": "Mot de passe",
       "jokeLabel": "Blague du comédien",
       "jokePlaceholder": "Entrez votre blague"
     },
     "actions": {
       "legendHeading": "Inscription Comédien",
       "submitButton": "Rejoignez-nous"
+    },
+    "errors": {
+      "validationFailed": "Veuillez vérifier les informations fournies",
+      "general": "Une erreur s'est produite lors de l'inscription",
+      "registrationFailed": "Inscription échouée. Veuillez réessayer."
+    },
+    "success": {
+      "registered": "Inscription réussie ! Bienvenue dans la communauté."
+    },
+    "validation": {
+      "email": {
+        "required": "L'email est requis",
+        "invalid": "Veuillez saisir une adresse email valide"
+      },
+      "password": {
+        "required": "Le mot de passe est requis",
+        "minLength": "Le mot de passe doit contenir au moins 6 caractères"
+      },
+      "name": {
+        "required": "Le nom est requis",
+        "minLength": "Le nom doit contenir au moins 2 caractères",
+        "maxLength": "Le nom ne peut pas dépasser 50 caractères"
+      },
+      "joke": {
+        "required": "Un exemple de blague est requis pour l'inscription",
+        "minLength": "La blague doit contenir au moins 10 caractères",
+        "maxLength": "La blague ne peut pas dépasser 300 caractères"
+      }
     }
   },
   "ComedianLoginForm": {
@@ -99,14 +168,32 @@
       "paragraph": "Un terrain de jeu alimenté par la satire qui mélange esprit culturel et rébellion créative — découvrez l'histoire, la mission et pourquoi le rire frappe plus fort quand il est honnête."
     },
     "fields": {
-      "namePlaceholder": "Choisissez un nom de comédien",
-      "nameLabel": "Nom de comédien",
       "emailPlaceholder": "email@fauxdomaine.net",
-      "emailLabel": "Email du comédien"
+      "emailLabel": "Email du comédien",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "passwordLabel": "Mot de passe"
     },
     "actions": {
       "legendHeading": "Connexion Comédien",
       "submitButton": "Entrez dans l'Humour"
+    },
+    "errors": {
+      "validationFailed": "Veuillez vérifier vos identifiants",
+      "general": "Une erreur s'est produite lors de la connexion",
+      "loginFailed": "Connexion échouée. Veuillez vérifier votre email et mot de passe."
+    },
+    "success": {
+      "loggedIn": "Content de vous revoir ! Vous êtes maintenant connecté."
+    },
+    "validation": {
+      "email": {
+        "required": "L'email est requis",
+        "invalid": "Veuillez saisir une adresse email valide"
+      },
+      "password": {
+        "required": "Le mot de passe est requis",
+        "minLength": "Le mot de passe doit contenir au moins 6 caractères"
+      }
     }
   },
   "SelectCountry": {
@@ -133,18 +220,49 @@
       "US": "États-Unis",
       "FR": "France",
       "DE": "Allemagne"
+    },
+    "ariaLabels": {
+      "selectYourCountry": "Sélectionnez votre pays",
+      "countrySelectionIntroduction": "Introduction à la sélection de pays",
+      "countryOptions": "Options de pays"
     }
   },
   "HeaderNavigation": {
     "navItems": {
-      "home": "Accueil",
-      "signUp": "S'inscrire",
-      "logIn": "Se connecter"
-    }
+      "home": "Bibliothèque Comédie",
+      "signUp": "Rejoindre le Club Comédie",
+      "logIn": "Connexion Club Comédie",
+      "logOut": "Se déconnecter",
+      "workshop": "Studio Créateur de Blagues",
+      "community": "Hub Blagues Communauté",
+      "dashboard": "Coulisses"
+    },
+    "userGreeting": "Bonjour, {name}!"
+  },
+  "QuickNavigation": {
+    "setup": "Explorateur de Blagues",
+    "build": "Créer des Blagues",
+    "punch-line": "Chute"
   },
   "common": {
     "none": "Aucun",
-    "all": "Tous"
+    "all": "Tous",
+    "flags": {
+      "nsfw": "Contenu Adulte",
+      "religious": "Religieux",
+      "political": "Politique",
+      "racist": "Raciste",
+      "sexist": "Sexiste",
+      "explicit": "Explicite"
+    },
+    "categories": {
+      "Programming": "Programmation",
+      "Miscellaneous": "Divers",
+      "Dark": "Sombre",
+      "Pun": "Jeu de Mots",
+      "Spooky": "Effrayant",
+      "Christmas": "Noël"
+    }
   },
   "plans": {
     "navLink": {
@@ -193,40 +311,40 @@
   },
   "TheFinalSetupPage": {
     "leadIn": {
-      "heading": "Bienvenue chez Bite of Humor",
-      "paragraph": "Votre configuration est terminée ! Explorez les différentes sections de votre expérience humoristique personnalisée."
+      "heading": "L'Intrigue Se Complique...",
+      "paragraph": "Vous êtes arrivé jusqu'ici. Maintenant, la vraie question est : êtes-vous prêt pour ce qui suit ?"
     },
     "platformCards": {
       "communicationHub": {
-        "title": "Centre de Communication",
-        "description": "Restez connecté avec votre communauté de blagues",
+        "title": "Le Coffre-Fort",
+        "description": "Là où vivent les bonnes choses. Explorez ce qui fait rire, pleurer et tout remettre en question.",
         "features": {
-          "feature1": "Newsletters de blagues quotidiennes",
-          "feature2": "Notifications de la communauté",
-          "feature3": "Recommandations personnalisées",
-          "feature4": "Résumé hebdomadaire de l'humour"
+          "feature1": "Perles comiques sélectionnées",
+          "feature2": "Les tendances de l'humour",
+          "feature3": "Blagues qui ont cassé internet",
+          "feature4": "Celles qui nous ont échappé"
         },
         "badge": "Essentiel"
       },
       "socialFeatures": {
-        "title": "Fonctionnalités Sociales",
-        "description": "Connectez-vous et partagez avec d'autres passionnés de blagues",
+        "title": "L'Atelier",
+        "description": "Temps de se salir les mains. C'est ici que les idées deviennent légendes (ou échecs spectaculaires).",
         "features": {
-          "feature1": "Partager les blagues préférées",
-          "feature2": "Suivre d'autres utilisateurs",
-          "feature3": "Créer des collections de blagues",
-          "feature4": "Discussions communautaires"
+          "feature1": "Votre terrain de jeu créatif",
+          "feature2": "Construisez quelque chose de mémorable",
+          "feature3": "Testez votre timing comique",
+          "feature4": "Partagez votre chef-d'œuvre"
         },
-        "badge": "Interactif"
+        "badge": "Créatif"
       },
       "premiumExperience": {
-        "title": "Expérience Premium",
-        "description": "Débloquez des fonctionnalités avancées et du contenu exclusif",
+        "title": "Le Salon VIP",
+        "description": "Pour ceux qui veulent l'expérience complète. Aucun compromis, aucun regret, aucune pub.",
         "features": {
-          "feature1": "Accès illimité aux blagues",
-          "feature2": "Filtrage avancé",
-          "feature3": "Catégories premium",
-          "feature4": "Expérience sans publicité"
+          "feature1": "Accédez à tout, partout",
+          "feature2": "Passez les files d'attente",
+          "feature3": "Exclusivités des coulisses",
+          "feature4": "Le traitement premium"
         },
         "badge": "Exclusif"
       }
@@ -243,6 +361,9 @@
     }
   },
   "JokePage": {
+    "ariaLabels": {
+      "jokeExplorerSection": "Section d'exploration de blagues"
+    },
     "navLink": {
       "text": "Aller à la finale"
     },
@@ -255,9 +376,49 @@
       "placeholder": "Rechercher dans les blagues...",
       "label": "Recherche par mot-clé",
       "safeModeLabel": "Mode sécurisé",
-      "categoryLabel": "Sélectionner une catégorie"
+      "categoryLabel": "Sélectionner une catégorie",
+      "mockDataLabel": "Utiliser les données mock"
     },
-    "loadingMessage": "Chargement..."
+    "loadingMessage": "Chargement...",
+    "noJokesFound": "Aucune blague trouvée correspondant à vos critères"
+  },
+  "PremiumPage": {
+    "plans": {
+      "heading": "Choisissez Votre Aventure Comique",
+      "paragraph": "Débloquez les fonctionnalités premium et élevez votre expérience humoristique"
+    },
+    "benefits": {
+      "heading": "Pourquoi Choisir Premium ?",
+      "security": {
+        "title": "Sécurisé et Sûr",
+        "description": "Vos données sont protégées par une sécurité de niveau entreprise"
+      },
+      "access": {
+        "title": "Accès Instantané",
+        "description": "Commencez à utiliser les fonctionnalités premium immédiatement après l'inscription"
+      },
+      "support": {
+        "title": "Support 24/7",
+        "description": "Obtenez de l'aide quand vous en avez besoin de notre équipe d'experts"
+      },
+      "quality": {
+        "title": "Qualité Premium",
+        "description": "Accédez à du contenu comique sélectionné et de haute qualité"
+      },
+      "community": {
+        "title": "Accès Communauté",
+        "description": "Rejoignez notre communauté exclusive d'amateurs de comédie"
+      }
+    },
+    "stats": {
+      "users": "Utilisateurs Satisfaits",
+      "uptime": "Disponibilité"
+    },
+    "accessibility": {
+      "plansSection": "Plans premium disponibles",
+      "featuresSection": "Fonctionnalités et avantages premium",
+      "statsSection": "Statistiques de la plateforme"
+    }
   },
   "footer": {
     "brandName": "Bite of Humor",
@@ -270,15 +431,27 @@
             "subtitle": "Qu'est-ce que Bite of Humor ?",
             "link": "/core/what-is"
           },
-          { "subtitle": "Derrière le Nom", "link": "/core/name-origin" },
-          { "subtitle": "Philosophie du Logo", "link": "/core/logo-philosophy" }
+          {
+            "subtitle": "Derrière le Nom",
+            "link": "/core/name-origin"
+          },
+          {
+            "subtitle": "Philosophie du Logo",
+            "link": "/core/logo-philosophy"
+          }
         ]
       },
       {
         "title": "À Propos du Projet",
         "topics": [
-          { "subtitle": "Aperçu du Projet", "link": "/about/overview" },
-          { "subtitle": "Objectifs de Conception", "link": "/about/goals" },
+          {
+            "subtitle": "Aperçu du Projet",
+            "link": "/about/overview"
+          },
+          {
+            "subtitle": "Objectifs de Conception",
+            "link": "/about/goals"
+          },
           {
             "subtitle": "Direction Créative",
             "link": "/about/creative-direction"
@@ -288,14 +461,267 @@
       {
         "title": "Communauté",
         "topics": [
-          { "subtitle": "Forum de Discussion", "link": "/community/forum" },
+          {
+            "subtitle": "Forum de Discussion",
+            "link": "/community/forum"
+          },
           {
             "subtitle": "Proposer une Blague",
             "link": "/community/submit-joke"
           },
-          { "subtitle": "Défis de Conception", "link": "/community/challenges" }
+          {
+            "subtitle": "Défis de Conception",
+            "link": "/community/challenges"
+          }
         ]
       }
     ]
+  },
+  "HomePage": {
+    "ariaLabels": {
+      "homeMainContent": "Contenu principal de la page d'accueil",
+      "platformFeaturesList": "Liste des fonctionnalités de la plateforme",
+      "userDashboardActions": "Actions du tableau de bord utilisateur",
+      "workshopMainContent": "Contenu principal de l'atelier",
+      "creationTools": "Section outils de création",
+      "userProjects": "Zone des projets utilisateur"
+    },
+    "leadIn": {
+      "heading": "Votre Studio Créatif",
+      "paragraph": "Tout ce dont vous avez besoin pour créer, construire et perfectionner vos chefs-d'œuvre comiques. Créons quelque chose d'incroyable !"
+    },
+    "platformCards": {
+      "myCreations": {
+        "title": "Mon Atelier",
+        "description": "Votre espace créatif personnel où les idées prennent vie",
+        "features": {
+          "feature1": "Projets actifs en cours",
+          "feature2": "Brouillons de blagues et concepts",
+          "feature3": "Outils créatifs et modèles",
+          "feature4": "Votre évolution comique"
+        },
+        "badge": "Créatif"
+      },
+      "humorHistory": {
+        "title": "Inspiration Comique",
+        "description": "Étudiez les maîtres et alimentez votre processus créatif",
+        "features": {
+          "feature1": "Structures de blagues légendaires",
+          "feature2": "Techniques d'écriture comique",
+          "feature3": "Conseils de timing et de delivery",
+          "feature4": "Guides de genre et de style"
+        },
+        "badge": "Apprentissage"
+      },
+      "communityForum": {
+        "title": "Réseau de Créateurs",
+        "description": "Connectez-vous avec d'autres créateurs de comédie et collaborateurs",
+        "features": {
+          "feature1": "Partagez vos travaux en cours",
+          "feature2": "Obtenez des retours créatifs",
+          "feature3": "Trouvez des partenaires de collaboration",
+          "feature4": "Rejoignez des défis d'écriture"
+        },
+        "badge": "Communauté"
+      }
+    },
+    "buildTools": {
+      "title": "Boîte à Outils Créative",
+      "body": "Votre suite complète d'outils de création et publication comique",
+      "actions": {
+        "createNew": "Commencer à Créer",
+        "viewDrafts": "Mes Brouillons",
+        "analytics": "Performance",
+        "publish": "Mettre en Ligne"
+      }
+    }
+  },
+  "WorkshopPage": {
+    "ariaLabels": {
+      "workshopMainContent": "Contenu principal de l'atelier",
+      "creationTools": "Section outils de création",
+      "userProjects": "Zone des projets utilisateur"
+    },
+    "leadIn": {
+      "heading": "Votre Atelier Créatif",
+      "paragraph": "Construisez, créez et perfectionnez vos créations comiques. C'est ici que la magie opère !"
+    },
+    "header": {
+      "steps": {
+        "write": {
+          "heading": "1. Écrire",
+          "paragraph": "Remplissez le formulaire avec la configuration et la chute de votre blague"
+        },
+        "preview": {
+          "heading": "2. Aperçu",
+          "paragraph": "Regardez votre blague prendre vie avec un style dynamique"
+        },
+        "submit": {
+          "heading": "3. Soumettre",
+          "paragraph": "Obtenez des commentaires instantanés et partagez votre humour avec le monde"
+        }
+      }
+    },
+    "sections": {
+      "tools": {
+        "title": "Outils Comiques",
+        "description": "Tout ce dont vous avez besoin pour créer la blague parfaite"
+      },
+      "projects": {
+        "title": "Vos Projets",
+        "description": "Suivez vos créations comiques et votre progression"
+      },
+      "inspiration": {
+        "title": "Inspiration Quotidienne",
+        "description": "Idées fraîches pour stimuler votre créativité"
+      }
+    },
+    "actions": {
+      "createNew": "Créer Nouveau",
+      "saveProject": "Sauvegarder Projet",
+      "preview": "Aperçu",
+      "publish": "Publier"
+    },
+    "form": {
+      "title": "Créez Votre Blague",
+      "legend": "Formulaire de Création de Blague",
+      "preview": "Aperçu de la Blague",
+      "feedback": {
+        "title": "Retour IA Bientôt Disponible",
+        "description": "Nous développons un système IA pour fournir une analyse de blagues en temps réel et des suggestions d'amélioration.",
+        "status": "En Développement"
+      },
+      "fields": {
+        "category": {
+          "label": "Catégorie",
+          "placeholder": "Sélectionnez une catégorie"
+        },
+        "flags": {
+          "label": "Indicateurs de Contenu",
+          "placeholder": "Sélectionnez des indicateurs de contenu",
+          "groupLabel": "Options d'Indicateurs"
+        },
+        "setup": {
+          "label": "Configuration",
+          "placeholder": "Entrez la configuration de votre blague..."
+        },
+        "punchline": {
+          "label": "Chute",
+          "placeholder": "Entrez votre chute..."
+        }
+      },
+      "submit": "Créer la Blague",
+      "sendButton": "Envoyer la Blague"
+    }
+  },
+  "validation": {
+    "category": {
+      "required": "La catégorie est requise",
+      "invalid": "Catégorie invalide sélectionnée"
+    },
+    "setup": {
+      "required": "La configuration de la blague est requise",
+      "minWords": "La configuration doit contenir au moins 3 mots",
+      "maxLength": "La configuration ne peut pas dépasser 200 caractères"
+    },
+    "punchline": {
+      "required": "La chute est requise",
+      "minWords": "La chute doit contenir au moins 1 mot",
+      "maxLength": "La chute ne peut pas dépasser 150 caractères"
+    },
+    "darkCategory": {
+      "explicitRequired": "L'humour noir doit avoir le flag explicite activé"
+    }
+  },
+  "jokeSubmission": {
+    "errors": {
+      "fixErrors": "Veuillez corriger les erreurs suivantes:",
+      "submissionFailed": "Échec de la soumission",
+      "generalError": "Une erreur s'est produite lors de la soumission de votre blague"
+    },
+    "success": {
+      "submitted": "Votre blague a été soumise avec succès et est en attente de révision!"
+    }
+  },
+  "NavigationContext": {
+    "title": "Que faire ensuite ?",
+    "subtitle": "Continuez votre parcours avec ces actions recommandées",
+    "cards": {
+      "final": {
+        "startCreating": {
+          "title": "Commencer à créer",
+          "description": "Vous êtes prêt ! Il est temps de créer votre premier chef-d'œuvre et de le partager avec le monde.",
+          "actionText": "Créer la première blague"
+        },
+        "exploreCommunity": {
+          "title": "Explorer la communauté",
+          "description": "Rejoignez des milliers de créateurs et découvrez ce qui fait rire la communauté.",
+          "actionText": "Rejoindre la communauté"
+        }
+      }
+    }
+  },
+  "CentralHub": {
+    "leadIn": {
+      "heading": "Centre de Commande Humoristique",
+      "paragraph": "Votre hub central pour créer, partager et explorer l'univers de l'humour. Choisissez votre aventure et commencez à faire rire le monde !"
+    },
+    "sections": {
+      "buildWorkshop": {
+        "title": "Atelier de Création",
+        "description": "Créez, éditez et perfectionnez vos blagues avec nos outils avancés.",
+        "badge": "Créateur",
+        "features": {
+          "jokeBuilder": "Constructeur de blagues avancé",
+          "templates": "Modèles professionnels",
+          "aiAssistance": "Suggestions alimentées par l'IA",
+          "collaboration": "Outils de collaboration d'équipe"
+        }
+      },
+      "punchlineCommunity": {
+        "title": "Scène Communautaire",
+        "description": "Partagez vos créations, obtenez des commentaires et connectez-vous avec des comédiens du monde entier.",
+        "badge": "Partager",
+        "features": {
+          "shareJokes": "Partager et présenter",
+          "feedback": "Commentaires de la communauté",
+          "voting": "Vote et évaluations",
+          "trending": "Contenu tendance"
+        }
+      },
+      "setupExplorer": {
+        "title": "Explorateur de Blagues",
+        "description": "Découvrez du contenu incroyable, explorez les catégories et trouvez l'inspiration partout.",
+        "badge": "Découvrir",
+        "features": {
+          "discover": "Découverte de contenu",
+          "categories": "Catégories organisées",
+          "filters": "Filtrage intelligent",
+          "favorites": "Favoris personnels"
+        }
+      },
+      "setupPremium": {
+        "title": "Expérience Premium",
+        "description": "Débloquez tout le potentiel avec des fonctionnalités exclusives, des analyses et un support prioritaire.",
+        "badge": "Premium",
+        "features": {
+          "advancedTools": "Outils de création avancés",
+          "analytics": "Analyses de performance",
+          "exportOptions": "Options d'exportation",
+          "prioritySupport": "Support prioritaire"
+        }
+      },
+      "setupProfile": {
+        "title": "Profil et Paramètres",
+        "description": "Gérez votre compte, vos préférences et personnalisez votre expérience comique.",
+        "badge": "Paramètres",
+        "features": {
+          "personalSettings": "Paramètres personnels",
+          "preferences": "Préférences de contenu",
+          "account": "Gestion de compte",
+          "history": "Historique d'activité"
+        }
+      }
+    }
   }
 }

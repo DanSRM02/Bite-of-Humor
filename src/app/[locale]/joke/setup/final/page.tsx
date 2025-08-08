@@ -1,110 +1,106 @@
 "use client";
 import LeadIn from "@/components/dataDisplay/leadIn";
-import Card from "@/components/feedback/card";
-import { LuLaugh } from "react-icons/lu";
-import { IoSettingsOutline } from "react-icons/io5";
-import { CiHeart, CiFilter } from "react-icons/ci";
-import { platformSections } from "@/utils/const";
-import CardGrid from "@/components/layout/cardGrid";
+import { Icon } from "@/components/feedback/icon";
 import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";
-import ButtonList from "@/components/dataDisplay/buttonList";
 import { useTranslations } from "next-intl";
+import NavigationContext from "@/components/layout/navigation/context";
+import { TheatricalBackground } from "@/components/animations/theatrical";
 
-
-function TheFinalSetupPage() {
-  const t  = useTranslations();
+function CentralHub() {
+  const t = useTranslations();
   const router = useRouter();
 
   const handleRedirect = (typeButton: string) => {
     const routes: Record<string, string> = {
-      filter: "joke-explorer",
-      configuration: "configuration",
-      premiumExperience: "premium",
-      socialFeatures: "../build/home"
-    };        
+      buildWorkshop: "../build/workshop",
+      punchlineCommunity: "../punch-line/community",
+      setupExplorer: "joke-explorer",
+      setupPremium: "premium",
+      setupProfile: "sign-up",
+    };
 
     const route = routes[typeButton];
     if (route) router.push(route);
   };
 
-  const platformSectionCard = platformSections.map((section) => ({
+  const getIconName = (iconType: string): string => {
+    const iconMap: Record<string, string> = {
+      workshop: "lucide:hammer",
+      community: "lucide:users", 
+      explorer: "lucide:compass",
+      premium: "lucide:crown",
+      profile: "lucide:circle"
+    };
+    return iconMap[iconType] || "lucide:circle";
+  };
+
+  const centralHubSections = [
+    {
+      title: "buildWorkshop",
+      iconName: "workshop" as const,
+      features: ["jokeBuilder", "templates", "aiAssistance", "collaboration"]
+    },
+    {
+      title: "punchlineCommunity", 
+      iconName: "community" as const,
+      features: ["shareJokes", "feedback", "voting", "trending"]
+    },
+    {
+      title: "setupExplorer",
+      iconName: "explorer" as const, 
+      features: ["discover", "categories", "filters", "favorites"]
+    },
+    {
+      title: "setupPremium",
+      iconName: "premium" as const,
+      features: ["advancedTools", "analytics", "exportOptions", "prioritySupport"]
+    },
+    {
+      title: "setupProfile",
+      iconName: "profile" as const,
+      features: ["personalSettings", "preferences", "account", "history"]
+    }
+  ];
+
+  const platformSectionCard = centralHubSections.map((section) => ({
     key: section.title,
-    title: `TheFinalSetupPage.platformCards.${section.title}.title`,
-    body: `TheFinalSetupPage.platformCards.${section.title}.description`,
-    badge: `TheFinalSetupPage.platformCards.${section.title}.badge`,
+    title: `CentralHub.sections.${section.title}.title`,
+    body: `CentralHub.sections.${section.title}.description`,
+    badge: `CentralHub.sections.${section.title}.badge`,
     features: section.features?.map(
       (featureKey) =>
-        `TheFinalSetupPage.platformCards.${section.title}.features.${featureKey}`
+        `CentralHub.sections.${section.title}.features.${featureKey}`
     ),
-    icon: section.icon ? (
-      <section.icon aria-label={`${section.title} icon`} />
+    icon: section.iconName ? (
+      <Icon icon={getIconName(section.iconName)} aria-label={`${section.title} icon`} />
     ) : null,
     onExplore: () => handleRedirect(section.title),
     variant: "expandable" as const,
   }));
 
-  const dashboardTranslations = {
-    title: "TheFinalSetupPage.dashboardCard.title",
-    body: "TheFinalSetupPage.dashboardCard.body",
-    myFavorites: t("TheFinalSetupPage.dashboardButtons.myFavorites"),
-    advancedFilters: t("TheFinalSetupPage.dashboardButtons.advancedFilters"),
-    preferences: t("TheFinalSetupPage.dashboardButtons.preferences"),
-    settings: t("TheFinalSetupPage.dashboardButtons.settings"),
-  };
-
-  const dashboardButtons = [
-    {
-      label: dashboardTranslations.myFavorites,
-      icon: <LuLaugh size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect(""),
-    },
-    {
-      label: dashboardTranslations.advancedFilters,
-      icon: <CiHeart size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect(""),
-    },
-    {
-      label: dashboardTranslations.preferences,
-      icon: <CiFilter size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect("filter"),
-    },
-    {
-      label: dashboardTranslations.settings,
-      icon: <IoSettingsOutline size="1.2rem" aria-hidden="true" />,
-      onClick: () => handleRedirect("configuration"),
-    },
-  ];
-
   return (
-    <>
-      <LeadIn
-        heading={dashboardTranslations.title}
-        paragraph={dashboardTranslations.body}
-      />
-      <section
-        aria-label="Platform features and dashboard"
-        className="flex flex-col gap-20"
-      >
-        <CardGrid ariaLabel="Platform features list">
-         <CardList cards={platformSectionCard}  />
-        </CardGrid>
-        <article
-          aria-label="User dashboard actions"
-          className="border-2 border-gray-300 rounded-lg"
-        >
-          <Card
-            title={dashboardTranslations.title}
-            body={dashboardTranslations.body}
+    <TheatricalBackground type="stage" className="min-h-screen">
+      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+          <LeadIn
+            heading={t("CentralHub.leadIn.heading")}
+            paragraph={t("CentralHub.leadIn.paragraph")}
+            isTextRaw
+          />
+
+          <section
+            aria-label="Main platform sections"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10"
           >
-            <span className="flex justify-center items-center p-4 gap-4">    
-              <ButtonList buttons={dashboardButtons} />          
-            </span>
-          </Card>
-        </article>
-      </section>
-    </>
+            <CardList cards={platformSectionCard} />
+          </section>
+
+          <NavigationContext />
+        </div>
+      </main>
+    </TheatricalBackground>
   );
 }
 
-export default TheFinalSetupPage;
+export default CentralHub;

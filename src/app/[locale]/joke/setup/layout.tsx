@@ -1,24 +1,30 @@
 import { ReactNode } from "react";
-import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/footer";
+import Navigation from "@/components/layout/navigation";
 
 type SetupLayoutProps = {
   children: ReactNode;
 };
 
 export default function SetupLayout({ children }: SetupLayoutProps) {
+  const navigationLinks = [
+    { key: "navItems.home", href: "/joke/setup/medium" },
+    { key: "navItems.signUp", href: "/joke/setup/sign-up" },
+    { key: "navItems.logIn", href: "/joke/setup/log-in" },
+  ];
+
   return (
     <div
       className="min-h-screen flex flex-col"
-      aria-label="Public layout wrapper"       
+      aria-label="Public layout wrapper"
     >
-      <Navigation />
+      <Navigation links={navigationLinks} />
       <main
         className="mx-[5rem] flex flex-col flex-1 gap-[5rem] justify-center"
-        aria-label="Main content area"         
+        aria-label="Main content area"
       >
         {children}
-      </main>
+      </main>      
       <Footer />
     </div>
   );

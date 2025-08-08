@@ -1,21 +1,26 @@
 import { ReactNode } from "react";
 import Footer from "@/components/layout/footer";
+import Navigation from "@/components/layout/navigation";
 
 type SetupLayoutProps = {
   children: ReactNode;
 };
 
 export default function BuildLayout({ children }: SetupLayoutProps) {
+  const navigationLinks = [
+    { key: "navItems.home", href: "/joke/setup/final" },
+    { key: "navItems.workshop", href: "/joke/build/workshop" },
+    { key: "navItems.community", href: "/joke/punch-line/community" },
+  ];
+
   return (
     <div
       className="min-h-screen flex flex-col"
-      aria-label="Public layout wrapper"
+      aria-label="Build layout wrapper"
     >
-      <span className=" flex justify-center mt-5">
-        <h2 className="font-bold">Bite of Humor</h2>
-      </span>
+      <Navigation links={navigationLinks} />
       <main
-        className="mx-[5rem] flex flex-col flex-1 gap-[5rem] justify-center"
+        className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 flex flex-col flex-1 gap-8 md:gap-12 lg:gap-20 justify-center"
         aria-label="Main content area"
       >
         {children}

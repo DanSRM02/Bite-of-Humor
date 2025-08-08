@@ -1,11 +1,14 @@
-"use client";
+
+import { initialLoginState } from "@/utils/initialStates";
 import LeadIn from "@/components/dataDisplay/leadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
-import { useRouter } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { signInComedianAction } from "@/actions/comedianActions";
 
-function LogIn() {
-  const router = useRouter();
+async function LogIn() {
+  const t = await getTranslations();
+
   const translations = {
     intro: {
       heading: "ComedianLoginForm.introduction.heading",
@@ -13,46 +16,47 @@ function LogIn() {
     },
     fields: [
       {
-        placeholder: "ComedianLoginForm.fields.namePlaceholder",
-        label: "ComedianLoginForm.fields.nameLabel",
-        id: "name",
-        type: "text" as inputTypes,
-      },
-      {
         placeholder: "ComedianLoginForm.fields.emailPlaceholder",
         label: "ComedianLoginForm.fields.emailLabel",
-        id: "email",
+        id: "comedian-email",
         type: "email" as inputTypes,
+        nameInput: "email",
+      },
+      {
+        placeholder: "ComedianLoginForm.fields.passwordPlaceholder",
+        label: "ComedianLoginForm.fields.passwordLabel",
+        id: "comedian-password",
+        type: "password" as inputTypes,
+        nameInput: "password",
       },
     ],
     actions: {
       legendHeading: "ComedianLoginForm.actions.legendHeading",
-      submitButton: "ComedianLoginForm.actions.submitButton",
+      submitButton: t("ComedianLoginForm.actions.submitButton"),
     },
   };
 
-  const handleRedirect = () => {
-    router.push("select-country");
-  };
   return (
-    <>
-      <section
-        className="flex justify-center items-center flex-wrap p-12 min-h-[35rem] gap-8 border-2 border-gray-300 rounded-lg"
-        aria-label="Log in section"
-      >
+    <section
+      className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-12 min-h-[400px] sm:min-h-[500px] lg:min-h-[35rem] border-2 border-gray-300 rounded-lg max-w-7xl mx-auto"
+      aria-label="Log in section"
+    >
+      <div className="flex-1 max-w-md lg:max-w-lg text-center lg:text-left">
         <LeadIn
           heading={translations.intro.heading}
           paragraph={translations.intro.paragraph}
         />
+      </div>
+      <div className="flex-1 w-full max-w-md lg:max-w-lg">
         <Form
-          actionForm=""
+          actionForm={signInComedianAction}
+          initialStateForm={initialLoginState}
           inputFields={translations.fields}
           textButton={translations.actions.submitButton}
           legendHeading={translations.actions.legendHeading}
-          handleClick={handleRedirect}
         />
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
