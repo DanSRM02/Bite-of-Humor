@@ -1,10 +1,10 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/leadIn";
+import LeadIn from "@/components/dataDisplay/LeadIn";
 import { plansForPremiumPage } from "@/utils/constants";
-import CardGrid from "@/components/layout/cardGrid";
-import Card from "@/components/feedback/card";
+import CardGrid from "@/components/layout/CardGrid";
+import Card from "@/components/feedback/Card";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import BenefitItem from "@/components/premium/benefitItem";
+import BenefitItem from "@/components/premium/BenefitItem";
 import { useTranslations } from "next-intl";
 
 function PremiumExperiencePage() {

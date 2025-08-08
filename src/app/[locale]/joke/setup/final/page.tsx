@@ -1,5 +1,5 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/leadIn";
+import LeadIn from "@/components/dataDisplay/LeadIn";
 import { Icon } from "@/components/feedback/icon";
 import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";

@@ -1,6 +1,6 @@
 "use client";
 
-import FormRendered from "@/components/dataDisplay/formRendered";
+import FormRendered from "@/components/dataDisplay/FormRendered";
 import { FieldBlueprintType, FormFieldProps } from "@/types/baseFieldTypes";
 import { useCommunityJokeFilter } from "@/contexts/CommunityJokeFilterContext";
 

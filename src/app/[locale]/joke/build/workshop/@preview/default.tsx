@@ -1,5 +1,5 @@
 "use client";
-import Card from "@/components/feedback/card";
+import Card from "@/components/feedback/Card";
 import { useJokeSubmission } from "@/contexts/JokeSubmissionContext";
 import { useTranslations } from "next-intl";
 

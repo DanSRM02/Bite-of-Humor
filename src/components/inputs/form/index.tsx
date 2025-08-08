@@ -1,7 +1,7 @@
 "use client";
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
-import FormRendered from "@/components/dataDisplay/formRendered";
-import Heading from "@/components/dataDisplay/heading";
+import FormRendered from "@/components/dataDisplay/FormRendered";
+import Heading from "@/components/dataDisplay/Heading";
 import { ReactNode, useActionState } from "react";
 import ButtonSubmitForm from "../button/submit";
 import { FormStateAction } from "@/types/formTypes";

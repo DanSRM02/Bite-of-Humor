@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
-import Card from "@/components/feedback/card";
-import CardGrid from "@/components/layout/cardGrid";
+import Card from "@/components/feedback/Card";
+import CardGrid from "@/components/layout/CardGrid";
 import useCommunityJokes from "@/hooks/useCommunityJokes";
 import { useCommunityJokeFilter } from "@/contexts/CommunityJokeFilterContext";
 

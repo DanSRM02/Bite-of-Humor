@@ -1,4 +1,4 @@
-import Card, { CardProps } from "@/components/feedback/card";
+import Card, { CardProps } from "@/components/feedback/Card";
 
 type CardListProps = {
   cards: CardProps[]

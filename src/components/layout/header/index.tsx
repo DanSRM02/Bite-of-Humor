@@ -1,5 +1,5 @@
-import Heading from "@/components/dataDisplay/heading";
-import LeadIn from "@/components/dataDisplay/leadIn";
+import Heading from "@/components/dataDisplay/Heading";
+import LeadIn from "@/components/dataDisplay/LeadIn";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 

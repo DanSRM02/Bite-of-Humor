@@ -1,6 +1,6 @@
 
 import { initialLoginState } from "@/utils/initialStates";
-import LeadIn from "@/components/dataDisplay/leadIn";
+import LeadIn from "@/components/dataDisplay/LeadIn";
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
 import { getTranslations } from "next-intl/server";
