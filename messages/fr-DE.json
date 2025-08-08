@@ -229,12 +229,12 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "home": "Découvrir",
-      "signUp": "Rejoindre",
-      "logIn": "Se connecter",
+      "home": "Bibliothèque Comédie",
+      "signUp": "Rejoindre le Club Comédie",
+      "logIn": "Connexion Club Comédie",
       "logOut": "Se déconnecter",
-      "workshop": "Atelier Comédie",
-      "community": "Communauté",
+      "workshop": "Studio Créateur de Blagues",
+      "community": "Hub Blagues Communauté",
       "dashboard": "Coulisses"
     },
     "userGreeting": "Bonjour, {name}!"

@@ -429,12 +429,12 @@
   "HeaderNavigation": {
     "navItems": {
       "dashboard": "Backstage",     
-      "home": "Discover",
-      "signUp": "Join Now",
-      "logIn": "Sign In",
+      "home": "Comedy Library",
+      "signUp": "Join the Comedy Club",
+      "logIn": "Comedy Club Login",
       "logOut": "Sign Out",
-      "workshop": "Comedy Workshop",
-      "community": "Community"
+      "workshop": "Joke Builder Studio",
+      "community": "Community Jokes Hub"
     },
     "userGreeting": "Hello, {name}!"
   },

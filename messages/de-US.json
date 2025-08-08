@@ -230,12 +230,12 @@
   "HeaderNavigation": {
     "navItems": {
       "dashboard": "Backstage",
-      "home": "Entdecken",
-      "signUp": "Jetzt Beitreten",
-      "logIn": "Anmelden",
+      "home": "Comedy-Bibliothek",
+      "signUp": "Comedy-Club Beitreten",
+      "logIn": "Comedy-Club Anmeldung",
       "logOut": "Abmelden",
-      "workshop": "Comedy Werkstatt",
-      "community": "Community"
+      "workshop": "Witz-Builder Studio",
+      "community": "Community Witze-Hub"
     },
      "userGreeting": "Hallo, {name}!"
   },
