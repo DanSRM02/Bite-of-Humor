@@ -69,6 +69,42 @@
       }
     }
   },
+  "CommunityPage": {
+    "title": "Community-Witze",
+    "description": "Entdecken Sie lustige Witze von Komikern aus aller Welt. Lachen Sie mit und finden Sie Ihren nächsten Lieblingswitz!",
+    "filters": {
+      "title": "Witze Filtern",
+      "category": {
+        "label": "Kategorie",
+        "placeholder": "Kategorie auswählen"
+      },
+      "search": {
+        "label": "Suchen",
+        "placeholder": "Witze suchen..."
+      },
+      "sortBy": {
+        "label": "Sortieren nach",
+        "placeholder": "Sortierreihenfolge",
+        "newest": "Neueste zuerst",
+        "oldest": "Älteste zuerst",
+        "popular": "Beliebteste"
+      }
+    },
+    "jokesGrid": {
+      "title": "Neueste Witze",
+      "subtitle": "Frischer Humor aus unserer Community"
+    },
+    "loading": "Community-Witze werden geladen...",
+    "noJokes": {
+      "title": "Keine Witze Gefunden",
+      "description": "Seien Sie der Erste, der einen Witz mit der Community teilt!"
+    },
+    "callToAction": {
+      "title": "Teilen Sie Ihren Humor",
+      "description": "Treten Sie unserer Community bei und verbreiten Sie Freude mit Ihren Witzen.",
+      "button": "Witz Erstellen"
+    }
+  },
   "ErrorPage": {
     "content": {
       "title": "Seite nicht gefunden",

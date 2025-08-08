@@ -203,6 +203,42 @@
       }
     }
   },
+  "CommunityPage": {
+    "title": "Community Jokes",
+    "description": "Discover hilarious jokes created by comedians from around the world. Join the laughter and find your next favorite joke!",
+    "filters": {
+      "title": "Filter Jokes",
+      "category": {
+        "label": "Category",
+        "placeholder": "Select a category"
+      },
+      "search": {
+        "label": "Search",
+        "placeholder": "Search jokes..."
+      },
+      "sortBy": {
+        "label": "Sort by",
+        "placeholder": "Sort order",
+        "newest": "Newest First",
+        "oldest": "Oldest First",
+        "popular": "Most Popular"
+      }
+    },
+    "jokesGrid": {
+      "title": "Latest Jokes",
+      "subtitle": "Fresh humor from our community"
+    },
+    "loading": "Loading community jokes...",
+    "noJokes": {
+      "title": "No Jokes Found",
+      "description": "Be the first to share a joke with the community!"
+    },
+    "callToAction": {
+      "title": "Share Your Humor",
+      "description": "Join our community and spread joy with your jokes.",
+      "button": "Create a Joke"
+    }
+  },
   "ErrorPage": {
     "content": {
       "title": "Page Not Found",

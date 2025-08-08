@@ -69,6 +69,42 @@
       }
     }
   },
+  "CommunityPage": {
+    "title": "Blagues de la Communauté",
+    "description": "Découvrez des blagues hilarantes créées par des comédiens du monde entier. Rejoignez les rires et trouvez votre prochaine blague préférée !",
+    "filters": {
+      "title": "Filtrer les Blagues",
+      "category": {
+        "label": "Catégorie",
+        "placeholder": "Sélectionner une catégorie"
+      },
+      "search": {
+        "label": "Rechercher",
+        "placeholder": "Rechercher des blagues..."
+      },
+      "sortBy": {
+        "label": "Trier par",
+        "placeholder": "Ordre de tri",
+        "newest": "Plus Récentes",
+        "oldest": "Plus Anciennes",
+        "popular": "Plus Populaires"
+      }
+    },
+    "jokesGrid": {
+      "title": "Dernières Blagues",
+      "subtitle": "Humour frais de notre communauté"
+    },
+    "loading": "Chargement des blagues de la communauté...",
+    "noJokes": {
+      "title": "Aucune Blague Trouvée",
+      "description": "Soyez le premier à partager une blague avec la communauté !"
+    },
+    "callToAction": {
+      "title": "Partagez Votre Humour",
+      "description": "Rejoignez notre communauté et répandez la joie avec vos blagues.",
+      "button": "Créer une Blague"
+    }
+  },
   "ErrorPage": {
     "content": {
       "title": "Page non trouvée",

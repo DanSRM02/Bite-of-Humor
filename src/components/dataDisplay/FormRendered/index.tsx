@@ -17,12 +17,12 @@ type FormRenderedProps = {
 const VARIANT_STYLES = {
   container: {
     form: "flex flex-col gap-4 sm:gap-5",
-    filter: "flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6",
+    filter: "flex flex-col gap-4",
     inline: "flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4",
   },
   field: {
     form: "w-full",
-    filter: "min-w-[150px] sm:min-w-[180px] flex-shrink-0",
+    filter: "w-full",
     inline: "flex-1 min-w-[200px]",
   },
 } as const;

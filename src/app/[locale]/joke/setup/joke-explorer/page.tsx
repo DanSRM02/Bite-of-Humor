@@ -1,4 +1,4 @@
-import { JokeFilter } from "@/components/joke/JokeFilter";
+import { JokeFilter } from "@/components/joke/jokeFilter";
 import { getJokesInitialLoad } from "@/services/jokeService";
 import { inputTypes } from "@/types/baseFieldTypes";
 import { JokeImpl } from "@/types/jokeAPITypes";

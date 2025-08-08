@@ -2,11 +2,13 @@ import { ReactNode } from "react";
 import Footer from "@/components/layout/footer";
 import Navigation from "@/components/layout/navigation";
 
-type SetupLayoutProps = {
+type PunchLineLayoutProps = {
   children: ReactNode;
 };
 
-export default function BuildLayout({ children }: SetupLayoutProps) {
+export default function PunchLineLayout({
+  children,
+}: PunchLineLayoutProps) {
   const navigationLinks = [
     { key: "navItems.home", href: "/joke/build/home" },
     { key: "navItems.workshop", href: "/joke/build/workshop" },
@@ -16,11 +18,11 @@ export default function BuildLayout({ children }: SetupLayoutProps) {
   return (
     <div
       className="min-h-screen flex flex-col"
-      aria-label="Build layout wrapper"
+      aria-label="Punch Line layout wrapper"
     >
       <Navigation links={navigationLinks} />
       <main
-        className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 flex flex-col flex-1 gap-8 md:gap-12 lg:gap-20 justify-center"
+        className="flex-1"
         aria-label="Main content area"
       >
         {children}

@@ -35,7 +35,7 @@ const DefaultField = ({
         name={nameInput}
         type={type}
         placeholder={formattedPlaceholder || undefined}
-        className={`border border-stone-300 rounded-lg p-4 text-base focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-stone-400 transition-all duration-200 ${
+        className={`w-full border border-stone-300 rounded-lg p-4 text-base focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-stone-400 transition-all duration-200 ${
           color === "primary"
             ? "bg-stone-50 text-stone-800 placeholder-stone-400"
             : "bg-stone-100 text-stone-800 placeholder-stone-500"

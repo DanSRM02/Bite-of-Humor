@@ -1,21 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import LeadIn from "../dataDisplay/leadIn";
-import Chip from "../feedback/chip";
+import LeadIn from "../../dataDisplay/leadIn";
+import Chip from "../../feedback/chip";
 import { BaseFieldImpl } from "@/types/baseFieldTypes";
 import useJokeList from "@/hooks/useJokeList";
-import CardGrid from "../layout/cardGrid";
-import Card from "../feedback/card";
+import CardGrid from "../../layout/cardGrid";
+import Card from "../../feedback/card";
 import { JokeImpl } from "@/types/jokeAPITypes";
 import { useJokeFilter } from "@/contexts/JokeFilterContext";
-import FormRendered from "../dataDisplay/formRendered";
+import FormRendered from "../../dataDisplay/formRendered";
 
 type jokeFilterProps = {
   initialLoad: JokeImpl[];
   language: string;
   fieldsBlueprint: BaseFieldImpl[];
 };
+
 export const JokeFilter = ({
   initialLoad,
   language,
