@@ -1,8 +1,7 @@
 "use client";
 import React from 'react';
-import { Icon as IconifyIcon } from '@iconify/react';
+import { Icon as IconifyIcon, IconifyIcon as IconifyIconType } from '@iconify/react';
 
-// Import specific icon objects for better tree-shaking
 import arrowLeftLong from '@iconify-icons/fa6-solid/arrow-left-long';
 import instagram from '@iconify-icons/fa/instagram';
 import facebook from '@iconify-icons/fa/facebook';
@@ -16,13 +15,21 @@ import mail from '@iconify-icons/lucide/mail';
 import circle from '@iconify-icons/lucide/circle';
 import star from '@iconify-icons/lucide/star';
 import laugh from '@iconify-icons/lucide/laugh';
+import hammer from '@iconify-icons/lucide/hammer';
+import compass from '@iconify-icons/lucide/compass';
+import barChart3 from '@iconify-icons/lucide/bar-chart-3';
+import rocket from '@iconify-icons/lucide/rocket';
+import palette from '@iconify-icons/lucide/palette';
+import bookOpen from '@iconify-icons/lucide/book-open';
+import messageCircle from '@iconify-icons/lucide/message-circle';
+import x from '@iconify-icons/lucide/x';
+import menu from '@iconify-icons/lucide/menu';
 import filter from '@iconify-icons/ci/filter';
 import heart from '@iconify-icons/ci/heart-outline';
 import settingsOutline from '@iconify-icons/ion/settings-outline';
 import arrowLeftRight from '@iconify-icons/bi/arrow-left-right';
 
-// Direct mapping of icon objects for better performance
-const ICON_OBJECTS: Record<string, any> = {
+const ICON_OBJECTS: Record<string, IconifyIconType> = {
   'fa6-solid:arrow-left-long': arrowLeftLong,
   'fa:instagram': instagram,
   'fa:facebook': facebook,
@@ -36,6 +43,15 @@ const ICON_OBJECTS: Record<string, any> = {
   'lucide:circle': circle,
   'lucide:star': star,
   'lucide:laugh': laugh,
+  'lucide:hammer': hammer,
+  'lucide:compass': compass,
+  'lucide:bar-chart-3': barChart3,
+  'lucide:rocket': rocket,
+  'lucide:palette': palette,
+  'lucide:book-open': bookOpen,
+  'lucide:message-circle': messageCircle,
+  'lucide:x': x,
+  'lucide:menu': menu,
   'ci:filter': filter,
   'ci:heart': heart,
   'ion:settings-outline': settingsOutline,
@@ -43,7 +59,7 @@ const ICON_OBJECTS: Record<string, any> = {
 };
 
 export type IconProps = {  
-  icon: string | any;
+  icon: string | IconifyIconType;
   className?: string;
   size?: number | string;
   color?: string;

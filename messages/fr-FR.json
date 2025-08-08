@@ -647,25 +647,6 @@
     "title": "Que faire ensuite ?",
     "subtitle": "Continuez votre parcours avec ces actions recommandées",
     "cards": {
-      "setup": {
-        "nextBuilding": {
-          "title": "Suivant : Commencer à créer",
-          "description": "Prêt à créer votre première blague ? Entrez dans notre atelier et donnez vie à votre humour.",
-          "actionText": "Ouvrir l'atelier"
-        }
-      },
-      "build": {
-        "exploreJokes": {
-          "title": "Explorer les blagues", 
-          "description": "Découvrez les blagues populaires et inspirez-vous du meilleur contenu de la communauté.",
-          "actionText": "Voir les blagues"
-        },
-        "viewAnalytics": {
-          "title": "Voir les statistiques",
-          "description": "Suivez les performances de vos blagues et voyez comment votre audience interagit avec votre contenu.",
-          "actionText": "Voir les statistiques"
-        }
-      },
       "final": {
         "startCreating": {
           "title": "Commencer à créer",
@@ -676,6 +657,69 @@
           "title": "Explorer la communauté",
           "description": "Rejoignez des milliers de créateurs et découvrez ce qui fait rire la communauté.",
           "actionText": "Rejoindre la communauté"
+        }
+      }
+    }
+  },
+  "CentralHub": {
+    "leadIn": {
+      "heading": "Centre de Commande Humoristique",
+      "paragraph": "Votre hub central pour créer, partager et explorer l'univers de l'humour. Choisissez votre aventure et commencez à faire rire le monde !"
+    },
+    "sections": {
+      "buildWorkshop": {
+        "title": "Atelier de Création",
+        "description": "Créez, éditez et perfectionnez vos blagues avec nos outils avancés.",
+        "badge": "Créateur",
+        "features": {
+          "jokeBuilder": "Constructeur de blagues avancé",
+          "templates": "Modèles professionnels",
+          "aiAssistance": "Suggestions alimentées par l'IA",
+          "collaboration": "Outils de collaboration d'équipe"
+        }
+      },
+      "punchlineCommunity": {
+        "title": "Scène Communautaire",
+        "description": "Partagez vos créations, obtenez des commentaires et connectez-vous avec des comédiens du monde entier.",
+        "badge": "Partager",
+        "features": {
+          "shareJokes": "Partager et présenter",
+          "feedback": "Commentaires de la communauté",
+          "voting": "Vote et évaluations",
+          "trending": "Contenu tendance"
+        }
+      },
+      "setupExplorer": {
+        "title": "Explorateur de Blagues",
+        "description": "Découvrez du contenu incroyable, explorez les catégories et trouvez l'inspiration partout.",
+        "badge": "Découvrir",
+        "features": {
+          "discover": "Découverte de contenu",
+          "categories": "Catégories organisées",
+          "filters": "Filtrage intelligent",
+          "favorites": "Favoris personnels"
+        }
+      },
+      "setupPremium": {
+        "title": "Expérience Premium",
+        "description": "Débloquez tout le potentiel avec des fonctionnalités exclusives, des analyses et un support prioritaire.",
+        "badge": "Premium",
+        "features": {
+          "advancedTools": "Outils de création avancés",
+          "analytics": "Analyses de performance",
+          "exportOptions": "Options d'exportation",
+          "prioritySupport": "Support prioritaire"
+        }
+      },
+      "setupProfile": {
+        "title": "Profil et Paramètres",
+        "description": "Gérez votre compte, vos préférences et personnalisez votre expérience comique.",
+        "badge": "Paramètres",
+        "features": {
+          "personalSettings": "Paramètres personnels",
+          "preferences": "Préférences de contenu",
+          "account": "Gestion de compte",
+          "history": "Historique d'activité"
         }
       }
     }

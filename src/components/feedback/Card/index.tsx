@@ -110,7 +110,7 @@ const Card = ({
   };
 
   const getActiveFlags = () => 
-    Object.entries(flags).filter(([_, isActive]) => isActive);
+    Object.entries(flags).filter(([, isActive]) => isActive);
 
   const renderFlag = (flagName: string) => {
     const flagConfiguration = flagConfig[flagName as keyof typeof flagConfig];

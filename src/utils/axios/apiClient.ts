@@ -1,9 +1,9 @@
 import type { ApiErrorData } from "@/types/jokeAPITypes";
-import { API_BASE } from "@/utils/baseConstants";
 import axios from "axios";
+import { API_CONFIG } from "../constants";
 
 const apiClient = axios.create({
-  baseURL: API_BASE,
+  baseURL: API_CONFIG.BASE_URL,
 });
 
 apiClient.interceptors.request.use((config) => {

@@ -1,7 +1,16 @@
-import { getTranslations } from "next-intl/server";
+"use client";
 
-const CommunityCallToAction = async () => {
-  const t = await getTranslations();
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import Button from "@/components/inputs/button";
+
+const CommunityCallToAction = () => {
+  const t = useTranslations();
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push("/joke/build/workshop");
+  };
 
   return (
     <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 text-center">
@@ -11,9 +20,14 @@ const CommunityCallToAction = async () => {
       <p className="text-gray-600 text-sm mb-4">
         {t("CommunityPage.callToAction.description")}
       </p>
-      <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+      <Button
+        onClick={handleRedirect}
+        variant="primary"
+        size="medium"
+        className="inline-block"
+      >
         {t("CommunityPage.callToAction.button")}
-      </button>
+      </Button>
     </section>
   );
 };

@@ -13,7 +13,7 @@ const Audience = ({ audienceRef }: AudienceProps) => {
   return (
     <div
       ref={audienceRef}
-      className="absolute bottom-0 left-0 w-full h-12 md:h-20 z-15 pointer-events-none"
+      className="absolute bottom-0 left-0 w-full h-8 sm:h-12 md:h-16 lg:h-20 z-15 pointer-events-none"
       style={AUDIENCE_STYLES}
     />
   );

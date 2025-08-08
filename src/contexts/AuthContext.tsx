@@ -40,8 +40,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const protectedRoutes = [
     "/joke/build/workshop",
-    "/joke/build/home",
     "/joke/setup/final",
+    "/joke/punch-line/community",
+    "/joke/setup/joke-explorer",
+    "/joke/setup/premium",
+  ];
+
+  const protectedRoutePatterns = [
+    /\/joke\/build\/.*/,
+    /\/joke\/punch-line\/.*/,
   ];
 
   const isPrivateRoute = protectedRoutes.some(
@@ -50,7 +57,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       pathname.match(
         new RegExp(`^\/[a-z]{2}(-[A-Z]{2})?${route.replace("/", "\\/")}$`)
       )
-  );
+  ) || protectedRoutePatterns.some((pattern) => pattern.test(pathname));
 
   useEffect(() => {
     const initializeAuth = async () => {

@@ -36,9 +36,10 @@ export async function signUpComedianAction(
     await comedianSignUp(signUpData);
 
     
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : t("ComedianSignUpForm.errors.general");
     return {
-      errors: [error.message || t("ComedianSignUpForm.errors.general")],
+      errors: [errorMessage],
       message: t("ComedianSignUpForm.errors.registrationFailed"),
     };
   }
@@ -77,9 +78,10 @@ export async function signInComedianAction(
       };
     }
     
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : t("ComedianLoginForm.errors.general");
     return {
-      errors: [error.message || t("ComedianLoginForm.errors.general")],
+      errors: [errorMessage],
       message: t("ComedianLoginForm.errors.loginFailed"),
     };
   }

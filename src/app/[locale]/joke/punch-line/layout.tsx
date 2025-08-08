@@ -10,7 +10,7 @@ export default function PunchLineLayout({
   children,
 }: PunchLineLayoutProps) {
   const navigationLinks = [
-    { key: "navItems.home", href: "/joke/build/home" },
+    { key: "navItems.home", href: "/joke/setup/final" },
     { key: "navItems.workshop", href: "/joke/build/workshop" },
     { key: "navItems.community", href: "/joke/punch-line/community" },
   ];

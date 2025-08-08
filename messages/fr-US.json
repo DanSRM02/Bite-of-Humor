@@ -384,18 +384,18 @@
   },
   "PremiumPage": {
     "plans": {
-      "heading": "Choisissez Votre Parcours Comédie",
-      "paragraph": "Débloquez les fonctionnalités premium et élevez votre expérience d'humour au niveau supérieur"
+      "heading": "Choisissez Votre Aventure Comique",
+      "paragraph": "Débloquez les fonctionnalités premium et élevez votre expérience humoristique"
     },
     "benefits": {
       "heading": "Pourquoi Choisir Premium ?",
       "security": {
-        "title": "Sécurisé et Protégé",
+        "title": "Sécurisé et Sûr",
         "description": "Vos données sont protégées par une sécurité de niveau entreprise"
       },
       "access": {
         "title": "Accès Instantané",
-        "description": "Commencez à utiliser les fonctionnalités premium immédiatement après inscription"
+        "description": "Commencez à utiliser les fonctionnalités premium immédiatement après l'inscription"
       },
       "support": {
         "title": "Support 24/7",
@@ -403,11 +403,11 @@
       },
       "quality": {
         "title": "Qualité Premium",
-        "description": "Accès à du contenu comique curé et de haute qualité"
+        "description": "Accédez à du contenu comique sélectionné et de haute qualité"
       },
       "community": {
         "title": "Accès Communauté",
-        "description": "Rejoignez notre communauté exclusive d'enthousiastes de la comédie"
+        "description": "Rejoignez notre communauté exclusive d'amateurs de comédie"
       }
     },
     "stats": {
@@ -487,52 +487,52 @@
       "userProjects": "Zone des projets utilisateur"
     },
     "leadIn": {
-      "heading": "Votre Hub Humour",
-      "paragraph": "Accédez à toutes vos fonctionnalités comedy préférées depuis un seul endroit. Explorez, découvrez et profitez !"
+      "heading": "Votre Studio Créatif",
+      "paragraph": "Tout ce dont vous avez besoin pour créer, construire et perfectionner vos chefs-d'œuvre comiques. Créons quelque chose d'incroyable !"
     },
     "platformCards": {
       "myCreations": {
-        "title": "Mes Créations",
-        "description": "Consultez et gérez les résultats de votre atelier de comédie",
+        "title": "Mon Atelier",
+        "description": "Votre espace créatif personnel où les idées prennent vie",
         "features": {
-          "feature1": "Vos blagues terminées",
-          "feature2": "Progrès de l'atelier",
-          "feature3": "Analyses de performance",
-          "feature4": "Modifier et peaufiner"
+          "feature1": "Projets actifs en cours",
+          "feature2": "Brouillons de blagues et concepts",
+          "feature3": "Outils créatifs et modèles",
+          "feature4": "Votre évolution comique"
         },
-        "badge": "Personnel"
+        "badge": "Créatif"
       },
       "humorHistory": {
-        "title": "Histoire de l'Humour",
-        "description": "Explorez le vaste monde de la comédie et de l'humour",
+        "title": "Inspiration Comique",
+        "description": "Étudiez les maîtres et alimentez votre processus créatif",
         "features": {
-          "feature1": "Chronologies comiques",
-          "feature2": "Comédiens célèbres",
-          "feature3": "Évolution des blagues",
-          "feature4": "Humour culturel"
+          "feature1": "Structures de blagues légendaires",
+          "feature2": "Techniques d'écriture comique",
+          "feature3": "Conseils de timing et de delivery",
+          "feature4": "Guides de genre et de style"
         },
-        "badge": "Éducatif"
+        "badge": "Apprentissage"
       },
       "communityForum": {
-        "title": "Forum Communautaire",
-        "description": "Partagez vos blagues et connectez-vous avec d'autres comédiens",
+        "title": "Réseau de Créateurs",
+        "description": "Connectez-vous avec d'autres créateurs de comédie et collaborateurs",
         "features": {
-          "feature1": "Publiez vos blagues",
-          "feature2": "Obtenez des commentaires",
-          "feature3": "Notez les blagues des autres",
-          "feature4": "Discussions comiques"
+          "feature1": "Partagez vos travaux en cours",
+          "feature2": "Obtenez des retours créatifs",
+          "feature3": "Trouvez des partenaires de collaboration",
+          "feature4": "Rejoignez des défis d'écriture"
         },
-        "badge": "Social"
+        "badge": "Communauté"
       }
     },
     "buildTools": {
-      "title": "Outils de Construction",
-      "body": "Tout ce dont vous avez besoin pour créer et publier votre comédie",
+      "title": "Boîte à Outils Créative",
+      "body": "Votre suite complète d'outils de création et publication comique",
       "actions": {
-        "createNew": "Créer Nouveau",
-        "viewDrafts": "Voir les Brouillons",
-        "analytics": "Analyses",
-        "publish": "Publier"
+        "createNew": "Commencer à Créer",
+        "viewDrafts": "Mes Brouillons",
+        "analytics": "Performance",
+        "publish": "Mettre en Ligne"
       }
     }
   },
@@ -647,25 +647,6 @@
     "title": "Que faire ensuite ?",
     "subtitle": "Continuez votre parcours avec ces actions recommandées",
     "cards": {
-      "setup": {
-        "nextBuilding": {
-          "title": "Suivant : Commencer à créer",
-          "description": "Prêt à créer votre première blague ? Entrez dans notre atelier et donnez vie à votre humour.",
-          "actionText": "Ouvrir l'atelier"
-        }
-      },
-      "build": {
-        "exploreJokes": {
-          "title": "Explorer les blagues", 
-          "description": "Découvrez les blagues populaires et inspirez-vous du meilleur contenu de la communauté.",
-          "actionText": "Voir les blagues"
-        },
-        "viewAnalytics": {
-          "title": "Voir les statistiques",
-          "description": "Suivez les performances de vos blagues et voyez comment votre audience interagit avec votre contenu.",
-          "actionText": "Voir les statistiques"
-        }
-      },
       "final": {
         "startCreating": {
           "title": "Commencer à créer",
@@ -676,6 +657,69 @@
           "title": "Explorer la communauté",
           "description": "Rejoignez des milliers de créateurs et découvrez ce qui fait rire la communauté.",
           "actionText": "Rejoindre la communauté"
+        }
+      }
+    }
+  },
+  "CentralHub": {
+    "leadIn": {
+      "heading": "Centre de Commande Humoristique",
+      "paragraph": "Votre hub central pour créer, partager et explorer l'univers de l'humour. Choisissez votre aventure et commencez à faire rire le monde !"
+    },
+    "sections": {
+      "buildWorkshop": {
+        "title": "Atelier de Création",
+        "description": "Créez, éditez et perfectionnez vos blagues avec nos outils avancés.",
+        "badge": "Créateur",
+        "features": {
+          "jokeBuilder": "Constructeur de blagues avancé",
+          "templates": "Modèles professionnels",
+          "aiAssistance": "Suggestions alimentées par l'IA",
+          "collaboration": "Outils de collaboration d'équipe"
+        }
+      },
+      "punchlineCommunity": {
+        "title": "Scène Communautaire",
+        "description": "Partagez vos créations, obtenez des commentaires et connectez-vous avec des comédiens du monde entier.",
+        "badge": "Partager",
+        "features": {
+          "shareJokes": "Partager et présenter",
+          "feedback": "Commentaires de la communauté",
+          "voting": "Vote et évaluations",
+          "trending": "Contenu tendance"
+        }
+      },
+      "setupExplorer": {
+        "title": "Explorateur de Blagues",
+        "description": "Découvrez du contenu incroyable, explorez les catégories et trouvez l'inspiration partout.",
+        "badge": "Découvrir",
+        "features": {
+          "discover": "Découverte de contenu",
+          "categories": "Catégories organisées",
+          "filters": "Filtrage intelligent",
+          "favorites": "Favoris personnels"
+        }
+      },
+      "setupPremium": {
+        "title": "Expérience Premium",
+        "description": "Débloquez tout le potentiel avec des fonctionnalités exclusives, des analyses et un support prioritaire.",
+        "badge": "Premium",
+        "features": {
+          "advancedTools": "Outils de création avancés",
+          "analytics": "Analyses de performance",
+          "exportOptions": "Options d'exportation",
+          "prioritySupport": "Support prioritaire"
+        }
+      },
+      "setupProfile": {
+        "title": "Profil et Paramètres",
+        "description": "Gérez votre compte, vos préférences et personnalisez votre expérience comique.",
+        "badge": "Paramètres",
+        "features": {
+          "personalSettings": "Paramètres personnels",
+          "preferences": "Préférences de contenu",
+          "account": "Gestion de compte",
+          "history": "Historique d'activité"
         }
       }
     }

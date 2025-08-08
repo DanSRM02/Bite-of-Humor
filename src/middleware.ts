@@ -12,8 +12,15 @@ export async function middleware(request: NextRequest) {
 
   const protectedRoutes = [
     "/joke/build/workshop",
-    "/joke/build/home",
     "/joke/setup/final",
+    "/joke/punch-line/community",
+    "/joke/setup/joke-explorer",
+    "/joke/setup/premium",
+  ];
+
+  const protectedRoutePatterns = [
+    /^\/[a-z]{2}(-[A-Z]{2})?\/joke\/build\/.*/,
+    /^\/[a-z]{2}(-[A-Z]{2})?\/joke\/punch-line\/.*/,
   ];
 
   const isLocaleProtectedRoute = protectedRoutes.some((route) => {
@@ -23,8 +30,12 @@ export async function middleware(request: NextRequest) {
     return localeProtectedPattern.test(pathname) || pathname.includes(route);
   });
 
+  const isPatternProtectedRoute = protectedRoutePatterns.some((pattern) => 
+    pattern.test(pathname)
+  );
+
   const isPrivateRoute =
-    isLocaleProtectedRoute || protectedRoutes.includes(pathname);
+    isLocaleProtectedRoute || isPatternProtectedRoute || protectedRoutes.includes(pathname);
 
   if (firstSegment && firstSegment.includes("-")) {
     const isValidLocale = SUPPORTED_LOCALES_STRING.includes(firstSegment);

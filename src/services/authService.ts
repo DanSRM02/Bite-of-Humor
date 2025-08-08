@@ -58,8 +58,8 @@ export const getCurrentUser = async () => {
     }
 
     return user;
-  } catch (error: any) {
-    if (!error?.message?.includes("Auth session missing")) {
+  } catch (error: unknown) {
+    if (error instanceof Error && !error.message?.includes("Auth session missing")) {
       console.error("Error getting current user:", error);
     }
     return null;
@@ -70,8 +70,7 @@ export const isAuthenticated = async (): Promise<boolean> => {
   try {
     const user = await getCurrentUser();
     return user !== null;
-  } catch (error) {
-    
+  } catch {
     return false;
   }
 };
@@ -89,7 +88,7 @@ export const comedianSignOut = async () => {
   }
 };
 
-export const onAuthStateChange = (callback: (user: any) => void) => {
+export const onAuthStateChange = (callback: (user: unknown) => void) => {
   const supabase = createClient();
 
   const {

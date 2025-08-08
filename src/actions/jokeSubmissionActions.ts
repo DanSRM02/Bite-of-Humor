@@ -41,13 +41,14 @@ export async function submitJokeAction(
     }
     
     
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : t("ComedianSignUpForm.errors.general");
     return {
-      errors: [t("jokeSubmission.errors.submissionFailed")],
+      errors: [errorMessage],
       message: t("jokeSubmission.errors.generalError"),
     };
   }
 
   revalidatePath("/", "layout");
-  redirect(`/${locale}/joke/setup/final`);
+  redirect(`/${locale}/joke/punch-line/community`);
 }

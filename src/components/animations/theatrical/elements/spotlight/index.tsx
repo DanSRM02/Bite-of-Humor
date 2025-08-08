@@ -17,7 +17,7 @@ const SPOTLIGHT_STYLES = {
   },
 } as const;
 
-const BASE_CLASSES = "absolute top-0 left-1/2 transform -translate-x-1/2 w-64 h-64 md:w-96 md:h-96 rounded-full z-10 pointer-events-none";
+const BASE_CLASSES = "absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full z-10 pointer-events-none";
 
 const Spotlight = ({ spotlightRef, type }: SpotlightProps) => {
   if (type === "backstage") return null;

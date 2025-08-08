@@ -17,5 +17,3 @@ export const SUPPORTED_LOCALES: Locale[] = [
 export const SUPPORTED_LOCALES_STRING = SUPPORTED_LOCALES.map(
   (locale) => locale.language
 );
-
-export const API_BASE: string = "https://v2.jokeapi.dev/";

@@ -1,12 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import FormRendered from "@/components/dataDisplay/formRendered";
 import { FieldBlueprintType, FormFieldProps } from "@/types/baseFieldTypes";
 import { useCommunityJokeFilter } from "@/contexts/CommunityJokeFilterContext";
 
-const CommunityJokeFilter = () => {
-  const t = useTranslations();
+const CommunityJokeFilter = () => {  
   const { filters, updateFilter } = useCommunityJokeFilter();
 
   const handleInputChange = (

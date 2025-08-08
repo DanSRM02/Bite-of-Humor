@@ -10,14 +10,12 @@ type InteractiveFormProps = {
   fieldsBlueprint: FieldBlueprintType[];
   actionForm: (prevState: FormStateAction, formData: FormData) => Promise<FormStateAction>;
   initialStateForm: FormStateAction;
-  onSubmissionSuccess?: () => void;
 };
 
 const InteractiveForm = ({ 
   fieldsBlueprint, 
   actionForm, 
-  initialStateForm,
-  onSubmissionSuccess 
+  initialStateForm
 }: InteractiveFormProps) => {
   const { jokeSubmissionData, setJokeSubmissionData } = useJokeSubmission();
   const t = useTranslations();

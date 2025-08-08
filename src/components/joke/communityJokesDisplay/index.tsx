@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Card from "@/components/feedback/card";
 import CardGrid from "@/components/layout/cardGrid";
-import Chip from "@/components/feedback/chip";
 import useCommunityJokes from "@/hooks/useCommunityJokes";
 import { useCommunityJokeFilter } from "@/contexts/CommunityJokeFilterContext";
 

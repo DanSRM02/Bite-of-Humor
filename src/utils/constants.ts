@@ -15,8 +15,7 @@ import MultipleSelectField from "@/components/inputs/field/multipleSelect";
 export {
   DEFAULT_LOCALE,
   SUPPORTED_LOCALES,
-  SUPPORTED_LOCALES_STRING,
-  API_BASE,
+  SUPPORTED_LOCALES_STRING,  
 } from "./baseConstants";
 
 export const _AVAILABLE_CATEGORIES: string[] = [

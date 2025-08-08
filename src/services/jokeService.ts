@@ -1,4 +1,4 @@
-import type { FilterImpl, JokeImpl } from "@/types/jokeAPITypes";
+import type { FilterImpl } from "@/types/jokeAPITypes";
 import type { JokeWithFlag } from "@/types/databaseTypes";
 import apiClient from "../utils/axios/apiClient";
 import { createClientServer } from "@/utils/supabase/server";
@@ -18,7 +18,7 @@ export const getJokesInitialLoad = async (language: string) => {
     }
 
     return jokes;
-  } catch (error) {
+  } catch {
     return [];
   }
 };

@@ -49,10 +49,21 @@ const TheatricalBackground = ({
       backstageElements: backstageElementsRef,
     };
 
-    const timeline = createAnimation(type, refs);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    let timeline: gsap.core.Timeline | null = null;
+    if (!prefersReducedMotion) {
+      timeline = createAnimation(type, refs);
+    } else {
+      if (contentRef.current) {
+        contentRef.current.style.opacity = '1';
+      }
+    }
 
     return () => {
-      timeline.kill();
+      if (timeline) {
+        timeline.kill();
+      }
     };
   }, [type]);
 
@@ -82,7 +93,7 @@ const TheatricalBackground = ({
         <BackstageElements elementsRef={backstageElementsRef || fallbackRef} />
       )}
 
-      <div ref={contentRef || fallbackRef} className="relative z-10">
+      <div ref={contentRef || fallbackRef} className="relative z-10 p-4 sm:p-6 md:p-8">
         {children || <div>No content provided</div>}
       </div>
     </div>

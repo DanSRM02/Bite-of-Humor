@@ -23,7 +23,7 @@
   "HomePage": {
     "ariaLabels": {
       "homeMainContent": "Home page main content",
-      "platformFeaturesList": "Platform features list",
+      "platformFeaturesList": "Platform features list", 
       "userDashboardActions": "User dashboard actions"
     },
     "leadIn": {
@@ -32,47 +32,47 @@
     },
     "platformCards": {
       "myCreations": {
-        "title": "My Creations",
-        "description": "View and manage your comedy workshop results",
+        "title": "My Workshop",
+        "description": "Your personal creative space where ideas come to life",
         "features": {
-          "feature1": "Your completed jokes",
-          "feature2": "Workshop progress",
-          "feature3": "Performance analytics",
-          "feature4": "Edit and refine"
+          "feature1": "Active projects in progress",
+          "feature2": "Draft jokes and concepts", 
+          "feature3": "Creative tools and templates",
+          "feature4": "Your comedy evolution"
         },
-        "badge": "Personal"
+        "badge": "Creative"
       },
       "humorHistory": {
-        "title": "Humor History",
-        "description": "Explore the vast world of comedy and humor",
+        "title": "Comedy Inspiration",
+        "description": "Study the masters and fuel your creative process",
         "features": {
-          "feature1": "Comedy timelines",
-          "feature2": "Famous comedians",
-          "feature3": "Joke evolution",
-          "feature4": "Cultural humor"
+          "feature1": "Legendary joke structures",
+          "feature2": "Comedy writing techniques",
+          "feature3": "Timing and delivery tips",
+          "feature4": "Genre and style guides"
         },
-        "badge": "Educational"
+        "badge": "Learning"
       },
       "communityForum": {
-        "title": "Community Forum",
-        "description": "Share your jokes and connect with fellow comedians",
+        "title": "Creator Network",
+        "description": "Connect with fellow comedy creators and collaborators", 
         "features": {
-          "feature1": "Post your jokes",
-          "feature2": "Get feedback",
-          "feature3": "Rate others' jokes",
-          "feature4": "Comedy discussions"
+          "feature1": "Share works in progress",
+          "feature2": "Get creative feedback",
+          "feature3": "Find collaboration partners",
+          "feature4": "Join writing challenges"
         },
-        "badge": "Social"
+        "badge": "Community"
       }
     },
     "buildTools": {
-      "title": "Build Tools",
-      "body": "Everything you need to craft and publish your comedy",
+      "title": "Creation Toolkit",
+      "body": "Your comprehensive suite of comedy creation and publishing tools",
       "actions": {
-        "createNew": "Create New",
-        "viewDrafts": "View Drafts",
-        "analytics": "Analytics",
-        "publish": "Publish"
+        "createNew": "Start Creating",
+        "viewDrafts": "My Drafts",
+        "analytics": "Performance",
+        "publish": "Go Live"
       }
     }
   },
@@ -366,7 +366,7 @@
     "all": "All",
     "flags": {
       "nsfw": "NSFW",
-      "religious": "Religious",
+      "religious": "Religious", 
       "political": "Political",
       "racist": "Racist",
       "sexist": "Sexist",
@@ -374,7 +374,7 @@
     },
     "categories": {
       "Programming": "Programming",
-      "Miscellaneous": "Miscellaneous",
+      "Miscellaneous": "Miscellaneous", 
       "Dark": "Dark",
       "Pun": "Pun",
       "Spooky": "Spooky",
@@ -428,7 +428,7 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "dashboard": "Backstage",
+      "dashboard": "Backstage",     
       "home": "Comedy Library",
       "signUp": "Join the Comedy Club",
       "logIn": "Comedy Club Login",
@@ -489,9 +489,72 @@
     },
     "dashboardButtons": {
       "myFavorites": "My Favorites",
-      "advancedFilters": "Advanced Filters",
+      "advancedFilters": "Advanced Filters", 
       "preferences": "Preferences",
       "settings": "Settings"
+    }
+  },
+  "CentralHub": {
+    "leadIn": {
+      "heading": "Welcome to Your Comedy Universe",
+      "paragraph": "Everything you need to create, share, and discover amazing humor. Where will your journey take you today?"
+    },
+    "sections": {
+      "buildWorkshop": {
+        "title": "Creative Workshop",
+        "description": "Build and craft your comedic masterpieces with powerful tools and AI assistance",
+        "badge": "Create",
+        "features": {
+          "jokeBuilder": "Advanced joke builder",
+          "templates": "Professional templates",
+          "aiAssistance": "AI-powered suggestions",
+          "collaboration": "Team collaboration tools"
+        }
+      },
+      "punchlineCommunity": {
+        "title": "Community Stage",
+        "description": "Share your work, get feedback, and connect with fellow comedians worldwide",
+        "badge": "Share",
+        "features": {
+          "shareJokes": "Share and showcase",
+          "feedback": "Community feedback",
+          "voting": "Voting and ratings",
+          "trending": "Trending content"
+        }
+      },
+      "setupExplorer": {
+        "title": "Joke Explorer",
+        "description": "Discover amazing content, explore categories, and find inspiration everywhere",
+        "badge": "Discover",
+        "features": {
+          "discover": "Content discovery",
+          "categories": "Organized categories",
+          "filters": "Smart filtering",
+          "favorites": "Personal favorites"
+        }
+      },
+      "setupPremium": {
+        "title": "Premium Experience",
+        "description": "Unlock the full potential with exclusive features, analytics, and priority support",
+        "badge": "Premium",
+        "features": {
+          "advancedTools": "Advanced creation tools",
+          "analytics": "Performance analytics",
+          "exportOptions": "Export options",
+          "prioritySupport": "Priority support"
+        }
+      },
+      "setupProfile": {
+        "title": "Profile & Settings",
+        "description": "Manage your account, preferences, and personalize your comedy experience",
+        "badge": "Settings",
+        "features": {
+          "personalSettings": "Personal settings",
+          "preferences": "Content preferences",
+          "account": "Account management",
+          "history": "Activity history"
+        }
+      }
     }
   },
   "JokePage": {
@@ -616,26 +679,7 @@
   "NavigationContext": {
     "title": "What's Next?",
     "subtitle": "Continue your journey with these recommended actions",
-    "cards": {
-      "setup": {
-        "nextBuilding": {
-          "title": "Next: Start Building",
-          "description": "Ready to create your first joke? Enter our workshop and bring your humor to life.",
-          "actionText": "Open Workshop"
-        }
-      },
-      "build": {
-        "exploreJokes": {
-          "title": "Explore Jokes",
-          "description": "Discover popular jokes and get inspired by the community's best content.",
-          "actionText": "View Jokes"
-        },
-        "viewAnalytics": {
-          "title": "View Analytics",
-          "description": "Track your jokes' performance and see how your audience interacts with your content.",
-          "actionText": "View Analytics"
-        }
-      },
+    "cards": {      
       "final": {
         "startCreating": {
           "title": "Start Creating",

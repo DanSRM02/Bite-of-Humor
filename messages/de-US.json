@@ -229,13 +229,13 @@
   },
   "HeaderNavigation": {
     "navItems": {
-      "dashboard": "Backstage",
       "home": "Comedy-Bibliothek",
       "signUp": "Comedy-Club Beitreten",
       "logIn": "Comedy-Club Anmeldung",
       "logOut": "Abmelden",
       "workshop": "Witz-Builder Studio",
-      "community": "Community Witze-Hub"
+      "community": "Community Witze-Hub",
+      "dashboard": "Backstage"
     },
      "userGreeting": "Hallo, {name}!"
   },
@@ -487,52 +487,52 @@
       "userProjects": "Benutzerprojekte-Bereich"
     },
     "leadIn": {
-      "heading": "Ihr Humor-Hub",
-      "paragraph": "Greifen Sie auf alle Ihre bevorzugten Comedy-Funktionen von einem Ort aus zu. Erkunden, entdecken und genießen Sie!"
+      "heading": "Ihr Kreatives Studio",
+      "paragraph": "Alles was Sie brauchen, um Ihre Comedy-Meisterwerke zu erstellen, zu bauen und zu perfektionieren. Lassen Sie uns etwas Großartiges schaffen!"
     },
     "platformCards": {
       "myCreations": {
-        "title": "Meine Kreationen",
-        "description": "Sehen und verwalten Sie Ihre Comedy-Workshop-Ergebnisse",
+        "title": "Meine Werkstatt",
+        "description": "Ihr persönlicher kreativer Raum, wo Ideen zum Leben erwachen",
         "features": {
-          "feature1": "Ihre fertigen Witze",
-          "feature2": "Workshop-Fortschritt",
-          "feature3": "Leistungsanalyse",
-          "feature4": "Bearbeiten und verfeinern"
+          "feature1": "Aktive Projekte in Bearbeitung",
+          "feature2": "Witz-Entwürfe und Konzepte",
+          "feature3": "Kreative Tools und Vorlagen",
+          "feature4": "Ihre Comedy-Evolution"
         },
-        "badge": "Persönlich"
+        "badge": "Kreativ"
       },
       "humorHistory": {
-        "title": "Humor-Geschichte",
-        "description": "Erkunden Sie die weite Welt der Komödie und des Humors",
+        "title": "Comedy-Inspiration",
+        "description": "Studieren Sie die Meister und befeuern Sie Ihren kreativen Prozess",
         "features": {
-          "feature1": "Comedy-Zeitlinien",
-          "feature2": "Berühmte Komiker",
-          "feature3": "Witz-Evolution",
-          "feature4": "Kultureller Humor"
+          "feature1": "Legendäre Witz-Strukturen",
+          "feature2": "Comedy-Schreibtechniken",
+          "feature3": "Timing- und Delivery-Tipps",
+          "feature4": "Genre- und Stil-Guides"
         },
-        "badge": "Bildend"
+        "badge": "Lernen"
       },
       "communityForum": {
-        "title": "Community-Forum",
-        "description": "Teilen Sie Ihre Witze und verbinden Sie sich mit anderen Komikern",
+        "title": "Ersteller-Netzwerk",
+        "description": "Verbinden Sie sich mit anderen Comedy-Erstellern und Kollaborateuren",
         "features": {
-          "feature1": "Posten Sie Ihre Witze",
-          "feature2": "Feedback erhalten",
-          "feature3": "Witze anderer bewerten",
-          "feature4": "Comedy-Diskussionen"
+          "feature1": "Arbeiten in Bearbeitung teilen",
+          "feature2": "Kreatives Feedback erhalten",
+          "feature3": "Kollaborationspartner finden",
+          "feature4": "An Schreibherausforderungen teilnehmen"
         },
-        "badge": "Sozial"
+        "badge": "Gemeinschaft"
       }
     },
     "buildTools": {
-      "title": "Build-Tools",
-      "body": "Alles was Sie brauchen um Ihre Comedy zu erstellen und zu veröffentlichen",
+      "title": "Kreativ-Toolkit",
+      "body": "Ihre umfassende Suite von Comedy-Erstellungs- und Veröffentlichungstools",
       "actions": {
-        "createNew": "Neu Erstellen",
-        "viewDrafts": "Entwürfe Anzeigen",
-        "analytics": "Analysen",
-        "publish": "Veröffentlichen"
+        "createNew": "Erstellen Beginnen",
+        "viewDrafts": "Meine Entwürfe",
+        "analytics": "Performance",
+        "publish": "Live Schalten"
       }
     }
   },
@@ -647,25 +647,6 @@
     "title": "Was kommt als Nächstes?",
     "subtitle": "Setzen Sie Ihre Reise mit diesen empfohlenen Aktionen fort",
     "cards": {
-      "setup": {
-        "nextBuilding": {
-          "title": "Nächster Schritt: Mit dem Erstellen beginnen",
-          "description": "Bereit, Ihren ersten Witz zu erstellen? Betreten Sie unsere Werkstatt und erwecken Sie Ihren Humor zum Leben.",
-          "actionText": "Werkstatt öffnen"
-        }
-      },
-      "build": {
-        "exploreJokes": {
-          "title": "Witze erkunden", 
-          "description": "Entdecken Sie beliebte Witze und lassen Sie sich von den besten Inhalten der Community inspirieren.",
-          "actionText": "Witze ansehen"
-        },
-        "viewAnalytics": {
-          "title": "Statistiken anzeigen",
-          "description": "Verfolgen Sie die Leistung Ihrer Witze und sehen Sie, wie Ihr Publikum mit Ihren Inhalten interagiert.",
-          "actionText": "Statistiken anzeigen"
-        }
-      },
       "final": {
         "startCreating": {
           "title": "Mit dem Erstellen beginnen",
@@ -676,6 +657,69 @@
           "title": "Community erkunden",
           "description": "Schließen Sie sich Tausenden von Erstellern an und entdecken Sie, was die Community zum Lachen bringt.",
           "actionText": "Community beitreten"
+        }
+      }
+    }
+  },
+  "CentralHub": {
+    "leadIn": {
+      "heading": "Humor-Kommandozentrale",
+      "paragraph": "Ihr zentraler Hub zum Erstellen, Teilen und Erkunden der Welt des Humors. Wählen Sie Ihr Abenteuer und bringen Sie die Welt zum Lachen!"
+    },
+    "sections": {
+      "buildWorkshop": {
+        "title": "Kreativer Workshop",
+        "description": "Erstellen und gestalten Sie Ihre komödiantischen Meisterwerke mit leistungsstarken Tools und KI-Unterstützung.",
+        "badge": "Erstellen",
+        "features": {
+          "jokeBuilder": "Erweiterte Witz-Erstellung",
+          "templates": "Professionelle Vorlagen",
+          "aiAssistance": "KI-gestützte Vorschläge",
+          "collaboration": "Team-Kollaborationstools"
+        }
+      },
+      "punchlineCommunity": {
+        "title": "Community-Bühne",
+        "description": "Teilen Sie Ihre Arbeit, erhalten Sie Feedback und verbinden Sie sich mit Komikern weltweit.",
+        "badge": "Teilen",
+        "features": {
+          "shareJokes": "Teilen und präsentieren",
+          "feedback": "Community-Feedback",
+          "voting": "Abstimmung und Bewertungen",
+          "trending": "Trending-Inhalte"
+        }
+      },
+      "setupExplorer": {
+        "title": "Witz-Explorer",
+        "description": "Entdecken Sie erstaunliche Inhalte, erkunden Sie Kategorien und finden Sie überall Inspiration.",
+        "badge": "Entdecken",
+        "features": {
+          "discover": "Inhalts-Entdeckung",
+          "categories": "Organisierte Kategorien",
+          "filters": "Intelligente Filterung",
+          "favorites": "Persönliche Favoriten"
+        }
+      },
+      "setupPremium": {
+        "title": "Premium-Erlebnis",
+        "description": "Schöpfen Sie das volle Potenzial mit exklusiven Funktionen, Analysen und prioritärem Support aus.",
+        "badge": "Premium",
+        "features": {
+          "advancedTools": "Erweiterte Erstellungstools",
+          "analytics": "Leistungsanalysen",
+          "exportOptions": "Export-Optionen",
+          "prioritySupport": "Prioritärer Support"
+        }
+      },
+      "setupProfile": {
+        "title": "Profil & Einstellungen",
+        "description": "Verwalten Sie Ihr Konto, Ihre Vorlieben und personalisieren Sie Ihr Comedy-Erlebnis.",
+        "badge": "Einstellungen",
+        "features": {
+          "personalSettings": "Persönliche Einstellungen",
+          "preferences": "Inhalts-Vorlieben",
+          "account": "Konto-Verwaltung",
+          "history": "Aktivitätsverlauf"
         }
       }
     }

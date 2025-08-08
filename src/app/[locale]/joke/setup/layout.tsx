@@ -7,10 +7,10 @@ type SetupLayoutProps = {
 };
 
 export default function SetupLayout({ children }: SetupLayoutProps) {
-  const navLinks = [
-    { key: "navItems.home", href: "medium" },
-    { key: "navItems.signUp", href: "sign-up" },
-    { key: "navItems.logIn", href: "log-in" },
+  const navigationLinks = [
+    { key: "navItems.home", href: "/joke/setup/medium" },
+    { key: "navItems.signUp", href: "/joke/setup/sign-up" },
+    { key: "navItems.logIn", href: "/joke/setup/log-in" },
   ];
 
   return (
@@ -18,7 +18,7 @@ export default function SetupLayout({ children }: SetupLayoutProps) {
       className="min-h-screen flex flex-col"
       aria-label="Public layout wrapper"
     >
-      <Navigation links={navLinks} />
+      <Navigation links={navigationLinks} />
       <main
         className="mx-[5rem] flex flex-col flex-1 gap-[5rem] justify-center"
         aria-label="Main content area"
