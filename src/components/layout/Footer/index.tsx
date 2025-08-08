@@ -2,7 +2,7 @@ import { Icon } from "@/components/feedback/icon";
 import instagram from "@iconify-icons/fa/instagram";
 import facebook from "@iconify-icons/fa/facebook";
 import youtube from "@iconify-icons/fa/youtube";
-import UnorderedList from "@/components/dataDisplay/unorderedList";
+import UnorderedList from "@/components/dataDisplay/UnorderedList";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { UnorderedListImpl } from "@/types/unorderedListType";

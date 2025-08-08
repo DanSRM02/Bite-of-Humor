@@ -1,11 +1,11 @@
 "use client";
-import LeadIn from "@/components/dataDisplay/leadIn";
+import LeadIn from "@/components/dataDisplay/LeadIn";
 import { Icon } from "@/components/feedback/icon";
 import { useRouter } from "next/navigation";
 import CardList from "@/components/dataDisplay/cardList";
 import { useTranslations } from "next-intl";
-import NavigationContext from "@/components/layout/navigation/context";
 import { TheatricalBackground } from "@/components/animations/theatrical";
+import NavigationContext from "@/components/layout/Navigation/context";
 
 function CentralHub() {
   const t = useTranslations();

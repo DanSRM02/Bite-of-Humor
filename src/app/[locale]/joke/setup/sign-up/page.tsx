@@ -1,6 +1,6 @@
 import Form from "@/components/inputs/form";
 import { inputTypes } from "@/types/baseFieldTypes";
-import LeadIn from "@/components/dataDisplay/leadIn";
+import LeadIn from "@/components/dataDisplay/LeadIn";
 import { signUpComedianAction } from "@/actions/comedianActions";
 import { initialSignUpState } from "@/utils/initialStates";
 import { getTranslations } from "next-intl/server";

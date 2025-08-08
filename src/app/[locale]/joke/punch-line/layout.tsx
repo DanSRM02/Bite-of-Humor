@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Footer from "@/components/layout/footer";
-import Navigation from "@/components/layout/navigation";
+import Footer from "@/components/layout/Footer";
+import Navigation from "@/components/layout/Navigation";
 
 type PunchLineLayoutProps = {
   children: ReactNode;

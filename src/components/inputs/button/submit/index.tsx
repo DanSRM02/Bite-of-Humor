@@ -3,7 +3,7 @@ import React from "react";
 import { useFormStatus } from "react-dom";
 import Button from "..";
 import { FormStateAction } from "@/types/formTypes";
-import Heading from "@/components/dataDisplay/heading";
+import Heading from "@/components/dataDisplay/Heading";
 import { useTranslations } from "next-intl";
 
 type ButtonSubmitProps = {
